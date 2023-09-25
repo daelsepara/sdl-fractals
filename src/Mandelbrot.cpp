@@ -57,10 +57,10 @@ int main(int argc, char **argv)
     auto exponent = 2.0;
     
     // complex plane window boundaries
-    auto min_x = -2.0;
-    auto max_x = 1.0;
-    auto min_y = -1.5;
-    auto max_y = 1.5;
+    auto min_x = -2.5;
+    auto max_x = 2.5;
+    auto min_y = -2.5;
+    auto max_y = 2.5;
 
     // calculate scaling factor
     auto dx = (double)(max_x - min_x) / (double)(x_pixels);
