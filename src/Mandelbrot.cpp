@@ -7,13 +7,10 @@
 
 int main(int argc, char **argv)
 {
-    using namespace std::complex_literals;
-    std::cout << std::fixed << std::setprecision(3);
-
-    auto scale_x = 512;
-    auto scale_y = 512;
+    auto scale_x = 256;
+    auto scale_y = 256;
     auto escape_time_threshold = 255;
-    auto escape_value_threshold = 4.0;
+    auto escape_value_threshold = 2.0;
 
     auto grid = std::vector<std::vector<short int>>(scale_y);
 
@@ -46,7 +43,7 @@ int main(int argc, char **argv)
             auto z = std::complex(xx, yy);
             auto c = std::complex(0.37, 0.2);
 
-            while (abs(z) < escape_value_threshold && (t < escape_time_threshold - 1))
+            while (abs(z) <= escape_value_threshold && (t < escape_time_threshold - 1))
             {
                 z = pow(z, 2.0) + c;
 
