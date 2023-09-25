@@ -47,62 +47,70 @@ int main(int argc, char **argv)
             0x0b, 0x10, 0x0b, 0x0b, 0x10, 0x0c, 0x0b, 0x10, 0x0d, 0x0b, 0x10, 0x0f, 0x0b, 0x10, 0x10, 0x0b, 0x0f, 0x10, 0x0b, 0x0d, 0x10, 0x0b, 0x0c, 0x10,
             0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
 
-    auto scale_x = 2048;
-    auto scale_y = 2048;
+    // size of fractal image
+    auto x_pixels = 2048;
+    auto y_pixels = 2048;
+
+    // mandelbrot parameter(s)
     Uint8 escape_time_threshold = 255;
     auto escape_value_threshold = 2.0;
-
-    auto grid = std::vector<std::vector<Uint8>>(scale_y);
-
-    // initialize grid
-    for (auto y = 0; y < scale_y; y++)
-    {
-        grid[y] = std::vector<Uint8>(scale_x);
-    }
-
+    auto exponent = 2.0;
+    
+    // complex plane window boundaries
     auto min_x = -2.0;
     auto max_x = 1.0;
     auto min_y = -1.5;
     auto max_y = 1.5;
 
-    auto dx = (double)(max_x - min_x) / (double)(scale_x);
-    auto dy = (double)(max_y - min_y) / (double)(scale_y);
+    // calculate scaling factor
+    auto dx = (double)(max_x - min_x) / (double)(x_pixels);
+    auto dy = (double)(max_y - min_y) / (double)(y_pixels);
+
+    // create complex plane
+    auto grid = std::vector<std::vector<Uint8>>(y_pixels);
+
+    // initialize grid
+    for (auto y = 0; y < y_pixels; y++)
+    {
+        grid[y] = std::vector<Uint8>(x_pixels);
+    }
 
     // calculate mandelbrot set
-    for (auto y = 0; y < scale_y; y++)
+    for (auto y = 0; y < y_pixels; y++)
     {
-        for (auto x = 0; x < scale_x; x++)
+        for (auto x = 0; x < x_pixels; x++)
         {
             Uint8 t = 0;
 
-            auto z = std::complex(0.0, 0.0);
+            // calculate location on complex plane
             auto cx = min_x + (double)x * dx;
-            auto cy = min_y + (double)(scale_y - y - 1) * dy;
+            // reverse y-location on image, i.e. - to + runs from top to bottom of the image
+            auto cy = min_y + (double)(y_pixels - y - 1) * dy;
+            // combine cx, cy point location to a single complex number
             auto c = std::complex(cx, cy);
-
+            // initial condition (z0)
+            auto z = std::complex(0.0, 0.0);
+            // generate escape time fractal
             while (abs(z) <= escape_value_threshold && (t < escape_time_threshold))
             {
-                z = pow(z, 2.0) + c;
+                z = pow(z, exponent) + c;
 
                 t++;
             }
 
+            // set escape-time color
             grid[y][x] = t;
-
-            auto r = grid[y][x];
-            auto g = grid[y][x];
-            auto b = grid[y][x];
         }
     }
 
-    auto surface = SDL_CreateRGBSurface(0, scale_x, scale_y, 32, 0, 0, 0, 0);
+    auto surface = SDL_CreateRGBSurface(0, x_pixels, y_pixels, 32, 0, 0, 0, 0);
 
     if (surface)
     {
         // write to ARGB surface
-        for (auto y = 0; y < scale_y; y++)
+        for (auto y = 0; y < y_pixels; y++)
         {
-            for (auto x = 0; x < scale_x; x++)
+            for (auto x = 0; x < x_pixels; x++)
             {
                 // calculate target pixel
                 Uint32 *const target = (Uint32 *)((Uint8 *)surface->pixels + y * surface->pitch + x * surface->format->BytesPerPixel);
@@ -120,12 +128,14 @@ int main(int argc, char **argv)
             }
         }
 
+        // save surface as png file
         IMG_Init(IMG_INIT_PNG);
 
         IMG_SavePNG(surface, "mandel.png");
 
         IMG_Quit();
 
+        // clean-up
         SDL_FreeSurface(surface);
     }
 
