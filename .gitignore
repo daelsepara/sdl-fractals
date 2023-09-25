@@ -33,3 +33,6 @@
 
 # local settings
 .vscode/
+
+# generated files
+*.ppm

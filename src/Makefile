@@ -13,10 +13,13 @@ else
 	LINKER_FLAGS += -lstdc++fs
 endif
 
-all: clean fractals
+all: clean fractals mandel
 
 fractals:
 	$(CC) $(SDLFRACTALS_SOURCE) $(LINKER_FLAGS) $(INCLUDES) -o $(SDLFRACTALS_OUTPUT)
+
+mandel:
+	$(CC) Mandelbrot.cpp $(LINKER_FLAGS) $(INCLUDES) -o Mandelbrot.exe
 
 clean:
 	rm -f *.exe *.o
