@@ -47,17 +47,17 @@ int main(int argc, char **argv)
             0x0b, 0x10, 0x0b, 0x0b, 0x10, 0x0c, 0x0b, 0x10, 0x0d, 0x0b, 0x10, 0x0f, 0x0b, 0x10, 0x10, 0x0b, 0x0f, 0x10, 0x0b, 0x0d, 0x10, 0x0b, 0x0c, 0x10,
             0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
 
-    auto scale_x = 1024;
-    auto scale_y = 1024;
-    auto escape_time_threshold = 255;
+    auto scale_x = 2048;
+    auto scale_y = 2048;
+    Uint8 escape_time_threshold = 255;
     auto escape_value_threshold = 2.0;
 
-    auto grid = std::vector<std::vector<short int>>(scale_y);
+    auto grid = std::vector<std::vector<Uint8>>(scale_y);
 
     // initialize grid
     for (auto y = 0; y < scale_y; y++)
     {
-        grid[y] = std::vector<short int>(scale_x);
+        grid[y] = std::vector<Uint8>(scale_x);
     }
 
     auto min_x = -2.0;
@@ -73,7 +73,7 @@ int main(int argc, char **argv)
     {
         for (auto x = 0; x < scale_x; x++)
         {
-            short int t = 0;
+            Uint8 t = 0;
 
             auto z = std::complex(0.0, 0.0);
             auto cx = min_x + (double)x * dx;
@@ -104,15 +104,19 @@ int main(int argc, char **argv)
         {
             for (auto x = 0; x < scale_x; x++)
             {
-                Uint32 *const target_pixel = (Uint32 *)((Uint8 *)surface->pixels + y * surface->pitch + x * surface->format->BytesPerPixel);
-
-                Uint8 a = 0;
-                Uint8 c = grid[y][x];
-                auto r = palette[c * 3];
-                auto g = palette[c * 3 + 1];
-                auto b = palette[c * 3 + 2];
-
-                *target_pixel = (Uint32)(a << 24 | r << 16 | g << 8 | b);
+                // calculate target pixel
+                Uint32 *const target = (Uint32 *)((Uint8 *)surface->pixels + y * surface->pitch + x * surface->format->BytesPerPixel);
+                // set alpha channel
+                Uint8 a = 255;
+                // clamp to values 0-255 and calculate index to palette
+                auto c = std::min(std::max((int)grid[y][x], 0), 255) * 3;
+                // get RGB color from palette and adjust color brightness
+                auto brightness = 4;
+                Uint8 r = palette[c] * brightness;
+                Uint8 g = palette[c + 1] * brightness;
+                Uint8 b = palette[c + 2] * brightness;
+                // write pixel on surface
+                *target = (Uint32)(a << 24 | r << 16 | g << 8 | b);
             }
         }
 
