@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 
 int main(int argc, char **argv)
 {
@@ -19,10 +20,6 @@ int main(int argc, char **argv)
     {
         grid[y] = std::vector<short int>(scale_x);
     }
-
-    std::cout << "P3" << std::endl;
-    std::cout << scale_x << " " << scale_y << std::endl;
-    std::cout << escape_time_threshold << std::endl;
 
     auto min_x = -2.0;
     auto max_x = 1.0;
@@ -43,7 +40,7 @@ int main(int argc, char **argv)
             auto cx = min_x + (double)x * dx;
             auto cy = min_y + (double)(scale_y - y - 1) * dy;
             auto c = std::complex(cx, cy);
-            
+
             while (abs(z) <= escape_value_threshold && (t < escape_time_threshold))
             {
                 z = pow(z, 2.0) + c;
@@ -56,11 +53,40 @@ int main(int argc, char **argv)
             auto r = grid[y][x];
             auto g = grid[y][x];
             auto b = grid[y][x];
-
-            std::cout << r << " " << g << " " << b << " ";
         }
+    }
 
-        std::cout << std::endl;
+    auto surface = SDL_CreateRGBSurface(0, scale_x, scale_y, 32, 0, 0, 0, 0);
+
+    // write to ARGB surface
+    for (auto y = 0; y < scale_y; y++)
+    {
+        for (auto x = 0; x < scale_x; x++)
+        {
+            Uint32 *const target_pixel = (Uint32 *)((Uint8 *)surface->pixels + y * surface->pitch + x * surface->format->BytesPerPixel);
+
+            // stretch color
+            Uint8 c = (Uint8)((double)grid[y][x] / (double)escape_time_threshold * 255.0);
+
+            Uint8 alpha = 0;
+
+            auto pixel = (Uint32)(0 << 24 | c << 16 | c << 8 | c);
+
+            *target_pixel = pixel;
+        }
+    }
+
+    if (surface)
+    {
+        IMG_Init(IMG_INIT_PNG);
+
+        IMG_SavePNG(surface, "mandel.png");
+
+        IMG_Quit();
+
+        SDL_FreeSurface(surface);
+
+        surface = NULL;
     }
 
     return 0;
