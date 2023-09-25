@@ -97,29 +97,25 @@ int main(int argc, char **argv)
 
     auto surface = SDL_CreateRGBSurface(0, scale_x, scale_y, 32, 0, 0, 0, 0);
 
-    // write to ARGB surface
-    for (auto y = 0; y < scale_y; y++)
-    {
-        for (auto x = 0; x < scale_x; x++)
-        {
-            Uint32 *const target_pixel = (Uint32 *)((Uint8 *)surface->pixels + y * surface->pitch + x * surface->format->BytesPerPixel);
-
-            Uint8 c = grid[y][x];
-
-            Uint8 a = 0;
-
-            auto r = palette[c * 3];
-            auto g = palette[c * 3 + 1];
-            auto b = palette[c * 3 + 2];
-
-            auto pixel = (Uint32)(a << 24 | r << 16 | g << 8 | b);
-
-            *target_pixel = pixel;
-        }
-    }
-
     if (surface)
     {
+        // write to ARGB surface
+        for (auto y = 0; y < scale_y; y++)
+        {
+            for (auto x = 0; x < scale_x; x++)
+            {
+                Uint32 *const target_pixel = (Uint32 *)((Uint8 *)surface->pixels + y * surface->pitch + x * surface->format->BytesPerPixel);
+
+                Uint8 a = 0;
+                Uint8 c = grid[y][x];
+                auto r = palette[c * 3];
+                auto g = palette[c * 3 + 1];
+                auto b = palette[c * 3 + 2];
+
+                *target_pixel = (Uint32)(a << 24 | r << 16 | g << 8 | b);
+            }
+        }
+
         IMG_Init(IMG_INIT_PNG);
 
         IMG_SavePNG(surface, "mandel.png");
@@ -127,8 +123,6 @@ int main(int argc, char **argv)
         IMG_Quit();
 
         SDL_FreeSurface(surface);
-
-        surface = NULL;
     }
 
     return 0;
