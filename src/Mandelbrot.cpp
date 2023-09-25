@@ -7,8 +7,8 @@
 
 int main(int argc, char **argv)
 {
-    auto scale_x = 1024;
-    auto scale_y = 1024;
+    auto scale_x = 512;
+    auto scale_y = 512;
     auto escape_time_threshold = 255;
     auto escape_value_threshold = 2.0;
 
@@ -25,9 +25,9 @@ int main(int argc, char **argv)
     std::cout << "255" << std::endl;
 
     auto min_x = -2.0;
-    auto max_x = 2.0;
-    auto min_y = -2.0;
-    auto max_y = 2.0;
+    auto max_x = 1.0;
+    auto min_y = -1.5;
+    auto max_y = 1.5;
 
     auto dx = (double)(max_x - min_x) / (double)(scale_x);
     auto dy = (double)(max_y - min_y) / (double)(scale_y);
@@ -38,12 +38,12 @@ int main(int argc, char **argv)
         for (auto x = 0; x < scale_x; x++)
         {
             short int t = 0;
-            auto xx = (double)(x - scale_x/2) * dx;
-            auto yy = (double)(y - scale_y/2) * dy;
-            auto z = std::complex(xx, yy);
-            auto c = std::complex(0.37, 0.2);
-
-            while (abs(z) <= escape_value_threshold && (t < escape_time_threshold - 1))
+            auto z = std::complex(0.0, 0.0);
+            auto cx = min_x + (double)x * dx;
+            auto cy = min_y + (double)(scale_y - y - 1) * dy;
+            auto c = std::complex(cx, cy);
+            
+            while (abs(z) <= escape_value_threshold && (t < escape_time_threshold))
             {
                 z = pow(z, 2.0) + c;
 
