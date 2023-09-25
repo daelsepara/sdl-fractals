@@ -9,7 +9,7 @@ int main(int argc, char **argv)
 {
     auto scale_x = 1024;
     auto scale_y = 1024;
-    auto escape_time_threshold = 32;
+    auto escape_time_threshold = 16;
     auto escape_value_threshold = 2.0;
 
     auto grid = std::vector<std::vector<short int>>(scale_y);
