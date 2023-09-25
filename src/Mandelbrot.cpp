@@ -7,8 +7,8 @@
 
 int main(int argc, char **argv)
 {
-    auto scale_x = 256;
-    auto scale_y = 256;
+    auto scale_x = 1024;
+    auto scale_y = 1024;
     auto escape_time_threshold = 255;
     auto escape_value_threshold = 2.0;
 
@@ -50,7 +50,7 @@ int main(int argc, char **argv)
                 t++;
             }
 
-            grid[y][x] = t + 1;
+            grid[y][x] = t;
 
             auto r = grid[y][x];
             auto g = grid[y][x];
