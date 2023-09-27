@@ -51,12 +51,15 @@ int main(int argc, char **argv)
             // initial condition z0 (zx, zy)
             auto zx = 0.0;
             auto zy = 0.0;
+            auto xx = 0.0;
+            auto yy = 0.0;
             // generate escape time fractal
-            while ((zx * zx + zy * zy) <= escape_value_threshold * escape_value_threshold && (t < escape_time_threshold))
+            while ((zx + zy) <= escape_value_threshold * escape_value_threshold && (t < escape_time_threshold))
             {
-                auto xtemp = zx * zx - zy * zy + cx;
-                zy = 2 * zx * zy + cy;
-                zx = xtemp;
+                yy = 2 * xx * yy + cy;
+                xx = zx - zy + cx;
+                zx = xx * xx;
+                zy = yy * yy;
                 t++;
             }
 
@@ -93,7 +96,7 @@ int main(int argc, char **argv)
         // save surface as png file
         IMG_Init(IMG_INIT_PNG);
 
-        IMG_SavePNG(surface, "mandel2.png");
+        IMG_SavePNG(surface, "mandel3.png");
 
         IMG_Quit();
 
