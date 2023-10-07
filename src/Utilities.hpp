@@ -114,6 +114,126 @@ namespace Fractal
         return surface;
     }
 
+    void RenderImage(Grid &grid, Fractal::Parameters &parameters, std::string palette_file)
+    {
+        // window
+        SDL_Window *window = NULL;
+
+        // renderer
+        SDL_Renderer *renderer = NULL;
+
+        auto Width = 1280;
+
+        auto Height = 1024;
+
+        if (SDL_Init(SDL_INIT_VIDEO) < 0)
+        {
+            std::cerr << "SDL could not initialize! SDL_Error: " << SDL_GetError() << std::endl;
+
+            std::exit(1);
+        }
+        else
+        {
+            SDL_DisplayMode mode;
+
+            SDL_GetCurrentDisplayMode(0, &mode);
+
+            Width = mode.w;
+
+            Height = mode.h;
+
+            SDL_CreateWindowAndRenderer(Width, Height, (SDL_WINDOW_FULLSCREEN_DESKTOP | SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC), &window, &renderer);
+
+            if (!window || !renderer)
+            {
+                std::cerr << "Window could not be created! SDL_Error: " << SDL_GetError() << std::endl;
+
+                std::exit(1);
+            }
+
+            if (window)
+            {
+                SDL_SetWindowTitle(window, "SDL Fractals");
+            }
+
+            if (renderer)
+            {
+                SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
+            }
+
+            auto palette = Fractal::Palette();
+
+            if (palette_file.length() > 0)
+            {
+                palette.Load(palette_file);
+            }
+
+            auto surface = Fractal::GenerateSurface(grid, parameters, palette);
+
+            if (surface)
+            {
+                SDL_Rect dst;
+                dst.x = Width > surface->w ? (Width - surface->w) / 2 : 0;
+                dst.y = Height > surface->h ? (Height - surface->h) / 2 : 0;
+                dst.w = Width > surface->w ? surface->w : Width;
+                dst.h = Height > surface->h ? surface->h : Height;
+
+                SDL_Rect src;
+                src.x = surface->w > Width ? (surface->w - Width) / 2 : 0;
+                src.y = surface->h > Height ? (surface->h - Height) / 2 : 0;
+                src.w = surface->w > Width ? Width : surface->w;
+                src.h = surface->h > Height ? Height : surface->h;
+
+                auto texture = SDL_CreateTextureFromSurface(renderer, surface);
+
+                if (texture)
+                {
+                    // Event handler
+                    SDL_Event e;
+
+                    auto quit = false;
+
+                    while (!quit)
+                    {
+                        while (SDL_PollEvent(&e) != 0)
+                        {
+                            // User requests quit
+                            if (e.type == SDL_QUIT)
+                            {
+                                quit = true;
+                            }
+                            else if (e.type == SDL_KEYDOWN)
+                            {
+                                quit = true;
+                            }
+
+                            SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+
+                            SDL_RenderFillRect(renderer, &dst);
+
+                            if (texture)
+                            {
+                                SDL_RenderCopy(renderer, texture, &src, &dst);
+                            }
+
+                            SDL_RenderPresent(renderer);
+                        }
+                    }
+
+                    SDL_DestroyTexture(texture);
+                }
+
+                SDL_FreeSurface(surface);
+            }
+
+            SDL_DestroyRenderer(renderer);
+
+            SDL_DestroyWindow(window);
+        }
+
+        SDL_Quit();
+    }
+
     void SaveImage(Grid &grid, Fractal::Parameters &parameters, std::string filename, std::string palette_file)
     {
         auto palette = Fractal::Palette();

@@ -162,31 +162,66 @@ int main(int argc, char **argv)
 		{
 			auto fractal = Fractal::Mandelbrot(parameters);
 
-			fractal.generate(image_file, palette_file);
+			if (image_file.length() > 0)
+			{
+				fractal.generate(image_file, palette_file);
+			}
+			else
+			{
+				fractal.generate(palette_file);
+			}
 		}
 		else if (parameters.type == "mandelbrot2")
 		{
 			auto fractal = Fractal::Mandelbrot2(parameters);
 
-			fractal.generate(image_file, palette_file);
+			if (image_file.length() > 0)
+			{
+				fractal.generate(image_file, palette_file);
+			}
+			else
+			{
+				fractal.generate(palette_file);
+			}
 		}
 		else if (parameters.type == "mandelbrot3")
 		{
 			auto fractal = Fractal::Mandelbrot3(parameters);
 
-			fractal.generate(image_file, palette_file);
+			if (image_file.length() > 0)
+			{
+				fractal.generate(image_file, palette_file);
+			}
+			else
+			{
+				fractal.generate(palette_file);
+			}
 		}
 		else if (parameters.type == "newton1")
 		{
 			auto fractal = Fractal::Newton1(parameters);
 
-			fractal.generate(image_file, palette_file);
+			if (image_file.length() > 0)
+			{
+				fractal.generate(image_file, palette_file);
+			}
+			else
+			{
+				fractal.generate(palette_file);
+			}
 		}
 		else if (parameters.type == "julia")
 		{
 			auto fractal = Fractal::Julia(parameters);
 
-			fractal.generate(image_file, palette_file);
+			if (image_file.length() > 0)
+			{
+				fractal.generate(image_file, palette_file);
+			}
+			else
+			{
+				fractal.generate(palette_file);
+			}
 		}
 		else
 		{

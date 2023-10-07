@@ -49,6 +49,13 @@ namespace Fractal
             }
         }
 
+        void generate(std::string palette)
+        {
+            this->generate();
+
+            Fractal::RenderImage(this->grid, this->parameters, palette);
+        }
+
         void generate(std::string image, std::string palette)
         {
             this->generate();
