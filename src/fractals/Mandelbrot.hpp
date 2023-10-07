@@ -11,15 +11,21 @@ namespace Fractal
 {
     class Mandelbrot
     {
+    private:
+        Fractal::Parameters parameters;
+
     public:
-        void generate(Fractal::Parameters parameters, std::string image)
+        Fractal::Grid grid;
+
+        void generate()
         {
             // create complex plane (initialize grid)
-            auto grid = Fractal::InitializeGrid(parameters);
+            this->grid = Fractal::InitializeGrid(this->parameters);
 
             // calculate scaling factor
-            auto dx = (double)(parameters.max_x - parameters.min_x) / (double)(parameters.x_pixels);
-            auto dy = (double)(parameters.max_y - parameters.min_y) / (double)(parameters.y_pixels);
+            auto dx = (double)(this->parameters.max_x - this->parameters.min_x) / (double)(this->parameters.x_pixels);
+
+            auto dy = (double)(this->parameters.max_y - this->parameters.min_y) / (double)(this->parameters.y_pixels);
 
             // calculate mandelbrot set
             for (auto y = 0; y < parameters.y_pixels; y++)
@@ -29,33 +35,41 @@ namespace Fractal
                     Uint8 t = 0;
 
                     // calculate location (cx, cy) on complex plane
-                    auto cx = parameters.min_x + (double)x * dx;
+                    auto cx = this->parameters.min_x + (double)x * dx;
                     // reverse y-location on image, i.e. - to + runs from top to bottom of the image
-                    auto cy = parameters.min_y + (double)(parameters.y_pixels - y - 1) * dy;
+                    auto cy = this->parameters.min_y + (double)(this->parameters.y_pixels - y - 1) * dy;
                     // generate escape time fractal
                     auto c = std::complex(cx, cy);
                     // initial condition (z0)
                     auto z = std::complex(0.0, 0.0);
                     // generate escape time fractal
-                    while (abs(z) <= parameters.escape_value_threshold && (t < parameters.escape_time_threshold))
+                    while (abs(z) <= this->parameters.escape_value_threshold && (t < this->parameters.escape_time_threshold))
                     {
-                        z = std::pow(z, parameters.exponent) + c;
+                        z = std::pow(z, this->parameters.exponent) + c;
 
                         t++;
                     }
 
                     // set escape-time color
-                    grid[y][x] = t;
+                    this->grid[y][x] = t;
                 }
-            }
-
-            if (image.length() > 0)
-            {
-                Fractal::SaveImage(grid, parameters, image);
             }
         }
 
-        Mandelbrot() {}
+        void generate(std::string image)
+        {
+            this->generate();
+
+            if (image.length() > 0)
+            {
+                Fractal::SaveImage(this->grid, this->parameters, image);
+            }
+        }
+
+        Mandelbrot(Fractal::Parameters parameters)
+        {
+            this->parameters = parameters;
+        }
     };
 }
 

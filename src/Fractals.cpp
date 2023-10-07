@@ -26,7 +26,8 @@ void ParseInt(std::string arg, const char *str, const char *var, int &dst)
 			catch (const std::invalid_argument &ia)
 			{
 				std::cerr << "... " << var << " = NaN " << ia.what() << std::endl;
-				exit(1);
+
+				std::exit(1);
 			}
 		}
 	}
@@ -69,7 +70,7 @@ void ParseInts(std::string arg, const char *str, const char *var, std::vector<in
 			{
 				std::cerr << "... " << var << " = NaN " << ia.what() << std::endl;
 
-				exit(1);
+				std::exit(1);
 			}
 		}
 	}
@@ -95,16 +96,39 @@ void ParseDouble(std::string arg, const char *str, const char *var, double &dst)
 			{
 				std::cerr << "... " << var << " = NaN " << ia.what() << std::endl;
 
-				exit(1);
+				std::exit(1);
 			}
 		}
 	}
 }
 
-int main(int argc, char **argv)
+bool ParseString(std::string arg, char **argv, int i, const char *param, std::string &dst)
 {
+	// temporary character buffer
 	char Buffer[256];
 
+	auto len = std::strlen(param);
+
+	auto result = (!arg.compare(0, len, param) && arg.length() > len);
+
+	if (result)
+	{
+		// clear buffer
+		std::memset(Buffer, 0, 255);
+		// copy parameter string into buffer
+		std::copy(&argv[i][len], &argv[i][len] + (sizeof(Buffer) - len), Buffer);
+		// convert to string
+		if (std::strlen(Buffer) > 0)
+		{
+			dst = std::string(Buffer);
+		}
+	}
+
+	return result;
+}
+
+int main(int argc, char **argv)
+{
 	std::string parameters_file;
 
 	std::string image_file;
@@ -115,33 +139,13 @@ int main(int argc, char **argv)
 	{
 		for (auto i = 1; i < argc; i++)
 		{
-			std::string arg = argv[i];
+			auto arg = std::string(argv[i]);
 
 			std::transform(arg.begin(), arg.end(), arg.begin(), ::toupper);
 
-			if (!arg.compare(0, 8, "/PARAMS=") && arg.length() > 8)
-			{
-				std::memset(Buffer, 0, 255);
-
-				std::copy(&argv[i][8], &argv[i][8] + sizeof(Buffer), Buffer);
-
-				if (std::strlen(Buffer) > 0)
-				{
-					parameters_file = std::string(Buffer);
-				}
-			}
-
-			if (!arg.compare(0, 7, "/IMAGE=") && arg.length() > 7)
-			{
-				std::memset(Buffer, 0, 255);
-
-				std::copy(&argv[i][7], &argv[i][7] + sizeof(Buffer), Buffer);
-
-				if (std::strlen(Buffer) > 0)
-				{
-					image_file = std::string(Buffer);
-				}
-			}
+			ParseString(arg, argv, i, "/PARAMS=", parameters_file);
+			ParseString(arg, argv, i, "/PARAMETERS=", parameters_file);
+			ParseString(arg, argv, i, "/IMAGE=", image_file);
 		}
 	}
 
@@ -153,21 +157,28 @@ int main(int argc, char **argv)
 
 		if (parameters.type == "mandelbrot")
 		{
-			auto fractal = Fractal::Mandelbrot();
+			auto fractal = Fractal::Mandelbrot(parameters);
 
-			fractal.generate(parameters, image_file);
+			fractal.generate(image_file);
 		}
 		else if (parameters.type == "mandelbrot2")
 		{
-			auto fractal = Fractal::Mandelbrot2();
+			auto fractal = Fractal::Mandelbrot2(parameters);
 
-			fractal.generate(parameters, image_file);
+			fractal.generate(image_file);
 		}
 		else if (parameters.type == "mandelbrot3")
 		{
-			auto fractal = Fractal::Mandelbrot3();
+			auto fractal = Fractal::Mandelbrot3(parameters);
 
-			fractal.generate(parameters, image_file);
+			fractal.generate(image_file);
+		}
+		else
+		{
+			std::cerr << "Unable to generate unknown '"
+					  << parameters.type
+					  << "' fractal."
+					  << std::endl;
 		}
 	}
 
