@@ -133,6 +133,8 @@ int main(int argc, char **argv)
 
 	std::string image_file;
 
+	std::string palette_file;
+
 	Fractal::Parameters parameters;
 
 	if (argc > 1)
@@ -146,6 +148,7 @@ int main(int argc, char **argv)
 			ParseString(arg, argv, i, "/PARAMS=", parameters_file);
 			ParseString(arg, argv, i, "/PARAMETERS=", parameters_file);
 			ParseString(arg, argv, i, "/IMAGE=", image_file);
+			ParseString(arg, argv, i, "/PALETTE=", palette_file);
 		}
 	}
 
@@ -159,25 +162,31 @@ int main(int argc, char **argv)
 		{
 			auto fractal = Fractal::Mandelbrot(parameters);
 
-			fractal.generate(image_file);
+			fractal.generate(image_file, palette_file);
 		}
 		else if (parameters.type == "mandelbrot2")
 		{
 			auto fractal = Fractal::Mandelbrot2(parameters);
 
-			fractal.generate(image_file);
+			fractal.generate(image_file, palette_file);
 		}
 		else if (parameters.type == "mandelbrot3")
 		{
 			auto fractal = Fractal::Mandelbrot3(parameters);
 
-			fractal.generate(image_file);
+			fractal.generate(image_file, palette_file);
 		}
 		else if (parameters.type == "newton1")
 		{
 			auto fractal = Fractal::Newton1(parameters);
 
-			fractal.generate(image_file);
+			fractal.generate(image_file, palette_file);
+		}
+		else if (parameters.type == "julia1")
+		{
+			auto fractal = Fractal::Julia1(parameters);
+
+			fractal.generate(image_file, palette_file);
 		}
 		else
 		{

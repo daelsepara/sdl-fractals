@@ -56,13 +56,13 @@ namespace Fractal
             }
         }
 
-        void generate(std::string image)
+        void generate(std::string image, std::string palette)
         {
             this->generate();
 
             if (image.length() > 0)
             {
-                Fractal::SaveImage(this->grid, this->parameters, image);
+                Fractal::SaveImage(this->grid, this->parameters, image, palette);
             }
         }
 

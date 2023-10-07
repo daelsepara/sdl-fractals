@@ -1,9 +1,6 @@
 #ifndef __MANDELBROT2_HPP__
 #define __MANDELBROT2_HPP__
 
-#include <cmath>
-#include <complex>
-
 #include "../Parameters.hpp"
 #include "../Utilities.hpp"
 
@@ -55,13 +52,13 @@ namespace Fractal
             }
         }
 
-        void generate(std::string image)
+        void generate(std::string image, std::string palette)
         {
             this->generate();
 
             if (image.length() > 0)
             {
-                Fractal::SaveImage(this->grid, this->parameters, image);
+                Fractal::SaveImage(this->grid, this->parameters, image, palette);
             }
         }
 

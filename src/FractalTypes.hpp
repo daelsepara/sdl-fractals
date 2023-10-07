@@ -5,5 +5,6 @@
 #include "fractals/Mandelbrot2.hpp"
 #include "fractals/Mandelbrot3.hpp"
 #include "fractals/Newton1.hpp"
+#include "fractals/Julia1.hpp"
 
 #endif

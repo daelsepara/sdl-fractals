@@ -27,6 +27,10 @@ namespace Fractal
 
         // Newton parameters
         double tolerance = 0.000001;
+
+        // Julia set parameters
+        double cx = -0.8;
+        double cy = 0.156;
     };
 }
 
