@@ -40,3 +40,21 @@ Range (min … max):   639.8 ms … 662.9 ms    10 runs
 Time (mean ± σ):     681.8 ms ±  35.2 ms    [User: 619.5 ms, System: 38.9 ms]
 Range (min … max):   647.1 ms … 744.7 ms    10 runs
 ```
+
+## Newton
+![Newton](/samples/newton1.png)
+
+### Parameters
+|Parameter      | Value |
+|---------------|:-----:|
+|Generator      | **z** - (**z**^3 - 1)/(3**z**^2) |
+|tolerance      | 1e-6 |
+|treshold       | 255 |
+|parameter files| [newton1.json](src/parameters/newton1.json) |
+
+### Benchmarks
+
+```cmd
+Time (mean ± σ):     868.1 ms ±   8.0 ms    [User: 822.9 ms, System: 35.2 ms]
+Range (min … max):   855.1 ms … 882.9 ms    10 runs
+```

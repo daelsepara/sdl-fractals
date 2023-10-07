@@ -49,6 +49,9 @@ namespace Fractal
             // mandelbrot parameter
             parameters.exponent = !data["exponent"].is_null() ? (double)data["exponent"] : std::numeric_limits<double>::quiet_NaN();
 
+            // newton parameter
+            parameters.tolerance = !data["tolerance"].is_null() ? (double)data["tolerance"] : std::numeric_limits<double>::epsilon();
+
             file.close();
         }
         else

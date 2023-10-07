@@ -24,6 +24,9 @@ namespace Fractal
         double max_x = 2.5;
         double min_y = -2.5;
         double max_y = 2.5;
+
+        // Newton parameters
+        double tolerance = 0.000001;
     };
 }
 

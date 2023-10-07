@@ -173,6 +173,12 @@ int main(int argc, char **argv)
 
 			fractal.generate(image_file);
 		}
+		else if (parameters.type == "newton1")
+		{
+			auto fractal = Fractal::Newton1(parameters);
+
+			fractal.generate(image_file);
+		}
 		else
 		{
 			std::cerr << "Unable to generate unknown '"
