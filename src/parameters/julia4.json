@@ -1,0 +1,13 @@
+{
+    "type": "julia",
+    "x_pixels": 2048,
+    "y_pixels": 2048,
+    "escape_time_threshold": 255,
+    "escape_value_threshold": 2.0,
+    "cx": -0.7269,
+    "cy": 0.1889,
+    "min_x": -2.5,
+    "max_x": 2.5,
+    "min_y": -2.5,
+    "max_y": 2.5
+}
