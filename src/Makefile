@@ -11,16 +11,19 @@ else
 	LINKER_FLAGS += -lstdc++fs
 endif
 
-all: clean mandel mandel2 mandel3
+all: mandel1 mandel2 mandel3 main
 
-mandel:
-	$(CC) Mandelbrot.cpp $(LINKER_FLAGS) $(INCLUDES) -o Mandelbrot.exe
+mandel1:
+	$(CC) Mandelbrot1.cpp $(LINKER_FLAGS) $(INCLUDES) -o Mandelbrot1.exe
 
 mandel2:
 	$(CC) Mandelbrot2.cpp $(LINKER_FLAGS) $(INCLUDES) -o Mandelbrot2.exe
 
 mandel3:
 	$(CC) Mandelbrot3.cpp $(LINKER_FLAGS) $(INCLUDES) -o Mandelbrot3.exe
+
+main:
+	$(CC) Fractals.cpp $(LINKER_FLAGS) $(INCLUDES) -o Fractals.exe
 
 clean:
 	rm -f *.exe *.o

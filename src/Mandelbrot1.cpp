@@ -6,6 +6,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
+#include "nlohmann/json.hpp"
 #include "palette.hpp"
 
 int main(int argc, char **argv)
