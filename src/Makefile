@@ -11,16 +11,7 @@ else
 	LINKER_FLAGS += -lstdc++fs
 endif
 
-all: mandel1 mandel2 mandel3 main
-
-mandel1:
-	$(CC) Mandelbrot1.cpp $(LINKER_FLAGS) $(INCLUDES) -o Mandelbrot1.exe
-
-mandel2:
-	$(CC) Mandelbrot2.cpp $(LINKER_FLAGS) $(INCLUDES) -o Mandelbrot2.exe
-
-mandel3:
-	$(CC) Mandelbrot3.cpp $(LINKER_FLAGS) $(INCLUDES) -o Mandelbrot3.exe
+all: main
 
 main:
 	$(CC) Fractals.cpp $(LINKER_FLAGS) $(INCLUDES) -o Fractals.exe

@@ -2,6 +2,7 @@
 #define __UTILITIES_HPP__
 
 #include <fstream>
+#include <limits>
 #include <string>
 #include <vector>
 
@@ -9,8 +10,8 @@
 #include <SDL2/SDL_image.h>
 
 #include "nlohmann/json.hpp"
-#include "palette.hpp"
-#include "parameters.hpp"
+#include "Palette.hpp"
+#include "Parameters.hpp"
 
 namespace Fractal
 {
@@ -24,23 +25,33 @@ namespace Fractal
 
         if (file.good())
         {
+            std::cerr << "Loading parameters from " << filename << std::endl;
+
             auto data = nlohmann::json::parse(file);
 
+            // fractal type
             parameters.type = !data["type"].is_null() ? std::string(data["type"]) : std::string("mandelbrot");
 
-            parameters.x_pixels = !data["x_pixels"].is_null() ? (int)data["x_pixels"] : 2048;
-            parameters.y_pixels = !data["y_pixels"].is_null() ? (int)data["y_pixels"] : 2048;
-            
-            parameters.escape_time_threshold = !data["escape_time_threshold"].is_null() ? (int)data["escape_time_threshold"] : 255;
-            parameters.escape_value_threshold = !data["escape_value_threshold"].is_null() ? (double)data["escape_value_threshold"] : 2.0;
-            parameters.exponent = !data["exponent"].is_null() ? (double)data["exponent"] : 2.0;
-            
+            // window borders on the comlex plane
             parameters.min_x = !data["min_x"].is_null() ? (double)data["min_x"] : -2.5;
             parameters.max_x = !data["max_x"].is_null() ? (double)data["max_x"] : 2.5;
             parameters.min_y = !data["min_y"].is_null() ? (double)data["min_y"] : -2.5;
             parameters.max_y = !data["max_y"].is_null() ? (double)data["max_y"] : 2.5;
 
+            // fractal dimensions (in pixels)
+            parameters.x_pixels = !data["x_pixels"].is_null() ? (int)data["x_pixels"] : 2048;
+            parameters.y_pixels = !data["y_pixels"].is_null() ? (int)data["y_pixels"] : 2048;
+
+            // parameters for escape time type of fractals
+            parameters.escape_time_threshold = !data["escape_time_threshold"].is_null() ? (int)data["escape_time_threshold"] : std::numeric_limits<int>::quiet_NaN();
+            parameters.escape_value_threshold = !data["escape_value_threshold"].is_null() ? (double)data["escape_value_threshold"] : std::numeric_limits<double>::quiet_NaN();
+            parameters.exponent = !data["exponent"].is_null() ? (double)data["exponent"] : std::numeric_limits<double>::quiet_NaN();
+
             file.close();
+        }
+        else
+        {
+            std::cerr << "Unable to laod parameters from " << filename << std::endl;
         }
 
         return parameters;
@@ -81,9 +92,9 @@ namespace Fractal
                     auto c = std::min(std::max((int)grid[y][x], 0), 255) * 3;
                     // get RGB color from palette and adjust color brightness
                     auto brightness = 4;
-                    Uint8 r = palette[c] * brightness;
-                    Uint8 g = palette[c + 1] * brightness;
-                    Uint8 b = palette[c + 2] * brightness;
+                    Uint8 r = Fractal::Palette[c] * brightness;
+                    Uint8 g = Fractal::Palette[c + 1] * brightness;
+                    Uint8 b = Fractal::Palette[c + 2] * brightness;
                     // write pixel on surface
                     *target = (Uint32)(a << 24 | r << 16 | g << 8 | b);
                 }
