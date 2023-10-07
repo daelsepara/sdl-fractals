@@ -1,12 +1,12 @@
-#ifndef __JULIA1_HPP__
-#define __JULIA1_HPP__
+#ifndef __JULIA_HPP__
+#define __JULIA_HPP__
 
 #include "../Parameters.hpp"
 #include "../Utilities.hpp"
 
 namespace Fractal
 {
-    class Julia1
+    class Julia
     {
     private:
         Fractal::Parameters parameters;
@@ -59,7 +59,7 @@ namespace Fractal
             }
         }
 
-        Julia1(Fractal::Parameters parameters)
+        Julia(Fractal::Parameters parameters)
         {
             this->parameters = parameters;
         }

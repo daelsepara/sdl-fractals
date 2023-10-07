@@ -182,9 +182,9 @@ int main(int argc, char **argv)
 
 			fractal.generate(image_file, palette_file);
 		}
-		else if (parameters.type == "julia1")
+		else if (parameters.type == "julia")
 		{
-			auto fractal = Fractal::Julia1(parameters);
+			auto fractal = Fractal::Julia(parameters);
 
 			fractal.generate(image_file, palette_file);
 		}
