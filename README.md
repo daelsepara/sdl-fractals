@@ -22,6 +22,7 @@ To use:
 |threshold      | 255 |
 |orbit          | 2.0 |
 |parameter files| [mandelbrot](src/parameters/mandelbrot.json), [mandelbrot2](src/parameters/mandelbrot2.json), [mandelbrot3](src/parameters/mandelbrot3.json) |
+|palette        | default |
 
 ### Benchmarks
 
@@ -53,6 +54,7 @@ Range (min … max):   647.1 ms … 744.7 ms    10 runs
 |tolerance      | 1e-6 |
 |threshold      | 255 |
 |parameter files| [newton1](src/parameters/newton1.json) |
+|palette        | default |
 
 ```cmd
 Time (mean ± σ):     868.1 ms ±   8.0 ms    [User: 822.9 ms, System: 35.2 ms]
@@ -75,6 +77,7 @@ Range (min … max):   855.1 ms … 882.9 ms    10 runs
 |----------|:-----------:|
 |C         | -0.4 + 0.6i |
 |parameter file| [julia1](src/parameters/julia1.json) |
+|palette   | [plasma](src/palettes/plasma.json) |
 
 ```cmd
 Time (mean ± σ):     821.6 ms ±   8.3 ms    [User: 770.7 ms, System: 38.7 ms]
@@ -86,6 +89,7 @@ Range (min … max):   812.3 ms … 836.7 ms    10 runs
 |----------|:-------------:|
 |C         | -0.8 + 0.156i |
 |parameter file| [julia2](src/parameters/julia2.json) |
+|palette   | [inferno](src/palettes/inferno.json) |
 
 ```cmd
 Time (mean ± σ):     936.7 ms ±  10.5 ms    [User: 881.0 ms, System: 39.5 ms]
@@ -97,6 +101,7 @@ Range (min … max):   925.1 ms … 959.9 ms    10 runs
 |----------|:-------------:|
 |C         | 0.285 + 0.01i |
 |parameter file| [julia3](src/parameters/julia3.json) |
+|palette   | [moreland](src/palettes/moreland.json) |
 
 ```cmd
 Time (mean ± σ):     732.1 ms ±  12.2 ms    [User: 678.0 ms, System: 38.8 ms]
@@ -108,6 +113,7 @@ Range (min … max):   718.5 ms … 755.8 ms    10 run
 |----------|:-------------:|
 |C         | -0.7269 + 0.1889i |
 |parameter file| [julia4](src/parameters/julia4.json) |
+|palette   | [magma](src/palettes/magma.json) |
 
 ```cmd
 Time (mean ± σ):      1.224 s ±  0.019 s    [User: 1.166 s, System: 0.041 s]
@@ -125,6 +131,7 @@ Range (min … max):    1.201 s …  1.263 s    10 runs
 |threshold      | 255 |
 |orbit          | 2.0 |
 |parameter files| [mandelbrot4](src/parameters/mandelbrot4.json) |
+|palette        | default |
 
 ```cmd
 Time (mean ± σ):      3.937 s ±  0.055 s    [User: 3.831 s, System: 0.056 s]
@@ -144,6 +151,7 @@ Range (min … max):    3.898 s …  4.063 s    10 runs
 |threshold      | 100  |
 |orbit          | 4.0 |
 |parameter files| [burningship](src/parameters/burningship.json) |
+|palette        | [hot](src/palettes/hot.json) |
 
 ```cmd
 Time (mean ± σ):     559.9 ms ±   4.1 ms    [User: 518.1 ms, System: 33.7 ms]
@@ -161,6 +169,7 @@ Range (min … max):   552.8 ms … 567.2 ms    10 runs
 |threshold      | 255  |
 |orbit          | 4.0  |
 |parameter files| [tricorn](src/parameters/tricorn.json) |
+|palette        | [parula](src/palettes/parula.json) |
 
 ```cmd
 Time (mean ± σ):     575.8 ms ±  21.6 ms    [User: 528.1 ms, System: 36.5 ms]
