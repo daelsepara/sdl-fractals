@@ -189,11 +189,11 @@ def paired(x):
 
 def main():
     parser = argparse.ArgumentParser(
-        prog='Convert palette',
-        description='Converts csv to palette json')
+        prog='Generate palette',
+        description='Generate paletten based on type')
 
     parser.add_argument('-t', '--type', required=True,
-                        help='csv file to convert')
+                        help='type of palettep to generate')
     parser.add_argument('-b', '--brightness', required=False,
                         default=1, type=int, help='Brightness factor')
 
