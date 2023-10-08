@@ -23,6 +23,7 @@ To use:
 |orbit          | 2.0 |
 |parameter files| [mandelbrot](src/parameters/mandelbrot.json), [mandelbrot2](src/parameters/mandelbrot2.json), [mandelbrot3](src/parameters/mandelbrot3.json) |
 |palette        | default |
+|source(s)      | [Mandelbrot.hpp](src/fractals/Mandelbrot.hpp), [Mandelbrot2.hpp](src/fractals/Mandelbrot2.hpp), [Mandelbrot3.hpp](src/fractals/Mandelbrot3.hpp) |
 
 ### Benchmarks
 
@@ -55,6 +56,7 @@ Range (min … max):   647.1 ms … 744.7 ms    10 runs
 |threshold      | 255 |
 |parameter files| [newton1](src/parameters/newton1.json) |
 |palette        | default |
+|source         | [Newton1.hpp](src/fractals/Newton1.hpp) |
 
 ```cmd
 Time (mean ± σ):     868.1 ms ±   8.0 ms    [User: 822.9 ms, System: 35.2 ms]
@@ -69,6 +71,7 @@ Range (min … max):   855.1 ms … 882.9 ms    10 runs
 |Generator      | **z**^**exp** + **C** |
 |threshold      | 255 |
 |orbit          | 2.0 |
+|source         | [Julia.hpp](src/fractals/Julia.hpp) |
 
 ### Specific Parameters and Benchmarks
 
@@ -132,6 +135,7 @@ Range (min … max):    1.201 s …  1.263 s    10 runs
 |orbit          | 2.0 |
 |parameter files| [mandelbrot4](src/parameters/mandelbrot4.json) |
 |palette        | default |
+|source         | [Mandelbrot.hpp](src/fractals/Mandelbrot.hpp) |
 
 ```cmd
 Time (mean ± σ):      3.937 s ±  0.055 s    [User: 3.831 s, System: 0.056 s]
@@ -152,6 +156,7 @@ Range (min … max):    3.898 s …  4.063 s    10 runs
 |orbit          | 4.0 |
 |parameter files| [burningship](src/parameters/burningship.json) |
 |palette        | [hot](src/palettes/hot.json) |
+|source         | [BurningShip.hpp](src/fractals/BurningShip.hpp) |
 
 ```cmd
 Time (mean ± σ):     559.9 ms ±   4.1 ms    [User: 518.1 ms, System: 33.7 ms]
@@ -170,6 +175,7 @@ Range (min … max):   552.8 ms … 567.2 ms    10 runs
 |orbit          | 4.0  |
 |parameter files| [tricorn](src/parameters/tricorn.json) |
 |palette        | [parula](src/palettes/parula.json) |
+|source         | [Tricorn.hpp](src/fractals/Tricorn.hpp) |
 
 ```cmd
 Time (mean ± σ):     575.8 ms ±  21.6 ms    [User: 528.1 ms, System: 36.5 ms]
