@@ -24,7 +24,7 @@ namespace Fractal
 
             auto dy = (double)(this->parameters.max_y - this->parameters.min_y) / (double)(this->parameters.y_pixels);
 
-            // calculate tricorn fractal
+            // calculate multi-corn fractal
             for (auto y = 0; y < parameters.y_pixels; y++)
             {
                 for (auto x = 0; x < parameters.x_pixels; x++)
