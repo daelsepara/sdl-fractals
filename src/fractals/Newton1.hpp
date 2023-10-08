@@ -1,9 +1,6 @@
 #ifndef __NEWTON1_HPP__
 #define __NEWTON1_HPP__
 
-#include <cmath>
-#include <complex>
-
 #include "../Parameters.hpp"
 #include "../Utilities.hpp"
 
@@ -34,10 +31,22 @@ namespace Fractal
                 {
                     Uint8 t = 0;
 
-                    // calculate location (cx, cy) on complex plane
+                    // calculate location (zx, zy) on complex plane
                     auto zx = this->parameters.min_x + (double)x * dx;
+
+                    if (this->parameters.invert_x)
+                    {
+                        // reverse x-location on image, i.e. - to + runs from right to left of the image
+                        zx = this->parameters.min_x + (double)(this->parameters.x_pixels - x - 1) * dx;
+                    }
+
                     // reverse y-location on image, i.e. - to + runs from top to bottom of the image
                     auto zy = this->parameters.min_y + (double)(this->parameters.y_pixels - y - 1) * dy;
+
+                    if (this->parameters.invert_y)
+                    {
+                        zy = this->parameters.min_y + (double)y * dy;
+                    }
 
                     auto tmp = 1.0;
 
@@ -51,7 +60,7 @@ namespace Fractal
 
                         zx = (2 * zx * tmp + zx * zx - zy * zy) / (3.0 * tmp);
 
-                        zy = (2 * zy *  (tmp - oldx)) / (3.0 * tmp);
+                        zy = (2 * zy * (tmp - oldx)) / (3.0 * tmp);
 
                         auto zx1 = zx - oldx;
 

@@ -58,6 +58,13 @@ namespace Fractal
             parameters.cx = !data["cx"].is_null() ? (double)data["cx"] : std::numeric_limits<double>::quiet_NaN();
             parameters.cy = !data["cy"].is_null() ? (double)data["cy"] : std::numeric_limits<double>::quiet_NaN();
 
+            // inside_color
+            parameters.inside_color = !data["inside_color"].is_null() ? (int)data["inside_color"] : std::numeric_limits<int>::quiet_NaN();
+
+            // invert axis
+            parameters.invert_x = !data["invert_x"].is_null() ? (bool)data["invert_x"] : false;
+            parameters.invert_y = !data["invert_y"].is_null() ? (bool)data["invert_y"] : false;
+
             file.close();
         }
         else

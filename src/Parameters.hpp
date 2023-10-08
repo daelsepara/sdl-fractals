@@ -31,6 +31,13 @@ namespace Fractal
         // Julia set parameters
         double cx = -0.8;
         double cy = 0.156;
+
+        // inside color
+        int inside_color = 128;
+
+        // invert axis
+        bool invert_x = false;
+        bool invert_y = false;
     };
 }
 

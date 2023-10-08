@@ -19,9 +19,9 @@ To use:
 |---------------|:-----:|
 |Generator      | **z**^**exp** + **C** |
 |exp            | 2   |
-|treshold       | 255 |
+|threshold      | 255 |
 |orbit          | 2.0 |
-|parameter files| [mandelbrot.json](src/parameters/mandelbrot.json), [mandelbrot2](src/parameters/mandelbrot2.json), [mandelbrot3](src/parameters/mandelbrot3.json) |
+|parameter files| [mandelbrot](src/parameters/mandelbrot.json), [mandelbrot2](src/parameters/mandelbrot2.json), [mandelbrot3](src/parameters/mandelbrot3.json) |
 
 ### Benchmarks
 
@@ -51,7 +51,7 @@ Range (min … max):   647.1 ms … 744.7 ms    10 runs
 |---------------|:-----:|
 |Generator      | **z** - (**z**^3 - 1)/(3**z**^2) |
 |tolerance      | 1e-6 |
-|treshold       | 255 |
+|threshold      | 255 |
 |parameter files| [newton1](src/parameters/newton1.json) |
 
 ```cmd
@@ -62,17 +62,15 @@ Range (min … max):   855.1 ms … 882.9 ms    10 runs
 ## Julia Sets
 
 ### Common Parameters
-
 |Parameter      | Value |
 |---------------|:-----:|
 |Generator      | **z**^**exp** + **C** |
-|treshold       | 255 |
+|threshold      | 255 |
 |orbit          | 2.0 |
 
 ### Specific Parameters and Benchmarks
 
 ![Julia 1](/samples/julia1.png)
-
 |Parameter | Value       |
 |----------|:-----------:|
 |C         | -0.4 + 0.6i |
@@ -84,7 +82,6 @@ Range (min … max):   812.3 ms … 836.7 ms    10 runs
 ```
 
 ![Julia 2](/samples/julia2.png)
-
 |Parameter | Value         |
 |----------|:-------------:|
 |C         | -0.8 + 0.156i |
@@ -96,7 +93,6 @@ Range (min … max):   925.1 ms … 959.9 ms    10 runs
 ```
 
 ![Julia 3](/samples/julia3.png)
-
 |Parameter | Value         |
 |----------|:-------------:|
 |C         | 0.285 + 0.01i |
@@ -108,7 +104,6 @@ Range (min … max):   718.5 ms … 755.8 ms    10 run
 ```
 
 ![Julia 4](/samples/julia4.png)
-
 |Parameter | Value         |
 |----------|:-------------:|
 |C         | -0.7269 + 0.1889i |
@@ -120,7 +115,6 @@ Range (min … max):    1.201 s …  1.263 s    10 runs
 ```
 
 ## Mandelbrot4
-
 ![Mandelbrot 4](/samples/mandelbrot4.png)
 
 ### Parameters
@@ -128,11 +122,30 @@ Range (min … max):    1.201 s …  1.263 s    10 runs
 |---------------|:-----:|
 |Generator      | **z**^**exp** + **C** |
 |exp            | 4   |
-|treshold       | 255 |
+|threshold      | 255 |
 |orbit          | 2.0 |
-|parameter files| [mandelbrot4.json](src/parameters/mandelbrot4.json) |
+|parameter files| [mandelbrot4](src/parameters/mandelbrot4.json) |
 
 ```cmd
 Time (mean ± σ):      3.937 s ±  0.055 s    [User: 3.831 s, System: 0.056 s]
 Range (min … max):    3.898 s …  4.063 s    10 runs
+```
+
+## Burning Ship
+![Burning Ship](/samples/burningship.png)
+
+### Parameters
+|Parameter      | Value |
+|---------------|:-----:|
+|Generator      | (Re(**Zn**) + iIm(**Zn**))^2 + **C** |
+|inverted x     | true |
+|inverted y     | true |
+|inside color   | 0    |
+|threshold      | 100  |
+|orbit          | 4.0 |
+|parameter files| [burningship](src/parameters/burningship.json) |
+
+```cmd
+Time (mean ± σ):     559.9 ms ±   4.1 ms    [User: 518.1 ms, System: 33.7 ms]
+Range (min … max):   552.8 ms … 567.2 ms    10 runs
 ```
