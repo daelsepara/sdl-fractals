@@ -1,0 +1,13 @@
+{
+    "type": "multicorn",
+    "x_pixels": 2048,
+    "y_pixels": 2048,
+    "escape_time_threshold": 255,
+    "escape_value_threshold": 4.0,
+    "exponent": 4,
+    "inside_color": 0,
+    "min_x": -2.25,
+    "max_x": 2.25,
+    "min_y": -2.25,
+    "max_y": 2.25
+}

@@ -181,3 +181,23 @@ Range (min … max):   552.8 ms … 567.2 ms    10 runs
 Time (mean ± σ):     575.8 ms ±  21.6 ms    [User: 528.1 ms, System: 36.5 ms]
 Range (min … max):   536.0 ms … 602.0 ms    10 runs
 ```
+
+## Multicorn
+![Multicorn](/samples/multicorn.png)
+
+### Parameters
+|Parameter      | Value |
+|---------------|:-----:|
+|Generator      | **Z_bar**^**exp** + **C** |
+|exponent       | 4    |
+|inside color   | 0    |
+|threshold      | 255  |
+|orbit          | 4.0  |
+|parameter files| [multicorn](src/parameters/multicorn.json) |
+|palette        | [viridis](src/palettes/viridis.json) |
+|source         | [Multicorn.hpp](src/fractals/Multicorn.hpp) |
+
+```cmd
+Time (mean ± σ):      1.316 s ±  0.016 s    [User: 1.261 s, System: 0.040 s]
+Range (min … max):    1.293 s …  1.346 s    10 runs
+```
