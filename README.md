@@ -149,3 +149,20 @@ Range (min … max):    3.898 s …  4.063 s    10 runs
 Time (mean ± σ):     559.9 ms ±   4.1 ms    [User: 518.1 ms, System: 33.7 ms]
 Range (min … max):   552.8 ms … 567.2 ms    10 runs
 ```
+
+## Tricorn
+![Tricorn](/samples/tricorn.png)
+
+### Parameters
+|Parameter      | Value |
+|---------------|:-----:|
+|Generator      | (**z_x**^2 + **z_y**^2) - i(2 * **z_x** * **z_y**) + **C** |
+|inside color   | 0    |
+|threshold      | 255  |
+|orbit          | 4.0  |
+|parameter files| [tricorn](src/parameters/tricorn.json) |
+
+```cmd
+Time (mean ± σ):     575.8 ms ±  21.6 ms    [User: 528.1 ms, System: 36.5 ms]
+Range (min … max):   536.0 ms … 602.0 ms    10 runs
+```
