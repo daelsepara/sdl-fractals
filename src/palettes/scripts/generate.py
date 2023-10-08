@@ -71,6 +71,47 @@ def jet(x):
     return [color['r'], color['g'], color['b']]
 
 
+def accent(x):
+    data = pd.DataFrame([[0x7f, 0xc9, 0x7f],
+                         [0xbe, 0xae, 0xd4],
+                         [0xfd, 0xc0, 0x86],
+                         [0xff, 0xff, 0x99],
+                         [0x38, 0x6c, 0xb0],
+                         [0xf0, 0x02, 0x7f],
+                         [0xbf, 0x5b, 0x17],
+                         [0x66, 0x66, 0x66]], columns=['r', 'g', 'b'])
+    color = lerp(x, data/255)
+    return [color['r'], color['g'], color['b']]
+
+
+def sand(x):
+    data = pd.DataFrame([[0x60, 0x48, 0x60],
+                         [0x78, 0x48, 0x60],
+                         [0xa8, 0x60, 0x60],
+                         [0xc0, 0x78, 0x60],
+                         [0xf0, 0xa8, 0x48],
+                         [0xf8, 0xca, 0x8c],
+                         [0xfe, 0xec, 0xae],
+                         [0xff, 0xf4, 0xc2],
+                         [0xff, 0xf7, 0xdb],
+                         [0xff, 0xfc, 0xf6]], columns=['r', 'g', 'b'])
+    color = lerp(x, data/255)
+    return [color['r'], color['g'], color['b']]
+
+
+def rdpu(x):
+    data = pd.DataFrame([[0xff, 0xf7, 0xf3],
+                         [0xfd, 0xe0, 0xdd],
+                         [0xfc, 0xc5, 0xc0],
+                         [0xfa, 0x9f, 0xb5],
+                         [0xf7, 0x68, 0xa1],
+                         [0xdd, 0x34, 0x97],
+                         [0xae, 0x01, 0x7e],
+                         [0x7a, 0x01, 0x77]], columns=['r', 'g', 'b'])
+    color = lerp(x, data/255)
+    return [color['r'], color['g'], color['b']]
+
+
 def main():
     parser = argparse.ArgumentParser(
         prog='Convert palette',
@@ -96,7 +137,13 @@ def main():
         elif args.type == 'jet':
             value = jet(x)
         elif args.type == 'github':
-            value = github(x)    
+            value = github(x)
+        elif args.type == 'accent':
+            value = accent(x)
+        elif args.type == 'sand':
+            value = sand(x)
+        elif args.type == 'rdpu':
+            value = rdpu(x)
         else:
             value = [x, x, x]
 
