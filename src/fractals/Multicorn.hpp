@@ -1,5 +1,5 @@
-#ifndef __TRICORN2_HPP__
-#define __TRICORN2_HPP__
+#ifndef __MULTICORN_HPP__
+#define __MULTICORN_HPP__
 
 #include "../Parameters.hpp"
 #include "../Utilities.hpp"
