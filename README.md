@@ -4,7 +4,9 @@ Fractal Image Generators in SDL
 To use:
 
 ```cmd
-./Fractals.exe /PARAMS={parameters.json} /IMAGE={image.png}
+./Fractals.exe /PARAMS={parameters.json} /IMAGE={image.png} /PALETTE={palette.json}
+
+/IMAGE and /PALETTE are optional
 ```
 
 # Examples
@@ -51,8 +53,6 @@ Range (min … max):   647.1 ms … 744.7 ms    10 runs
 |tolerance      | 1e-6 |
 |treshold       | 255 |
 |parameter files| [newton1](src/parameters/newton1.json) |
-
-### Benchmarks
 
 ```cmd
 Time (mean ± σ):     868.1 ms ±   8.0 ms    [User: 822.9 ms, System: 35.2 ms]
