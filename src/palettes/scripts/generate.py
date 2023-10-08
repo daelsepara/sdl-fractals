@@ -33,6 +33,34 @@ def heat(x):
     return [color['r'], color['g'], color['b']]
 
 
+def gray(x):
+    data = pd.DataFrame([[0.0, 0.0, 0.0],
+                         [1.0, 1.0, 1.0]], columns=['r', 'g', 'b'])
+    color = lerp(x, data)
+    return [color['r'], color['g'], color['b']]
+
+
+def blue(x):
+    data = pd.DataFrame([[0.0, 0.0, 0.0],
+                         [0.0, 0.0, 1.0]], columns=['r', 'g', 'b'])
+    color = lerp(x, data)
+    return [color['r'], color['g'], color['b']]
+
+
+def green(x):
+    data = pd.DataFrame([[0.0, 0.0, 0.0],
+                         [0.0, 1.0, 0.0]], columns=['r', 'g', 'b'])
+    color = lerp(x, data)
+    return [color['r'], color['g'], color['b']]
+
+
+def red(x):
+    data = pd.DataFrame([[0.0, 0.0, 0.0],
+                         [1.0, 0.0, 0.0]], columns=['r', 'g', 'b'])
+    color = lerp(x, data)
+    return [color['r'], color['g'], color['b']]
+
+
 def hot(x):
     x = clamp(x)
     if x < 0.4:
@@ -160,8 +188,6 @@ def main():
 
     parser.add_argument('-t', '--type', required=True,
                         help='csv file to convert')
-    parser.add_argument('-o', '--output', required=True,
-                        help='output filename')
     parser.add_argument('-b', '--brightness', required=False,
                         default=1, type=int, help='Brightness factor')
 
@@ -191,6 +217,14 @@ def main():
             value = set1(x)
         elif args.type == 'paired':
             value = paired(x)
+        elif args.type == 'gray' or args.type == 'grey':
+            value = gray(x)
+        elif args.type == 'red':
+            value = red(x)
+        elif args.type == 'green':
+            value = green(x)
+        elif args.type == 'blue':
+            value = blue(x)
         else:
             value = [x, x, x]
 

@@ -6,7 +6,7 @@
     "escape_value_threshold": 4.0,
     "invert_x": true,
     "invert_y": true,
-    "inside_color": 0,
+    "inside_color": 2,
     "min_x": -2.25,
     "max_x": 2.25,
     "min_y": -2.25,
