@@ -127,6 +127,32 @@ def gnpu(x):
     return [color['r'], color['g'], color['b']]
 
 
+def set1(x):
+    data = pd.DataFrame([[0xE4, 0x1A, 0x1C],
+                         [0x37, 0x7E, 0xB8],
+                         [0x4D, 0xAF, 0x4A],
+                         [0x98, 0x4E, 0xA3],
+                         [0xFF, 0x7F, 0x00],
+                         [0xFF, 0xFF, 0x33],
+                         [0xA6, 0x56, 0x28],
+                         [0xF7, 0x81, 0xBF]], columns=['r', 'g', 'b'])
+    color = lerp(x, data/255)
+    return [color['r'], color['g'], color['b']]
+
+
+def paired(x):
+    data = pd.DataFrame([[0xA6, 0xCE, 0xE3],
+                         [0x1F, 0x78, 0xB4],
+                         [0xB2, 0xDF, 0x8A],
+                         [0x33, 0xA0, 0x2C],
+                         [0xFB, 0x9A, 0x99],
+                         [0xE3, 0x1A, 0x1C],
+                         [0xFD, 0xBF, 0x6F],
+                         [0xFF, 0x7F, 0x00]], columns=['r', 'g', 'b'])
+    color = lerp(x, data/255)
+    return [color['r'], color['g'], color['b']]
+
+
 def main():
     parser = argparse.ArgumentParser(
         prog='Convert palette',
@@ -161,6 +187,10 @@ def main():
             value = rdpu(x)
         elif args.type == 'gnpu':
             value = gnpu(x)
+        elif args.type == 'set1':
+            value = set1(x)
+        elif args.type == 'paired':
+            value = paired(x)
         else:
             value = [x, x, x]
 

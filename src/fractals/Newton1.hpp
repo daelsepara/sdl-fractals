@@ -41,7 +41,7 @@ namespace Fractal
 
                     auto tmp = 1.0;
 
-                    while (tmp >= this->parameters.tolerance && ++t < this->parameters.escape_time_threshold)
+                    while (tmp > this->parameters.tolerance && ++t < this->parameters.escape_time_threshold)
                     {
                         auto oldx = zx;
 
