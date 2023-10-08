@@ -81,6 +81,8 @@ namespace Fractal
 
                 this->Brightness = !data["brightness"].is_null() ? (int)data["brightness"] : 1;
             }
+
+            file.close();
         }
     };
 }
