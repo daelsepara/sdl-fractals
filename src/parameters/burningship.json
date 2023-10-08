@@ -1,0 +1,14 @@
+{
+    "type": "burningship",
+    "x_pixels": 2048,
+    "y_pixels": 2048,
+    "escape_time_threshold": 100,
+    "escape_value_threshold": 4.0,
+    "invert_x": true,
+    "invert_y": true,
+    "inside_color": 0,
+    "min_x": -2.25,
+    "max_x": 2.25,
+    "min_y": -2.25,
+    "max_y": 2.25
+}
