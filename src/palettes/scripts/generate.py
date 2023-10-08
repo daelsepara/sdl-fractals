@@ -112,6 +112,21 @@ def rdpu(x):
     return [color['r'], color['g'], color['b']]
 
 
+def gnpu(x):
+    data = pd.DataFrame([[0x39, 0x63, 0x53],
+                         [0x0d, 0xb1, 0x4b],
+                         [0x6d, 0xc0, 0x67],
+                         [0xab, 0xd6, 0x9b],
+                         [0xda, 0xea, 0xc1],
+                         [0xdf, 0xcc, 0xe4],
+                         [0xc7, 0xb2, 0xd6],
+                         [0x94, 0x74, 0xb4],
+                         [0x75, 0x40, 0x98],
+                         [0x50, 0x49, 0x71]], columns=['r', 'g', 'b'])
+    color = lerp(x, data/255)
+    return [color['r'], color['g'], color['b']]
+
+
 def main():
     parser = argparse.ArgumentParser(
         prog='Convert palette',
@@ -144,6 +159,8 @@ def main():
             value = sand(x)
         elif args.type == 'rdpu':
             value = rdpu(x)
+        elif args.type == 'gnpu':
+            value = gnpu(x)
         else:
             value = [x, x, x]
 
