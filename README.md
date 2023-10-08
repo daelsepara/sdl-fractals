@@ -201,3 +201,31 @@ Range (min … max):   536.0 ms … 602.0 ms    10 runs
 Time (mean ± σ):      1.316 s ±  0.016 s    [User: 1.261 s, System: 0.040 s]
 Range (min … max):    1.293 s …  1.346 s    10 runs
 ```
+
+## Barnsley Fern
+![Barnsley Fern](/samples/barnsleyfern.png)
+
+### Parameters
+|Parameter      | Value |
+|---------------|:-----:|
+|Generator      | see below |
+|exponent       | 4     |
+|inside color   | 128   |
+|threshold      | 10000000 |
+|parameter files| [barnsleyfern](src/parameters/barnsleyfern.json) |
+|palette        | [green](src/palettes/green.json) |
+|source         | [BarnsleyFern.hpp](src/fractals/BarnsleyFern.hpp) |
+
+### Generator
+| Probability| Transformation (x_n)      | Transformation (y_n)            |
+|------------|---------------------------|---------------------------------|
+| p < 0.01   | x_n = 0.0                 | y_n = 0.16 * y                  |
+| p < 0.86   | xn = 0.85 * x + 0.04 * y  | yn = -0.04 * x + 0.85 * y + 1.6 |
+| p < 0.93   | xn = 0.2 * x - 0.26 * y   | yn = 0.23 * x + 0.22 * y + 1.6  |
+| p >= 0.93  | xn = -0.15 * x + 0.28 * y | yn = 0.26 * x + 0.24 * y + 0.44 |
+
+```cmd
+Time (mean ± σ):     664.8 ms ±   9.4 ms    [User: 621.5 ms, System: 33.5 ms]
+Range (min … max):   648.1 ms … 676.3 ms    10 runs
+```
+

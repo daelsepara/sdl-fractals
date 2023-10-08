@@ -262,6 +262,19 @@ int main(int argc, char **argv)
 				fractal.generate(palette_file);
 			}
 		}
+		else if (parameters.type == "barnsleyfern")
+		{
+			auto fractal = Fractal::BarnsleyFern(parameters);
+
+			if (image_file.length() > 0)
+			{
+				fractal.generate(image_file, palette_file);
+			}
+			else
+			{
+				fractal.generate(palette_file);
+			}
+		}
 		else
 		{
 			std::cerr << "Unable to generate unknown '"
