@@ -1,7 +1,9 @@
 #ifndef __UTILITIES_HPP__
 #define __UTILITIES_HPP__
 
+#include <cstdlib>
 #include <fstream>
+#include <iostream>
 #include <limits>
 #include <string>
 #include <vector>
