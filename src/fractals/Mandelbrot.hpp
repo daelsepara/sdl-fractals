@@ -1,9 +1,6 @@
 #ifndef __MANDELBROT_HPP__
 #define __MANDELBROT_HPP__
 
-#include <cmath>
-#include <complex>
-
 #include "../Parameters.hpp"
 #include "../Utilities.hpp"
 
@@ -27,6 +24,9 @@ namespace Fractal
 
             auto dy = (double)(this->parameters.max_y - this->parameters.min_y) / (double)(this->parameters.y_pixels);
 
+            // pre-calculate orbit
+            auto threshold = this->parameters.escape_value_threshold * this->parameters.escape_value_threshold;
+
             // calculate mandelbrot set
             for (auto y = 0; y < parameters.y_pixels; y++)
             {
@@ -38,14 +38,35 @@ namespace Fractal
                     auto cx = this->parameters.min_x + (double)x * dx;
                     // reverse y-location on image, i.e. - to + runs from top to bottom of the image
                     auto cy = this->parameters.min_y + (double)(this->parameters.y_pixels - y - 1) * dy;
+
+                    auto zx = 0.0;
+
+                    auto zy = 0.0;
+
                     // generate escape time fractal
-                    auto c = std::complex(cx, cy);
-                    // initial condition (z0)
-                    auto z = std::complex(0.0, 0.0);
-                    // generate escape time fractal
-                    while (abs(z) <= this->parameters.escape_value_threshold && (t < this->parameters.escape_time_threshold))
+                    while ((zx * zx + zy * zy) <= threshold && (t < this->parameters.escape_time_threshold))
                     {
-                        z = std::pow(z, this->parameters.exponent) + c;
+                        auto oldx = zx;
+
+                        auto oldy = zy;
+
+                        if ((int)this->parameters.exponent == 0)
+                        {
+                            zx = 1.0;
+
+                            zy = 1.0;
+                        }
+                        else
+                        {
+                            for (auto i = 0; i < this->parameters.exponent - 1; i++)
+                            {
+                                Fractal::Multiply(zx, zy, oldx, oldy, zx, zy);
+                            }
+                        }
+
+                        zx += cx;
+
+                        zy += cy;
 
                         t++;
                     }

@@ -4,7 +4,7 @@
     "y_pixels": 2048,
     "escape_time_threshold": 255,
     "escape_value_threshold": 2.0,
-    "exponent": 4.0,
+    "exponent": 4,
     "min_x": -1.4,
     "max_x": 1.4,
     "min_y": -1.4,

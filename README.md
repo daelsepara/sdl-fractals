@@ -18,7 +18,7 @@ To use:
 |Parameter      | Value |
 |---------------|:-----:|
 |Generator      | **z**^**exp** + **C** |
-|exp            | 2.0 |
+|exp            | 2   |
 |treshold       | 255 |
 |orbit          | 2.0 |
 |parameter files| [mandelbrot.json](src/parameters/mandelbrot.json), [mandelbrot2](src/parameters/mandelbrot2.json), [mandelbrot3](src/parameters/mandelbrot3.json) |
@@ -27,8 +27,8 @@ To use:
 
 **mandelbrot**
 ```cmd
-Time (mean ± σ):      8.775 s ±  0.057 s    [User: 8.537 s, System: 0.123 s]
-Range (min … max):    8.680 s …  8.880 s    10 runs
+Time (mean ± σ):     740.5 ms ±   6.3 ms    [User: 694.0 ms, System: 35.1 ms]
+Range (min … max):   729.2 ms … 751.2 ms    10 runs
 ```
 
 **mandelbrot2**
@@ -117,4 +117,22 @@ Range (min … max):   718.5 ms … 755.8 ms    10 run
 ```cmd
 Time (mean ± σ):      1.224 s ±  0.019 s    [User: 1.166 s, System: 0.041 s]
 Range (min … max):    1.201 s …  1.263 s    10 runs
+```
+
+## Mandelbrot4
+
+![Mandelbrot 4](/samples/mandelbrot4.png)
+
+### Parameters
+|Parameter      | Value |
+|---------------|:-----:|
+|Generator      | **z**^**exp** + **C** |
+|exp            | 4   |
+|treshold       | 255 |
+|orbit          | 2.0 |
+|parameter files| [mandelbrot4.json](src/parameters/mandelbrot4.json) |
+
+```cmd
+Time (mean ± σ):      3.937 s ±  0.055 s    [User: 3.831 s, System: 0.056 s]
+Range (min … max):    3.898 s …  4.063 s    10 runs
 ```

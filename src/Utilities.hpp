@@ -49,7 +49,7 @@ namespace Fractal
             parameters.escape_value_threshold = !data["escape_value_threshold"].is_null() ? (double)data["escape_value_threshold"] : std::numeric_limits<double>::quiet_NaN();
 
             // mandelbrot parameter
-            parameters.exponent = !data["exponent"].is_null() ? (double)data["exponent"] : std::numeric_limits<double>::quiet_NaN();
+            parameters.exponent = !data["exponent"].is_null() ? (int)data["exponent"] : std::numeric_limits<int>::quiet_NaN();
 
             // newton parameter
             parameters.tolerance = !data["tolerance"].is_null() ? (double)data["tolerance"] : std::numeric_limits<double>::epsilon();
@@ -261,6 +261,19 @@ namespace Fractal
             // clean-up
             SDL_FreeSurface(surface);
         }
+    }
+
+    void Multiply(double x, double y, double a, double b, double &zx, double &zy)
+    {
+        zx = (x * a - y * b);
+        zy = (x * b + y * a);
+    }
+
+    void Divide(double x, double y, double a, double b, double &zx, double &zy)
+    {
+        auto denom = a * a + b * b;
+
+        Fractal::Multiply(x / denom, y / denom, a, -b, zx, zy);
     }
 }
 

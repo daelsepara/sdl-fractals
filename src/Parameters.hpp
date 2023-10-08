@@ -17,7 +17,7 @@ namespace Fractal
         // mandelbrot parameter(s)
         int escape_time_threshold = 255;
         double escape_value_threshold = 2.0;
-        double exponent = 2.0;
+        int exponent = 2;
 
         // complex plane window boundaries
         double min_x = -2.5;
