@@ -122,6 +122,8 @@ namespace Fractal
 
             if (surface)
             {
+                /*
+                // TODO: Implement scrolling
                 SDL_Rect dst;
                 dst.x = Width > surface->w ? (Width - surface->w) / 2 : 0;
                 dst.y = Height > surface->h ? (Height - surface->h) / 2 : 0;
@@ -133,6 +135,7 @@ namespace Fractal
                 src.y = surface->h > Height ? (surface->h - Height) / 2 : 0;
                 src.w = surface->w > Width ? Width : surface->w;
                 src.h = surface->h > Height ? Height : surface->h;
+                */
 
                 auto texture = SDL_CreateTextureFromSurface(renderer, surface);
 
@@ -159,11 +162,13 @@ namespace Fractal
 
                             SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 
-                            SDL_RenderFillRect(renderer, &dst);
+                            SDL_RenderFillRect(renderer, NULL);
 
                             if (texture)
                             {
-                                SDL_RenderCopy(renderer, texture, &src, &dst);
+                                // TODO: Implement scrolling
+                                // SDL_RenderCopy(renderer, texture, &src, &dst);
+                                SDL_RenderCopy(renderer, texture, NULL, NULL);
                             }
 
                             SDL_RenderPresent(renderer);
