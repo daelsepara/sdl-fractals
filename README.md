@@ -209,7 +209,6 @@ Range (min … max):    1.293 s …  1.346 s    10 runs
 |Parameter      | Value |
 |---------------|:-----:|
 |Generator      | see below |
-|exponent       | 4     |
 |inside color   | 128   |
 |threshold      | 10000000 |
 |parameter files| [barnsleyfern](src/parameters/barnsleyfern.json) |
@@ -227,5 +226,57 @@ Range (min … max):    1.293 s …  1.346 s    10 runs
 ```cmd
 Time (mean ± σ):     664.8 ms ±   9.4 ms    [User: 621.5 ms, System: 33.5 ms]
 Range (min … max):   648.1 ms … 676.3 ms    10 runs
+```
+
+## Barnsley Fern (Culcita)
+![Barnsley Fern](/samples/culcita.png)
+
+### Parameters
+|Parameter      | Value |
+|---------------|:-----:|
+|Generator      | see below |
+|inside color   | 128   |
+|threshold      | 10000000 |
+|parameter files| [culcita](src/parameters/culcita.json) |
+|palette        | [green](src/palettes/green.json) |
+|source         | [BarnsleyFern.hpp](src/fractals/BarnsleyFern.hpp) |
+
+### Generator
+| Probability| Transformation (x_n)      | Transformation (y_n)            |
+|------------|---------------------------|---------------------------------|
+| p < 0.02   | x_n = 0.0                 | y_n = 0.25 * y - 0.14           |
+| p < 0.86   | xn = 0.85 * x + 0.02 * y  | yn = -0.02 * x + 0.83 * y + 1.0 |
+| p < 0.93   | xn = 0.09 * x - 0.28 * y  | yn = 0.3 * x + 0.11 * y + 0.6   |
+| p >= 0.93  | xn = -0.09 * x + 0.28 * y | yn = 0.3 * x + 0.09 * y + 0.7   |
+
+```cmd
+Time (mean ± σ):     637.9 ms ±  32.5 ms    [User: 583.6 ms, System: 33.9 ms]
+Range (min … max):   589.1 ms … 683.9 ms    10 runs
+```
+
+## Barnsley Fern (Thelypteridaceae)
+![Barnsley Fern](/samples/thelypteridaceae.png)
+
+### Parameters
+|Parameter      | Value |
+|---------------|:-----:|
+|Generator      | see below |
+|inside color   | 128   |
+|threshold      | 10000000 |
+|parameter files| [thelypteridaceae](src/parameters/thelypteridaceae.json) |
+|palette        | [green](src/palettes/green.json) |
+|source         | [BarnsleyFern.hpp](src/fractals/BarnsleyFern.hpp) |
+
+### Generator
+| Probability| Transformation (x_n)              | Transformation (y_n)             |
+|------------|-----------------------------------|----------------------------------|
+| p < 0.02   | x_n = 0.0                         | y_n = 0.25 * y - 0.4             |
+| p < 0.86   | xn = 0.95 * x + 0.005 * y - 0.002 | yn = -0.005 * x + 0.93 * y + 0.5 |
+| p < 0.93   | xn = 0.035 * x - 0.2 * y - 0.09   | yn = 0.16 * x + 0.04 * y + 0.02  |
+| p >= 0.93  | xn = -0.04 * x + 0.2 * y + 0.083  | yn = 0.16 * x + 0.04 * y + 0.12  |
+
+```cmd
+Time (mean ± σ):     572.3 ms ±   8.5 ms    [User: 533.0 ms, System: 31.7 ms]
+Range (min … max):   562.6 ms … 590.9 ms    10 runs
 ```
 
