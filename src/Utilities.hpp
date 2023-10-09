@@ -2,101 +2,19 @@
 #define __UTILITIES_HPP__
 
 #include <cstdlib>
-#include <fstream>
 #include <iostream>
-#include <limits>
 #include <string>
 #include <vector>
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
-#include "nlohmann/json.hpp"
 #include "Palette.hpp"
 #include "Parameters.hpp"
 
 namespace Fractal
 {
     typedef std::vector<std::vector<Uint8>> Grid;
-
-    Fractal::Parameters Load(std::string filename)
-    {
-        Fractal::Parameters parameters;
-
-        std::ifstream file(filename);
-
-        if (file.good())
-        {
-            std::cerr << "Loading parameters from " << filename << std::endl;
-
-            auto data = nlohmann::json::parse(file);
-
-            // fractal type
-            parameters.type = !data["type"].is_null() ? std::string(data["type"]) : std::string("mandelbrot");
-
-            // window borders on the comlex plane
-            parameters.min_x = !data["min_x"].is_null() ? (double)data["min_x"] : -2.5;
-            parameters.max_x = !data["max_x"].is_null() ? (double)data["max_x"] : 2.5;
-            parameters.min_y = !data["min_y"].is_null() ? (double)data["min_y"] : -2.5;
-            parameters.max_y = !data["max_y"].is_null() ? (double)data["max_y"] : 2.5;
-
-            // fractal dimensions (in pixels)
-            parameters.x_pixels = !data["x_pixels"].is_null() ? (int)data["x_pixels"] : 2048;
-            parameters.y_pixels = !data["y_pixels"].is_null() ? (int)data["y_pixels"] : 2048;
-
-            // parameters for escape time type of fractals
-            parameters.escape_time_threshold = !data["escape_time_threshold"].is_null() ? (int)data["escape_time_threshold"] : std::numeric_limits<int>::quiet_NaN();
-            parameters.escape_value_threshold = !data["escape_value_threshold"].is_null() ? (double)data["escape_value_threshold"] : std::numeric_limits<double>::quiet_NaN();
-
-            // mandelbrot parameter
-            parameters.exponent = !data["exponent"].is_null() ? (int)data["exponent"] : std::numeric_limits<int>::quiet_NaN();
-
-            // newton parameter
-            parameters.tolerance = !data["tolerance"].is_null() ? (double)data["tolerance"] : std::numeric_limits<double>::epsilon();
-
-            // julia set
-            parameters.cx = !data["cx"].is_null() ? (double)data["cx"] : std::numeric_limits<double>::quiet_NaN();
-            parameters.cy = !data["cy"].is_null() ? (double)data["cy"] : std::numeric_limits<double>::quiet_NaN();
-
-            // inside_color
-            parameters.inside_color = !data["inside_color"].is_null() ? (int)data["inside_color"] : std::numeric_limits<int>::quiet_NaN();
-
-            // invert axis
-            parameters.invert_x = !data["invert_x"].is_null() ? (bool)data["invert_x"] : false;
-            parameters.invert_y = !data["invert_y"].is_null() ? (bool)data["invert_y"] : false;
-
-            // transforms
-            if (!data["transforms"].is_null() && data["transforms"].is_array())
-            {
-                parameters.transforms = std::vector<std::vector<double>>();
-
-                for (auto j = 0; j < data["transforms"].size(); j++)
-                {
-                    if (!data["transforms"][j].is_null() && data["transforms"][j].is_array())
-                    {
-                        auto transform = std::vector<double>();
-
-                        for (auto i = 0; i < data["transforms"][j].size(); i++)
-                        {
-                            auto val = !data["transforms"][j][i].is_null() ? (double)data["transforms"][j][i] : std::numeric_limits<double>::quiet_NaN();
-
-                            transform.push_back(val);
-                        }
-
-                        parameters.transforms.push_back(transform);
-                    }
-                }
-            }
-
-            file.close();
-        }
-        else
-        {
-            std::cerr << "Unable to laod parameters from " << filename << std::endl;
-        }
-
-        return parameters;
-    }
 
     Grid InitializeGrid(Fractal::Parameters &parameters)
     {
@@ -304,6 +222,27 @@ namespace Fractal
         auto denom = a * a + b * b;
 
         Fractal::Multiply(x / denom, y / denom, a, -b, zx, zy);
+    }
+
+    void Power(double &zx, double &zy, int exponent)
+    {
+        auto oldx = zx;
+
+        auto oldy = zy;
+
+        if (exponent == 0)
+        {
+            zx = 1.0;
+
+            zy = 1.0;
+        }
+        else
+        {
+            for (auto i = 0; i < exponent - 1; i++)
+            {
+                Fractal::Multiply(zx, zy, oldx, oldy, zx, zy);
+            }
+        }
     }
 
     void ApplyTransformation(double x, double y, std::vector<double> &transform, double &xn, double &yn)

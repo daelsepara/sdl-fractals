@@ -135,8 +135,6 @@ int main(int argc, char **argv)
 
 	std::string palette_file;
 
-	Fractal::Parameters parameters;
-
 	if (argc > 1)
 	{
 		for (auto i = 1; i < argc; i++)
@@ -154,8 +152,8 @@ int main(int argc, char **argv)
 
 	if (parameters_file.length() > 0)
 	{
-		parameters = Fractal::Load(parameters_file);
-
+		auto parameters = Fractal::Parameters(parameters_file);
+		
 		std::cerr << "Generating '" << parameters.type << "' fractal" << std::endl;
 
 		if (parameters.type == "mandelbrot")

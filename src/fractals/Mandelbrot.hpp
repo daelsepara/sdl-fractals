@@ -58,23 +58,7 @@ namespace Fractal
                     // generate escape time fractal
                     while ((zx * zx + zy * zy) <= threshold && (t < this->parameters.escape_time_threshold))
                     {
-                        auto oldx = zx;
-
-                        auto oldy = zy;
-
-                        if ((int)this->parameters.exponent == 0)
-                        {
-                            zx = 1.0;
-
-                            zy = 1.0;
-                        }
-                        else
-                        {
-                            for (auto i = 0; i < this->parameters.exponent - 1; i++)
-                            {
-                                Fractal::Multiply(zx, zy, oldx, oldy, zx, zy);
-                            }
-                        }
+                        Fractal::Power(zx, zy, this->parameters.exponent);
 
                         zx += cx;
 
