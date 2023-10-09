@@ -66,6 +66,13 @@ def purple(x):
     color = lerp(x, data)
     return [color['r'], color['g'], color['b']]
 
+def bluered(x):
+    data = pd.DataFrame([[0.0, 0.0, 0.1],
+                         [0.25, 0.0, 0.5],
+                         [1.0, 0.0, 0.0]], columns=['r', 'g', 'b'])
+    color = lerp(x, data)
+    return [color['r'], color['g'], color['b']]
+
 
 def hot(x):
     x = clamp(x)
@@ -233,6 +240,8 @@ def main():
             value = blue(x)
         elif args.type == 'purple':
             value = purple(x)
+        elif args.type == 'bluered':
+            value = bluered(x)
         else:
             value = [x, x, x]
 

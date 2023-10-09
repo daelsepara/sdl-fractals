@@ -165,7 +165,7 @@ Range (min … max):   552.8 ms … 567.2 ms    10 runs
 ```
 
 ## Burning Ship (2)
-![Burning Ship](/samples/burningship2.png)
+![Burning Ship 2](/samples/burningship2.png)
 
 ### Parameters
 |Parameter      | Value |
@@ -179,6 +179,28 @@ Range (min … max):   552.8 ms … 567.2 ms    10 runs
 |orbit          | 4.0  |
 |parameter files| [burningship2](src/parameters/burningship2.json) |
 |palette        | [plasma](src/palettes/plasma.json) |
+|source         | [BurningShip.hpp](src/fractals/BurningShip.hpp) |
+
+```cmd
+Time (mean ± σ):      1.469 s ±  0.289 s    [User: 0.840 s, System: 0.054 s]
+Range (min … max):    1.248 s …  2.128 s    10 runs
+```
+
+## Burning Ship (3)
+![Burning Ship 3](/samples/burningship3.png)
+
+### Parameters
+|Parameter      | Value |
+|---------------|:-----:|
+|Generator      | (Re(**Zn**) + iIm(**Zn**))^2 + **C** |
+|inverted x     | true |
+|inverted y     | true |
+|log colormap   | true |
+|inside color   | 0    |
+|threshold      | 2000 |
+|orbit          | 4.0  |
+|parameter files| [burningship3](src/parameters/burningship2.json) |
+|palette        | [bluered](src/palettes/bluered.json) |
 |source         | [BurningShip.hpp](src/fractals/BurningShip.hpp) |
 
 ```cmd
