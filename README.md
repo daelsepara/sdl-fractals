@@ -151,6 +151,7 @@ Range (min … max):    3.898 s …  4.063 s    10 runs
 |Generator      | (Re(**Zn**) + iIm(**Zn**))^2 + **C** |
 |inverted x     | true |
 |inverted y     | true |
+|normalized colormap | true |
 |inside color   | 0    |
 |threshold      | 100  |
 |orbit          | 4.0 |
