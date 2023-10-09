@@ -42,7 +42,7 @@ namespace Fractal
 
                 for (auto x = 0; x < parameters.x_pixels; x++)
                 {
-                    Uint8 t = 0;
+                    auto t = 0;
 
                     // calculate location cx on complex plane
                     auto cx = this->parameters.min_x + (double)x * dx;
