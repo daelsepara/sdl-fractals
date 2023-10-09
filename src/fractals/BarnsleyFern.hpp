@@ -41,27 +41,7 @@ namespace Fractal
             {
                 auto p = random.NextDouble();
 
-                if (p < 0.01)
-                {
-                    xn = 0.0;
-
-                    yn = 0.16 * y;
-                }
-                else if (p < 0.86)
-                {
-                    xn = 0.85 * x + 0.04 * y;
-                    yn = -0.04 * x + 0.85 * y + 1.6;
-                }
-                else if (p < 0.93)
-                {
-                    xn = 0.2 * x - 0.26 * y;
-                    yn = 0.23 * x + 0.22 * y + 1.6;
-                }
-                else
-                {
-                    xn = -0.15 * x + 0.28 * y;
-                    yn = 0.26 * x + 0.24 * y + 0.44;
-                }
+                Fractal::Transform(p, x, y, this->parameters.transforms, xn, yn);
 
                 auto xp = (int)((xn - this->parameters.min_x) / dx);
 
@@ -78,7 +58,7 @@ namespace Fractal
                     yp = (int)((yn - this->parameters.min_y) / dy);
                 }
 
-                if (xp >= 0 && xp < this->parameters.x_pixels && yp >=0 && yp < this->parameters.y_pixels)
+                if (xp >= 0 && xp < this->parameters.x_pixels && yp >= 0 && yp < this->parameters.y_pixels)
                 {
                     this->grid[yp][xp] = this->parameters.inside_color;
                 }

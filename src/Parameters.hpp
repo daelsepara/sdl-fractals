@@ -2,6 +2,7 @@
 #define __PARAMETERS_HPP__
 
 #include <string>
+#include <vector>
 
 namespace Fractal
 {
@@ -38,6 +39,9 @@ namespace Fractal
         // invert axis
         bool invert_x = false;
         bool invert_y = false;
+
+        // transformations
+        std::vector<std::vector<double>> transforms = std::vector<std::vector<double>>();
     };
 }
 

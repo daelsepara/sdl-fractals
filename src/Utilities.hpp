@@ -65,6 +65,29 @@ namespace Fractal
             parameters.invert_x = !data["invert_x"].is_null() ? (bool)data["invert_x"] : false;
             parameters.invert_y = !data["invert_y"].is_null() ? (bool)data["invert_y"] : false;
 
+            // transforms
+            if (!data["transforms"].is_null() && data["transforms"].is_array())
+            {
+                parameters.transforms = std::vector<std::vector<double>>();
+
+                for (auto j = 0; j < data["transforms"].size(); j++)
+                {
+                    if (!data["transforms"][j].is_null() && data["transforms"][j].is_array())
+                    {
+                        auto transform = std::vector<double>();
+
+                        for (auto i = 0; i < data["transforms"][j].size(); i++)
+                        {
+                            auto val = !data["transforms"][j][i].is_null() ? (double)data["transforms"][j][i] : std::numeric_limits<double>::quiet_NaN();
+
+                            transform.push_back(val);
+                        }
+
+                        parameters.transforms.push_back(transform);
+                    }
+                }
+            }
+
             file.close();
         }
         else
@@ -281,6 +304,37 @@ namespace Fractal
         auto denom = a * a + b * b;
 
         Fractal::Multiply(x / denom, y / denom, a, -b, zx, zy);
+    }
+
+    void ApplyTransformation(double x, double y, std::vector<double> &transform, double &xn, double &yn)
+    {
+        // transform[0] = probability
+        // transform[1] = x coefficient (xn)
+        // transform[2] = y coefficient (xn)
+        // transform[3] = constant (xn)
+        // transform[4] = x coefficient (yn)
+        // transform[5] = y coefficient (yn)
+        // transform[6] = constant (yn)
+        if (transform.size() < 7)
+        {
+            return;
+        }
+
+        xn = transform[1] * x + transform[2] * y + transform[3];
+        yn = transform[4] * x + transform[5] * y + transform[6];
+    }
+
+    void Transform(double p, double x, double y, std::vector<std::vector<double>> &transforms, double &xn, double &yn)
+    {
+        for (auto i = 0; i < transforms.size(); i++)
+        {
+            if (p < transforms[i][0])
+            {
+                Fractal::ApplyTransformation(x, y, transforms[i], xn, yn);
+
+                break;
+            }
+        }
     }
 }
 
