@@ -42,6 +42,12 @@ namespace Fractal
         // inside color
         int inside_color = 128;
 
+        // log color mapping
+        bool log_coloring = false;
+
+        // normalized color mapping
+        bool normalized_coloring = false;
+
         // invert axis
         bool invert_x = false;
         bool invert_y = false;
@@ -93,6 +99,12 @@ namespace Fractal
                 // invert axis
                 this->invert_x = !data["invert_x"].is_null() ? (bool)data["invert_x"] : false;
                 this->invert_y = !data["invert_y"].is_null() ? (bool)data["invert_y"] : false;
+
+                // log coloring
+                this->log_coloring = !data["log_coloring"].is_null() ? (bool)data["log_coloring"] : false;
+
+                // normalized coloring
+                this->normalized_coloring = !data["normalized_coloring"].is_null() ? (bool)data["normalized_coloring"] : false;
 
                 // transforms
                 if (!data["transforms"].is_null() && data["transforms"].is_array())

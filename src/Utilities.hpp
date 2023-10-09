@@ -275,6 +275,21 @@ namespace Fractal
             }
         }
     }
+
+    Uint8 LogColor(int color, int max_value)
+    {
+        return (Uint8)(std::log((double)color) / std::log((double)max_value) * 255.0);
+    }
+
+    Uint8 NormalizedColor(int color, int max_value)
+    {
+        return (Uint8)((double)color / (double)max_value * 255.0);
+    }
+
+    Uint8 Clamp(int color)
+    {
+        return (Uint8)(std::min(std::max(0, color), 255));
+    }
 }
 
 #endif

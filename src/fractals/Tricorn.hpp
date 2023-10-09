@@ -63,7 +63,18 @@ namespace Fractal
                     if (t != this->parameters.escape_time_threshold)
                     {
                         // set escape-time color
-                        this->grid[y][x] = (int)((double)this->parameters.escape_time_threshold / (double)t * 255.0);
+                        if (this->parameters.log_coloring)
+                        {
+                            this->grid[y][x] = Fractal::LogColor(t, this->parameters.escape_time_threshold);
+                        }
+                        else if (this->parameters.normalized_coloring)
+                        {
+                            this->grid[y][x] = Fractal::NormalizedColor(t, this->parameters.escape_time_threshold);
+                        }
+                        else
+                        {
+                            this->grid[y][x] = Fractal::Clamp(t);
+                        }
                     }
                     else
                     {
