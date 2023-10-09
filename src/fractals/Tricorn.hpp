@@ -27,25 +27,27 @@ namespace Fractal
             // calculate tricorn fractal
             for (auto y = 0; y < parameters.y_pixels; y++)
             {
+                // calculate location cy on complex plane
+
+                // reverse y-location on image, i.e. - to + runs from top to bottom of the image
+                auto cy = this->parameters.min_y + (double)(this->parameters.y_pixels - y - 1) * dy;
+
+                if (this->parameters.invert_y)
+                {
+                    cy = this->parameters.min_y + (double)y * dy;
+                }
+
                 for (auto x = 0; x < parameters.x_pixels; x++)
                 {
                     Uint8 t = 0;
 
                     auto cx = this->parameters.min_x + (double)x * dx;
 
-                    // calculate location (cx, cy) on complex plane
+                    // calculate location cx on complex plane
                     if (this->parameters.invert_x)
                     {
                         // reverse x-location on image, i.e. - to + runs from right to left of the image
                         cx = this->parameters.min_x + (double)(this->parameters.x_pixels - x - 1) * dx;
-                    }
-
-                    // reverse y-location on image, i.e. - to + runs from top to bottom of the image
-                    auto cy = this->parameters.min_y + (double)(this->parameters.y_pixels - y - 1) * dy;
-
-                    if (this->parameters.invert_y)
-                    {
-                        cy = this->parameters.min_y + (double)y * dy;
                     }
 
                     auto zx = cx;
