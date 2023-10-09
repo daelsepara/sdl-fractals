@@ -51,7 +51,6 @@ void ParseInts(std::string arg, const char *str, const char *var, std::vector<in
 
 				while ((pos = s.find(delimiter)) != std::string::npos)
 				{
-
 					auto val = std::stoi(s.substr(0, pos));
 
 					ints.push_back(val);
@@ -135,6 +134,12 @@ int main(int argc, char **argv)
 
 	std::string palette_file;
 
+	// overrides
+	bool normalized_coloring = false;
+	bool log_coloring = false;
+	bool invertx = false;
+	bool inverty = false;
+
 	if (argc > 1)
 	{
 		for (auto i = 1; i < argc; i++)
@@ -147,12 +152,49 @@ int main(int argc, char **argv)
 			ParseString(arg, argv, i, "/PARAMETERS=", parameters_file);
 			ParseString(arg, argv, i, "/IMAGE=", image_file);
 			ParseString(arg, argv, i, "/PALETTE=", palette_file);
+
+			if (arg == "/LOG")
+			{
+				log_coloring = true;
+			}
+			else if (arg == "/NORMALIZED")
+			{
+				normalized_coloring = true;
+			}
+			else if (arg == "/INVERTX")
+			{
+				invertx = true;
+			}
+			else if (arg == "/INVERTY")
+			{
+				inverty = true;
+			}
 		}
 	}
 
 	if (parameters_file.length() > 0)
 	{
 		auto parameters = Fractal::Parameters(parameters_file);
+
+		if (normalized_coloring)
+		{
+			parameters.normalized_coloring = true;
+		}
+
+		if (log_coloring)
+		{
+			parameters.log_coloring = true;
+		}
+
+		if (invertx)
+		{
+			parameters.invert_x = true;
+		}
+
+		if (inverty)
+		{
+			parameters.invert_y = true;
+		}
 		
 		std::cerr << "Generating '" << parameters.type << "' fractal" << std::endl;
 
