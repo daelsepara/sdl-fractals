@@ -60,6 +60,7 @@ Use normalized color mapping.
 
 ### Parameters
 
+|---------------|-----------------------|
 |Generator      | **z**^**exp** + **C** |
 |exponent       | 2 |
 |threshold      | 255 |
@@ -93,10 +94,11 @@ Range (min … max):   647.1 ms … 744.7 ms    10 runs
 
 ### Parameters
 
+|---------------|----------------------------------|
 |Generator      | **z** - (**z**^3 - 1)/(3**z**^2) |
 |tolerance      | 1e-6 |
 |threshold      | 255 |
-|parameter files| [newton1](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/newton1.json) |
+|parameter file | [newton1](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/newton1.json) |
 |palette        | default |
 |source         | [Newton1.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Newton1.hpp) |
 
@@ -109,6 +111,7 @@ Range (min … max):   855.1 ms … 882.9 ms    10 runs
 
 ### Common Parameters
 
+|---------------|-----------------------|
 |Generator      | **z**^**exp** + **C** |
 |threshold      | 255 |
 |orbit          | 2.0 |
@@ -118,6 +121,7 @@ Range (min … max):   855.1 ms … 882.9 ms    10 runs
 
 ![Julia 1](samples/julia1.png)
 
+|----------|-------------|
 |C         | -0.4 + 0.6i |
 |parameter file| [julia1](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia1.json) |
 |palette   | [plasma](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/plasma.json) |
@@ -129,6 +133,7 @@ Range (min … max):   812.3 ms … 836.7 ms    10 runs
 
 ![Julia 2](samples/julia2.png)
 
+|----------|---------------|
 |C         | -0.8 + 0.156i |
 |parameter file| [julia2](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia2.json) |
 |palette   | [inferno](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/inferno.json) |
@@ -140,6 +145,7 @@ Range (min … max):   925.1 ms … 959.9 ms    10 runs
 
 ![Julia 3](samples/julia3.png)
 
+|----------|---------------|
 |C         | 0.285 + 0.01i |
 |parameter file| [julia3](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia3.json) |
 |palette   | [moreland](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/moreland.json) |
@@ -151,6 +157,7 @@ Range (min … max):   718.5 ms … 755.8 ms    10 run
 
 ![Julia 4](samples/julia4.png)
 
+|----------|-------------------|
 |C         | -0.7269 + 0.1889i |
 |parameter file| [julia4](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia4.json) |
 |palette   | [magma](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/magma.json) |
@@ -162,6 +169,7 @@ Range (min … max):    1.201 s …  1.263 s    10 runs
 
 ![Julia 5](samples/julia5.png)
 
+|----------|-------------------|
 |C         | 0.26294324588 - 0.0024215732998i |
 |threshold | 320 |
 |normalized colormap | true |
@@ -178,11 +186,12 @@ Range (min … max):    3.454 s …  3.544 s    10 runs
 
 ### Parameters
 
+|---------------|-----------------------|
 |Generator      | **z**^**exp** + **C** |
 |exponent       | 4 |
 |threshold      | 255 |
 |orbit          | 2.0 |
-|parameter files| [mandelbrot4](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/mandelbrot4.json) |
+|parameter file | [mandelbrot4](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/mandelbrot4.json) |
 |palette        | default |
 |source         | [Mandelbrot.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Mandelbrot.hpp) |
 
@@ -196,6 +205,7 @@ Range (min … max):    3.898 s …  4.063 s    10 runs
 
 ### Parameters
 
+|---------------|--------------------------------------|
 |Generator      | (Re(**Zn**) + iIm(**Zn**))^2 + **C** |
 |inverted x     | true |
 |inverted y     | true |
@@ -217,6 +227,7 @@ Range (min … max):   552.8 ms … 567.2 ms    10 runs
 
 ### Parameters
 
+|---------------|--------------------------------------|
 |Generator      | (Re(**Zn**) + iIm(**Zn**))^2 + **C** |
 |inverted x     | true |
 |inverted y     | true |
@@ -238,6 +249,7 @@ Range (min … max):    1.248 s …  2.128 s    10 runs
 
 ### Parameters
 
+|---------------|--------------------------------------|
 |Generator      | (Re(**Zn**) + iIm(**Zn**))^2 + **C** |
 |inverted x     | true |
 |inverted y     | true |
@@ -245,7 +257,7 @@ Range (min … max):    1.248 s …  2.128 s    10 runs
 |inside color   | 0 |
 |threshold      | 100 |
 |orbit          | 4.0 |
-|parameter file | [burningship3](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/burningship3.json) |
+|parameter file | [burningship3](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/burningship2.json) |
 |palette        | [bluered](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/bluered.json) |
 |source         | [BurningShip.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/BurningShip.hpp) |
 
@@ -259,6 +271,7 @@ Range (min … max):    1.248 s …  2.128 s    10 runs
 
 ### Parameters
 
+|---------------|------------------------------------------------------------|
 |Generator      | (**z_x**^2 + **z_y**^2) - i(2 * **z_x** * **z_y**) + **C** |
 |inside color   | 0 |
 |threshold      | 255 |
@@ -277,6 +290,7 @@ Range (min … max):   536.0 ms … 602.0 ms    10 runs
 
 ### Parameters
 
+|---------------|---------------------------|
 |Generator      | **Z_bar**^**exp** + **C** |
 |exponent       | 4 |
 |inside color   | 0 |
@@ -296,6 +310,8 @@ Range (min … max):    1.293 s …  1.346 s    10 runs
 
 ### Parameters
 
+|Parameter      |Value                                                         |
+|---------------|--------------------------------------------------------------|
 |Generator (xn) | **xn** = **xx** * **x** + **xy** * **y** + **xc** (see below)|
 |Generator (yn) | **yn** = **yx** * **x** + **yy** * **y** + **yc** (see below)|
 |inside color   | 128 |
@@ -323,6 +339,8 @@ Range (min … max):   648.1 ms … 676.3 ms    10 runs
 
 ### Parameters
 
+|Parameter      |Value                                                         |
+|---------------|--------------------------------------------------------------|
 |Generator (xn) | **xn** = **xx** * **x** + **xy** * **y** + **xc** (see below)|
 |Generator (yn) | **yn** = **yx** * **x** + **yy** * **y** + **yc** (see below)|
 |inside color   | 128   |
@@ -350,6 +368,8 @@ Range (min … max):   589.1 ms … 683.9 ms    10 runs
 
 ### Parameters
 
+|Parameter      |Value                                                         |
+|---------------|--------------------------------------------------------------|
 |Generator (xn) | **xn** = **xx** * **x** + **xy** * **y** + **xc** (see below)|
 |Generator (yn) | **yn** = **yx** * **x** + **yy** * **y** + **yc** (see below)|
 |inside color   | 128 |
@@ -377,6 +397,8 @@ Range (min … max):   562.6 ms … 590.9 ms    10 runs
 
 ### Parameters
 
+|Parameter      |Value                                                         |
+|---------------|--------------------------------------------------------------|
 |Generator (xn) | **xn** = **xx** * **x** + **xy** * **y** + **xc** (see below)|
 |Generator (yn) | **yn** = **yx** * **x** + **yy** * **y** + **yc** (see below)|
 |inside color   | 128 |
@@ -408,6 +430,8 @@ Range (min … max):   393.0 ms … 472.3 ms    10 runs
 
 ### Parameters
 
+|Parameter      | Value                                                        |
+|---------------|--------------------------------------------------------------|
 |Generator (xn) | **xn** = **xx** * **x** + **xy** * **y** + **xc** (see below)|
 |Generator (yn) | **yn** = **yx** * **x** + **yy** * **y** + **yc** (see below)|
 |inside color   | 128 |
