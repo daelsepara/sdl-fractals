@@ -15,7 +15,7 @@ Fractal Image Generators in SDL
 Save fractal to *{image.png}*
 
 ### /PALETTE={palette.json}
-Use *{palette.json}* colormap. See [palettes/](src/palettes/) for colormaps to use.
+Use *{palette.json}* colormap. See [palettes/](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/) for colormaps to use.
 
 ### /BENCHMARK
 Generate fractal in memory without rendering onscreen or saving image to {image.png}
@@ -39,7 +39,7 @@ Use normalized color mapping.
 # Examples
 
 ## Mandelbrot Set
-![Mandelbrot Set](/samples/mandelbrot.png)
+![Mandelbrot Set](https://github.com/daelsepara/sdl-fractals/tree/main/samples/mandelbrot.png)
 
 ### Parameters
 
@@ -48,9 +48,9 @@ Use normalized color mapping.
 |exp            | 2   |
 |threshold      | 255 |
 |orbit          | 2.0 |
-|parameter files| [mandelbrot](src/parameters/mandelbrot.json), [mandelbrot2](src/parameters/mandelbrot2.json), [mandelbrot3](src/parameters/mandelbrot3.json) |
+|parameter files| [mandelbrot](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/mandelbrot.json), [mandelbrot2](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/mandelbrot2.json), [mandelbrot3](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/mandelbrot3.json) |
 |palette        | default |
-|source(s)      | [Mandelbrot.hpp](src/fractals/Mandelbrot.hpp), [Mandelbrot2.hpp](src/fractals/Mandelbrot2.hpp), [Mandelbrot3.hpp](src/fractals/Mandelbrot3.hpp) |
+|source(s)      | [Mandelbrot.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Mandelbrot.hpp), [Mandelbrot2.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Mandelbrot2.hpp), [Mandelbrot3.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Mandelbrot3.hpp) |
 
 ### Benchmarks
 
@@ -73,7 +73,7 @@ Range (min … max):   647.1 ms … 744.7 ms    10 runs
 ```
 
 ## Newton
-![Newton](/samples/newton1.png)
+![Newton](https://github.com/daelsepara/sdl-fractals/tree/main/samples/newton1.png)
 
 ### Parameters
 
@@ -81,9 +81,9 @@ Range (min … max):   647.1 ms … 744.7 ms    10 runs
 |Generator      | **z** - (**z**^3 - 1)/(3**z**^2) |
 |tolerance      | 1e-6 |
 |threshold      | 255 |
-|parameter files| [newton1](src/parameters/newton1.json) |
+|parameter files| [newton1](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/newton1.json) |
 |palette        | default |
-|source         | [Newton1.hpp](src/fractals/Newton1.hpp) |
+|source         | [Newton1.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Newton1.hpp) |
 
 ```cmd
 Time (mean ± σ):     868.1 ms ±   8.0 ms    [User: 822.9 ms, System: 35.2 ms]
@@ -98,52 +98,52 @@ Range (min … max):   855.1 ms … 882.9 ms    10 runs
 |Generator      | **z**^**exp** + **C** |
 |threshold      | 255 |
 |orbit          | 2.0 |
-|source         | [Julia.hpp](src/fractals/Julia.hpp) |
+|source         | [Julia.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Julia.hpp) |
 
 ### Specific Parameters and Benchmarks
 
-![Julia 1](/samples/julia1.png)
+![Julia 1](https://github.com/daelsepara/sdl-fractals/tree/main/samples/julia1.png)
 
 |Parameter | Value       |
 |C         | -0.4 + 0.6i |
-|parameter file| [julia1](src/parameters/julia1.json) |
-|palette   | [plasma](src/palettes/plasma.json) |
+|parameter file| [julia1](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia1.json) |
+|palette   | [plasma](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/plasma.json) |
 
 ```cmd
 Time (mean ± σ):     821.6 ms ±   8.3 ms    [User: 770.7 ms, System: 38.7 ms]
 Range (min … max):   812.3 ms … 836.7 ms    10 runs
 ```
 
-![Julia 2](/samples/julia2.png)
+![Julia 2](https://github.com/daelsepara/sdl-fractals/tree/main/samples/julia2.png)
 
 |Parameter | Value         |
 |C         | -0.8 + 0.156i |
-|parameter file| [julia2](src/parameters/julia2.json) |
-|palette   | [inferno](src/palettes/inferno.json) |
+|parameter file| [julia2](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia2.json) |
+|palette   | [inferno](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/inferno.json) |
 
 ```cmd
 Time (mean ± σ):     936.7 ms ±  10.5 ms    [User: 881.0 ms, System: 39.5 ms]
 Range (min … max):   925.1 ms … 959.9 ms    10 runs
 ```
 
-![Julia 3](/samples/julia3.png)
+![Julia 3](https://github.com/daelsepara/sdl-fractals/tree/main/samples/julia3.png)
 
 |Parameter | Value         |
 |C         | 0.285 + 0.01i |
-|parameter file| [julia3](src/parameters/julia3.json) |
-|palette   | [moreland](src/palettes/moreland.json) |
+|parameter file| [julia3](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia3.json) |
+|palette   | [moreland](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/moreland.json) |
 
 ```cmd
 Time (mean ± σ):     732.1 ms ±  12.2 ms    [User: 678.0 ms, System: 38.8 ms]
 Range (min … max):   718.5 ms … 755.8 ms    10 run
 ```
 
-![Julia 4](/samples/julia4.png)
+![Julia 4](https://github.com/daelsepara/sdl-fractals/tree/main/samples/julia4.png)
 
 |Parameter | Value         |
 |C         | -0.7269 + 0.1889i |
-|parameter file| [julia4](src/parameters/julia4.json) |
-|palette   | [magma](src/palettes/magma.json) |
+|parameter file| [julia4](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia4.json) |
+|palette   | [magma](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/magma.json) |
 
 ```cmd
 Time (mean ± σ):      1.224 s ±  0.019 s    [User: 1.166 s, System: 0.041 s]
@@ -151,7 +151,7 @@ Range (min … max):    1.201 s …  1.263 s    10 runs
 ```
 
 ## Mandelbrot4
-![Mandelbrot 4](/samples/mandelbrot4.png)
+![Mandelbrot 4](https://github.com/daelsepara/sdl-fractals/tree/main/samples/mandelbrot4.png)
 
 ### Parameters
 
@@ -160,9 +160,9 @@ Range (min … max):    1.201 s …  1.263 s    10 runs
 |exp            | 4   |
 |threshold      | 255 |
 |orbit          | 2.0 |
-|parameter files| [mandelbrot4](src/parameters/mandelbrot4.json) |
+|parameter files| [mandelbrot4](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/mandelbrot4.json) |
 |palette        | default |
-|source         | [Mandelbrot.hpp](src/fractals/Mandelbrot.hpp) |
+|source         | [Mandelbrot.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Mandelbrot.hpp) |
 
 ```cmd
 Time (mean ± σ):      3.937 s ±  0.055 s    [User: 3.831 s, System: 0.056 s]
@@ -170,7 +170,7 @@ Range (min … max):    3.898 s …  4.063 s    10 runs
 ```
 
 ## Burning Ship
-![Burning Ship](/samples/burningship.png)
+![Burning Ship](https://github.com/daelsepara/sdl-fractals/tree/main/samples/burningship.png)
 
 ### Parameters
 
@@ -182,9 +182,9 @@ Range (min … max):    3.898 s …  4.063 s    10 runs
 |inside color   | 0    |
 |threshold      | 100  |
 |orbit          | 4.0 |
-|parameter files| [burningship](src/parameters/burningship.json) |
-|palette        | [hot](src/palettes/hot.json) |
-|source         | [BurningShip.hpp](src/fractals/BurningShip.hpp) |
+|parameter files| [burningship](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/burningship.json) |
+|palette        | [hot](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/hot.json) |
+|source         | [BurningShip.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/BurningShip.hpp) |
 
 ```cmd
 Time (mean ± σ):     559.9 ms ±   4.1 ms    [User: 518.1 ms, System: 33.7 ms]
@@ -192,7 +192,7 @@ Range (min … max):   552.8 ms … 567.2 ms    10 runs
 ```
 
 ## Burning Ship (2)
-![Burning Ship 2](/samples/burningship2.png)
+![Burning Ship 2](https://github.com/daelsepara/sdl-fractals/tree/main/samples/burningship2.png)
 
 ### Parameters
 
@@ -204,9 +204,9 @@ Range (min … max):   552.8 ms … 567.2 ms    10 runs
 |inside color   | 0    |
 |threshold      | 100  |
 |orbit          | 4.0  |
-|parameter files| [burningship2](src/parameters/burningship2.json) |
-|palette        | [plasma](src/palettes/plasma.json) |
-|source         | [BurningShip.hpp](src/fractals/BurningShip.hpp) |
+|parameter files| [burningship2](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/burningship2.json) |
+|palette        | [plasma](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/plasma.json) |
+|source         | [BurningShip.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/BurningShip.hpp) |
 
 ```cmd
 Time (mean ± σ):      1.469 s ±  0.289 s    [User: 0.840 s, System: 0.054 s]
@@ -214,7 +214,7 @@ Range (min … max):    1.248 s …  2.128 s    10 runs
 ```
 
 ## Burning Ship (3)
-![Burning Ship 3](/samples/burningship3.png)
+![Burning Ship 3](https://github.com/daelsepara/sdl-fractals/tree/main/samples/burningship3.png)
 
 ### Parameters
 
@@ -226,9 +226,9 @@ Range (min … max):    1.248 s …  2.128 s    10 runs
 |inside color   | 0    |
 |threshold      | 100  |
 |orbit          | 4.0  |
-|parameter files| [burningship3](src/parameters/burningship2.json) |
-|palette        | [bluered](src/palettes/bluered.json) |
-|source         | [BurningShip.hpp](src/fractals/BurningShip.hpp) |
+|parameter files| [burningship3](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/burningship2.json) |
+|palette        | [bluered](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/bluered.json) |
+|source         | [BurningShip.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/BurningShip.hpp) |
 
 ```cmd
 Time (mean ± σ):      1.469 s ±  0.289 s    [User: 0.840 s, System: 0.054 s]
@@ -236,7 +236,7 @@ Range (min … max):    1.248 s …  2.128 s    10 runs
 ```
 
 ## Tricorn
-![Tricorn](/samples/tricorn.png)
+![Tricorn](https://github.com/daelsepara/sdl-fractals/tree/main/samples/tricorn.png)
 
 ### Parameters
 
@@ -245,9 +245,9 @@ Range (min … max):    1.248 s …  2.128 s    10 runs
 |inside color   | 0    |
 |threshold      | 255  |
 |orbit          | 4.0  |
-|parameter files| [tricorn](src/parameters/tricorn.json) |
-|palette        | [parula](src/palettes/parula.json) |
-|source         | [Tricorn.hpp](src/fractals/Tricorn.hpp) |
+|parameter files| [tricorn](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/tricorn.json) |
+|palette        | [parula](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/parula.json) |
+|source         | [Tricorn.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Tricorn.hpp) |
 
 ```cmd
 Time (mean ± σ):     575.8 ms ±  21.6 ms    [User: 528.1 ms, System: 36.5 ms]
@@ -255,7 +255,7 @@ Range (min … max):   536.0 ms … 602.0 ms    10 runs
 ```
 
 ## Multicorn
-![Multicorn](/samples/multicorn.png)
+![Multicorn](https://github.com/daelsepara/sdl-fractals/tree/main/samples/multicorn.png)
 
 ### Parameters
 
@@ -265,9 +265,9 @@ Range (min … max):   536.0 ms … 602.0 ms    10 runs
 |inside color   | 0    |
 |threshold      | 255  |
 |orbit          | 4.0  |
-|parameter files| [multicorn](src/parameters/multicorn.json) |
-|palette        | [viridis](src/palettes/viridis.json) |
-|source         | [Multicorn.hpp](src/fractals/Multicorn.hpp) |
+|parameter files| [multicorn](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/multicorn.json) |
+|palette        | [viridis](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/viridis.json) |
+|source         | [Multicorn.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Multicorn.hpp) |
 
 ```cmd
 Time (mean ± σ):      1.316 s ±  0.016 s    [User: 1.261 s, System: 0.040 s]
@@ -275,7 +275,7 @@ Range (min … max):    1.293 s …  1.346 s    10 runs
 ```
 
 ## Barnsley Fern
-![Barnsley Fern](/samples/barnsleyfern.png)
+![Barnsley Fern](https://github.com/daelsepara/sdl-fractals/tree/main/samples/barnsleyfern.png)
 
 ### Parameters
 
@@ -283,9 +283,9 @@ Range (min … max):    1.293 s …  1.346 s    10 runs
 |Generator      | see below |
 |inside color   | 128   |
 |threshold      | 10000000 |
-|parameter files| [barnsleyfern](src/parameters/barnsleyfern.json) |
-|palette        | [green](src/palettes/green.json) |
-|source         | [BarnsleyFern.hpp](src/fractals/BarnsleyFern.hpp) |
+|parameter files| [barnsleyfern](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/barnsleyfern.json) |
+|palette        | [green](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/green.json) |
+|source         | [BarnsleyFern.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/BarnsleyFern.hpp) |
 
 ### Generator
 
@@ -301,7 +301,7 @@ Range (min … max):   648.1 ms … 676.3 ms    10 runs
 ```
 
 ## Barnsley Fern (Culcita)
-![Barnsley Fern](/samples/culcita.png)
+![Barnsley Fern](https://github.com/daelsepara/sdl-fractals/tree/main/samples/culcita.png)
 
 ### Parameters
 
@@ -309,9 +309,9 @@ Range (min … max):   648.1 ms … 676.3 ms    10 runs
 |Generator      | see below |
 |inside color   | 128   |
 |threshold      | 10000000 |
-|parameter files| [culcita](src/parameters/culcita.json) |
-|palette        | [green](src/palettes/green.json) |
-|source         | [BarnsleyFern.hpp](src/fractals/BarnsleyFern.hpp) |
+|parameter files| [culcita](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/culcita.json) |
+|palette        | [green](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/green.json) |
+|source         | [BarnsleyFern.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/BarnsleyFern.hpp) |
 
 ### Generator
 
@@ -327,7 +327,7 @@ Range (min … max):   589.1 ms … 683.9 ms    10 runs
 ```
 
 ## Barnsley Fern (Thelypteridaceae)
-![Barnsley Fern](/samples/thelypteridaceae.png)
+![Barnsley Fern](https://github.com/daelsepara/sdl-fractals/tree/main/samples/thelypteridaceae.png)
 
 ### Parameters
 
@@ -335,9 +335,9 @@ Range (min … max):   589.1 ms … 683.9 ms    10 runs
 |Generator      | see below |
 |inside color   | 128   |
 |threshold      | 10000000 |
-|parameter files| [thelypteridaceae](src/parameters/thelypteridaceae.json) |
-|palette        | [green](src/palettes/green.json) |
-|source         | [BarnsleyFern.hpp](src/fractals/BarnsleyFern.hpp) |
+|parameter files| [thelypteridaceae](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/thelypteridaceae.json) |
+|palette        | [green](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/green.json) |
+|source         | [BarnsleyFern.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/BarnsleyFern.hpp) |
 
 ### Generator
 
