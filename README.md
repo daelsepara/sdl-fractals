@@ -1,40 +1,40 @@
 # SDL Fractals
 Fractal Image Generators in SDL
 
-## Usage:
+# Usage
 
 ```cmd
 ./Fractals.exe /PARAMS={parameters.json} /IMAGE={image.png} /PALETTE={palette.json} /BENCHMAK {other parameters}
 ```
 
-### Optional parameters
-
 **/IMAGE**, **/PALETTE**, **/BENCHMARK** are optional
 
-**/IMAGE**=*{image.png}*
+## Optional parameters
+
+### /IMAGE={image.png}
 Save fractal to *{image.png}*
 
-**/PALETTE**=*{palette.json}*
+### /PALETTE={palette.json}
 Use *{palette.json}* colormap. See [palettes/](src/palettes/) for colormaps to use.
 
-**/BENCHMARK**
+### /BENCHMARK
 Generate fractal in memory without rendering onscreen or saving image to {image.png}
 
 Without **/BENCHMARK** and **/IMAGE** fractal is rendered onscreen.
 
-**/INVERTX**
+## Other parameters
+
+### /INVERTX
 Inverts x-axis. Left to right goes from + to - values.
 
-**/INVERTY**
+### /INVERTY
 Inverts y-axis. Top to bottom goes from - to + values.
 
-**/LOG**
+### /LOG
 Use log-scale color mapping.
 
 **/NORMALIZED**
 Use normalized color mapping.
-
-### Other parameters
 
 # Examples
 
