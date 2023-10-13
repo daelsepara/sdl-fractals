@@ -17,7 +17,7 @@ make
 
 ## Required parameters
 
-### /PARAMS={parameters.json}
+#### /PARAMS={parameters.json}
 
 Read parameters from *{parameters.json}* file.
 
@@ -25,32 +25,32 @@ See [parameters/](https://github.com/daelsepara/sdl-fractals/tree/main/src/param
 
 ## Optional parameters
 
-### /IMAGE={image.png}
+#### /IMAGE={image.png}
 Save fractal to *{image.png}*
 
-### /PALETTE={palette.json}
+#### /PALETTE={palette.json}
 Use *{palette.json}* colormap. See [palettes/](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/) for some colormaps that can be used.
 
-### /BENCHMARK
+#### /BENCHMARK
 Generate fractal in memory without rendering on the screen or saving image to {image.png}
 
 Without **/BENCHMARK** and **/IMAGE**, the fractal is rendered on the screen.
 
 ## Other parameters
 
-### /INVERTX
+#### /INVERTX
 Inverts x-axis. Left to right goes from + to - values.
 
-### /INVERTY
+#### /INVERTY
 Inverts y-axis. Top to bottom goes from - to + values.
 
-### /INVERT
+#### /INVERT
 Inverts color values.
 
-### /LOG
+#### /LOG
 Use log-scale color mapping.
 
-**/NORMALIZED**
+#### /NORMALIZED
 Use normalized color mapping.
 
 # Examples
