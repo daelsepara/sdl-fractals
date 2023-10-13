@@ -58,6 +58,9 @@ namespace Fractal
         // normalized color mapping
         bool normalized_coloring = false;
 
+        // invert colors
+        bool invert_colors = false;
+
         // invert axis
         bool invert_x = false;
         bool invert_y = false;

@@ -140,6 +140,7 @@ int main(int argc, char **argv)
 	bool invertx = false;
 	bool inverty = false;
 	bool benchmark = false;
+	bool invert_colors = false;
 
 	if (argc > 1)
 	{
@@ -174,6 +175,10 @@ int main(int argc, char **argv)
 			{
 				benchmark = true;
 			}
+			else if (arg == "/INVERT")
+			{
+				invert_colors = true;
+			}
 		}
 	}
 
@@ -199,6 +204,11 @@ int main(int argc, char **argv)
 		if (inverty)
 		{
 			parameters.invert_y = true;
+		}
+
+		if (invert_colors)
+		{
+			parameters.invert_colors = true;
 		}
 
 		Fractal::Base *fractal;

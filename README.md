@@ -15,9 +15,13 @@ make
 ./Fractals.exe /PARAMS={parameters.json} /IMAGE={image.png} /PALETTE={palette.json} /BENCHMAK {other parameters}
 ```
 
-**/IMAGE**, **/PALETTE**, and **/BENCHMARK** are optional
+## Required parameters
 
-See [parameters/](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/) for sample parameters.
+### /PARAMS={parameters.json}
+
+Read parameters from *{parameters.json}* file.
+
+See [parameters/](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/) for sample parameter files.
 
 ## Optional parameters
 
@@ -39,6 +43,9 @@ Inverts x-axis. Left to right goes from + to - values.
 
 ### /INVERTY
 Inverts y-axis. Top to bottom goes from - to + values.
+
+### /INVERT
+Inverts color values.
 
 ### /LOG
 Use log-scale color mapping.
@@ -161,6 +168,21 @@ Range (min … max):   718.5 ms … 755.8 ms    10 run
 |C         | -0.7269 + 0.1889i |
 |parameter file| [julia4](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia4.json) |
 |palette   | [magma](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/magma.json) |
+
+```cmd
+Time (mean ± σ):      1.224 s ±  0.019 s    [User: 1.166 s, System: 0.041 s]
+Range (min … max):    1.201 s …  1.263 s    10 runs
+```
+
+![Julia 5](samples/julia5.png)
+
+|Parameter | Value             |
+|----------|-------------------|
+|C         | 0.26294324588 - 0.0024215732998i |
+|threshold | 320 |
+|normalized colormap | true |
+|parameter file| [julia5](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia5.json) |
+|palette   | inverted [jet](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/jet.json) |
 
 ```cmd
 Time (mean ± σ):      1.224 s ±  0.019 s    [User: 1.166 s, System: 0.041 s]

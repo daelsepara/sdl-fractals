@@ -20,6 +20,9 @@ namespace Fractal
 
             auto dy = this->parameters.dy();
 
+            // pre-calculate escape orbit
+            auto threshold = this->parameters.escape_value_threshold * this->parameters.escape_value_threshold;
+
             // calculate julia set
             for (auto y = 0; y < this->parameters.y_pixels; y++)
             {
@@ -32,7 +35,7 @@ namespace Fractal
 
                     auto zy = this->parameters.scaled_y(y, dy);
 
-                    while ((zx * zx + zy * zy) <= this->parameters.escape_value_threshold * this->parameters.escape_value_threshold && (t < this->parameters.escape_time_threshold))
+                    while ((zx * zx + zy * zy) <= threshold && (t < this->parameters.escape_time_threshold))
                     {
                         auto xtemp = zx * zx - zy * zy + this->parameters.cx;
 

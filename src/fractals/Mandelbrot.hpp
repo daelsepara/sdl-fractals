@@ -20,7 +20,7 @@ namespace Fractal
 
             auto dy = this->parameters.dy();
 
-            // pre-calculate orbit
+            // pre-calculate escape orbit
             auto threshold = this->parameters.escape_value_threshold * this->parameters.escape_value_threshold;
 
             // calculate mandelbrot set

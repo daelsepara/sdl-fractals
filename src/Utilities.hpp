@@ -44,8 +44,16 @@ namespace Fractal
                     // calculate target pixel
                     Uint32 *const target = (Uint32 *)((Uint8 *)surface->pixels + y * surface->pitch + x * surface->format->BytesPerPixel);
 
+                    auto color = (int)grid[y][x];
+
+                    // invert colors
+                    if (parameters.invert_colors)
+                    {
+                        color = 255 - color;
+                    }
+
                     // clamp to values 0-255 and calculate index to palette
-                    auto c = std::min(std::max((int)grid[y][x], 0), 255) * 3;
+                    auto c = std::min(std::max(color, 0), 255) * 3;
 
                     // get RGB color from palette and adjust color brightness
                     Uint8 r = palette.Colors[c] * palette.Brightness;
