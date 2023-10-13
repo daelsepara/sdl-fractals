@@ -7,7 +7,9 @@ Fractal Image Generators in SDL
 ./Fractals.exe /PARAMS={parameters.json} /IMAGE={image.png} /PALETTE={palette.json} /BENCHMAK {other parameters}
 ```
 
-**/IMAGE**, **/PALETTE**, **/BENCHMARK** are optional
+**/IMAGE**, **/PALETTE**, and **/BENCHMARK** are optional
+
+See [parameters/](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/) for sample parameters.
 
 ## Optional parameters
 
@@ -15,12 +17,12 @@ Fractal Image Generators in SDL
 Save fractal to *{image.png}*
 
 ### /PALETTE={palette.json}
-Use *{palette.json}* colormap. See [palettes/](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/) for colormaps to use.
+Use *{palette.json}* colormap. See [palettes/](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/) for some colormaps that can be used.
 
 ### /BENCHMARK
-Generate fractal in memory without rendering onscreen or saving image to {image.png}
+Generate fractal in memory without rendering on the screen or saving image to {image.png}
 
-Without **/BENCHMARK** and **/IMAGE** fractal is rendered onscreen.
+Without **/BENCHMARK** and **/IMAGE** fractal is rendered on the screen.
 
 ## Other parameters
 
