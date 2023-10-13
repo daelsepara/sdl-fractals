@@ -1,20 +1,16 @@
 #ifndef __MULTICORN_HPP__
 #define __MULTICORN_HPP__
 
+#include "Base.hpp"
 #include "../Parameters.hpp"
 #include "../Utilities.hpp"
 
 namespace Fractal
 {
-    class Multicorn
+    class Multicorn : public Fractal::Base
     {
-    private:
-        Fractal::Parameters parameters;
-
-    public:
-        Fractal::Grid grid;
-
-        void generate()
+    protected:
+        void generate() override
         {
             // create complex plane (initialize grid)
             this->grid = Fractal::InitializeGrid(this->parameters);
@@ -79,27 +75,8 @@ namespace Fractal
             }
         }
 
-        void generate(std::string palette)
-        {
-            this->generate();
-
-            Fractal::RenderImage(this->grid, this->parameters, palette);
-        }
-
-        void generate(std::string image, std::string palette)
-        {
-            this->generate();
-
-            if (image.length() > 0)
-            {
-                Fractal::SaveImage(this->grid, this->parameters, image, palette);
-            }
-        }
-
-        Multicorn(Fractal::Parameters parameters)
-        {
-            this->parameters = parameters;
-        }
+    public:
+        Multicorn(Fractal::Parameters parameters) : Fractal::Base(parameters) {}
     };
 }
 

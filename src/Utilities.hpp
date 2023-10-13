@@ -31,7 +31,7 @@ namespace Fractal
     {
         auto surface = SDL_CreateRGBSurface(0, parameters.x_pixels, parameters.y_pixels, 32, 0, 0, 0, 0);
 
-        if (surface)
+        if (surface && grid.size() >= parameters.y_pixels && grid[0].size() >= parameters.x_pixels)
         {
             // set fixed alpha channel value
             Uint8 a = 255;

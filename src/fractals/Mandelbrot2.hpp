@@ -1,20 +1,16 @@
 #ifndef __MANDELBROT2_HPP__
 #define __MANDELBROT2_HPP__
 
+#include "Base.hpp"
 #include "../Parameters.hpp"
 #include "../Utilities.hpp"
 
 namespace Fractal
 {
-    class Mandelbrot2
+    class Mandelbrot2 : public Fractal::Base
     {
-    private:
-        Fractal::Parameters parameters;
-
-    public:
-        Fractal::Grid grid;
-
-        void generate()
+    protected:
+        void generate() override
         {
             // create complex plane (initialize grid)
             this->grid = Fractal::InitializeGrid(this->parameters);
@@ -83,10 +79,8 @@ namespace Fractal
             }
         }
 
-        Mandelbrot2(Fractal::Parameters parameters)
-        {
-            this->parameters = parameters;
-        }
+    public:
+        Mandelbrot2(Fractal::Parameters parameters) : Fractal::Base(parameters) {}
     };
 }
 

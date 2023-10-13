@@ -195,125 +195,44 @@ int main(int argc, char **argv)
 		{
 			parameters.invert_y = true;
 		}
-		
-		std::cerr << "Generating '" << parameters.type << "' fractal" << std::endl;
+
+		Fractal::Base *fractal;
 
 		if (parameters.type == "mandelbrot")
 		{
-			auto fractal = Fractal::Mandelbrot(parameters);
-
-			if (image_file.length() > 0)
-			{
-				fractal.generate(image_file, palette_file);
-			}
-			else
-			{
-				fractal.generate(palette_file);
-			}
+			fractal = new Fractal::Mandelbrot(parameters);
 		}
 		else if (parameters.type == "mandelbrot2")
 		{
-			auto fractal = Fractal::Mandelbrot2(parameters);
-
-			if (image_file.length() > 0)
-			{
-				fractal.generate(image_file, palette_file);
-			}
-			else
-			{
-				fractal.generate(palette_file);
-			}
+			fractal = new Fractal::Mandelbrot2(parameters);
 		}
 		else if (parameters.type == "mandelbrot3")
 		{
-			auto fractal = Fractal::Mandelbrot3(parameters);
-
-			if (image_file.length() > 0)
-			{
-				fractal.generate(image_file, palette_file);
-			}
-			else
-			{
-				fractal.generate(palette_file);
-			}
+			fractal = new Fractal::Mandelbrot3(parameters);
 		}
 		else if (parameters.type == "newton1")
 		{
-			auto fractal = Fractal::Newton1(parameters);
-
-			if (image_file.length() > 0)
-			{
-				fractal.generate(image_file, palette_file);
-			}
-			else
-			{
-				fractal.generate(palette_file);
-			}
+			fractal = new Fractal::Newton1(parameters);
 		}
 		else if (parameters.type == "julia")
 		{
-			auto fractal = Fractal::Julia(parameters);
-
-			if (image_file.length() > 0)
-			{
-				fractal.generate(image_file, palette_file);
-			}
-			else
-			{
-				fractal.generate(palette_file);
-			}
+			fractal = new Fractal::Julia(parameters);
 		}
 		else if (parameters.type == "burningship")
 		{
-			auto fractal = Fractal::BurningShip(parameters);
-
-			if (image_file.length() > 0)
-			{
-				fractal.generate(image_file, palette_file);
-			}
-			else
-			{
-				fractal.generate(palette_file);
-			}
+			fractal = new Fractal::BurningShip(parameters);
 		}
 		else if (parameters.type == "tricorn")
 		{
-			auto fractal = Fractal::Tricorn(parameters);
-
-			if (image_file.length() > 0)
-			{
-				fractal.generate(image_file, palette_file);
-			}
-			else
-			{
-				fractal.generate(palette_file);
-			}
+			fractal = new Fractal::Tricorn(parameters);
 		}
 		else if (parameters.type == "multicorn")
 		{
-			auto fractal = Fractal::Multicorn(parameters);
-
-			if (image_file.length() > 0)
-			{
-				fractal.generate(image_file, palette_file);
-			}
-			else
-			{
-				fractal.generate(palette_file);
-			}
+			fractal = new Fractal::Multicorn(parameters);
 		}
 		else if (parameters.type == "barnsleyfern")
 		{
-			auto fractal = Fractal::BarnsleyFern(parameters);
-
-			if (image_file.length() > 0)
-			{
-				fractal.generate(image_file, palette_file);
-			}
-			else
-			{
-				fractal.generate(palette_file);
-			}
+			fractal = new Fractal::BarnsleyFern(parameters);
 		}
 		else
 		{
@@ -321,6 +240,19 @@ int main(int argc, char **argv)
 					  << parameters.type
 					  << "' fractal."
 					  << std::endl;
+
+			return 1;
+		}
+
+		std::cerr << "Generating '" << parameters.type << "' fractal" << std::endl;
+
+		if (image_file.length() > 0)
+		{
+			fractal->save(image_file, palette_file);
+		}
+		else
+		{
+			fractal->render(palette_file);
 		}
 	}
 
