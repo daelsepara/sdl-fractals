@@ -185,8 +185,8 @@ Range (min … max):    1.201 s …  1.263 s    10 runs
 |palette   | inverted [jet](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/jet.json) |
 
 ```cmd
-Time (mean ± σ):      1.224 s ±  0.019 s    [User: 1.166 s, System: 0.041 s]
-Range (min … max):    1.201 s …  1.263 s    10 runs
+Time (mean ± σ):      3.495 s ±  0.027 s    [User: 3.428 s, System: 0.039 s]
+Range (min … max):    3.454 s …  3.544 s    10 runs
 ```
 
 ## Mandelbrot4
