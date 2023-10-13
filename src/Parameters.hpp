@@ -8,10 +8,20 @@
 #include <string>
 #include <vector>
 
+#include <SDL2/SDL.h>
+
 #include "nlohmann/json.hpp"
 
 namespace Fractal
 {
+    typedef std::vector<double> Transformation;
+
+    typedef std::vector<std::vector<double>> Transformations;
+
+    typedef std::vector<Uint8> GridRow;
+
+    typedef std::vector<std::vector<Uint8>> Grid;
+
     class Parameters
     {
     public:
@@ -53,7 +63,7 @@ namespace Fractal
         bool invert_y = false;
 
         // transformations
-        std::vector<std::vector<double>> transforms = std::vector<std::vector<double>>();
+        Fractal::Transformations transforms = Fractal::Transformations();
 
         // load parameters from file
         void Load(std::string filename)
@@ -109,13 +119,13 @@ namespace Fractal
                 // transforms
                 if (!data["transforms"].is_null() && data["transforms"].is_array())
                 {
-                    this->transforms = std::vector<std::vector<double>>();
+                    this->transforms = Fractal::Transformations();
 
                     for (auto j = 0; j < data["transforms"].size(); j++)
                     {
                         if (!data["transforms"][j].is_null() && data["transforms"][j].is_array())
                         {
-                            auto transform = std::vector<double>();
+                            auto transform = Fractal::Transformation();
 
                             for (auto i = 0; i < data["transforms"][j].size(); i++)
                             {

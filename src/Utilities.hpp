@@ -4,7 +4,6 @@
 #include <cstdlib>
 #include <iostream>
 #include <string>
-#include <vector>
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
@@ -14,17 +13,15 @@
 
 namespace Fractal
 {
-    typedef std::vector<std::vector<Uint8>> Grid;
-
     Grid InitializeGrid(Fractal::Parameters &parameters)
     {
         // create complex plane
-        auto grid = std::vector<std::vector<Uint8>>(parameters.y_pixels);
+        auto grid = Fractal::Grid(parameters.y_pixels);
 
         // initialize grid
         for (auto y = 0; y < parameters.y_pixels; y++)
         {
-            grid[y] = std::vector<Uint8>(parameters.x_pixels);
+            grid[y] = Fractal::GridRow(parameters.x_pixels);
         }
 
         return grid;
@@ -250,7 +247,7 @@ namespace Fractal
         }
     }
 
-    void ApplyTransformation(double x, double y, std::vector<double> &transform, double &xn, double &yn)
+    void ApplyTransformation(double x, double y, Fractal::Transformation &transform, double &xn, double &yn)
     {
         // transform[0] = x coefficient (xn)
         // transform[1] = y coefficient (xn)
@@ -268,7 +265,7 @@ namespace Fractal
         yn = transform[2] * x + transform[3] * y + transform[5];
     }
 
-    void Transform(double p, double x, double y, std::vector<std::vector<double>> &transforms, double &xn, double &yn)
+    void Transform(double p, double x, double y, Fractal::Transformations &transforms, double &xn, double &yn)
     {
         auto transform_p = 0.0;
 
