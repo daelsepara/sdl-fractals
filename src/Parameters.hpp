@@ -65,6 +65,64 @@ namespace Fractal
         // transformations
         Fractal::Transformations transforms = Fractal::Transformations();
 
+        double dx()
+        {
+            return (double)(this->max_x - this->min_x) / (double)(this->x_pixels);
+        }
+
+        double dy()
+        {
+            return (double)(this->max_y - this->min_y) / (double)(this->y_pixels);
+        }
+
+        double scaled_x(int x, double dx)
+        {
+            if (this->invert_x)
+            {
+                return this->min_x + (double)(this->x_pixels - x - 1) * dx;
+            }
+            else
+            {
+                return this->min_x + (double)x * dx;
+            }
+        }
+
+        double scaled_y(int y, double dy)
+        {
+            if (this->invert_y)
+            {
+                return this->min_y + (double)y * dy;
+            }
+            else
+            {
+                return this->min_y + (double)(this->y_pixels - y - 1) * dy;
+            }
+        }
+
+        int pixel_x(double x, double dx)
+        {
+            if (this->invert_x)
+            {
+                return (this->x_pixels - (int)((x - this->min_x) / dx) + 1);
+            }
+            else
+            {
+                return (int)((x - this->min_x) / dx);
+            }
+        }
+
+        int pixel_y(double y, double dy)
+        {
+            if (this->invert_y)
+            {
+                return (int)((y - this->min_y) / dy);
+            }
+            else
+            {
+                return (this->y_pixels - (int)((y - this->min_y) / dy) + 1);
+            }
+        }
+
         // load parameters from file
         void Load(std::string filename)
         {

@@ -21,9 +21,9 @@ namespace Fractal
             this->grid = Fractal::InitializeGrid(this->parameters);
 
             // calculate scaling factor
-            auto dx = (double)(this->parameters.max_x - this->parameters.min_x) / (double)(this->parameters.x_pixels);
+            auto dx = this->parameters.dx();
 
-            auto dy = (double)(this->parameters.max_y - this->parameters.min_y) / (double)(this->parameters.y_pixels);
+            auto dy = this->parameters.dy();
 
             auto x = 0.0;
 
@@ -39,24 +39,11 @@ namespace Fractal
 
             for (auto t = 0; t < this->parameters.escape_time_threshold; t++)
             {
-                auto p = random.NextDouble();
+                Fractal::Transform(random.NextDouble(), x, y, this->parameters.transforms, xn, yn);
 
-                Fractal::Transform(p, x, y, this->parameters.transforms, xn, yn);
+                auto xp = this->parameters.pixel_x(xn, dx);
 
-                auto xp = (int)((xn - this->parameters.min_x) / dx);
-
-                if (this->parameters.invert_x)
-                {
-                    // reverse x-location on image, i.e. - to + runs from right to left of the image
-                    xp = (this->parameters.x_pixels - (int)((xn - this->parameters.min_x) / dx) + 1);
-                }
-
-                auto yp = (this->parameters.y_pixels - (int)((yn - this->parameters.min_y) / dy) + 1);
-
-                if (this->parameters.invert_y)
-                {
-                    yp = (int)((yn - this->parameters.min_y) / dy);
-                }
+                auto yp = this->parameters.pixel_y(yn, dy);
 
                 if (xp >= 0 && xp < this->parameters.x_pixels && yp >= 0 && yp < this->parameters.y_pixels)
                 {

@@ -20,35 +20,22 @@ namespace Fractal
             this->grid = Fractal::InitializeGrid(this->parameters);
 
             // calculate scaling factor
-            auto dx = (double)(this->parameters.max_x - this->parameters.min_x) / (double)(this->parameters.x_pixels);
+            auto dx = this->parameters.dx();
 
-            auto dy = (double)(this->parameters.max_y - this->parameters.min_y) / (double)(this->parameters.y_pixels);
+            auto dy = this->parameters.dy();
 
             // calculate burning ship fractal
             for (auto y = 0; y < parameters.y_pixels; y++)
             {
                 // calculate location cy on complex plane
-
-                // reverse y-location on image, i.e. - to + runs from top to bottom of the image
-                auto cy = this->parameters.min_y + (double)(this->parameters.y_pixels - y - 1) * dy;
-
-                if (this->parameters.invert_y)
-                {
-                    cy = this->parameters.min_y + (double)y * dy;
-                }
+                auto cy = this->parameters.scaled_y(y, dy);
 
                 for (auto x = 0; x < parameters.x_pixels; x++)
                 {
                     auto t = 0;
 
-                    auto cx = this->parameters.min_x + (double)x * dx;
-
                     // calculate location cx on complex plane
-                    if (this->parameters.invert_x)
-                    {
-                        // reverse x-location on image, i.e. - to + runs from right to left of the image
-                        cx = this->parameters.min_x + (double)(this->parameters.x_pixels - x - 1) * dx;
-                    }
+                    auto cx = this->parameters.scaled_x(x, dx);
 
                     auto zx = cx;
 
