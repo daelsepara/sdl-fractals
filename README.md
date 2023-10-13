@@ -1,5 +1,14 @@
 Fractal Image Generators in SDL
 
+# Building (Unix/Linux)
+
+```cmd
+cd repository/src
+make
+```
+
+**Dependencies**: sdl2, sdl2-image
+
 # Usage
 
 ```cmd
