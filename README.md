@@ -369,3 +369,5 @@ Range (min … max):   589.1 ms … 683.9 ms    10 runs
 Time (mean ± σ):     572.3 ms ±   8.5 ms    [User: 533.0 ms, System: 31.7 ms]
 Range (min … max):   562.6 ms … 590.9 ms    10 runs
 ```
+
+**GitHub Repository**: [https://github.com/daelsepara/sdl-fractals](https://github.com/daelsepara/sdl-fractals)
