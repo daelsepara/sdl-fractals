@@ -16,7 +16,7 @@ namespace Fractal
             // create complex plane (initialize grid)
             this->grid = Fractal::InitializeGrid(this->parameters);
 
-            // calculate scaling factor
+            // calculate scaling factors
             auto dx = this->parameters.dx();
 
             auto dy = this->parameters.dy();
@@ -47,6 +47,7 @@ namespace Fractal
                 }
 
                 x = xn;
+                
                 y = yn;
             }
         }

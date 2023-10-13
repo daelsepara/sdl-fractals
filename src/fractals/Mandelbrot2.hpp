@@ -15,8 +15,9 @@ namespace Fractal
             // create complex plane (initialize grid)
             this->grid = Fractal::InitializeGrid(this->parameters);
 
-            // calculate scaling factor
+            // calculate scaling factors
             auto dx = this->parameters.dx();
+            
             auto dy = this->parameters.dy();
 
             // calculate mandelbrot set
@@ -34,14 +35,18 @@ namespace Fractal
 
                     // initial condition z0 (zx, zy)
                     auto zx = 0.0;
+                    
                     auto zy = 0.0;
 
                     // generate escape time fractal
                     while ((zx * zx + zy * zy) <= this->parameters.escape_value_threshold * this->parameters.escape_value_threshold && (t < this->parameters.escape_time_threshold))
                     {
                         auto xtemp = zx * zx - zy * zy + cx;
+                        
                         zy = 2 * zx * zy + cy;
+                        
                         zx = xtemp;
+                        
                         t++;
                     }
 
@@ -59,23 +64,6 @@ namespace Fractal
                         this->grid[y][x] = Fractal::Clamp(t);
                     }
                 }
-            }
-        }
-
-        void generate(std::string palette)
-        {
-            this->generate();
-
-            Fractal::RenderImage(this->grid, this->parameters, palette);
-        }
-
-        void generate(std::string image, std::string palette)
-        {
-            this->generate();
-
-            if (image.length() > 0)
-            {
-                Fractal::SaveImage(this->grid, this->parameters, image, palette);
             }
         }
 
