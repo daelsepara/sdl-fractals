@@ -21,7 +21,7 @@ Use *{palette.json}* colormap. See [palettes/](https://github.com/daelsepara/sdl
 ### /BENCHMARK
 Generate fractal in memory without rendering on the screen or saving image to {image.png}
 
-Without **/BENCHMARK** and **/IMAGE** fractal is rendered on the screen.
+Without **/BENCHMARK** and **/IMAGE**, the fractal is rendered on the screen.
 
 ## Other parameters
 
