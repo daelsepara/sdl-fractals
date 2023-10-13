@@ -1,4 +1,3 @@
-# SDL Fractals
 Fractal Image Generators in SDL
 
 # Usage
