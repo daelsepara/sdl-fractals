@@ -47,7 +47,7 @@ namespace Fractal
                 }
 
                 x = xn;
-                
+
                 y = yn;
             }
         }

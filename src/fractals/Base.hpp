@@ -37,6 +37,11 @@ namespace Fractal
             }
         }
 
+        void benchmark()
+        {
+            this->generate();
+        }
+
         Base() {}
 
         Base(Fractal::Parameters parameters)

@@ -40,11 +40,11 @@ namespace Fractal
                     while ((zx * zx + zy * zy) < this->parameters.escape_value_threshold && t < this->parameters.escape_time_threshold)
                     {
                         auto xtemp = zx * zx - zy * zy + cx;
-                        
+
                         zy = std::abs(2 * zx * zy) + cy;
-                        
+
                         zx = xtemp;
-                        
+
                         t++;
                     }
 

@@ -1,13 +1,40 @@
 # SDL Fractals
 Fractal Image Generators in SDL
 
-To use:
+## Usage:
 
 ```cmd
-./Fractals.exe /PARAMS={parameters.json} /IMAGE={image.png} /PALETTE={palette.json}
-
-/IMAGE and /PALETTE are optional
+./Fractals.exe /PARAMS={parameters.json} /IMAGE={image.png} /PALETTE={palette.json} /BENCHMAK {other parameters}
 ```
+
+### Optional parameters
+
+**/IMAGE**, **/PALETTE**, **/BENCHMARK** are optional
+
+**/IMAGE**=*{image.png}*
+Save fractal to *{image.png}*
+
+**/PALETTE**=*{palette.json}*
+Use *{palette.json}* colormap. See [palettes/](src/palettes/) for colormaps to use.
+
+**/BENCHMARK**
+Generate fractal in memory without rendering onscreen or saving image to {image.png}
+
+Without **/BENCHMARK** and **/IMAGE** fractal is rendered onscreen.
+
+**/INVERTX**
+Inverts x-axis. Left to right goes from + to - values.
+
+**/INVERTY**
+Inverts y-axis. Top to bottom goes from - to + values.
+
+**/LOG**
+Use log-scale color mapping.
+
+**/NORMALIZED**
+Use normalized color mapping.
+
+### Other parameters
 
 # Examples
 
@@ -197,7 +224,7 @@ Range (min … max):    1.248 s …  2.128 s    10 runs
 |inverted y     | true |
 |log colormap   | true |
 |inside color   | 0    |
-|threshold      | 2000 |
+|threshold      | 100  |
 |orbit          | 4.0  |
 |parameter files| [burningship3](src/parameters/burningship2.json) |
 |palette        | [bluered](src/palettes/bluered.json) |

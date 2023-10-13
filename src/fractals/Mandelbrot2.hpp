@@ -17,7 +17,7 @@ namespace Fractal
 
             // calculate scaling factors
             auto dx = this->parameters.dx();
-            
+
             auto dy = this->parameters.dy();
 
             // calculate mandelbrot set
@@ -35,18 +35,18 @@ namespace Fractal
 
                     // initial condition z0 (zx, zy)
                     auto zx = 0.0;
-                    
+
                     auto zy = 0.0;
 
                     // generate escape time fractal
                     while ((zx * zx + zy * zy) <= this->parameters.escape_value_threshold * this->parameters.escape_value_threshold && (t < this->parameters.escape_time_threshold))
                     {
                         auto xtemp = zx * zx - zy * zy + cx;
-                        
+
                         zy = 2 * zx * zy + cy;
-                        
+
                         zx = xtemp;
-                        
+
                         t++;
                     }
 

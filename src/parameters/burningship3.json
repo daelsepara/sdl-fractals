@@ -2,7 +2,7 @@
     "type": "burningship",
     "x_pixels": 2048,
     "y_pixels": 2048,
-    "escape_time_threshold": 2000,
+    "escape_time_threshold": 100,
     "escape_value_threshold": 4.0,
     "log_coloring": true,
     "invert_x": true,

@@ -139,6 +139,7 @@ int main(int argc, char **argv)
 	bool log_coloring = false;
 	bool invertx = false;
 	bool inverty = false;
+	bool benchmark = false;
 
 	if (argc > 1)
 	{
@@ -168,6 +169,10 @@ int main(int argc, char **argv)
 			else if (arg == "/INVERTY")
 			{
 				inverty = true;
+			}
+			else if (arg == "/BENCHMARK")
+			{
+				benchmark = true;
 			}
 		}
 	}
@@ -244,15 +249,22 @@ int main(int argc, char **argv)
 			return 1;
 		}
 
-		std::cerr << "Generating '" << parameters.type << "' fractal" << std::endl;
-
-		if (image_file.length() > 0)
+		if (!benchmark)
 		{
-			fractal->save(image_file, palette_file);
+			std::cerr << "Generating '" << parameters.type << "' fractal" << std::endl;
+
+			if (image_file.length() > 0)
+			{
+				fractal->save(image_file, palette_file);
+			}
+			else
+			{
+				fractal->render(palette_file);
+			}
 		}
 		else
 		{
-			fractal->render(palette_file);
+			fractal->benchmark();
 		}
 	}
 

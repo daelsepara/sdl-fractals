@@ -35,24 +35,24 @@ namespace Fractal
 
                     // initial condition z0 (zx, zy)
                     auto zx = 0.0;
-                    
+
                     auto zy = 0.0;
-                    
+
                     auto xx = 0.0;
-                    
+
                     auto yy = 0.0;
 
                     // generate escape time fractal
                     while ((zx + zy) <= this->parameters.escape_value_threshold * this->parameters.escape_value_threshold && (t < this->parameters.escape_time_threshold))
                     {
                         yy = 2 * xx * yy + cy;
-                        
+
                         xx = zx - zy + cx;
-                        
+
                         zx = xx * xx;
-                        
+
                         zy = yy * yy;
-                        
+
                         t++;
                     }
 

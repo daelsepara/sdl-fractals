@@ -17,7 +17,7 @@ namespace Fractal
 
             // calculate scaling factors
             auto dx = this->parameters.dx();
-            
+
             auto dy = this->parameters.dy();
 
             // calculate julia set
@@ -29,17 +29,17 @@ namespace Fractal
 
                     // calculate location (zx, zy) on complex plane
                     auto zx = this->parameters.scaled_x(x, dx);
-                    
+
                     auto zy = this->parameters.scaled_y(y, dy);
 
                     while ((zx * zx + zy * zy) <= this->parameters.escape_value_threshold * this->parameters.escape_value_threshold && (t < this->parameters.escape_time_threshold))
                     {
                         auto xtemp = zx * zx - zy * zy + this->parameters.cx;
-                        
+
                         zy = 2 * zx * zy + this->parameters.cy;
-                        
+
                         zx = xtemp;
-                        
+
                         t++;
                     }
 

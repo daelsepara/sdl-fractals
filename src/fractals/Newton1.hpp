@@ -29,7 +29,7 @@ namespace Fractal
 
                     // calculate location (zx, zy) on complex plane
                     auto zx = this->parameters.scaled_x(x, dx);
-                    
+
                     auto zy = this->parameters.scaled_y(y, dy);
 
                     if (this->parameters.invert_y)
