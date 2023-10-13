@@ -43,7 +43,7 @@ Use normalized color mapping.
 
 ### Parameters
 |Parameter      | Value |
-|---------------|:-----:|
+|||
 |Generator      | **z**^**exp** + **C** |
 |exp            | 2   |
 |threshold      | 255 |
@@ -77,7 +77,7 @@ Range (min … max):   647.1 ms … 744.7 ms    10 runs
 
 ### Parameters
 |Parameter      | Value |
-|---------------|:-----:|
+|||
 |Generator      | **z** - (**z**^3 - 1)/(3**z**^2) |
 |tolerance      | 1e-6 |
 |threshold      | 255 |
@@ -94,7 +94,7 @@ Range (min … max):   855.1 ms … 882.9 ms    10 runs
 
 ### Common Parameters
 |Parameter      | Value |
-|---------------|:-----:|
+|||
 |Generator      | **z**^**exp** + **C** |
 |threshold      | 255 |
 |orbit          | 2.0 |
@@ -116,7 +116,7 @@ Range (min … max):   812.3 ms … 836.7 ms    10 runs
 
 ![Julia 2](/samples/julia2.png)
 |Parameter | Value         |
-|----------|:-------------:|
+|||
 |C         | -0.8 + 0.156i |
 |parameter file| [julia2](src/parameters/julia2.json) |
 |palette   | [inferno](src/palettes/inferno.json) |
@@ -128,7 +128,7 @@ Range (min … max):   925.1 ms … 959.9 ms    10 runs
 
 ![Julia 3](/samples/julia3.png)
 |Parameter | Value         |
-|----------|:-------------:|
+|||
 |C         | 0.285 + 0.01i |
 |parameter file| [julia3](src/parameters/julia3.json) |
 |palette   | [moreland](src/palettes/moreland.json) |
@@ -140,7 +140,7 @@ Range (min … max):   718.5 ms … 755.8 ms    10 run
 
 ![Julia 4](/samples/julia4.png)
 |Parameter | Value         |
-|----------|:-------------:|
+|||
 |C         | -0.7269 + 0.1889i |
 |parameter file| [julia4](src/parameters/julia4.json) |
 |palette   | [magma](src/palettes/magma.json) |
@@ -155,7 +155,7 @@ Range (min … max):    1.201 s …  1.263 s    10 runs
 
 ### Parameters
 |Parameter      | Value |
-|---------------|:-----:|
+|||
 |Generator      | **z**^**exp** + **C** |
 |exp            | 4   |
 |threshold      | 255 |
@@ -174,7 +174,7 @@ Range (min … max):    3.898 s …  4.063 s    10 runs
 
 ### Parameters
 |Parameter      | Value |
-|---------------|:-----:|
+|||
 |Generator      | (Re(**Zn**) + iIm(**Zn**))^2 + **C** |
 |inverted x     | true |
 |inverted y     | true |
@@ -196,7 +196,7 @@ Range (min … max):   552.8 ms … 567.2 ms    10 runs
 
 ### Parameters
 |Parameter      | Value |
-|---------------|:-----:|
+|||
 |Generator      | (Re(**Zn**) + iIm(**Zn**))^2 + **C** |
 |inverted x     | true |
 |inverted y     | true |
@@ -218,7 +218,7 @@ Range (min … max):    1.248 s …  2.128 s    10 runs
 
 ### Parameters
 |Parameter      | Value |
-|---------------|:-----:|
+|||
 |Generator      | (Re(**Zn**) + iIm(**Zn**))^2 + **C** |
 |inverted x     | true |
 |inverted y     | true |
@@ -240,7 +240,7 @@ Range (min … max):    1.248 s …  2.128 s    10 runs
 
 ### Parameters
 |Parameter      | Value |
-|---------------|:-----:|
+|||
 |Generator      | (**z_x**^2 + **z_y**^2) - i(2 * **z_x** * **z_y**) + **C** |
 |inside color   | 0    |
 |threshold      | 255  |
@@ -259,7 +259,7 @@ Range (min … max):   536.0 ms … 602.0 ms    10 runs
 
 ### Parameters
 |Parameter      | Value |
-|---------------|:-----:|
+|||
 |Generator      | **Z_bar**^**exp** + **C** |
 |exponent       | 4    |
 |inside color   | 0    |
@@ -279,7 +279,7 @@ Range (min … max):    1.293 s …  1.346 s    10 runs
 
 ### Parameters
 |Parameter      | Value |
-|---------------|:-----:|
+|||
 |Generator      | see below |
 |inside color   | 128   |
 |threshold      | 10000000 |
@@ -289,7 +289,7 @@ Range (min … max):    1.293 s …  1.346 s    10 runs
 
 ### Generator
 | Probability| Transformation (x_n)      | Transformation (y_n)            |
-|------------|---------------------------|---------------------------------|
+||||
 | p < 0.01   | x_n = 0.0                 | y_n = 0.16 * y                  |
 | p < 0.86   | xn = 0.85 * x + 0.04 * y  | yn = -0.04 * x + 0.85 * y + 1.6 |
 | p < 0.93   | xn = 0.2 * x - 0.26 * y   | yn = 0.23 * x + 0.22 * y + 1.6  |
@@ -305,7 +305,7 @@ Range (min … max):   648.1 ms … 676.3 ms    10 runs
 
 ### Parameters
 |Parameter      | Value |
-|---------------|:-----:|
+|||
 |Generator      | see below |
 |inside color   | 128   |
 |threshold      | 10000000 |
@@ -315,7 +315,7 @@ Range (min … max):   648.1 ms … 676.3 ms    10 runs
 
 ### Generator
 | Probability| Transformation (x_n)      | Transformation (y_n)            |
-|------------|---------------------------|---------------------------------|
+||||
 | p < 0.02   | x_n = 0.0                 | y_n = 0.25 * y - 0.14           |
 | p < 0.86   | xn = 0.85 * x + 0.02 * y  | yn = -0.02 * x + 0.83 * y + 1.0 |
 | p < 0.93   | xn = 0.09 * x - 0.28 * y  | yn = 0.3 * x + 0.11 * y + 0.6   |
@@ -331,7 +331,7 @@ Range (min … max):   589.1 ms … 683.9 ms    10 runs
 
 ### Parameters
 |Parameter      | Value |
-|---------------|:-----:|
+|||
 |Generator      | see below |
 |inside color   | 128   |
 |threshold      | 10000000 |
@@ -341,7 +341,7 @@ Range (min … max):   589.1 ms … 683.9 ms    10 runs
 
 ### Generator
 | Probability| Transformation (x_n)              | Transformation (y_n)             |
-|------------|-----------------------------------|----------------------------------|
+||||
 | p < 0.02   | x_n = 0.0                         | y_n = 0.25 * y - 0.4             |
 | p < 0.86   | xn = 0.95 * x + 0.005 * y - 0.002 | yn = -0.005 * x + 0.93 * y + 0.5 |
 | p < 0.93   | xn = 0.035 * x - 0.2 * y - 0.09   | yn = 0.16 * x + 0.04 * y + 0.02  |
