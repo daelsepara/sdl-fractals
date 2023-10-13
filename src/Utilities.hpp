@@ -252,31 +252,38 @@ namespace Fractal
 
     void ApplyTransformation(double x, double y, std::vector<double> &transform, double &xn, double &yn)
     {
-        // transform[0] = probability
-        // transform[1] = x coefficient (xn)
-        // transform[2] = y coefficient (xn)
-        // transform[3] = constant (xn)
-        // transform[4] = x coefficient (yn)
-        // transform[5] = y coefficient (yn)
-        // transform[6] = constant (yn)
+        // transform[0] = x coefficient (xn)
+        // transform[1] = y coefficient (xn)
+        // transform[2] = x coefficient (yn)
+        // transform[3] = y coefficient (yn)
+        // transform[4] = constant (xn)
+        // transform[5] = constant (yn)
+        // transform[6] = probability
         if (transform.size() < 7)
         {
             return;
         }
 
-        xn = transform[1] * x + transform[2] * y + transform[3];
-        yn = transform[4] * x + transform[5] * y + transform[6];
+        xn = transform[0] * x + transform[1] * y + transform[4];
+        yn = transform[2] * x + transform[3] * y + transform[5];
     }
 
     void Transform(double p, double x, double y, std::vector<std::vector<double>> &transforms, double &xn, double &yn)
     {
+        auto transform_p = 0.0;
+
         for (auto i = 0; i < transforms.size(); i++)
         {
-            if (p < transforms[i][0])
+            if (transforms[i].size() >= 7)
             {
-                Fractal::ApplyTransformation(x, y, transforms[i], xn, yn);
+                transform_p += transforms[i][6];
 
-                break;
+                if (p < transform_p)
+                {
+                    Fractal::ApplyTransformation(x, y, transforms[i], xn, yn);
+
+                    break;
+                }
             }
         }
     }
