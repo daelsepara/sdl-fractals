@@ -324,9 +324,10 @@ Range (min … max):    1.293 s …  1.346 s    10 runs
 
 ### Parameters
 
-|Parameter      | Value     |
-|---------------|-----------|
-|Generator      | see below |
+|Parameter      |Value                                                         |
+|---------------|--------------------------------------------------------------|
+|Generator (xn) | **xn** = **xx** * **x** + **xy** * **y** + **xc** (see below)|
+|Generator (yn) | **yn** = **yx** * **x** + **yy** * **y** + **yc** (see below)|
 |inside color   | 128 |
 |threshold      | 10000000 |
 |parameter files| [barnsleyfern](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/barnsleyfern.json) |
@@ -335,12 +336,12 @@ Range (min … max):    1.293 s …  1.346 s    10 runs
 
 ### Generator
 
-| Probability| Transformation (x_n)      | Transformation (y_n)            |
-|------------|---------------------------|---------------------------------|
-| p < 0.01   | x_n = 0.0                 | y_n = 0.16 * y                  |
-| p < 0.86   | xn = 0.85 * x + 0.04 * y  | yn = -0.04 * x + 0.85 * y + 1.6 |
-| p < 0.93   | xn = 0.2 * x - 0.26 * y   | yn = 0.23 * x + 0.22 * y + 1.6  |
-| p < 1.00   | xn = -0.15 * x + 0.28 * y | yn = 0.26 * x + 0.24 * y + 0.44 |
+| Probability | Transformation [ xx xy yx yy xc yc ]           |
+|-------------|------------------------------------------------|
+| p < 0.01    | [  0.000  0.000  0.000  0.160  0.000  0.000 ]  |
+| p < 0.86    | [  0.850  0.040 -0.040  0.850  0.000  1.600 ]  |
+| p < 0.93    | [  0.200 -0.260  0.230  0.220  0.000  1.600 ]  |
+| p < 1.00    | [ -0.150  0.280  0.260  0.240  0.000  0.440 ]  |
 
 ```cmd
 Time (mean ± σ):     664.8 ms ±   9.4 ms    [User: 621.5 ms, System: 33.5 ms]
@@ -352,8 +353,10 @@ Range (min … max):   648.1 ms … 676.3 ms    10 runs
 
 ### Parameters
 
-|Generator      | (see below) |
-|---------------|-------------|
+|Parameter      |Value                                                         |
+|---------------|--------------------------------------------------------------|
+|Generator (xn) | **xn** = **xx** * **x** + **xy** * **y** + **xc** (see below)|
+|Generator (yn) | **yn** = **yx** * **x** + **yy** * **y** + **yc** (see below)|
 |inside color   | 128   |
 |threshold      | 10000000 |
 |parameter files| [culcita](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/culcita.json) |
@@ -362,12 +365,12 @@ Range (min … max):   648.1 ms … 676.3 ms    10 runs
 
 ### Generator
 
-| Probability| Transformation (x_n)      | Transformation (y_n)            |
-|------------|---------------------------|---------------------------------|
-| p < 0.02   | x_n = 0.0                 | y_n = 0.25 * y - 0.14           |
-| p < 0.86   | xn = 0.85 * x + 0.02 * y  | yn = -0.02 * x + 0.83 * y + 1.0 |
-| p < 0.93   | xn = 0.09 * x - 0.28 * y  | yn = 0.3 * x + 0.11 * y + 0.6   |
-| p < 1.00   | xn = -0.09 * x + 0.28 * y | yn = 0.3 * x + 0.09 * y + 0.7   |
+| Probability | Transformation [ xx xy yx yy xc yc ]           |
+|-------------|------------------------------------------------|
+| p < 0.02    | [  0.000  0.000  0.000  0.250  0.000 -0.140 ]  |
+| p < 0.86    | [  0.850  0.020 -0.020  0.830  0.000  1.000 ]  |
+| p < 0.93    | [  0.090 -0.280  0.300  0.110  0.000  0.600 ]  |
+| p < 1.00    | [ -0.090  0.280  0.300  0.090  0.000  0.700 ]  |
 
 ```cmd
 Time (mean ± σ):     637.9 ms ±  32.5 ms    [User: 583.6 ms, System: 33.9 ms]
@@ -379,8 +382,10 @@ Range (min … max):   589.1 ms … 683.9 ms    10 runs
 
 ### Parameters
 
-|Generator      | (see below) |
-|---------------|-------------|
+|Parameter      |Value                                                         |
+|---------------|--------------------------------------------------------------|
+|Generator (xn) | **xn** = **xx** * **x** + **xy** * **y** + **xc** (see below)|
+|Generator (yn) | **yn** = **yx** * **x** + **yy** * **y** + **yc** (see below)|
 |inside color   | 128 |
 |threshold      | 10000000 |
 |parameter files| [thelypteridaceae](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/thelypteridaceae.json) |
@@ -389,16 +394,77 @@ Range (min … max):   589.1 ms … 683.9 ms    10 runs
 
 ### Generator
 
-| Probability| Transformation (x_n)              | Transformation (y_n)             |
-|------------|-----------------------------------|----------------------------------|
-| p < 0.02   | x_n = 0.0                         | y_n = 0.25 * y - 0.4             |
-| p < 0.86   | xn = 0.95 * x + 0.005 * y - 0.002 | yn = -0.005 * x + 0.93 * y + 0.5 |
-| p < 0.93   | xn = 0.035 * x - 0.2 * y - 0.09   | yn = 0.16 * x + 0.04 * y + 0.02  |
-| p < 1.00   | xn = -0.04 * x + 0.2 * y + 0.083  | yn = 0.16 * x + 0.04 * y + 0.12  |
+| Probability | Transformation [ xx xy yx yy xc yc ]           |
+|-------------|------------------------------------------------|
+| p < 0.02    | [  0.000  0.000  0.000  0.250  0.000 -0.400 ]  |
+| p < 0.86    | [  0.950  0.005 -0.005  0.930 -0.002  0.500 ]  |
+| p < 0.93    | [  0.035 -0.200  0.160  0.040 -0.090  0.020 ]  |
+| p < 1.00    | [ -0.040  0.200  0.160  0.040  0.083  0.120 ]  |
 
 ```cmd
 Time (mean ± σ):     572.3 ms ±   8.5 ms    [User: 533.0 ms, System: 31.7 ms]
 Range (min … max):   562.6 ms … 590.9 ms    10 runs
+```
+
+## Sierpinski Carpet
+![Sierpinski Carpet](samples/sierpinski-carpet.png)
+
+### Parameters
+
+|Parameter      |Value                                                         |
+|---------------|--------------------------------------------------------------|
+|Generator (xn) | **xn** = **xx** * **x** + **xy** * **y** + **xc** (see below)|
+|Generator (yn) | **yn** = **yx** * **x** + **yy** * **y** + **yc** (see below)|
+|inside color   | 128 |
+|threshold      | 10000000 |
+|parameter files| [sierpinski-carpet](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/sierpinski-carpet.json) |
+|palette        | [sand](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/sand.json) |
+|source         | [BarnsleyFern.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/BarnsleyFern.hpp) |
+
+### Generator
+
+| Probability | Transformation [ xx xy yx yy xc yc ]     |
+|-------------|------------------------------------------|
+| p < 0.125   | [  0.33  0.00  0.00  0.33 -0.66  0.66  ] |
+| p < 0.250   | [  0.33  0.00  0.00  0.33  0.00  0.66  ] |
+| p < 0.375   | [  0.33  0.00  0.00  0.33  0.66  0.66  ] |
+| p < 0.500   | [  0.33  0.00  0.00  0.33 -0.66  0.00  ] |
+| p < 0.625   | [  0.33  0.00  0.00  0.33  0.66  0.00  ] |
+| p < 0.750   | [  0.33  0.00  0.00  0.33 -0.66 -0.66  ] |
+| p < 0.875   | [  0.33  0.00  0.00  0.33  0.00 -0.66  ] |
+| p < 1.000   | [  0.33  0.00  0.00  0.33  0.66 -0.66  ] |
+
+```cmd
+Time (mean ± σ):     429.3 ms ±  31.5 ms    [User: 402.7 ms, System: 18.1 ms]
+Range (min … max):   393.0 ms … 472.3 ms    10 runs
+```
+
+## Sierpinski Triangle
+![Sierpinski Triangle](samples/sierpinski-triangle.png)
+
+### Parameters
+
+|Parameter      | Value                                                        |
+|---------------|--------------------------------------------------------------|
+|Generator (xn) | **xn** = **xx** * **x** + **xy** * **y** + **xc** (see below)|
+|Generator (yn) | **yn** = **yx** * **x** + **yy** * **y** + **yc** (see below)|
+|inside color   | 128 |
+|threshold      | 10000000 |
+|parameter files| [sierpinski-triangle](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/sierpinski-triangle.json) |
+|palette        | [gnpu](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/gnpu.json) |
+|source         | [BarnsleyFern.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/BarnsleyFern.hpp) |
+
+### Generator
+
+| Probability | Transformation [ xx xy yx yy xc yc ]     |
+|-------------|------------------------------------------|
+| p < 0.33    | [  0.50  0.00  0.00  0.50 -0.50 -0.50  ] |
+| p < 0.66    | [  0.50  0.00  0.00  0.50  0.00  0.50  ] |
+| p < 1.00    | [  0.50  0.00  0.00  0.50  0.50 -0.50  ] |
+
+```cmd
+Time (mean ± σ):     377.3 ms ±  26.8 ms    [User: 353.2 ms, System: 16.8 ms]
+Range (min … max):   350.7 ms … 432.0 ms    10 runs
 ```
 
 **GitHub Repository**: [https://github.com/daelsepara/sdl-fractals](https://github.com/daelsepara/sdl-fractals)
