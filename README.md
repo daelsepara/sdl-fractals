@@ -39,7 +39,7 @@ Use normalized color mapping.
 # Examples
 
 ## Mandelbrot Set
-![Mandelbrot Set](https://github.com/daelsepara/sdl-fractals/tree/main/samples/mandelbrot.png)
+![Mandelbrot Set](samples/mandelbrot.png)
 
 ### Parameters
 
@@ -72,7 +72,7 @@ Range (min … max):   647.1 ms … 744.7 ms    10 runs
 ```
 
 ## Newton
-![Newton](https://github.com/daelsepara/sdl-fractals/tree/main/samples/newton1.png)
+![Newton](samples/newton1.png)
 
 ### Parameters
 
@@ -99,7 +99,7 @@ Range (min … max):   855.1 ms … 882.9 ms    10 runs
 
 ### Specific Parameters and Benchmarks
 
-![Julia 1](https://github.com/daelsepara/sdl-fractals/tree/main/samples/julia1.png)
+![Julia 1](samples/julia1.png)
 
 |C         | -0.4 + 0.6i |
 |parameter file| [julia1](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia1.json) |
@@ -110,7 +110,7 @@ Time (mean ± σ):     821.6 ms ±   8.3 ms    [User: 770.7 ms, System: 38.7 ms]
 Range (min … max):   812.3 ms … 836.7 ms    10 runs
 ```
 
-![Julia 2](https://github.com/daelsepara/sdl-fractals/tree/main/samples/julia2.png)
+![Julia 2](samples/julia2.png)
 
 |C         | -0.8 + 0.156i |
 |parameter file| [julia2](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia2.json) |
@@ -121,7 +121,7 @@ Time (mean ± σ):     936.7 ms ±  10.5 ms    [User: 881.0 ms, System: 39.5 ms]
 Range (min … max):   925.1 ms … 959.9 ms    10 runs
 ```
 
-![Julia 3](https://github.com/daelsepara/sdl-fractals/tree/main/samples/julia3.png)
+![Julia 3](samples/julia3.png)
 
 |C         | 0.285 + 0.01i |
 |parameter file| [julia3](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia3.json) |
@@ -132,7 +132,7 @@ Time (mean ± σ):     732.1 ms ±  12.2 ms    [User: 678.0 ms, System: 38.8 ms]
 Range (min … max):   718.5 ms … 755.8 ms    10 run
 ```
 
-![Julia 4](https://github.com/daelsepara/sdl-fractals/tree/main/samples/julia4.png)
+![Julia 4](samples/julia4.png)
 
 |C         | -0.7269 + 0.1889i |
 |parameter file| [julia4](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia4.json) |
@@ -144,7 +144,7 @@ Range (min … max):    1.201 s …  1.263 s    10 runs
 ```
 
 ## Mandelbrot4
-![Mandelbrot 4](https://github.com/daelsepara/sdl-fractals/tree/main/samples/mandelbrot4.png)
+![Mandelbrot 4](samples/mandelbrot4.png)
 
 ### Parameters
 
@@ -162,7 +162,7 @@ Range (min … max):    3.898 s …  4.063 s    10 runs
 ```
 
 ## Burning Ship
-![Burning Ship](https://github.com/daelsepara/sdl-fractals/tree/main/samples/burningship.png)
+![Burning Ship](samples/burningship.png)
 
 ### Parameters
 
@@ -183,7 +183,7 @@ Range (min … max):   552.8 ms … 567.2 ms    10 runs
 ```
 
 ## Burning Ship (2)
-![Burning Ship 2](https://github.com/daelsepara/sdl-fractals/tree/main/samples/burningship2.png)
+![Burning Ship 2](samples/burningship2.png)
 
 ### Parameters
 
@@ -204,7 +204,7 @@ Range (min … max):    1.248 s …  2.128 s    10 runs
 ```
 
 ## Burning Ship (3)
-![Burning Ship 3](https://github.com/daelsepara/sdl-fractals/tree/main/samples/burningship3.png)
+![Burning Ship 3](samples/burningship3.png)
 
 ### Parameters
 
@@ -225,7 +225,7 @@ Range (min … max):    1.248 s …  2.128 s    10 runs
 ```
 
 ## Tricorn
-![Tricorn](https://github.com/daelsepara/sdl-fractals/tree/main/samples/tricorn.png)
+![Tricorn](samples/tricorn.png)
 
 ### Parameters
 
@@ -243,7 +243,7 @@ Range (min … max):   536.0 ms … 602.0 ms    10 runs
 ```
 
 ## Multicorn
-![Multicorn](https://github.com/daelsepara/sdl-fractals/tree/main/samples/multicorn.png)
+![Multicorn](samples/multicorn.png)
 
 ### Parameters
 
@@ -262,7 +262,7 @@ Range (min … max):    1.293 s …  1.346 s    10 runs
 ```
 
 ## Barnsley Fern
-![Barnsley Fern](https://github.com/daelsepara/sdl-fractals/tree/main/samples/barnsleyfern.png)
+![Barnsley Fern](samples/barnsleyfern.png)
 
 ### Parameters
 
@@ -287,7 +287,7 @@ Range (min … max):   648.1 ms … 676.3 ms    10 runs
 ```
 
 ## Barnsley Fern (Culcita)
-![Barnsley Fern](https://github.com/daelsepara/sdl-fractals/tree/main/samples/culcita.png)
+![Barnsley Fern](samples/culcita.png)
 
 ### Parameters
 
@@ -312,7 +312,7 @@ Range (min … max):   589.1 ms … 683.9 ms    10 runs
 ```
 
 ## Barnsley Fern (Thelypteridaceae)
-![Barnsley Fern](https://github.com/daelsepara/sdl-fractals/tree/main/samples/thelypteridaceae.png)
+![Barnsley Fern](samples/thelypteridaceae.png)
 
 ### Parameters
 
