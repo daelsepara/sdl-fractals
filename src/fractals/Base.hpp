@@ -20,8 +20,6 @@ namespace Fractal
     public:
         void render(std::string palette)
         {
-            std::cerr << "generating..." << std::endl;
-
             this->generate();
 
             Fractal::RenderImage(this->grid, this->parameters, palette);

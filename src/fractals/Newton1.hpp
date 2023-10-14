@@ -45,11 +45,17 @@ namespace Fractal
 
                         auto oldy = zy;
 
-                        tmp = (zx * zx + zy * zy) * (zx * zx + zy * zy);
+                        auto zxx = zx * zx;
 
-                        zx = (2 * zx * tmp + zx * zx - zy * zy) / (3.0 * tmp);
+                        auto zyy = zy * zy;
 
-                        zy = (2 * zy * (tmp - oldx)) / (3.0 * tmp);
+                        tmp = (zxx + zyy) * (zxx + zyy);
+
+                        auto tmp3 = 3.0 * tmp;
+
+                        zx = ((zx + zx) * tmp + zxx - zyy) / tmp3;
+
+                        zy = ((zy + zy) * (tmp - oldx)) / tmp3;
 
                         auto zx1 = zx - oldx;
 

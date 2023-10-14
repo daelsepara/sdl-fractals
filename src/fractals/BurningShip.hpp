@@ -41,7 +41,7 @@ namespace Fractal
                     {
                         auto xtemp = zx * zx - zy * zy + cx;
 
-                        zy = std::abs(2 * zx * zy) + cy;
+                        zy = std::abs((zx + zx) * zy) + cy;
 
                         zx = xtemp;
 

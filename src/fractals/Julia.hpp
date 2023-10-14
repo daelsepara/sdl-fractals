@@ -39,7 +39,7 @@ namespace Fractal
                     {
                         auto xtemp = zx * zx - zy * zy + this->parameters.cx;
 
-                        zy = 2 * zx * zy + this->parameters.cy;
+                        zy = (zx + zx) * zy + this->parameters.cy;
 
                         zx = xtemp;
 

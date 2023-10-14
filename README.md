@@ -128,7 +128,7 @@ Range (min … max):   855.1 ms … 882.9 ms    10 runs
 |----------|-------------|
 |C         | -0.4 + 0.6i |
 |parameter file| [julia1](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia1.json) |
-|palette   | [plasma](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/plasma.json) |
+|palette   | [magma](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/magma.json) |
 
 ```cmd
 Time (mean ± σ):     821.6 ms ±   8.3 ms    [User: 770.7 ms, System: 38.7 ms]

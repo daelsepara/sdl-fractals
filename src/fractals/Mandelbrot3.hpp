@@ -48,7 +48,7 @@ namespace Fractal
                     // generate escape time fractal
                     while ((zx + zy) <= threshold && (t < this->parameters.escape_time_threshold))
                     {
-                        yy = 2 * xx * yy + cy;
+                        yy = (xx + xx) * yy + cy;
 
                         xx = zx - zy + cx;
 
