@@ -31,19 +31,19 @@ namespace Fractal
 
                 for (auto x = 0; x < this->parameters.x_pixels; x++)
                 {
-                    auto t = 0;
+                    auto t = 1;
 
                     // calculate location cx on complex plane
                     auto cx = this->parameters.scaled_x(x, dx);
 
                     // initial condition z0 (zx, zy)
-                    auto zx = 0.0;
+                    auto zx = cx * cx;
 
-                    auto zy = 0.0;
+                    auto zy = cy * cy;
 
-                    auto xx = 0.0;
+                    auto xx = cx;
 
-                    auto yy = 0.0;
+                    auto yy = cy;
 
                     // generate escape time fractal
                     while ((zx + zy) <= threshold && (t < this->parameters.escape_time_threshold))

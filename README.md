@@ -74,20 +74,20 @@ Use normalized color mapping.
 
 **mandelbrot**
 ```cmd
-Time (mean ± σ):     740.5 ms ±   6.3 ms    [User: 694.0 ms, System: 35.1 ms]
-Range (min … max):   729.2 ms … 751.2 ms    10 runs
+Time (mean ± σ):     474.8 ms ±   7.7 ms    [User: 450.3 ms, System: 17.9 ms]
+Range (min … max):   460.1 ms … 484.7 ms    10 runs
 ```
 
 **mandelbrot2**
 ```cmd
-Time (mean ± σ):     651.1 ms ±   8.4 ms    [User: 604.5 ms, System: 36.2 ms]
-Range (min … max):   639.8 ms … 662.9 ms    10 runs
+Time (mean ± σ):     382.1 ms ±   7.6 ms    [User: 359.3 ms, System: 17.4 ms]
+Range (min … max):   375.8 ms … 401.5 ms    10 runs
 ```
 
 **mandelbrot3**
 ```cmd
-Time (mean ± σ):     681.8 ms ±  35.2 ms    [User: 619.5 ms, System: 38.9 ms]
-Range (min … max):   647.1 ms … 744.7 ms    10 runs
+Time (mean ± σ):     390.9 ms ±  11.6 ms    [User: 365.0 ms, System: 18.2 ms]
+Range (min … max):   376.6 ms … 411.8 ms    10 runs
 ```
 
 ## Newton
