@@ -194,6 +194,20 @@ def paired(x):
     return [color['r'], color['g'], color['b']]
 
 
+def rainbow(x):
+    data = pd.DataFrame([[0xBE, 0x0A, 0xFF],
+                         [0x58, 0x0A, 0xFF],
+                         [0x14, 0x7D, 0x85],
+                         [0x0A, 0xEF, 0xFF],
+                         [0x0A, 0xFF, 0x99],
+                         [0xA1, 0xFF, 0x0A],
+                         [0xDE, 0xFF, 0x0A],
+                         [0xFF, 0xD3, 0x00],
+                         [0XFF, 0x87, 0x00],
+                         [0XFF, 0x00, 0x00]], columns=['r', 'g', 'b'])
+    color = lerp(x, data/255)
+    return [color['r'], color['g'], color['b']]
+
 def main():
     parser = argparse.ArgumentParser(
         prog='Generate palette',
@@ -242,6 +256,8 @@ def main():
             value = purple(x)
         elif args.type == 'bluered':
             value = bluered(x)
+        elif args.type == 'rainbow':
+            value = rainbow(x)
         else:
             value = [x, x, x]
 
