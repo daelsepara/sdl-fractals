@@ -492,4 +492,8 @@ Range (min … max):   350.7 ms … 432.0 ms    10 runs
 ![Julia Flower](samples/julia-flower.png)
 **Parameter:** [julia-flower](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia-flower.json)
 
+## Mandelbrot (Histogram coloring)
+![Mandelbrot Histogram](samples/mandelbrot-histogram.png)
+**Parameter:** [mandelbrot-histogram](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/mandelbrot-histogram.json)
+
 **GitHub Repository**: [https://github.com/daelsepara/sdl-fractals](https://github.com/daelsepara/sdl-fractals)

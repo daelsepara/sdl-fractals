@@ -61,6 +61,9 @@ namespace Fractal
         // modulus color mapping
         bool mod_coloring = false;
 
+        // histogram color mapping
+        bool histogram_coloring = false;
+
         // invert colors
         bool invert_colors = false;
 
@@ -182,6 +185,9 @@ namespace Fractal
 
                 // modulus coloring
                 this->mod_coloring = !data["mod_coloring"].is_null() ? (bool)data["mod_coloring"] : false;
+
+                // histogram coloring
+                this->histogram_coloring = !data["histogram_coloring"].is_null() ? (bool)data["histogram_coloring"] : false;
 
                 // transforms
                 if (!data["transforms"].is_null() && data["transforms"].is_array())

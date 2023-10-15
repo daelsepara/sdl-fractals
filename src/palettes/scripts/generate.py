@@ -60,17 +60,43 @@ def red(x):
     color = lerp(x, data)
     return [color['r'], color['g'], color['b']]
 
+
 def purple(x):
     data = pd.DataFrame([[0.0, 0.0, 0.0],
                          [1.0, 0.0, 1.0]], columns=['r', 'g', 'b'])
     color = lerp(x, data)
     return [color['r'], color['g'], color['b']]
 
+
 def bluered(x):
     data = pd.DataFrame([[0.0, 0.0, 0.1],
                          [0.25, 0.0, 0.5],
                          [1.0, 0.0, 0.0]], columns=['r', 'g', 'b'])
     color = lerp(x, data)
+    return [color['r'], color['g'], color['b']]
+
+
+def bbw(x):
+    data = pd.DataFrame([[0x1A, 0x1A, 0x1A],
+                         [0x27, 0x34, 0x4D],
+                         [0x34, 0x50, 0x82],
+                         [0x41, 0x6A, 0xB6],
+                         [0x61, 0x8A, 0xD5],
+                         [0x91, 0xAC, 0xDF],
+                         [0xC2, 0xD0, 0xE9],
+                         [0xF2, 0xF2, 0xF2]], columns=['r', 'g', 'b'])
+    color = lerp(x, data/255)
+    return [color['r'], color['g'], color['b']]
+
+
+def rocket(x):
+    data = pd.DataFrame([[0x35, 0x19, 0x3E],
+                         [0x70, 0x1F, 0x57],
+                         [0xAD, 0x17, 0x59],
+                         [0xE1, 0x33, 0x42],
+                         [0xF3, 0x76, 0x51],
+                         [0xF6, 0xB4, 0x8F]], columns=['r', 'g', 'b'])
+    color = lerp(x, data/255)
     return [color['r'], color['g'], color['b']]
 
 
@@ -209,6 +235,7 @@ def rainbow(x):
     color = lerp(x, data/255)
     return [color['r'], color['g'], color['b']]
 
+
 def main():
     parser = argparse.ArgumentParser(
         prog='Generate palette',
@@ -259,6 +286,10 @@ def main():
             value = bluered(x)
         elif args.type == 'rainbow':
             value = rainbow(x)
+        elif args.type == 'bbw':
+            value = bbw(x)
+        elif args.type == 'rocket':
+            value = rocket(x)
         else:
             value = [x, x, x]
 

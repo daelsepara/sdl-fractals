@@ -3,6 +3,7 @@
 
 #include <cstdlib>
 #include <iostream>
+#include <map>
 #include <string>
 
 #include <SDL2/SDL.h>
@@ -16,7 +17,7 @@ namespace Fractal
     Grid InitializeGrid(Fractal::Parameters &parameters)
     {
         // create complex plane
-        return std::vector<std::vector<int>>(parameters.y_pixels, std::vector<int>(parameters.x_pixels));
+        return Fractal::Grid(parameters.y_pixels, Fractal::GridRow(parameters.x_pixels, 0));
     }
 
     SDL_Surface *GenerateSurface(Fractal::Grid &grid, Fractal::Parameters &parameters, Fractal::Palette &palette)
@@ -344,6 +345,50 @@ namespace Fractal
         }
     }
 
+    void Histogram(Fractal::Grid &grid)
+    {
+        auto NumIterationsPerPixel = std::map<int, int>();
+
+        // pass 1: compute histogram
+        for (auto y = 0; y < grid.size(); y++)
+        {
+            for (auto x = 0; x < grid[y].size(); x++)
+            {
+                NumIterationsPerPixel[grid[y][x]]++;
+            }
+        }
+
+        // pass 2: compute total counts
+        auto total = 0;
+
+        for (auto i = NumIterationsPerPixel.begin(); i != NumIterationsPerPixel.end(); ++i)
+        {
+            total += i->second;
+        }
+
+        // pass 3: compute hue
+        auto hue = std::vector<std::vector<double>>(grid.size(), std::vector<double>(grid[0].size(), 0.0));
+
+        for (auto y = 0; y < grid.size(); y++)
+        {
+            for (auto x = 0; x < grid[y].size(); x++)
+            {
+                auto iteration = grid[y][x];
+
+                for (auto i = NumIterationsPerPixel.begin(); i != NumIterationsPerPixel.end(); ++i)
+                {
+                    if (iteration <= i->first)
+                    {
+                        hue[y][x] += (double)i->second / (double)total;
+                    }
+                }
+
+                // pass 4: map to color
+                grid[y][x] = (int)(hue[y][x] * 255.0);
+            }
+        }
+    }
+
     void FinalizeColors(Fractal::Grid &grid, Fractal::Parameters &parameters, int max_color)
     {
         if (parameters.log_coloring)
@@ -357,6 +402,10 @@ namespace Fractal
         else if (parameters.mod_coloring)
         {
             Fractal::Mod(grid);
+        }
+        else if (parameters.histogram_coloring)
+        {
+            Fractal::Histogram(grid);
         }
         else
         {

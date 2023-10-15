@@ -131,6 +131,14 @@ bool ParseString(std::string arg, char **argv, int i, const char *param, std::st
 #undef main
 #endif
 
+void reset_colormap(Fractal::Parameters &parameters)
+{
+	parameters.log_coloring = false;
+	parameters.normalized_coloring = false;
+	parameters.mod_coloring = false;
+	parameters.histogram_coloring = false;
+}
+
 int main(int argc, char **argv)
 {
 	std::string parameters_file;
@@ -143,10 +151,12 @@ int main(int argc, char **argv)
 	bool normalized_coloring = false;
 	bool log_coloring = false;
 	bool mod_coloring = false;
+	bool histogram_coloring = false;
 	bool invertx = false;
 	bool inverty = false;
 	bool benchmark = false;
 	bool invert_colors = false;
+	bool default_coloring = false;
 
 	if (argc > 1)
 	{
@@ -173,6 +183,18 @@ int main(int argc, char **argv)
 			{
 				mod_coloring = true;
 			}
+			else if (arg == "/HISTOGRAM")
+			{
+				histogram_coloring = true;
+			}
+			else if (arg == "/DEFAULT")
+			{
+				default_coloring = true;
+			}
+			else if (arg == "/INVERT")
+			{
+				invert_colors = true;
+			}
 			else if (arg == "/INVERTX")
 			{
 				invertx = true;
@@ -185,10 +207,6 @@ int main(int argc, char **argv)
 			{
 				benchmark = true;
 			}
-			else if (arg == "/INVERT")
-			{
-				invert_colors = true;
-			}
 		}
 	}
 
@@ -198,17 +216,35 @@ int main(int argc, char **argv)
 
 		if (normalized_coloring)
 		{
+			reset_colormap(parameters);
+
 			parameters.normalized_coloring = true;
 		}
 
 		if (log_coloring)
 		{
+			reset_colormap(parameters);
+
 			parameters.log_coloring = true;
 		}
 
 		if (mod_coloring)
 		{
+			reset_colormap(parameters);
+
 			parameters.mod_coloring = true;
+		}
+
+		if (histogram_coloring)
+		{
+			reset_colormap(parameters);
+
+			parameters.histogram_coloring = true;
+		}
+
+		if (default_coloring)
+		{
+			reset_colormap(parameters);
 		}
 
 		if (invertx)

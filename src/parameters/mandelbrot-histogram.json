@@ -1,0 +1,13 @@
+{
+    "type": "mandelbrot",
+    "x_pixels": 2048,
+    "y_pixels": 2048,
+    "escape_time_threshold": 100,
+    "escape_value_threshold": 2.0,
+    "exponent": 2,
+    "min_x": -2.01,
+    "max_x": 0.69,
+    "min_y": -1.35,
+    "max_y": 1.35,
+    "histogram_coloring": true
+}
