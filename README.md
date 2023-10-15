@@ -1,5 +1,8 @@
 Fractal Image Generators in SDL
 
+# GitHub Repository
+[https://github.com/daelsepara/sdl-fractals](https://github.com/daelsepara/sdl-fractals)
+
 # Building (Unix/Linux)
 
 ```cmd
@@ -466,5 +469,27 @@ Range (min … max):   393.0 ms … 472.3 ms    10 runs
 Time (mean ± σ):     377.3 ms ±  26.8 ms    [User: 353.2 ms, System: 16.8 ms]
 Range (min … max):   350.7 ms … 432.0 ms    10 runs
 ```
+
+# Other Examples
+
+## Tree
+![Tree](samples/tree.png)
+**Parameter:** [tree](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/tree.json)
+
+## Seaweed
+![Seaweed](samples/seaweed.png)
+**Parameter:** [seaweed](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/seaweed.json)
+
+## Julia (Dragon)
+![Julia Dragon](samples/julia-dragon.png)
+**Parameter:** [julia-dragon](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/jula-dragon.json)
+
+## Julia (Siegel Disk)
+![Julia Siegel Disk](samples/julia-siegel.png)
+**Parameter:** [julia-siegel](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia-siegel.json)
+
+## Julia (Flower)
+![Julia Flower](samples/julia-flower.png)
+**Parameter:** [julia-flower](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia-flower.json)
 
 **GitHub Repository**: [https://github.com/daelsepara/sdl-fractals](https://github.com/daelsepara/sdl-fractals)
