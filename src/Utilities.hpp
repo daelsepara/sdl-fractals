@@ -377,7 +377,7 @@ namespace Fractal
 
                 for (auto i = NumIterationsPerPixel.begin(); i != NumIterationsPerPixel.end(); ++i)
                 {
-                    if (iteration <= i->first)
+                    if (i->first <= iteration)
                     {
                         hue[y][x] += (double)i->second / (double)total;
                     }
