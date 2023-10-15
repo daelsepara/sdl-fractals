@@ -7,8 +7,8 @@
 #include "fractals/Mandelbrot.hpp"
 #include "fractals/Mandelbrot2.hpp"
 #include "fractals/Mandelbrot3.hpp"
+#include "fractals/Multicorn.hpp"
 #include "fractals/Newton1.hpp"
 #include "fractals/Tricorn.hpp"
-#include "fractals/Multicorn.hpp"
 
 #endif

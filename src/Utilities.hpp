@@ -27,7 +27,7 @@ namespace Fractal
         return grid;
     }
 
-    SDL_Surface *GenerateSurface(Grid &grid, Fractal::Parameters &parameters, Fractal::Palette &palette)
+    SDL_Surface *GenerateSurface(Fractal::Grid &grid, Fractal::Parameters &parameters, Fractal::Palette &palette)
     {
         auto surface = SDL_CreateRGBSurface(0, parameters.x_pixels, parameters.y_pixels, 32, 0, 0, 0, 0);
 
@@ -69,7 +69,7 @@ namespace Fractal
         return surface;
     }
 
-    void RenderImage(Grid &grid, Fractal::Parameters &parameters, std::string palette_file)
+    void RenderImage(Fractal::Grid &grid, Fractal::Parameters &parameters, std::string palette_file)
     {
         // window
         SDL_Window *window = NULL;
@@ -194,7 +194,7 @@ namespace Fractal
         SDL_Quit();
     }
 
-    void SaveImage(Grid &grid, Fractal::Parameters &parameters, std::string filename, std::string palette_file)
+    void SaveImage(Fractal::Grid &grid, Fractal::Parameters &parameters, std::string filename, std::string palette_file)
     {
         auto palette = Fractal::Palette();
 
@@ -303,9 +303,79 @@ namespace Fractal
         return (Uint8)((double)color / (double)max_value * 255.0);
     }
 
-    Uint8 Clamp(int color)
+    Uint8 ClampColor(int color)
     {
         return (Uint8)(std::min(std::max(0, color), 255));
+    }
+
+    template<typename T>
+    T ModColor(T a, T m)
+    {
+        return (T)(a - m * std::floor(a / m));
+    }
+
+    void Log(Fractal::Grid &grid, int max_color)
+    {
+        for (auto y = 0; y < grid.size(); y++)
+        {
+            for (auto x = 0; x < grid[y].size(); x++)
+            {
+                grid[y][x] = Fractal::LogColor(grid[y][x], max_color);
+            }
+        }
+    }
+
+    void Normalize(Fractal::Grid &grid, int max_color)
+    {
+        for (auto y = 0; y < grid.size(); y++)
+        {
+            for (auto x = 0; x < grid[y].size(); x++)
+            {
+                grid[y][x] = Fractal::NormalizedColor(grid[y][x], max_color);
+            }
+        }
+    }
+
+    void Mod(Fractal::Grid &grid)
+    {
+        for (auto y = 0; y < grid.size(); y++)
+        {
+            for (auto x = 0; x < grid[y].size(); x++)
+            {
+                grid[y][x] = (Uint8)Fractal::ModColor((int)grid[y][x], 255);
+            }
+        }
+    }
+
+    void Clamp(Fractal::Grid &grid)
+    {
+        for (auto y = 0; y < grid.size(); y++)
+        {
+            for (auto x = 0; x < grid[y].size(); x++)
+            {
+                grid[y][x] = Fractal::ClampColor(grid[y][x]);
+            }
+        }
+    }
+
+    void FinalizeColors(Fractal::Grid &grid, Fractal::Parameters &parameters, int max_color)
+    {
+        if (parameters.log_coloring)
+        {
+            Fractal::Log(grid, max_color);
+        }
+        else if (parameters.normalized_coloring)
+        {
+            Fractal::Normalize(grid, max_color);
+        }
+        else if (parameters.mod_coloring)
+        {
+            Fractal::Mod(grid);
+        }
+        else
+        {
+            Fractal::Clamp(grid);
+        }
     }
 }
 

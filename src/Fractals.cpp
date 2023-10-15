@@ -142,6 +142,7 @@ int main(int argc, char **argv)
 	// overrides
 	bool normalized_coloring = false;
 	bool log_coloring = false;
+	bool mod_coloring = false;
 	bool invertx = false;
 	bool inverty = false;
 	bool benchmark = false;
@@ -167,6 +168,10 @@ int main(int argc, char **argv)
 			else if (arg == "/NORMALIZED")
 			{
 				normalized_coloring = true;
+			}
+			else if (arg == "/MOD")
+			{
+				mod_coloring = true;
 			}
 			else if (arg == "/INVERTX")
 			{
@@ -199,6 +204,11 @@ int main(int argc, char **argv)
 		if (log_coloring)
 		{
 			parameters.log_coloring = true;
+		}
+
+		if (mod_coloring)
+		{
+			parameters.mod_coloring = true;
 		}
 
 		if (invertx)

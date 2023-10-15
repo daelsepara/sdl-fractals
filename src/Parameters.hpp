@@ -18,9 +18,9 @@ namespace Fractal
 
     typedef std::vector<std::vector<double>> Transformations;
 
-    typedef std::vector<Uint8> GridRow;
+    typedef std::vector<int> GridRow;
 
-    typedef std::vector<std::vector<Uint8>> Grid;
+    typedef std::vector<std::vector<int>> Grid;
 
     class Parameters
     {
@@ -57,6 +57,9 @@ namespace Fractal
 
         // normalized color mapping
         bool normalized_coloring = false;
+
+        // modulus color mapping
+        bool mod_coloring = false;
 
         // invert colors
         bool invert_colors = false;
@@ -151,7 +154,7 @@ namespace Fractal
                 this->y_pixels = !data["y_pixels"].is_null() ? (int)data["y_pixels"] : 2048;
 
                 // parameters for escape time type of fractals
-                this->escape_time_threshold = !data["escape_time_threshold"].is_null() ? (int)data["escape_time_threshold"] : std::numeric_limits<int>::quiet_NaN();
+                this->escape_time_threshold = !data["escape_time_threshold"].is_null() ? (int)data["escape_time_threshold"] : 255;
                 this->escape_value_threshold = !data["escape_value_threshold"].is_null() ? (double)data["escape_value_threshold"] : std::numeric_limits<double>::quiet_NaN();
 
                 // mandelbrot parameter
@@ -176,6 +179,9 @@ namespace Fractal
 
                 // normalized coloring
                 this->normalized_coloring = !data["normalized_coloring"].is_null() ? (bool)data["normalized_coloring"] : false;
+
+                // modulus coloring
+                this->mod_coloring = !data["mod_coloring"].is_null() ? (bool)data["mod_coloring"] : false;
 
                 // transforms
                 if (!data["transforms"].is_null() && data["transforms"].is_array())
