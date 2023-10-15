@@ -482,7 +482,7 @@ Range (min … max):   350.7 ms … 432.0 ms    10 runs
 
 ## Julia (Dragon)
 ![Julia Dragon](samples/julia-dragon.png)
-**Parameter:** [julia-dragon](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/jula-dragon.json)
+**Parameter:** [julia-dragon](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia-dragon.json)
 
 ## Julia (Siegel Disk)
 ![Julia Siegel Disk](samples/julia-siegel.png)
