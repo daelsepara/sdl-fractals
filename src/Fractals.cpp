@@ -126,6 +126,10 @@ bool ParseString(std::string arg, char **argv, int i, const char *param, std::st
 	return result;
 }
 
+#ifdef _WIN32
+#undef main
+#endif
+
 int main(int argc, char **argv)
 {
 	std::string parameters_file;

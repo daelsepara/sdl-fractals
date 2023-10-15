@@ -33,7 +33,17 @@
 
 # local settings
 .vscode/
+.vs/
+
+# miscellaneous
+*.user
+*.filters
+
+# vs output directories
+*/x64/Release/*
+*/x64/Debug/*
 
 # generated files
 *.ppm
 *.png
+
