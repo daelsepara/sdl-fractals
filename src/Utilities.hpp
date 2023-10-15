@@ -16,15 +16,7 @@ namespace Fractal
     Grid InitializeGrid(Fractal::Parameters &parameters)
     {
         // create complex plane
-        auto grid = Fractal::Grid(parameters.y_pixels);
-
-        // initialize grid
-        for (auto y = 0; y < parameters.y_pixels; y++)
-        {
-            grid[y] = Fractal::GridRow(parameters.x_pixels);
-        }
-
-        return grid;
+        return std::vector<std::vector<int>>(parameters.y_pixels, std::vector<int>(parameters.x_pixels));
     }
 
     SDL_Surface *GenerateSurface(Fractal::Grid &grid, Fractal::Parameters &parameters, Fractal::Palette &palette)
@@ -308,12 +300,6 @@ namespace Fractal
         return (Uint8)(std::min(std::max(0, color), 255));
     }
 
-    template<typename T>
-    T ModColor(T a, T m)
-    {
-        return (T)(a - m * std::floor(a / m));
-    }
-
     void Log(Fractal::Grid &grid, int max_color)
     {
         for (auto y = 0; y < grid.size(); y++)
@@ -342,7 +328,7 @@ namespace Fractal
         {
             for (auto x = 0; x < grid[y].size(); x++)
             {
-                grid[y][x] = (Uint8)Fractal::ModColor((int)grid[y][x], 255);
+                grid[y][x] = (Uint8)(grid[y][x] % 255);
             }
         }
     }
