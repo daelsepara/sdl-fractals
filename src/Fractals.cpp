@@ -126,6 +126,7 @@ bool ParseString(std::string arg, char **argv, int i, const char *param, std::st
 	return result;
 }
 
+// SDL2 header in Windows define SDL_main as main that interferes with the build
 #ifdef _WIN32
 #undef main
 #endif
