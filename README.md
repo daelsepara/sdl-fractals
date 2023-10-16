@@ -321,10 +321,10 @@ Range (min … max):   536.0 ms … 602.0 ms    10 runs
 |exponent       | 4 |
 |inside color   | 0 |
 |threshold      | 255 |
-|orbit          | 4.0 |
+|orbit          | 2.0 |
 |parameter file | [multicorn](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/multicorn.json) |
 |palette        | [viridis](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/viridis.json) |
-|source         | [Multicorn.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Multicorn.hpp) |
+|source         | [Mandelbrot.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Mandelbrot.hpp) |
 
 ```cmd
 Time (mean ± σ):      1.316 s ±  0.016 s    [User: 1.261 s, System: 0.040 s]

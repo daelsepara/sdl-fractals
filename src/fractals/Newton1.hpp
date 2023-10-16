@@ -65,7 +65,14 @@ namespace Fractal
                     }
 
                     // set escape-time color
-                    this->grid[y][x] = t;
+                    if (t != this->parameters.escape_time_threshold)
+                    {
+                        this->grid[y][x] = t;
+                    }
+                    else
+                    {
+                        this->grid[y][x] = this->parameters.inside_color;
+                    }
                 }
             }
         }

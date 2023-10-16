@@ -292,10 +292,6 @@ int main(int argc, char **argv)
 		{
 			fractal = new Fractal::Tricorn(parameters);
 		}
-		else if (parameters.type == "multicorn")
-		{
-			fractal = new Fractal::Multicorn(parameters);
-		}
 		else if (parameters.type == "ifs")
 		{
 			fractal = new Fractal::IteratedFunctionSystem(parameters);

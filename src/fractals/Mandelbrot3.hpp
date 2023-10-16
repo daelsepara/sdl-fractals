@@ -66,7 +66,7 @@ namespace Fractal
                     }
                     else
                     {
-                        this->grid[y][x] = 0;
+                        this->grid[y][x] = this->parameters.inside_color;
                     }
                 }
             }

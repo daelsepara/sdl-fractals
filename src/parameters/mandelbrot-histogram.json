@@ -6,6 +6,7 @@
     "escape_value_threshold": 2.0,
     "exponent": 2,
     "function": "z",
+    "inside_color": 0,
     "min_x": -2.01,
     "max_x": 0.69,
     "min_y": -1.35,

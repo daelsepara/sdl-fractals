@@ -50,7 +50,7 @@ namespace Fractal
         double cy = 0.156;
 
         // inside color
-        int inside_color = 128;
+        int inside_color = 0;
 
         // log color mapping
         bool log_coloring = false;
@@ -174,7 +174,7 @@ namespace Fractal
                 this->cy = !data["cy"].is_null() ? (double)data["cy"] : std::numeric_limits<double>::quiet_NaN();
 
                 // inside_color
-                this->inside_color = !data["inside_color"].is_null() ? (int)data["inside_color"] : std::numeric_limits<int>::quiet_NaN();
+                this->inside_color = !data["inside_color"].is_null() ? (int)data["inside_color"] : 0;
 
                 // invert axis
                 this->invert_x = !data["invert_x"].is_null() ? (bool)data["invert_x"] : false;

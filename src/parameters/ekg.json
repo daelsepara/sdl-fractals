@@ -5,6 +5,8 @@
     "escape_time_threshold": 255,
     "escape_value_threshold": 2.0,
     "exponent": 2,
+    "function": "z",
+    "inside_color": 0,
     "cx": -1.5,
     "cy": 0.0,
     "min_x": -2.0,
