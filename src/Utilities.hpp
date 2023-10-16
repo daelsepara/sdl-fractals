@@ -367,7 +367,7 @@ namespace Fractal
         }
 
         // pass 3: compute hue
-        auto hue = std::vector<std::vector<int>>(grid.size(), std::vector<int>(grid[0].size(), 0.0));
+        auto hue = std::vector<std::vector<int>>(grid.size(), std::vector<int>(grid[0].size(), 0));
 
         auto color_scaler = 1.0 / (double)total * 255.0;
 
