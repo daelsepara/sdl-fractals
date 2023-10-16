@@ -23,6 +23,34 @@ namespace Fractal
             // pre-calculate escape orbit
             auto threshold = this->parameters.escape_value_threshold * this->parameters.escape_value_threshold;
 
+            // pointer to complex function
+            void (*ComplexFunction)(double &, double &);
+
+            if (this->parameters.function == "sin")
+            {
+                ComplexFunction = Fractal::Sin;
+            }
+            else if (this->parameters.function == "cos")
+            {
+                ComplexFunction = Fractal::Cos;
+            }
+            else if (this->parameters.function == "tan")
+            {
+                ComplexFunction = Fractal::Tan;
+            }
+            else if (this->parameters.function == "exp")
+            {
+                ComplexFunction = Fractal::Exp;
+            }
+            else if (this->parameters.function == "conj")
+            {
+                ComplexFunction = Fractal::Conjugate;
+            }
+            else
+            {
+                ComplexFunction = Fractal::Identity;
+            }
+
             // calculate julia set
             for (auto y = 0; y < this->parameters.y_pixels; y++)
             {
@@ -35,19 +63,37 @@ namespace Fractal
 
                     auto zy = this->parameters.scaled_y(y, dy);
 
-                    while ((zx * zx + zy * zy) <= threshold && (t < this->parameters.escape_time_threshold))
+                    // generate escape time fractal
+                    while (t < this->parameters.escape_time_threshold)
                     {
-                        auto xtemp = zx * zx - zy * zy + this->parameters.cx;
+                        ComplexFunction(zx, zy);
 
-                        zy = (zx + zx) * zy + this->parameters.cy;
+                        if (this->parameters.exponent != 1)
+                        {
+                            Fractal::Power(zx, zy, this->parameters.exponent);
+                        }
 
-                        zx = xtemp;
+                        zx += this->parameters.cx;
+
+                        zy += this->parameters.cy;
+
+                        if ((zx * zx + zy * zy) > threshold)
+                        {
+                            break;
+                        }
 
                         t++;
                     }
 
                     // set escape-time color
-                    this->grid[y][x] = t;
+                    if (t != this->parameters.escape_time_threshold)
+                    {
+                        this->grid[y][x] = t;
+                    }
+                    else
+                    {
+                        this->grid[y][x] = 0;
+                    }
                 }
             }
         }

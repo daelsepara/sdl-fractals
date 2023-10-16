@@ -74,6 +74,9 @@ namespace Fractal
         // transformations
         Fractal::Transformations transforms = Fractal::Transformations();
 
+        // function
+        std::string function = "z";
+
         double dx()
         {
             return (double)(this->max_x - this->min_x) / (double)(this->x_pixels);
@@ -188,6 +191,9 @@ namespace Fractal
 
                 // histogram coloring
                 this->histogram_coloring = !data["histogram_coloring"].is_null() ? (bool)data["histogram_coloring"] : false;
+
+                // function
+                this->function = !data["function"].is_null() ? std::string(data["function"]) : std::string("z");
 
                 // transforms
                 if (!data["transforms"].is_null() && data["transforms"].is_array())

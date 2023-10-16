@@ -9,6 +9,7 @@
 #include "fractals/Mandelbrot3.hpp"
 #include "fractals/Multicorn.hpp"
 #include "fractals/Newton1.hpp"
+#include "fractals/SimpleJulia.hpp"
 #include "fractals/Tricorn.hpp"
 
 #endif

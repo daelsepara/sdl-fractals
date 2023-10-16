@@ -1,0 +1,16 @@
+{
+    "type": "simplejulia",
+    "x_pixels": 2048,
+    "y_pixels": 2048,
+    "escape_time_threshold": 100,
+    "escape_value_threshold": 0.0001,
+    "exponent": 1,
+    "cx": 0.0,
+    "cy": 0.0,
+    "function": "sin",
+    "min_x": -2.0,
+    "max_x": 2.0,
+    "min_y": -2.0,
+    "max_y": 2.0,
+    "log_coloring": true
+}

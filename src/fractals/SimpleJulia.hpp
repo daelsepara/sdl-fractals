@@ -1,5 +1,5 @@
-#ifndef __MANDELBROT_HPP__
-#define __MANDELBROT_HPP__
+#ifndef __SIMPLE_JULIA_HPP__
+#define __SIMPLE_JULIA_HPP__
 
 #include "Base.hpp"
 #include "../Parameters.hpp"
@@ -7,7 +7,7 @@
 
 namespace Fractal
 {
-    class Mandelbrot : public Fractal::Base
+    class SimpleJulia : public Fractal::Base
     {
     protected:
         void generate() override
@@ -20,8 +20,13 @@ namespace Fractal
 
             auto dy = this->parameters.dy();
 
-            // pre-calculate escape orbit
-            auto threshold = this->parameters.escape_value_threshold * this->parameters.escape_value_threshold;
+            auto max_iterations = 510;
+
+            auto attract = parameters.escape_value_threshold * parameters.escape_value_threshold;
+
+            auto threshold = this->parameters.escape_time_threshold * this->parameters.escape_time_threshold;
+
+            auto max_color = std::max(max_iterations, this->parameters.escape_time_threshold);
 
             // pointer to complex function
             void (*ComplexFunction)(double &, double &);
@@ -51,25 +56,23 @@ namespace Fractal
                 ComplexFunction = Fractal::Identity;
             }
 
-            // calculate mandelbrot set
-            for (auto y = 0; y < parameters.y_pixels; y++)
+            // calculate julia set
+            for (auto y = 0; y < this->parameters.y_pixels; y++)
             {
-                // calculate location cy on complex plane
-                auto cy = this->parameters.scaled_y(y, dy);
-
-                for (auto x = 0; x < parameters.x_pixels; x++)
+                for (auto x = 0; x < this->parameters.x_pixels; x++)
                 {
                     auto t = 0;
 
-                    // calculate location cx on complex plane
-                    auto cx = this->parameters.scaled_x(x, dx);
+                    // calculate location (zx, zy) on complex plane
+                    auto zx = this->parameters.scaled_x(x, dx);
 
-                    auto zx = 0.0;
+                    auto zy = this->parameters.scaled_y(y, dy);
 
-                    auto zy = 0.0;
+                    auto cx = this->parameters.cx;
 
-                    // generate escape time fractal
-                    while (t < this->parameters.escape_time_threshold)
+                    auto cy = this->parameters.cy;
+
+                    while (t < max_iterations)
                     {
                         ComplexFunction(zx, zy);
 
@@ -82,7 +85,15 @@ namespace Fractal
 
                         zy += cy;
 
-                        if ((zx * zx + zy * zy) > threshold)
+                        auto mag = zx * zx + zy * zy;
+
+                        if (mag < attract)
+                        {
+                            t = 0;
+
+                            break;
+                        }
+                        else if (mag >= threshold)
                         {
                             break;
                         }
@@ -91,20 +102,15 @@ namespace Fractal
                     }
 
                     // set escape-time color
-                    if (t != this->parameters.escape_time_threshold)
-                    {
-                        this->grid[y][x] = t;
-                    }
-                    else
-                    {
-                        this->grid[y][x] = 0;
-                    }
+                    this->grid[y][x] = t;
                 }
             }
+
+            this->parameters.escape_time_threshold = max_color;
         }
 
     public:
-        Mandelbrot(Fractal::Parameters parameters) : Fractal::Base(parameters) {}
+        SimpleJulia(Fractal::Parameters parameters) : Fractal::Base(parameters) {}
     };
 }
 

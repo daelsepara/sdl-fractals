@@ -220,32 +220,99 @@ namespace Fractal
         zy = (x * b + y * a);
     }
 
-    void Divide(double x, double y, double a, double b, double &zx, double &zy)
+    void Divide(double a, double b, double c, double d, double &zx, double &zy)
     {
-        auto denom = a * a + b * b;
+        auto denom = c * c + d * d;
 
-        Fractal::Multiply(x / denom, y / denom, a, -b, zx, zy);
+        zx = (a * c + b * d) / denom;
+
+        zy = (b * c - a * d) / denom;
     }
 
-    void Power(double &zx, double &zy, int exponent)
+    void Sin(double &zx, double &zy)
     {
         auto oldx = zx;
 
         auto oldy = zy;
 
+        zx = std::sin(oldx) * std::cosh(oldy);
+
+        zy = std::cos(oldx) * std::sinh(oldy);
+    }
+
+    void Cos(double &zx, double &zy)
+    {
+        auto oldx = zx;
+
+        auto oldy = zy;
+
+        zx = std::cos(oldx) * std::cosh(oldy);
+
+        zy = -std::sin(oldx) * std::sinh(oldy);
+    }
+
+    void Exp(double &zx, double &zy)
+    {
+        auto oldx = zx;
+
+        auto oldy = zy;
+
+        auto expx = std::exp(oldx);
+
+        zx = expx * std::cos(oldy);
+
+        zy = expx * std::sin(oldy);
+    }
+
+    void Tan(double &zx, double &zy)
+    {
+        double sinzx = zx;
+        double sinzy = zy;
+        double coszx = zx;
+        double coszy = zy;
+
+        Fractal::Sin(sinzx, sinzy);
+        Fractal::Cos(coszx, coszy);
+        Fractal::Divide(sinzx, sinzy, coszx, coszy, zx, zy);
+    }
+
+    void Conjugate(double &zx, double &zy)
+    {
+        zy = -zy;
+    }
+
+    void Power(double &zx, double &zy, int exponent)
+    {
         if (exponent == 0)
         {
             zx = 1.0;
 
             zy = 1.0;
         }
-        else
+        else if (exponent == 1)
         {
+            zx = zx;
+
+            zy = zy;
+        }
+        else if (exponent > 1)
+        {
+            auto oldx = zx;
+
+            auto oldy = zy;
+
             for (auto i = 0; i < exponent - 1; i++)
             {
                 Fractal::Multiply(zx, zy, oldx, oldy, zx, zy);
             }
         }
+    }
+
+    void Identity(double &zx, double &zy)
+    {
+        zx = zx;
+
+        zy = zy;
     }
 
     void ApplyTransformation(double x, double y, Fractal::Transformation &transform, double &xn, double &yn)
