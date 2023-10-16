@@ -38,6 +38,42 @@ namespace Fractal
             {
                 ComplexFunction = Fractal::Tan;
             }
+            else if (this->parameters.function == "cot")
+            {
+                ComplexFunction = Fractal::Cot;
+            }
+            else if (this->parameters.function == "sec")
+            {
+                ComplexFunction = Fractal::Sec;
+            }
+            else if (this->parameters.function == "csc")
+            {
+                ComplexFunction = Fractal::Csc;
+            }
+            else if (this->parameters.function == "sinh")
+            {
+                ComplexFunction = Fractal::Sinh;
+            }
+            else if (this->parameters.function == "cosh")
+            {
+                ComplexFunction = Fractal::Cosh;
+            }
+            else if (this->parameters.function == "tanh")
+            {
+                ComplexFunction = Fractal::Tanh;
+            }
+            else if (this->parameters.function == "coth")
+            {
+                ComplexFunction = Fractal::Coth;
+            }
+            else if (this->parameters.function == "sech")
+            {
+                ComplexFunction = Fractal::Sech;
+            }
+            else if (this->parameters.function == "csch")
+            {
+                ComplexFunction = Fractal::Csch;
+            }
             else if (this->parameters.function == "exp")
             {
                 ComplexFunction = Fractal::Exp;

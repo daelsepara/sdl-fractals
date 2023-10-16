@@ -266,14 +266,114 @@ namespace Fractal
 
     void Tan(double &zx, double &zy)
     {
-        double sinzx = zx;
-        double sinzy = zy;
-        double coszx = zx;
-        double coszy = zy;
+        auto sinzx = zx;
+        auto sinzy = zy;
+        auto coszx = zx;
+        auto coszy = zy;
 
         Fractal::Sin(sinzx, sinzy);
         Fractal::Cos(coszx, coszy);
         Fractal::Divide(sinzx, sinzy, coszx, coszy, zx, zy);
+    }
+
+    void Cot(double &zx, double &zy)
+    {
+        auto sinzx = zx;
+        auto sinzy = zy;
+        auto coszx = zx;
+        auto coszy = zy;
+
+        Fractal::Sin(sinzx, sinzy);
+        Fractal::Cos(coszx, coszy);
+        Fractal::Divide(coszx, coszy, sinzx, sinzy, zx, zy);
+    }
+
+    void Sec(double &zx, double &zy)
+    {
+        auto coszx = zx;
+        auto coszy = zy;
+
+        Fractal::Cos(coszx, coszy);
+        Fractal::Divide(1.0, 0.0, coszx, coszy, zx, zy);
+    }
+
+    void Csc(double &zx, double &zy)
+    {
+        auto sinzx = zx;
+        auto sinzy = zy;
+
+        Fractal::Sin(sinzx, sinzy);
+        Fractal::Divide(1.0, 0.0, sinzx, sinzy, zx, zy);
+    }
+
+    void Sinh(double &zx, double &zy)
+    {
+        auto ezx = zx;
+        auto ezy = zy;
+        auto nzx = -zx;
+        auto nzy = -zy;
+
+        Fractal::Exp(ezx, ezy);
+        Fractal::Exp(nzx, nzy);
+
+        zx = (ezx - nzx) / 2.0;
+        zy = (ezy - nzy) / 2.0;
+    }
+
+    void Cosh(double &zx, double &zy)
+    {
+        auto ezx = zx;
+        auto ezy = zy;
+        auto nzx = -zx;
+        auto nzy = -zy;
+
+        Fractal::Exp(ezx, ezy);
+        Fractal::Exp(nzx, nzy);
+
+        zx = (ezx + nzx) / 2.0;
+        zy = (ezy + nzy) / 2.0;
+    }
+
+    void Tanh(double &zx, double &zy)
+    {
+        auto sinhzx = zx;
+        auto sinhzy = zy;
+        auto coshzx = zx;
+        auto coshzy = zy;
+
+        Fractal::Sinh(sinhzx, sinhzy);
+        Fractal::Cosh(coshzx, coshzy);
+        Fractal::Divide(sinhzx, sinhzy, coshzx, coshzy, zx, zy);
+    }
+
+    void Coth(double &zx, double &zy)
+    {
+        auto sinhzx = zx;
+        auto sinhzy = zy;
+        auto coshzx = zx;
+        auto coshzy = zy;
+
+        Fractal::Sinh(sinhzx, sinhzy);
+        Fractal::Cosh(coshzx, coshzy);
+        Fractal::Divide(coshzx, coshzy, sinhzx, sinhzy, zx, zy);
+    }
+
+    void Sech(double &zx, double &zy)
+    {
+        auto coshzx = zx;
+        auto coshzy = zy;
+
+        Fractal::Cosh(coshzx, coshzy);
+        Fractal::Divide(1.0, 0.0, coshzx, coshzy, zx, zy);
+    }
+
+    void Csch(double &zx, double &zy)
+    {
+        auto sinhzx = zx;
+        auto sinhzy = zy;
+
+        Fractal::Sinh(sinhzx, sinhzy);
+        Fractal::Divide(1.0, 0.0, sinhzx, sinhzy, zx, zy);
     }
 
     void Conjugate(double &zx, double &zy)
