@@ -505,4 +505,22 @@ Range (min … max):   350.7 ms … 432.0 ms    10 runs
 ![Mandelbrot Histogram](samples/mandelbrot-histogram.png)
 **Parameter:** [mandelbrot-histogram](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/mandelbrot-histogram.json)
 
-**GitHub Repository**: [https://github.com/daelsepara/sdl-fractals](https://github.com/daelsepara/sdl-fractals)
+## Chrysantemum (Julia)
+![Chrysantemum](samples/chrysantemum.png)
+**Parameter:** [chrysantemum](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/chrysantemum.json)
+
+## Cross Snowflakes
+![Cross Snowflakes](samples/cross-snowflakes.png)
+**Parameter:** [cross-snowflakes](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/cross-snowflakes.json)
+
+## Dendrite (Julia)
+![Dendrite](samples/dendrite.png)
+**Parameter:** [dendrite](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/dendrite.json)
+
+## EKG (Julia)
+![EKG](samples/ekg.png)
+**Parameter:** [ekg](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/ekg.json)
+
+## Snowflakes (Julia)
+![Snowflakes](samples/julia-snowflakes.png)
+**Parameter:** [julia-snowflakes](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia-snowflakes.json)
