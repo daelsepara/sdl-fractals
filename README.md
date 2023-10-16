@@ -532,3 +532,7 @@ Range (min … max):   350.7 ms … 432.0 ms    10 runs
 ## Cosine (Julia)
 ![Sine](samples/julia-cos.png)
 **Parameter:** [julia-cos](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia-cos.json)
+
+## Dragon Curve
+![Sine](samples/dragon-curve.png)
+**Parameter:** [dragon-curve](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/dragon-curve.json)
