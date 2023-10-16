@@ -389,12 +389,6 @@ namespace Fractal
 
             zy = 1.0;
         }
-        else if (exponent == 1)
-        {
-            zx = zx;
-
-            zy = zy;
-        }
         else if (exponent > 1)
         {
             auto oldx = zx;

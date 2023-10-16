@@ -35,7 +35,6 @@
     <ClInclude Include="..\src\fractals\Mandelbrot.hpp" />
     <ClInclude Include="..\src\fractals\Mandelbrot2.hpp" />
     <ClInclude Include="..\src\fractals\Mandelbrot3.hpp" />
-    <ClInclude Include="..\src\fractals\Multicorn.hpp" />
     <ClInclude Include="..\src\fractals\Newton1.hpp" />
     <ClInclude Include="..\src\fractals\Tricorn.hpp" />
     <ClInclude Include="..\src\FractalTypes.hpp" />
