@@ -1,5 +1,5 @@
 {
-    "type": "barnsleyfern",
+    "type": "ifs",
     "x_pixels": 2048,
     "y_pixels": 2048,
     "escape_time_threshold": 10000000,

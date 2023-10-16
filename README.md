@@ -344,7 +344,7 @@ Range (min … max):    1.293 s …  1.346 s    10 runs
 |threshold      | 10000000 |
 |parameter file | [barnsleyfern](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/barnsleyfern.json) |
 |palette        | [green](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/green.json) |
-|source         | [BarnsleyFern.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/BarnsleyFern.hpp) |
+|source         | [IteratedFunctionSystem.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/IteratedFunctionSystem.hpp) |
 
 ### Generator
 
@@ -373,7 +373,7 @@ Range (min … max):   648.1 ms … 676.3 ms    10 runs
 |threshold      | 10000000 |
 |parameter file | [culcita](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/culcita.json) |
 |palette        | [green](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/green.json) |
-|source         | [BarnsleyFern.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/BarnsleyFern.hpp) |
+|source         | [IteratedFunctionSystem.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/IteratedFunctionSystem.hpp) |
 
 ### Generator
 
@@ -402,7 +402,7 @@ Range (min … max):   589.1 ms … 683.9 ms    10 runs
 |threshold      | 10000000 |
 |parameter file | [thelypteridaceae](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/thelypteridaceae.json) |
 |palette        | [green](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/green.json) |
-|source         | [BarnsleyFern.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/BarnsleyFern.hpp) |
+|source         | [IteratedFunctionSystem.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/IteratedFunctionSystem.hpp) |
 
 ### Generator
 
@@ -431,7 +431,7 @@ Range (min … max):   562.6 ms … 590.9 ms    10 runs
 |threshold      | 10000000 |
 |parameter file | [sierpinski-carpet](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/sierpinski-carpet.json) |
 |palette        | [sand](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/sand.json) |
-|source         | [BarnsleyFern.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/BarnsleyFern.hpp) |
+|source         | [IteratedFunctionSystem.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/IteratedFunctionSystem.hpp) |
 
 ### Generator
 
@@ -464,7 +464,7 @@ Range (min … max):   393.0 ms … 472.3 ms    10 runs
 |threshold      | 10000000 |
 |parameter file | [sierpinski-triangle](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/sierpinski-triangle.json) |
 |palette        | [gnpu](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/gnpu.json) |
-|source         | [BarnsleyFern.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/BarnsleyFern.hpp) |
+|source         | [IteratedFunctionSystem.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/IteratedFunctionSystem.hpp) |
 
 ### Generator
 

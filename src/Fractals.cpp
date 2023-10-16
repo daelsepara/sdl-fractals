@@ -296,9 +296,9 @@ int main(int argc, char **argv)
 		{
 			fractal = new Fractal::Multicorn(parameters);
 		}
-		else if (parameters.type == "barnsleyfern")
+		else if (parameters.type == "ifs")
 		{
-			fractal = new Fractal::BarnsleyFern(parameters);
+			fractal = new Fractal::IteratedFunctionSystem(parameters);
 		}
 		else if (parameters.type == "simplejulia")
 		{

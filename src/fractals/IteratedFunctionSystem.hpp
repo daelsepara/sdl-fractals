@@ -1,5 +1,5 @@
-#ifndef __BARNSLEY_FERN_HPP__
-#define __BARNSLEY_FERN_HPP__
+#ifndef __ITERATED_FUNCTION_SYSTEM_HPP__
+#define __ITERATED_FUNCTION_SYSTEM_HPP__
 
 #include "Base.hpp"
 #include "../Parameters.hpp"
@@ -8,7 +8,7 @@
 
 namespace Fractal
 {
-    class BarnsleyFern : public Fractal::Base
+    class IteratedFunctionSystem : public Fractal::Base
     {
     protected:
         void generate() override
@@ -53,7 +53,7 @@ namespace Fractal
         }
 
     public:
-        BarnsleyFern(Fractal::Parameters parameters) : Fractal::Base(parameters) {}
+        IteratedFunctionSystem(Fractal::Parameters parameters) : Fractal::Base(parameters) {}
     };
 }
 

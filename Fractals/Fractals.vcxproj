@@ -28,7 +28,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\fractals\BarnsleyFern.hpp" />
+    <ClInclude Include="..\src\fractals\IteratedFunctionSystem.hpp" />
     <ClInclude Include="..\src\fractals\Base.hpp" />
     <ClInclude Include="..\src\fractals\BurningShip.hpp" />
     <ClInclude Include="..\src\fractals\Julia.hpp" />
