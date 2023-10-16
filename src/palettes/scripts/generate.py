@@ -90,6 +90,14 @@ def bbw(x):
     return [color['r'], color['g'], color['b']]
 
 
+def rob(x):
+    data = pd.DataFrame([[0x00, 0x00, 0x00],
+                         [0xFF, 0x50, 0x00],
+                         [0xFF, 0x00, 0x00]], columns=['r', 'g', 'b'])
+    color = lerp(x, data/255)
+    return [color['r'], color['g'], color['b']]
+
+
 def rocket(x):
     data = pd.DataFrame([[0x35, 0x19, 0x3E],
                          [0x70, 0x1F, 0x57],
@@ -237,6 +245,36 @@ def rainbow(x):
     return [color['r'], color['g'], color['b']]
 
 
+def blues(x):
+    data = pd.DataFrame([[0x00, 0x00, 0x00],
+                         [0x30, 0x04, 0x5E],
+                         [0x02, 0x3E, 0x8A],
+                         [0x00, 0x77, 0xB6],
+                         [0x00, 0x96, 0xC7],
+                         [0x00, 0xB4, 0xD8],
+                         [0x48, 0xCA, 0xE4],
+                         [0x90, 0xE0, 0xEF],
+                         [0xAD, 0xE8, 0xF4],
+                         [0xCA, 0xF0, 0xF8]], columns=['r', 'g', 'b'])
+    color = lerp(x, data/255)
+    return [color['r'], color['g'], color['b']]
+
+
+def bluegray(x):
+    data = pd.DataFrame([[0x04, 0x66, 0xC8],
+                         [0x03, 0x53, 0xA4],
+                         [0x02, 0x3E, 0x7D],
+                         [0x00, 0x28, 0x55],
+                         [0x00, 0x18, 0x45],
+                         [0x00, 0x12, 0x33],
+                         [0x33, 0x41, 0x5C],
+                         [0x5C, 0x67, 0x7D],
+                         [0x7D, 0x85, 0x97],
+                         [0x97, 0x9D, 0xAC]], columns=['r', 'g', 'b'])
+    color = lerp(x, data/255)
+    return [color['r'], color['g'], color['b']]
+
+
 def main():
     parser = argparse.ArgumentParser(
         prog='Generate palette',
@@ -291,6 +329,12 @@ def main():
             value = bbw(x)
         elif args.type == 'rocket':
             value = rocket(x)
+        elif args.type == 'rob':
+            value = rob(x)
+        elif args.type == 'blues':
+            value = blues(x)
+        elif args.type == 'bluegray':
+            value = bluegray(x)
         else:
             value = [x, x, x]
 

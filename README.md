@@ -51,10 +51,19 @@ Inverts y-axis. Top to bottom goes from - to + values.
 Inverts color values.
 
 #### /LOG
-Use log-scale color mapping.
+Use log-scale color mapping. Overrides color mapping in parameter file.
 
 #### /NORMALIZED
-Use normalized color mapping.
+Use normalized color mapping. Overrides color mapping in parameter file.
+
+#### /MOD
+Use moduluo-255 color mapping. Overrides color mapping in parameter file.
+
+#### /HISTOGRAM
+Use histogram color mapping. Overrides color mapping in parameter file.
+
+#### /DEFAULT
+Use default color mapping. Overrides color mapping in parameter file.
 
 # Examples
 

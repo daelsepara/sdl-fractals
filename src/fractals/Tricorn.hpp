@@ -49,9 +49,9 @@ namespace Fractal
                         t++;
                     }
 
+                    // set escape-time color
                     if (t != this->parameters.escape_time_threshold)
                     {
-                        // set escape-time color
                         this->grid[y][x] = t;
                     }
                     else

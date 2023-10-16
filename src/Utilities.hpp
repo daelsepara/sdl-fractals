@@ -367,24 +367,24 @@ namespace Fractal
         }
 
         // pass 3: compute hue
-        auto hue = std::vector<std::vector<double>>(grid.size(), std::vector<double>(grid[0].size(), 0.0));
+        auto hue = std::vector<std::vector<int>>(grid.size(), std::vector<int>(grid[0].size(), 0.0));
 
+        auto color_scaler = 1.0 / (double)total * 255.0;
+
+        // pass 4: map to color
         for (auto y = 0; y < grid.size(); y++)
         {
             for (auto x = 0; x < grid[y].size(); x++)
             {
-                auto iteration = grid[y][x];
-
                 for (auto i = NumIterationsPerPixel.begin(); i != NumIterationsPerPixel.end(); ++i)
                 {
-                    if (i->first <= iteration)
+                    if (i->first <= grid[y][x])
                     {
-                        hue[y][x] += (double)i->second / (double)total;
+                        hue[y][x] += i->second;
                     }
                 }
 
-                // pass 4: map to color
-                grid[y][x] = (int)(hue[y][x] * 255.0);
+                grid[y][x] = (int)((double)hue[y][x] * color_scaler);
             }
         }
     }
