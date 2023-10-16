@@ -524,3 +524,11 @@ Range (min … max):   350.7 ms … 432.0 ms    10 runs
 ## Snowflakes (Julia)
 ![Snowflakes](samples/julia-snowflakes.png)
 **Parameter:** [julia-snowflakes](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia-snowflakes.json)
+
+## Sine (Julia)
+![Sine](samples/julia-sin.png)
+**Parameter:** [julia-sin](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia-sin.json)
+
+## Cosine (Julia)
+![Sine](samples/julia-cos.png)
+**Parameter:** [julia-cos](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia-cos.json)
