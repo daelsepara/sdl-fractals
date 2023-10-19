@@ -537,11 +537,15 @@ Range (min … max):   350.7 ms … 432.0 ms    10 runs
 ![Dragon Curve](samples/dragon-curve.png)
 **Parameter:** [dragon-curve](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/dragon-curve.json)
 
-## Biomorph (Mandelbrot)
+## Biomorph 1 (Mandelbrot)
 ![Biomorph (Mandelbrot)](samples/biomorph-mandelbrot.png)
 **Parameter:** [biomorph-mandelbrot](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/biomorph-mandelbrot.json)
 
-## Biomorph (Julia)
+## Biomorph 2 (Julia)
 ![Biomorph (Julia)](samples/biomorph-julia.png)
 **Parameter:** [biomorph-julia](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/biomorph-julia.json)
+
+## Biomorph 3 (Julia)
+![Biomorph (Julia)](samples/biomorph-julia2.png)
+**Parameter:** [biomorph-julia2](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/biomorph-julia2.json)
 
