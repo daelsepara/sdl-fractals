@@ -3,14 +3,14 @@
     "x_pixels": 2048,
     "y_pixels": 2048,
     "max_iterations": 255,
-    "orbit": 2.0,
-    "bailout": 100.0,
+    "orbit": 100,
+    "bailout": 100,
     "exponent": 2,
     "function": "z",
     "inside_color": 0,
     "bailout_color": 128,
-    "min_x": -2.0,
-    "max_x": 2.0,
-    "min_y": -2.0,
-    "max_y": 2.0
+    "min_x": -5,
+    "max_x": 4,
+    "min_y": -4.5,
+    "max_y": 4.5
 }

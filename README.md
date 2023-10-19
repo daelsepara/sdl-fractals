@@ -530,9 +530,18 @@ Range (min … max):   350.7 ms … 432.0 ms    10 runs
 **Parameter:** [julia-sin](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia-sin.json)
 
 ## Cosine (Julia)
-![Sine](samples/julia-cos.png)
+![Cosine](samples/julia-cos.png)
 **Parameter:** [julia-cos](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia-cos.json)
 
 ## Dragon Curve
-![Sine](samples/dragon-curve.png)
+![Dragon Curve](samples/dragon-curve.png)
 **Parameter:** [dragon-curve](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/dragon-curve.json)
+
+## Biomorph (Mandelbrot)
+![Biomorph (Mandelbrot)](samples/biomorph-mandelbrot.png)
+**Parameter:** [biomorph-mandelbrot](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/biomorph-mandelbrot.json)
+
+## Biomorph (Julia)
+![Biomorph (Julia)](samples/biomorph-julia.png)
+**Parameter:** [biomorph-julia](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/biomorph-julia.json)
+
