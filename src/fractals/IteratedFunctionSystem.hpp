@@ -33,7 +33,7 @@ namespace Fractal
 
             auto yn = 0.0;
 
-            for (auto t = 0; t < this->parameters.escape_time_threshold; t++)
+            for (auto t = 0; t < this->parameters.max_iterations; t++)
             {
                 Fractal::Transform(random.NextDouble(), x, y, this->parameters.transforms, xn, yn);
 

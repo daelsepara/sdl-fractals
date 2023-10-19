@@ -21,7 +21,7 @@ namespace Fractal
             auto dy = this->parameters.dy();
 
             // pre-calculate escape orbit
-            auto threshold = this->parameters.escape_value_threshold * this->parameters.escape_value_threshold;
+            auto threshold = this->parameters.orbit * this->parameters.orbit;
 
             // pointer to complex function
             void (*ComplexFunction)(double &, double &);
@@ -100,7 +100,7 @@ namespace Fractal
                     auto zy = this->parameters.scaled_y(y, dy);
 
                     // generate escape time fractal
-                    while (t < this->parameters.escape_time_threshold)
+                    while (t < this->parameters.max_iterations)
                     {
                         ComplexFunction(zx, zy);
 
@@ -122,7 +122,7 @@ namespace Fractal
                     }
 
                     // set escape-time color
-                    if (t != this->parameters.escape_time_threshold)
+                    if (t != this->parameters.max_iterations)
                     {
                         this->grid[y][x] = t;
                     }

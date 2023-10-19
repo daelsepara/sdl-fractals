@@ -22,11 +22,11 @@ namespace Fractal
 
             auto max_iterations = 510;
 
-            auto attract = parameters.escape_value_threshold * parameters.escape_value_threshold;
+            auto attract = parameters.orbit * parameters.orbit;
 
-            auto threshold = this->parameters.escape_time_threshold * this->parameters.escape_time_threshold;
+            auto threshold = this->parameters.max_iterations * this->parameters.max_iterations;
 
-            auto max_color = std::max(max_iterations, this->parameters.escape_time_threshold);
+            auto max_color = std::max(max_iterations, this->parameters.max_iterations);
 
             // pointer to complex function
             void (*ComplexFunction)(double &, double &);
@@ -149,7 +149,7 @@ namespace Fractal
                 }
             }
 
-            this->parameters.escape_time_threshold = max_color;
+            this->parameters.max_iterations = max_color;
         }
 
     public:

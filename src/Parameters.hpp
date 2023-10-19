@@ -32,9 +32,10 @@ namespace Fractal
         int y_pixels = 2048;
 
         // mandelbrot parameter(s)
-        int escape_time_threshold = 255;
-        double escape_value_threshold = 2.0;
+        int max_iterations = 255;
         int exponent = 2;
+        double orbit = 2.0;
+        double bailout = -1.0;
 
         // complex plane window boundaries
         double min_x = -2.5;
@@ -51,6 +52,9 @@ namespace Fractal
 
         // inside color
         int inside_color = 0;
+
+        // bailout color
+        int bailout_color = 0;
 
         // log color mapping
         bool log_coloring = false;
@@ -160,8 +164,9 @@ namespace Fractal
                 this->y_pixels = !data["y_pixels"].is_null() ? (int)data["y_pixels"] : 2048;
 
                 // parameters for escape time type of fractals
-                this->escape_time_threshold = !data["escape_time_threshold"].is_null() ? (int)data["escape_time_threshold"] : 255;
-                this->escape_value_threshold = !data["escape_value_threshold"].is_null() ? (double)data["escape_value_threshold"] : std::numeric_limits<double>::quiet_NaN();
+                this->max_iterations = !data["max_iterations"].is_null() ? (int)data["max_iterations"] : 255;
+                this->orbit = !data["orbit"].is_null() ? (double)data["orbit"] : std::numeric_limits<double>::quiet_NaN();
+                this->bailout = !data["bailout"].is_null() ? (double)data["bailout"] : std::numeric_limits<double>::quiet_NaN();
 
                 // mandelbrot parameter
                 this->exponent = !data["exponent"].is_null() ? (int)data["exponent"] : std::numeric_limits<int>::quiet_NaN();
@@ -175,6 +180,9 @@ namespace Fractal
 
                 // inside_color
                 this->inside_color = !data["inside_color"].is_null() ? (int)data["inside_color"] : 0;
+
+                // bailout_color
+                this->bailout_color = !data["bailout_color"].is_null() ? (int)data["bailout_color"] : 0;
 
                 // invert axis
                 this->invert_x = !data["invert_x"].is_null() ? (bool)data["invert_x"] : false;

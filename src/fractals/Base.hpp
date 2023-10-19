@@ -22,7 +22,7 @@ namespace Fractal
         {
             this->generate();
 
-            Fractal::FinalizeColors(this->grid, this->parameters, this->parameters.escape_time_threshold);
+            Fractal::FinalizeColors(this->grid, this->parameters, this->parameters.max_iterations);
 
             Fractal::RenderImage(this->grid, this->parameters, palette);
         }
@@ -33,7 +33,7 @@ namespace Fractal
 
             if (image.length() > 0)
             {
-                Fractal::FinalizeColors(this->grid, this->parameters, this->parameters.escape_time_threshold);
+                Fractal::FinalizeColors(this->grid, this->parameters, this->parameters.max_iterations);
 
                 Fractal::SaveImage(this->grid, this->parameters, image, palette);
             }

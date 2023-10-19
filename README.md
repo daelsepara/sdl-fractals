@@ -76,7 +76,7 @@ Use default color mapping. Overrides color mapping in parameter file.
 |---------------|-----------------------|
 |Generator      | **z**^**exp** + **C** |
 |exponent       | 2 |
-|threshold      | 255 |
+|max iterations | 255 |
 |orbit          | 2.0 |
 |parameter files| [mandelbrot](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/mandelbrot.json), [mandelbrot2](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/mandelbrot2.json), [mandelbrot3](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/mandelbrot3.json) |
 |palette        | default |
@@ -111,7 +111,7 @@ Range (min … max):   376.6 ms … 411.8 ms    10 runs
 |---------------|----------------------------------|
 |Generator      | **z** - (**z**^3 - 1)/(3**z**^2) |
 |tolerance      | 1e-6 |
-|threshold      | 255 |
+|max iterations | 255 |
 |parameter file | [newton1](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/newton1.json) |
 |palette        | default |
 |source         | [Newton1.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Newton1.hpp) |
@@ -128,7 +128,7 @@ Range (min … max):   855.1 ms … 882.9 ms    10 runs
 |||
 |---------------|-----------------------|
 |Generator      | **z**^**exp** + **C** |
-|threshold      | 255 |
+|max iterations | 255 |
 |orbit          | 2.0 |
 |source         | [Julia.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Julia.hpp) |
 
@@ -191,7 +191,7 @@ Range (min … max):    1.201 s …  1.263 s    10 runs
 |||
 |----------|-------------------|
 |C         | 0.26294324588 - 0.0024215732998i |
-|threshold | 320 |
+|max iterations | 320 |
 |normalized colormap | true |
 |parameter file| [julia5](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia5.json) |
 |palette   | inverted [jet](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/jet.json) |
@@ -210,7 +210,7 @@ Range (min … max):    3.454 s …  3.544 s    10 runs
 |---------------|-----------------------|
 |Generator      | **z**^**exp** + **C** |
 |exponent       | 4 |
-|threshold      | 255 |
+|max iterations | 255 |
 |orbit          | 2.0 |
 |parameter file | [mandelbrot4](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/mandelbrot4.json) |
 |palette        | default |
@@ -233,7 +233,7 @@ Range (min … max):    3.898 s …  4.063 s    10 runs
 |inverted y     | true |
 |normalized colormap | true |
 |inside color   | 0 |
-|threshold      | 100 |
+|max iterations | 100 |
 |orbit          | 4.0 |
 |parameter file | [burningship](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/burningship.json) |
 |palette        | [hot](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/hot.json) |
@@ -256,7 +256,7 @@ Range (min … max):   552.8 ms … 567.2 ms    10 runs
 |inverted y     | true |
 |log colormap   | true |
 |inside color   | 0 |
-|threshold      | 100 |
+|max iterations | 100 |
 |orbit          | 4.0 |
 |parameter file | [burningship2](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/burningship2.json) |
 |palette        | [plasma](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/plasma.json) |
@@ -279,7 +279,7 @@ Range (min … max):    1.248 s …  2.128 s    10 runs
 |inverted y     | true |
 |log colormap   | true |
 |inside color   | 0 |
-|threshold      | 100 |
+|max iterations | 100 |
 |orbit          | 4.0 |
 |parameter file | [burningship3](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/burningship2.json) |
 |palette        | [bluered](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/bluered.json) |
@@ -299,7 +299,7 @@ Range (min … max):    1.248 s …  2.128 s    10 runs
 |---------------|------------------------------------------------------------|
 |Generator      | (**z_x**^2 + **z_y**^2) - i(2 * **z_x** * **z_y**) + **C** |
 |inside color   | 0 |
-|threshold      | 255 |
+|max iterations | 255 |
 |orbit          | 4.0 |
 |parameter file | [tricorn](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/tricorn.json) |
 |palette        | [parula](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/parula.json) |
@@ -320,7 +320,7 @@ Range (min … max):   536.0 ms … 602.0 ms    10 runs
 |Generator      | **Z_bar**^**exp** + **C** |
 |exponent       | 4 |
 |inside color   | 0 |
-|threshold      | 255 |
+|max iterations | 255 |
 |orbit          | 2.0 |
 |parameter file | [multicorn](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/multicorn.json) |
 |palette        | [viridis](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/viridis.json) |
@@ -341,7 +341,7 @@ Range (min … max):    1.293 s …  1.346 s    10 runs
 |Generator (xn) | **xn** = **xx** * **x** + **xy** * **y** + **xc** (see below)|
 |Generator (yn) | **yn** = **yx** * **x** + **yy** * **y** + **yc** (see below)|
 |inside color   | 128 |
-|threshold      | 10000000 |
+|max iterations | 10000000 |
 |parameter file | [barnsleyfern](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/barnsleyfern.json) |
 |palette        | [green](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/green.json) |
 |source         | [IteratedFunctionSystem.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/IteratedFunctionSystem.hpp) |
@@ -370,7 +370,7 @@ Range (min … max):   648.1 ms … 676.3 ms    10 runs
 |Generator (xn) | **xn** = **xx** * **x** + **xy** * **y** + **xc** (see below)|
 |Generator (yn) | **yn** = **yx** * **x** + **yy** * **y** + **yc** (see below)|
 |inside color   | 128   |
-|threshold      | 10000000 |
+|max iterations | 10000000 |
 |parameter file | [culcita](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/culcita.json) |
 |palette        | [green](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/green.json) |
 |source         | [IteratedFunctionSystem.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/IteratedFunctionSystem.hpp) |
@@ -399,7 +399,7 @@ Range (min … max):   589.1 ms … 683.9 ms    10 runs
 |Generator (xn) | **xn** = **xx** * **x** + **xy** * **y** + **xc** (see below)|
 |Generator (yn) | **yn** = **yx** * **x** + **yy** * **y** + **yc** (see below)|
 |inside color   | 128 |
-|threshold      | 10000000 |
+|max iterations | 10000000 |
 |parameter file | [thelypteridaceae](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/thelypteridaceae.json) |
 |palette        | [green](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/green.json) |
 |source         | [IteratedFunctionSystem.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/IteratedFunctionSystem.hpp) |
@@ -428,7 +428,7 @@ Range (min … max):   562.6 ms … 590.9 ms    10 runs
 |Generator (xn) | **xn** = **xx** * **x** + **xy** * **y** + **xc** (see below)|
 |Generator (yn) | **yn** = **yx** * **x** + **yy** * **y** + **yc** (see below)|
 |inside color   | 128 |
-|threshold      | 10000000 |
+|max iterations | 10000000 |
 |parameter file | [sierpinski-carpet](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/sierpinski-carpet.json) |
 |palette        | [sand](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/sand.json) |
 |source         | [IteratedFunctionSystem.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/IteratedFunctionSystem.hpp) |
@@ -461,7 +461,7 @@ Range (min … max):   393.0 ms … 472.3 ms    10 runs
 |Generator (xn) | **xn** = **xx** * **x** + **xy** * **y** + **xc** (see below)|
 |Generator (yn) | **yn** = **yx** * **x** + **yy** * **y** + **yc** (see below)|
 |inside color   | 128 |
-|threshold      | 10000000 |
+|max iterations | 10000000 |
 |parameter file | [sierpinski-triangle](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/sierpinski-triangle.json) |
 |palette        | [gnpu](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/gnpu.json) |
 |source         | [IteratedFunctionSystem.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/IteratedFunctionSystem.hpp) |

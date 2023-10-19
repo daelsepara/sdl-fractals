@@ -21,7 +21,7 @@ namespace Fractal
             auto dy = this->parameters.dy();
 
             // pre-calculate escape orbit
-            auto threshold = this->parameters.escape_value_threshold * this->parameters.escape_value_threshold;
+            auto threshold = this->parameters.orbit * this->parameters.orbit;
 
             // calculate mandelbrot set
             for (auto y = 0; y < this->parameters.y_pixels; y++)
@@ -46,7 +46,7 @@ namespace Fractal
                     auto yy = cy;
 
                     // generate escape time fractal
-                    while ((zx + zy) <= threshold && (t < this->parameters.escape_time_threshold))
+                    while ((zx + zy) <= threshold && (t < this->parameters.max_iterations))
                     {
                         yy = (xx + xx) * yy + cy;
 
@@ -60,7 +60,7 @@ namespace Fractal
                     }
 
                     // set escape-time color
-                    if (t != this->parameters.escape_time_threshold)
+                    if (t != this->parameters.max_iterations)
                     {
                         this->grid[y][x] = t;
                     }

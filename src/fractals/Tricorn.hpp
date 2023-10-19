@@ -38,7 +38,7 @@ namespace Fractal
 
                     auto zy = cy;
 
-                    while ((zx * zx + zy * zy) < this->parameters.escape_value_threshold && t < this->parameters.escape_time_threshold)
+                    while ((zx * zx + zy * zy) < this->parameters.orbit && t < this->parameters.max_iterations)
                     {
                         auto xtemp = zx * zx - zy * zy + cx;
 
@@ -50,7 +50,7 @@ namespace Fractal
                     }
 
                     // set escape-time color
-                    if (t != this->parameters.escape_time_threshold)
+                    if (t != this->parameters.max_iterations)
                     {
                         this->grid[y][x] = t;
                     }

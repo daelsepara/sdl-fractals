@@ -2,7 +2,7 @@
     "type": "newton1",
     "x_pixels": 2048,
     "y_pixels": 2048,
-    "escape_time_threshold": 255,
+    "max_iterations": 255,
     "tolerance": 1e-6,
     "normalized_coloring": true,
     "min_x": -2.5,
