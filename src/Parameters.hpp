@@ -81,6 +81,9 @@ namespace Fractal
         // function
         std::string function = "z";
 
+        // palette / colormap to use
+        std::string palette = "";
+
         double dx()
         {
             return (double)(this->max_x - this->min_x) / (double)(this->x_pixels);
@@ -200,6 +203,9 @@ namespace Fractal
                 // histogram coloring
                 this->histogram_coloring = !data["histogram_coloring"].is_null() ? (bool)data["histogram_coloring"] : false;
 
+                // invert colors
+                this->invert_colors = !data["invert_colors"].is_null() ? (bool)data["invert_colors"] : false;
+
                 // function
                 this->function = !data["function"].is_null() ? std::string(data["function"]) : std::string("z");
 
@@ -225,6 +231,9 @@ namespace Fractal
                         }
                     }
                 }
+
+                // palette / colormap
+                this->palette = !data["palette"].is_null() ? std::string(data["palette"]) : "";
 
                 file.close();
             }

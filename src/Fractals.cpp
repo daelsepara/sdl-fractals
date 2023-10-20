@@ -214,6 +214,11 @@ int main(int argc, char **argv)
 	{
 		auto parameters = Fractal::Parameters(parameters_file);
 
+		if (palette_file.length() > 0)
+		{
+			parameters.palette = palette_file;
+		}
+
 		if (normalized_coloring)
 		{
 			reset_colormap(parameters);
@@ -316,11 +321,11 @@ int main(int argc, char **argv)
 
 			if (image_file.length() > 0)
 			{
-				fractal->save(image_file, palette_file);
+				fractal->save(image_file);
 			}
 			else
 			{
-				fractal->render(palette_file);
+				fractal->render();
 			}
 		}
 		else

@@ -3,6 +3,7 @@
     "x_pixels": 2048,
     "y_pixels": 2048,
     "max_iterations": 100,
+    "inside_color": 510,
     "orbit": 0.001,
     "exponent": 1,
     "cx": 0.0,
@@ -12,5 +13,6 @@
     "max_x": 2.0,
     "min_y": -2.0,
     "max_y": 2.0,
-    "log_coloring": true
+    "log_coloring": true,
+    "palette": "palettes/magma.json"
 }

@@ -62,7 +62,7 @@ namespace Fractal
         return surface;
     }
 
-    void RenderImage(Fractal::Grid &grid, Fractal::Parameters &parameters, std::string palette_file)
+    void RenderImage(Fractal::Grid &grid, Fractal::Parameters &parameters)
     {
         // window
         SDL_Window *window = NULL;
@@ -111,9 +111,9 @@ namespace Fractal
 
             auto palette = Fractal::Palette();
 
-            if (palette_file.length() > 0)
+            if (parameters.palette.length() > 0)
             {
-                palette.Load(palette_file);
+                palette.Load(parameters.palette);
             }
 
             auto surface = Fractal::GenerateSurface(grid, parameters, palette);
@@ -187,13 +187,13 @@ namespace Fractal
         SDL_Quit();
     }
 
-    void SaveImage(Fractal::Grid &grid, Fractal::Parameters &parameters, std::string filename, std::string palette_file)
+    void SaveImage(Fractal::Grid &grid, Fractal::Parameters &parameters, std::string filename)
     {
         auto palette = Fractal::Palette();
 
-        if (palette_file.length() > 0)
+        if (parameters.palette.length() > 0)
         {
-            palette.Load(palette_file);
+            palette.Load(parameters.palette);
         }
 
         auto surface = Fractal::GenerateSurface(grid, parameters, palette);

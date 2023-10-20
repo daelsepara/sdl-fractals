@@ -5,12 +5,14 @@
     "max_iterations": 255,
     "orbit": 2.0,
     "function": "z",
-    "inside_color": 0,
+    "exponent": 2,
+    "inside_color": 255,
     "cx": 0.2541,
     "cy": 0.0,
     "min_x": -1.5,
     "max_x": 1.5,
     "min_y": -1.5,
     "max_y": 1.5,
-    "histogram_coloring": true
+    "histogram_coloring": true,
+    "palette": "palettes/rainbow.json"
 }

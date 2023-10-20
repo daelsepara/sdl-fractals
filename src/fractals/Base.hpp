@@ -18,16 +18,16 @@ namespace Fractal
         virtual void generate() {}
 
     public:
-        void render(std::string palette)
+        void render()
         {
             this->generate();
 
             Fractal::FinalizeColors(this->grid, this->parameters, this->parameters.max_iterations);
 
-            Fractal::RenderImage(this->grid, this->parameters, palette);
+            Fractal::RenderImage(this->grid, this->parameters);
         }
 
-        void save(std::string image, std::string palette)
+        void save(std::string image)
         {
             this->generate();
 
@@ -35,7 +35,7 @@ namespace Fractal
             {
                 Fractal::FinalizeColors(this->grid, this->parameters, this->parameters.max_iterations);
 
-                Fractal::SaveImage(this->grid, this->parameters, image, palette);
+                Fractal::SaveImage(this->grid, this->parameters, image);
             }
         }
 

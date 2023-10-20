@@ -27,5 +27,6 @@
     "min_x": -0.7,
     "max_x": 1.35,
     "min_y": -0.35,
-    "max_y": 1.35
+    "max_y": 1.35,
+    "palette": "palettes/heat.json"
 }

@@ -11,5 +11,6 @@
     "min_x": -1.80,
     "max_x": -1.715,
     "min_y": -0.08,
-    "max_y": 0.005
+    "max_y": 0.005,
+    "palette": "palettes/bluered.json"
 }

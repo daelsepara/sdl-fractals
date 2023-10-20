@@ -45,5 +45,6 @@
     "min_x": -3.5,
     "max_x": 3.5,
     "min_y": 0.0,
-    "max_y": 7.0
+    "max_y": 7.0,
+    "palette": "palettes/green.json"
 }

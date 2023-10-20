@@ -11,5 +11,6 @@
     "min_x": -2.25,
     "max_x": 2.25,
     "min_y": -2.25,
-    "max_y": 2.25
+    "max_y": 2.25,
+    "palette": "palettes/viridis.json"
 }

@@ -15,5 +15,6 @@
     "max_x": 4,
     "min_y": -4,
     "max_y": 4,
-    "histogram_coloring": true
+    "histogram_coloring": true,
+    "palette": "palettes/turbo.json"
 }

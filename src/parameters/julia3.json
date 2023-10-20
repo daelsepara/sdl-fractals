@@ -6,11 +6,12 @@
     "orbit": 2.0,
     "exponent": 2,
     "function": "z",
-    "inside_color": 0,
+    "inside_color": 255,
     "cx": 0.285,
     "cy": 0.01,
     "min_x": -1.5,
     "max_x": 1.5,
     "min_y": -1.5,
-    "max_y": 1.5
+    "max_y": 1.5,
+    "palette": "palettes/moreland.json"
 }
