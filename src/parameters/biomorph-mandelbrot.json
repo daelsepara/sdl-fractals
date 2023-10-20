@@ -14,6 +14,5 @@
     "min_y": -4.5,
     "max_y": 4.5,
     "histogram_coloring": true,
-    "palette": "palettes/set1.json",
-    "invert_colors": true
+    "palette": "palettes/set1.json"
 }

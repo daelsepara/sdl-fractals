@@ -14,6 +14,5 @@
     "min_y": -0.007,
     "max_y": 0.007,
     "normalized_coloring": true,
-    "palette": "palettes/jet.json",
-    "invert_colors": true
+    "palette": "palettes/jet.json"
 }
