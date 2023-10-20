@@ -275,6 +275,75 @@ def bluegray(x):
     return [color['r'], color['g'], color['b']]
 
 
+def seaborn(x):
+    data = pd.DataFrame([[0x4C, 0x72, 0xB0],
+                         [0xDD, 0x84, 0x52],
+                         [0x55, 0xA8, 0x68],
+                         [0xC4, 0x4E, 0x52],
+                         [0x81, 0x72, 0xB3],
+                         [0x93, 0x78, 0x60],
+                         [0xDA, 0x8B, 0xC3],
+                         [0x8C, 0x8C, 0x8C],
+                         [0xCC, 0xB9, 0x74],
+                         [0x64, 0xB5, 0xCD]], columns=['r', 'g', 'b'])
+    color = lerp(x, data/255)
+    return [color['r'], color['g'], color['b']]
+
+
+def tab10(x):
+    data = pd.DataFrame([[0x1F, 0x77, 0xB4],
+                         [0xFF, 0x7F, 0x0E],
+                         [0x2C, 0xA0, 0x2C],
+                         [0xD6, 0x27, 0x28],
+                         [0x94, 0x67, 0xBD],
+                         [0x8C, 0x56, 0x4B],
+                         [0xE3, 0x77, 0xC2],
+                         [0x7F, 0x7F, 0x7F],
+                         [0xBC, 0xBD, 0x22],
+                         [0x17, 0xBE, 0xCF]], columns=['r', 'g', 'b'])
+    color = lerp(x, data/255)
+    return [color['r'], color['g'], color['b']]
+
+
+def hls(x):
+    data = pd.DataFrame([[0xDB, 0x5F, 0x57],
+                         [0xDB, 0xC2, 0x57],
+                         [0x91, 0xDB, 0x57],
+                         [0x57, 0xDB, 0x80],
+                         [0x57, 0xD3, 0xDB],
+                         [0x57, 0x70, 0xDB],
+                         [0xA1, 0x57, 0xDB],
+                         [0xDB, 0x57, 0xB2]], columns=['r', 'g', 'b'])
+    color = lerp(x, data/255)
+    return [color['r'], color['g'], color['b']]
+
+
+def husl(x):
+    data = pd.DataFrame([[0xF7, 0x71, 0x89],
+                         [0xCE, 0x90, 0x32],
+                         [0x97, 0xA4, 0x31],
+                         [0x32, 0xB1, 0x66],
+                         [0x36, 0xAD, 0xA4],
+                         [0x39, 0xA7, 0xD0],
+                         [0xA4, 0x8C, 0xF4],
+                         [0xF5, 0x61, 0xDD]], columns=['r', 'g', 'b'])
+    color = lerp(x, data/255)
+    return [color['r'], color['g'], color['b']]
+
+
+def set2(x):
+    data = pd.DataFrame([[0x66, 0xC2, 0xA5],
+                         [0xFC, 0x8D, 0x62],
+                         [0x8D, 0xA0, 0xCB],
+                         [0xE7, 0x8A, 0xC3],
+                         [0xA6, 0xD8, 0x54],
+                         [0xFF, 0xD9, 0x2F],
+                         [0xE5, 0xC4, 0x94],
+                         [0xB3, 0xB3, 0xB3]], columns=['r', 'g', 'b'])
+    color = lerp(x, data/255)
+    return [color['r'], color['g'], color['b']]
+
+
 def main():
     parser = argparse.ArgumentParser(
         prog='Generate palette',
@@ -335,6 +404,16 @@ def main():
             value = blues(x)
         elif args.type == 'bluegray':
             value = bluegray(x)
+        elif args.type == 'seaborn':
+            value = seaborn(x)
+        elif args.type == 'tab10':
+            value = tab10(x)
+        elif args.type == 'hls':
+            value = hls(x)
+        elif args.type == 'husl':
+            value = husl(x)
+        elif args.type == 'set2':
+            value = set2(x)
         else:
             value = [x, x, x]
 
