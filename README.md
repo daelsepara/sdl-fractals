@@ -463,7 +463,7 @@ Range (min … max):   393.0 ms … 472.3 ms    10 runs
 |inside color   | 128 |
 |max iterations | 10000000 |
 |parameter file | [sierpinski-triangle](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/sierpinski-triangle.json) |
-|palette        | [gnpu](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/gnpu.json) |
+|palette        | [github](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/github.json) |
 |source         | [IteratedFunctionSystem.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/IteratedFunctionSystem.hpp) |
 
 ### Generator
