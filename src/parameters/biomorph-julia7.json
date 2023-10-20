@@ -1,0 +1,19 @@
+{
+    "type": "julia",
+    "x_pixels": 2048,
+    "y_pixels": 2048,
+    "max_iterations": 100,
+    "orbit": 10,
+    "bailout": 10,
+    "exponent": 5,
+    "function": "conj",
+    "inside_color": 0,
+    "bailout_color": 128,
+    "cx": -1.5888,
+    "cy": 0.0,
+    "min_x": -4,
+    "max_x": 4,
+    "min_y": -4,
+    "max_y": 4,
+    "histogram_coloring": true
+}
