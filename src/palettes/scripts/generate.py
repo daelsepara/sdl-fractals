@@ -344,6 +344,17 @@ def set2(x):
     return [color['r'], color['g'], color['b']]
 
 
+def flare(x):
+    data = pd.DataFrame([[0xE9, 0x8D, 0x6B],
+                         [0xE3, 0x68, 0x5C],
+                         [0xD1, 0x4A, 0x61],
+                         [0xB1, 0x3C, 0x6C],
+                         [0x8F, 0x33, 0x71],
+                         [0x6C, 0x2B, 0x6D]], columns=['r', 'g', 'b'])
+    color = lerp(x, data/255)
+    return [color['r'], color['g'], color['b']]
+
+
 def main():
     parser = argparse.ArgumentParser(
         prog='Generate palette',
@@ -414,6 +425,8 @@ def main():
             value = husl(x)
         elif args.type == 'set2':
             value = set2(x)
+        elif args.type == 'flare':
+            value = flare(x)
         else:
             value = [x, x, x]
 
