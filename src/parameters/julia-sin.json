@@ -4,7 +4,7 @@
     "y_pixels": 2048,
     "max_iterations": 100,
     "inside_color": 100,
-    "orbit": 1000,
+    "orbit": 100.0,
     "exponent": 1,
     "cx": 0.0,
     "cy": 0.0,
