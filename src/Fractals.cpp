@@ -301,10 +301,6 @@ int main(int argc, char **argv)
 		{
 			fractal = new Fractal::IteratedFunctionSystem(parameters);
 		}
-		else if (parameters.type == "simplejulia")
-		{
-			fractal = new Fractal::SimpleJulia(parameters);
-		}
 		else
 		{
 			std::cerr << "Unable to generate unknown '"
