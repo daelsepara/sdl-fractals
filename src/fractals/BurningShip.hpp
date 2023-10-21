@@ -37,7 +37,7 @@ namespace Fractal
 
                     auto zy = cy;
 
-                    while ((zx * zx + zy * zy) < this->parameters.orbit && t < this->parameters.max_iterations)
+                    while (Fractal::Mag2(zx, zy) < this->parameters.orbit && t < this->parameters.max_iterations)
                     {
                         auto xtemp = zx * zx - zy * zy + cx;
 

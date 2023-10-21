@@ -1,5 +1,5 @@
-#ifndef __MANDELBROT2_HPP__
-#define __MANDELBROT2_HPP__
+#ifndef __MANDELBROT_FN12_HPP__
+#define __MANDELBROT_FN12_HPP__
 
 #include "Base.hpp"
 #include "../Parameters.hpp"
@@ -7,7 +7,7 @@
 
 namespace Fractal
 {
-    class Mandelbrot2 : public Fractal::Base
+    class MandelbrotFn12 : public Fractal::Base
     {
     protected:
         void generate() override
@@ -23,32 +23,53 @@ namespace Fractal
             // pre-calculate escape orbit
             auto threshold = this->parameters.orbit * this->parameters.orbit;
 
-            // calculate mandelbrot set
+            // pre-calculate shift value
+            auto shift_value = this->parameters.shift_value * this->parameters.shift_value;
+
+            // pointer to complex function
+            auto ComplexFunction1 = Fractal::MapFunction(this->parameters.function);
+            auto ComplexFunction2 = Fractal::MapFunction(this->parameters.function2);
+
+            // calculate julia set
             for (auto y = 0; y < this->parameters.y_pixels; y++)
             {
-                // calculate location cy on complex plane
                 auto cy = this->parameters.scaled_y(y, dy);
 
                 for (auto x = 0; x < this->parameters.x_pixels; x++)
                 {
-                    auto t = 1;
-
-                    // calculate location cx on complex plane
                     auto cx = this->parameters.scaled_x(x, dx);
 
-                    // initial condition z0 (zx, zy)
-                    auto zx = cx;
+                    auto zx = 0.0;
 
-                    auto zy = cy;
+                    auto zy = 0.0;
+
+                    auto t = 0;
 
                     // generate escape time fractal
-                    while (Fractal::Mag2(zx, zy) <= threshold && (t < this->parameters.max_iterations))
+                    while (t < this->parameters.max_iterations)
                     {
-                        auto xtemp = zx * zx - zy * zy + cx;
+                        if (Fractal::Mag2(zx, zy) < shift_value)
+                        {
+                            ComplexFunction1(zx, zy);
+                        }
+                        else
+                        {
+                            ComplexFunction2(zx, zy);
+                        }
 
-                        zy = (zx + zx) * zy + cy;
+                        if (this->parameters.exponent != 1)
+                        {
+                            Fractal::Power(zx, zy, this->parameters.exponent);
+                        }
 
-                        zx = xtemp;
+                        zx += cx;
+
+                        zy += cy;
+
+                        if (Fractal::Mag2(zx, zy) > threshold)
+                        {
+                            break;
+                        }
 
                         t++;
                     }
@@ -74,7 +95,7 @@ namespace Fractal
         }
 
     public:
-        Mandelbrot2(Fractal::Parameters parameters) : Fractal::Base(parameters) {}
+        MandelbrotFn12(Fractal::Parameters parameters) : Fractal::Base(parameters) {}
     };
 }
 

@@ -4,9 +4,11 @@
 #include "fractals/BurningShip.hpp"
 #include "fractals/IteratedFunctionSystem.hpp"
 #include "fractals/Julia.hpp"
+#include "fractals/JuliaFn12.hpp"
 #include "fractals/Mandelbrot.hpp"
 #include "fractals/Mandelbrot2.hpp"
 #include "fractals/Mandelbrot3.hpp"
+#include "fractals/MandelbrotFn12.hpp"
 #include "fractals/Newton1.hpp"
 #include "fractals/Tricorn.hpp"
 

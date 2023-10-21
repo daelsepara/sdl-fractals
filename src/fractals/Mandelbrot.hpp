@@ -24,68 +24,7 @@ namespace Fractal
             auto threshold = this->parameters.orbit * this->parameters.orbit;
 
             // pointer to complex function
-            void (*ComplexFunction)(double &, double &);
-
-            if (this->parameters.function == "sin")
-            {
-                ComplexFunction = Fractal::Sin;
-            }
-            else if (this->parameters.function == "cos")
-            {
-                ComplexFunction = Fractal::Cos;
-            }
-            else if (this->parameters.function == "tan")
-            {
-                ComplexFunction = Fractal::Tan;
-            }
-            else if (this->parameters.function == "cot")
-            {
-                ComplexFunction = Fractal::Cot;
-            }
-            else if (this->parameters.function == "sec")
-            {
-                ComplexFunction = Fractal::Sec;
-            }
-            else if (this->parameters.function == "csc")
-            {
-                ComplexFunction = Fractal::Csc;
-            }
-            else if (this->parameters.function == "sinh")
-            {
-                ComplexFunction = Fractal::Sinh;
-            }
-            else if (this->parameters.function == "cosh")
-            {
-                ComplexFunction = Fractal::Cosh;
-            }
-            else if (this->parameters.function == "tanh")
-            {
-                ComplexFunction = Fractal::Tanh;
-            }
-            else if (this->parameters.function == "coth")
-            {
-                ComplexFunction = Fractal::Coth;
-            }
-            else if (this->parameters.function == "sech")
-            {
-                ComplexFunction = Fractal::Sech;
-            }
-            else if (this->parameters.function == "csch")
-            {
-                ComplexFunction = Fractal::Csch;
-            }
-            else if (this->parameters.function == "exp")
-            {
-                ComplexFunction = Fractal::Exp;
-            }
-            else if (this->parameters.function == "conj")
-            {
-                ComplexFunction = Fractal::Conjugate;
-            }
-            else
-            {
-                ComplexFunction = Fractal::Identity;
-            }
+            auto ComplexFunction = Fractal::MapFunction(this->parameters.function);
 
             // calculate mandelbrot set
             for (auto y = 0; y < parameters.y_pixels; y++)
@@ -118,7 +57,7 @@ namespace Fractal
 
                         zy += cy;
 
-                        if ((zx * zx + zy * zy) > threshold)
+                        if (Fractal::Mag2(zx, zy) > threshold)
                         {
                             break;
                         }

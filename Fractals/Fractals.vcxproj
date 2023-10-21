@@ -32,9 +32,11 @@
     <ClInclude Include="..\src\fractals\BurningShip.hpp" />
     <ClInclude Include="..\src\fractals\IteratedFunctionSystem.hpp" />
     <ClInclude Include="..\src\fractals\Julia.hpp" />
+    <ClInclude Include="..\src\fractals\JuliaFn12.hpp" />
     <ClInclude Include="..\src\fractals\Mandelbrot.hpp" />
     <ClInclude Include="..\src\fractals\Mandelbrot2.hpp" />
     <ClInclude Include="..\src\fractals\Mandelbrot3.hpp" />
+    <ClInclude Include="..\src\fractals\MandelbrotFn12.hpp" />
     <ClInclude Include="..\src\fractals\Newton1.hpp" />
     <ClInclude Include="..\src\fractals\Tricorn.hpp" />
     <ClInclude Include="..\src\FractalTypes.hpp" />
@@ -565,6 +567,13 @@
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
+    <CopyFileToFolders Include="..\src\parameters\julia-funcs.json">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
+      <FileType>Document</FileType>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
+    </CopyFileToFolders>
     <CopyFileToFolders Include="..\src\parameters\julia-siegel.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
@@ -615,6 +624,13 @@
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
     <CopyFileToFolders Include="..\src\parameters\julia5.json">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
+      <FileType>Document</FileType>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\src\parameters\mandelbrot-funcs.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>

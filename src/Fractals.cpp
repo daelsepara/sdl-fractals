@@ -281,6 +281,10 @@ int main(int argc, char **argv)
 		{
 			fractal = new Fractal::Mandelbrot3(parameters);
 		}
+		else if (parameters.type == "mandelbrot(f1|f2)")
+		{
+			fractal = new Fractal::MandelbrotFn12(parameters);
+		}
 		else if (parameters.type == "newton1")
 		{
 			fractal = new Fractal::Newton1(parameters);
@@ -288,6 +292,10 @@ int main(int argc, char **argv)
 		else if (parameters.type == "julia")
 		{
 			fractal = new Fractal::Julia(parameters);
+		}
+		else if (parameters.type == "julia(f1|f2)")
+		{
+			fractal = new Fractal::JuliaFn12(parameters);
 		}
 		else if (parameters.type == "burningship")
 		{

@@ -381,15 +381,56 @@ namespace Fractal
         zy = -zy;
     }
 
+    double Mag2(double zx, double zy)
+    {
+        return zx * zx + zy * zy;
+    }
+
+    double Abs(double zx, double zy)
+    {
+        return std::sqrt(Fractal::Mag2(zx, zy));
+    }
+
+    double Mag(double zx, double zy)
+    {
+        return Fractal::Abs(zx, zy);
+    }
+
+    void Reciprocal(double &zx, double &zy)
+    {
+        auto mag2 = Fractal::Mag2(zx, zy);
+
+        if (mag2 > 0.0)
+        {
+            zx = zx / mag2;
+            zy = -zy / mag2;
+        }
+    }
+
+    void Sqr(double &zx, double &zy)
+    {
+        auto xtemp = zx * zx - zy * zy;
+        zy = (zx + zx) * zy;
+        zx = xtemp;
+    }
+
     void Power(double &zx, double &zy, int exponent)
     {
-        if (exponent == 0)
+        if (exponent == -1)
+        {
+            Fractal::Reciprocal(zx, zy);
+        }
+        else if (exponent == 0)
         {
             zx = 1.0;
 
             zy = 1.0;
         }
-        else if (exponent > 1)
+        else if (exponent == 2)
+        {
+            Fractal::Sqr(zx, zy);
+        }
+        else if (exponent > 2)
         {
             auto oldx = zx;
 
@@ -407,6 +448,80 @@ namespace Fractal
         zx = zx;
 
         zy = zy;
+    }
+
+    typedef void (*FunctionPointer)(double &a, double &b);
+
+    Fractal::FunctionPointer MapFunction(std::string function)
+    {
+        if (function == "sin")
+        {
+            return Fractal::Sin;
+        }
+        else if (function == "cos")
+        {
+            return Fractal::Cos;
+        }
+        else if (function == "tan")
+        {
+            return Fractal::Tan;
+        }
+        else if (function == "cot")
+        {
+            return Fractal::Cot;
+        }
+        else if (function == "sec")
+        {
+            return Fractal::Sec;
+        }
+        else if (function == "csc")
+        {
+            return Fractal::Csc;
+        }
+        else if (function == "sinh")
+        {
+            return Fractal::Sinh;
+        }
+        else if (function == "cosh")
+        {
+            return Fractal::Cosh;
+        }
+        else if (function == "tanh")
+        {
+            return Fractal::Tanh;
+        }
+        else if (function == "coth")
+        {
+            return Fractal::Coth;
+        }
+        else if (function == "sech")
+        {
+            return Fractal::Sech;
+        }
+        else if (function == "csch")
+        {
+            return Fractal::Csch;
+        }
+        else if (function == "exp")
+        {
+            return Fractal::Exp;
+        }
+        else if (function == "conj")
+        {
+            return Fractal::Conjugate;
+        }
+        else if (function == "sqr")
+        {
+            return Fractal::Sqr;
+        }
+        else if (function == "reciprocal")
+        {
+            return Fractal::Reciprocal;
+        }
+        else
+        {
+            return Fractal::Identity;
+        }
     }
 
     void ApplyTransformation(double x, double y, Fractal::Transformation &transform, double &xn, double &yn)
@@ -454,7 +569,7 @@ namespace Fractal
 
     Uint8 NormalizedColor(int color, int max_value)
     {
-        return (Uint8)((double)color / (double)max_value * 255.0);
+        return (Uint8)(((double)color / (double)max_value) * 255.0);
     }
 
     Uint8 ClampColor(int color)

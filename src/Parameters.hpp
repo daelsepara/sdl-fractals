@@ -36,6 +36,7 @@ namespace Fractal
         int exponent = 2;
         int bailout = -1;
         double orbit = 2.0;
+        double shift_value = 0.0;
 
         // complex plane window boundaries
         double min_x = -2.5;
@@ -80,6 +81,7 @@ namespace Fractal
 
         // function
         std::string function = "z";
+        std::string function2 = "";
 
         // palette / colormap to use
         std::string palette = "";
@@ -169,6 +171,7 @@ namespace Fractal
                 // parameters for escape time type of fractals
                 this->max_iterations = !data["max_iterations"].is_null() ? (int)data["max_iterations"] : 255;
                 this->orbit = !data["orbit"].is_null() ? (double)data["orbit"] : std::numeric_limits<double>::quiet_NaN();
+                this->shift_value = !data["shift_value"].is_null() ? (double)data["shift_value"] : std::numeric_limits<double>::quiet_NaN();
                 this->bailout = !data["bailout"].is_null() ? (int)data["bailout"] : std::numeric_limits<int>::quiet_NaN();
 
                 // mandelbrot parameter
@@ -208,6 +211,7 @@ namespace Fractal
 
                 // function
                 this->function = !data["function"].is_null() ? std::string(data["function"]) : std::string("z");
+                this->function2 = !data["function2"].is_null() ? std::string(data["function2"]) : std::string("z");
 
                 // transforms
                 if (!data["transforms"].is_null() && data["transforms"].is_array())
