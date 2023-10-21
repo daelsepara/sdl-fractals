@@ -304,7 +304,7 @@
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\grbm.json">
+    <CopyFileToFolders Include="..\src\palettes\rgbm.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
