@@ -54,7 +54,9 @@ namespace Fractal
 
                     // get RGB color from palette and adjust color brightness
                     Uint8 r = palette.Colors[c] * palette.Brightness;
+
                     Uint8 g = palette.Colors[c + 1] * palette.Brightness;
+
                     Uint8 b = palette.Colors[c + 2] * palette.Brightness;
 
                     // write pixel on surface
@@ -143,7 +145,6 @@ namespace Fractal
 
                 if (texture)
                 {
-                    // Event handler
                     SDL_Event e;
 
                     auto quit = false;
@@ -221,6 +222,7 @@ namespace Fractal
     void Multiply(double x, double y, double a, double b, double &zx, double &zy)
     {
         zx = (x * a - y * b);
+
         zy = (x * b + y * a);
     }
 
@@ -231,6 +233,30 @@ namespace Fractal
         zx = (a * c + b * d) / denom;
 
         zy = (b * c - a * d) / denom;
+    }
+
+    double Mag2(double zx, double zy)
+    {
+        return zx * zx + zy * zy;
+    }
+
+    double Abs(double zx, double zy)
+    {
+        return std::sqrt(Fractal::Mag2(zx, zy));
+    }
+
+    double Mag(double zx, double zy)
+    {
+        return Fractal::Abs(zx, zy);
+    }
+
+    void Reciprocal(double &zx, double &zy)
+    {
+        auto mag2 = Fractal::Mag2(zx, zy) + eps;
+
+        zx = zx / mag2;
+
+        zy = -zy / mag2;
     }
 
     void Sin(double &zx, double &zy)
@@ -271,113 +297,115 @@ namespace Fractal
     void Tan(double &zx, double &zy)
     {
         auto sinzx = zx;
+
         auto sinzy = zy;
+
         auto coszx = zx;
+
         auto coszy = zy;
 
         Fractal::Sin(sinzx, sinzy);
+
         Fractal::Cos(coszx, coszy);
+
         Fractal::Divide(sinzx, sinzy, coszx, coszy, zx, zy);
     }
 
     void Cot(double &zx, double &zy)
     {
-        auto sinzx = zx;
-        auto sinzy = zy;
-        auto coszx = zx;
-        auto coszy = zy;
+        Fractal::Tan(zx, zy);
 
-        Fractal::Sin(sinzx, sinzy);
-        Fractal::Cos(coszx, coszy);
-        Fractal::Divide(coszx, coszy, sinzx, sinzy, zx, zy);
+        Fractal::Reciprocal(zx, zy);
     }
 
     void Sec(double &zx, double &zy)
     {
-        auto coszx = zx;
-        auto coszy = zy;
+        Fractal::Cos(zx, zy);
 
-        Fractal::Cos(coszx, coszy);
-        Fractal::Divide(1.0, 0.0, coszx, coszy, zx, zy);
+        Fractal::Reciprocal(zx, zy);
     }
 
     void Csc(double &zx, double &zy)
     {
-        auto sinzx = zx;
-        auto sinzy = zy;
+        Fractal::Sin(zx, zy);
 
-        Fractal::Sin(sinzx, sinzy);
-        Fractal::Divide(1.0, 0.0, sinzx, sinzy, zx, zy);
+        Fractal::Reciprocal(zx, zy);
     }
 
     void Sinh(double &zx, double &zy)
     {
         auto ezx = zx;
+
         auto ezy = zy;
+
         auto nzx = -zx;
+
         auto nzy = -zy;
 
         Fractal::Exp(ezx, ezy);
+
         Fractal::Exp(nzx, nzy);
 
         zx = (ezx - nzx) / 2.0;
+
         zy = (ezy - nzy) / 2.0;
     }
 
     void Cosh(double &zx, double &zy)
     {
         auto ezx = zx;
+
         auto ezy = zy;
+
         auto nzx = -zx;
+
         auto nzy = -zy;
 
         Fractal::Exp(ezx, ezy);
+
         Fractal::Exp(nzx, nzy);
 
         zx = (ezx + nzx) / 2.0;
+
         zy = (ezy + nzy) / 2.0;
     }
 
     void Tanh(double &zx, double &zy)
     {
         auto sinhzx = zx;
+
         auto sinhzy = zy;
+
         auto coshzx = zx;
+
         auto coshzy = zy;
 
         Fractal::Sinh(sinhzx, sinhzy);
+
         Fractal::Cosh(coshzx, coshzy);
+
         Fractal::Divide(sinhzx, sinhzy, coshzx, coshzy, zx, zy);
     }
 
     void Coth(double &zx, double &zy)
     {
-        auto sinhzx = zx;
-        auto sinhzy = zy;
-        auto coshzx = zx;
-        auto coshzy = zy;
+        Fractal::Tanh(zx, zy);
 
-        Fractal::Sinh(sinhzx, sinhzy);
-        Fractal::Cosh(coshzx, coshzy);
-        Fractal::Divide(coshzx, coshzy, sinhzx, sinhzy, zx, zy);
+        Fractal::Reciprocal(zx, zy);
     }
 
     void Sech(double &zx, double &zy)
     {
-        auto coshzx = zx;
-        auto coshzy = zy;
+        Fractal::Cosh(zx, zy);
 
-        Fractal::Cosh(coshzx, coshzy);
-        Fractal::Divide(1.0, 0.0, coshzx, coshzy, zx, zy);
+        Fractal::Reciprocal(zx, zy);
     }
 
     void Csch(double &zx, double &zy)
     {
-        auto sinhzx = zx;
-        auto sinhzy = zy;
+        Fractal::Sinh(zx, zy);
 
-        Fractal::Sinh(sinhzx, sinhzy);
-        Fractal::Divide(1.0, 0.0, sinhzx, sinhzy, zx, zy);
+        Fractal::Reciprocal(zx, zy);
     }
 
     void Conjugate(double &zx, double &zy)
@@ -385,33 +413,12 @@ namespace Fractal
         zy = -zy;
     }
 
-    double Mag2(double zx, double zy)
-    {
-        return zx * zx + zy * zy;
-    }
-
-    double Abs(double zx, double zy)
-    {
-        return std::sqrt(Fractal::Mag2(zx, zy));
-    }
-
-    double Mag(double zx, double zy)
-    {
-        return Fractal::Abs(zx, zy);
-    }
-
-    void Reciprocal(double &zx, double &zy)
-    {
-        auto mag2 = Fractal::Mag2(zx, zy) + eps;
-
-        zx = zx / mag2;
-        zy = -zy / mag2;
-    }
-
     void Sqr(double &zx, double &zy)
     {
         auto xtemp = zx * zx - zy * zy;
+
         zy = (zx + zx) * zy;
+
         zx = xtemp;
     }
 
@@ -441,6 +448,7 @@ namespace Fractal
         else if (exponent < 0)
         {
             Fractal::Reciprocal(zx, zy);
+
             Fractal::Power(zx, zy, -exponent);
         }
     }
@@ -562,19 +570,19 @@ namespace Fractal
         }
     }
 
-    Uint8 LogColor(int color, int max_value)
+    int LogColor(int color, int max_value)
     {
-        return (Uint8)(std::log1p((double)color) / std::log1p((double)max_value) * 255.0);
+        return (int)(std::log1p((double)color) / std::log1p((double)max_value) * 255.0);
     }
 
-    Uint8 NormalizedColor(int color, int max_value)
+    int NormalizedColor(int color, int max_value)
     {
-        return (Uint8)(((double)color / (double)max_value) * 255.0);
+        return (int)(((double)color / (double)max_value) * 255.0);
     }
 
-    Uint8 ClampColor(int color)
+    int ClampColor(int color)
     {
-        return (Uint8)(std::min(std::max(0, color), 255));
+        return std::min(std::max(0, color), 255);
     }
 
     void Log(Fractal::Grid &grid, int max_color)
