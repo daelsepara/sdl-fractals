@@ -3,7 +3,7 @@
     "x_pixels": 2048,
     "y_pixels": 2048,
     "max_iterations": 10000000,
-    "inside_color": 128,
+    "inside_color": 200,
     "transforms": [
         [
             0.14,
