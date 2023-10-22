@@ -58,7 +58,9 @@ namespace Fractal
                             Fractal::Power(zx, zy, this->parameters.exponent);
                         }
 
-                        Fractal::Multiply(zx, zy, this->parameters.cx, this->parameters.cy, zx, zy);
+                        zx += this->parameters.cx;
+
+                        zy += this->parameters.cy;
 
                         if (Fractal::Mag2(zx, zy) > threshold)
                         {

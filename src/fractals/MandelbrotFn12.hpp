@@ -39,9 +39,9 @@ namespace Fractal
                 {
                     auto cx = this->parameters.scaled_x(x, dx);
 
-                    auto zx = 0.0;
+                    auto zx = cx;
 
-                    auto zy = 0.0;
+                    auto zy = cy;
 
                     auto t = 0;
 
@@ -57,14 +57,12 @@ namespace Fractal
                             ComplexFunction2(zx, zy);
                         }
 
+                        Fractal::Multiply(zx, zy, cx, cy, zx, zy);
+
                         if (this->parameters.exponent != 1)
                         {
                             Fractal::Power(zx, zy, this->parameters.exponent);
                         }
-
-                        zx += cx;
-
-                        zy += cy;
 
                         if (Fractal::Mag2(zx, zy) > threshold)
                         {

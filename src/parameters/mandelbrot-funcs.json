@@ -9,10 +9,10 @@
     "function": "sqr",
     "function2": "cos",
     "inside_color": 0,
-    "min_x": -2.5,
-    "max_x": 1.5,
-    "min_y": -2.0,
-    "max_y": 2.0,
+    "min_x": -5,
+    "max_x": 5,
+    "min_y": -5,
+    "max_y": 5,
     "palette": "palettes/magma.json",
     "log_coloring": true
 }

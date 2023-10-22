@@ -1,0 +1,18 @@
+{
+    "type": "julia",
+    "x_pixels": 2048,
+    "y_pixels": 2048,
+    "max_iterations": 255,
+    "orbit": 2.0,
+    "exponent": 2,
+    "function": "z",
+    "inside_color": 32,
+    "cx": 0.27,
+    "cy": 0.004,
+    "min_x": -2.0,
+    "max_x": 2.0,
+    "min_y": -2.0,
+    "max_y": 2.0,
+    "log_coloring": true,
+    "palette": "palettes/jet.json"
+}

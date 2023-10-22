@@ -637,6 +637,13 @@
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
+    <CopyFileToFolders Include="..\src\parameters\julia6.json">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
+      <FileType>Document</FileType>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
+    </CopyFileToFolders>
     <CopyFileToFolders Include="..\src\parameters\levy-curve.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
@@ -687,6 +694,13 @@
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
     <CopyFileToFolders Include="..\src\parameters\mandelbrot4.json">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
+      <FileType>Document</FileType>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\src\parameters\maple.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
