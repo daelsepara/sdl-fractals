@@ -14,6 +14,10 @@
 
 namespace Fractal
 {
+    typedef void (*FunctionPointer)(double &a, double &b);
+
+    const double eps = std::numeric_limits<double>::epsilon();
+
     Grid InitializeGrid(Fractal::Parameters &parameters)
     {
         // create complex plane
@@ -398,13 +402,10 @@ namespace Fractal
 
     void Reciprocal(double &zx, double &zy)
     {
-        auto mag2 = Fractal::Mag2(zx, zy);
+        auto mag2 = Fractal::Mag2(zx, zy) + eps;
 
-        if (mag2 > 0.0)
-        {
-            zx = zx / mag2;
-            zy = -zy / mag2;
-        }
+        zx = zx / mag2;
+        zy = -zy / mag2;
     }
 
     void Sqr(double &zx, double &zy)
@@ -416,11 +417,7 @@ namespace Fractal
 
     void Power(double &zx, double &zy, int exponent)
     {
-        if (exponent == -1)
-        {
-            Fractal::Reciprocal(zx, zy);
-        }
-        else if (exponent == 0)
+        if (exponent == 0)
         {
             zx = 1.0;
 
@@ -441,6 +438,11 @@ namespace Fractal
                 Fractal::Multiply(zx, zy, oldx, oldy, zx, zy);
             }
         }
+        else if (exponent < 0)
+        {
+            Fractal::Reciprocal(zx, zy);
+            Fractal::Power(zx, zy, -exponent);
+        }
     }
 
     void Identity(double &zx, double &zy)
@@ -449,8 +451,6 @@ namespace Fractal
 
         zy = zy;
     }
-
-    typedef void (*FunctionPointer)(double &a, double &b);
 
     Fractal::FunctionPointer MapFunction(std::string function)
     {
@@ -564,7 +564,7 @@ namespace Fractal
 
     Uint8 LogColor(int color, int max_value)
     {
-        return (Uint8)(std::log((double)color) / std::log((double)max_value) * 255.0);
+        return (Uint8)(std::log1p((double)color) / std::log1p((double)max_value) * 255.0);
     }
 
     Uint8 NormalizedColor(int color, int max_value)

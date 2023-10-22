@@ -5,7 +5,7 @@
     "max_iterations": 255,
     "inside_color": 0,
     "tolerance": 1e-6,
-    "normalized_coloring": true,
+    "histogram_coloring": true,
     "min_x": -2.5,
     "max_x": 2.5,
     "min_y": -2.5,

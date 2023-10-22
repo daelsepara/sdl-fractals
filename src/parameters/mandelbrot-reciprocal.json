@@ -1,0 +1,16 @@
+{
+    "type": "mandelbrot",
+    "x_pixels": 2048,
+    "y_pixels": 2048,
+    "max_iterations": 100,
+    "orbit": 10,
+    "exponent": -2,
+    "function": "z",
+    "inside_color": 0,
+    "min_x": -2.0,
+    "max_x": 2.0,
+    "min_y": -2.0,
+    "max_y": 2.0,
+    "palette": "palettes/magma.json",
+    "log_coloring": true
+}
