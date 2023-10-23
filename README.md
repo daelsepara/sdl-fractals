@@ -541,6 +541,10 @@ Range (min … max):   350.7 ms … 432.0 ms    10 runs
 ![Julia (1/z|Conjugate)](samples/julia-funcs.png)
 **Parameters:** [julia-funcs](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia-funcs.json)
 
+## Julia 6
+![Julia 6](samples/julia6.png)
+**Parameters:** [julia6](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia6.json)
+
 ## Koch Curve
 ![Koch Curve](samples/koch.png)
 **Parameters:** [koch](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/koch.json)
@@ -576,6 +580,10 @@ Range (min … max):   350.7 ms … 432.0 ms    10 runs
 ## Maple
 ![Maple](samples/maple.png)
 **Parameters:** [maple](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/maple.json)
+
+## Pascal Hadamard
+![Maple](samples/pascal-hadamard.png)
+**Parameters:** [pascal-hadamard](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/pascal-hadamard.json)
 
 ## Pentagon
 ![Pentagon](samples/pentagon.png)
