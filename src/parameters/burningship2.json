@@ -6,6 +6,7 @@
     "orbit": 2.0,
     "exponent": 2,
     "inputs_filter": "abs",
+    "function:": "z",
     "invert_x": true,
     "invert_y": true,
     "log_coloring": true,
