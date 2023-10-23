@@ -18,7 +18,6 @@ namespace Fractal
 
         virtual void generate() {}
 
-    public:
         void set_color(int x, int y)
         {
             this->grid[y][x] = this->parameters.inside_color;
@@ -26,7 +25,6 @@ namespace Fractal
 
         void set_color(int t, int x, int y, double zx, double zy)
         {
-            // set escape-time color
             if (t != this->parameters.max_iterations)
             {
                 if (std::abs(zx) < this->parameters.bailout || std::abs(zy) < this->parameters.bailout)
@@ -44,6 +42,7 @@ namespace Fractal
             }
         }
 
+    public:
         void render()
         {
             this->generate();
