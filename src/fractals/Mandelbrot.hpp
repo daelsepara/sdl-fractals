@@ -46,11 +46,21 @@ namespace Fractal
                     // generate escape time fractal
                     while (t < this->parameters.max_iterations)
                     {
+                        if (this->parameters.absolute_inputs)
+                        {
+                            Fractal::Absolute(zx, zy);
+                        }
+
                         ComplexFunction(zx, zy);
 
                         if (this->parameters.exponent != 1)
                         {
                             Fractal::Power(zx, zy, this->parameters.exponent);
+                        }
+
+                        if (this->parameters.absolute_result)
+                        {
+                            Fractal::Absolute(zx, zy);
                         }
 
                         zx += cx;

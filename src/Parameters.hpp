@@ -76,6 +76,10 @@ namespace Fractal
         bool invert_x = false;
         bool invert_y = false;
 
+        // get absolute value of each component
+        bool absolute_inputs = false;
+        bool absolute_result = false;
+
         // transformations
         Fractal::Transformations transforms = Fractal::Transformations();
 
@@ -193,6 +197,10 @@ namespace Fractal
                 // invert axis
                 this->invert_x = !data["invert_x"].is_null() ? (bool)data["invert_x"] : false;
                 this->invert_y = !data["invert_y"].is_null() ? (bool)data["invert_y"] : false;
+
+                // absolute value flag
+                this->absolute_inputs = !data["absolute_inputs"].is_null() ? (bool)data["absolute_inputs"] : false;
+                this->absolute_result = !data["absolute_result"].is_null() ? (bool)data["absolute_result"] : false;
 
                 // log coloring
                 this->log_coloring = !data["log_coloring"].is_null() ? (bool)data["log_coloring"] : false;

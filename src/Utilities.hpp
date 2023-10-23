@@ -453,6 +453,13 @@ namespace Fractal
         }
     }
 
+    void Absolute(double &zx, double &zy)
+    {
+        zx = std::abs(zx);
+
+        zy = std::abs(zy);
+    }
+
     void Identity(double &zx, double &zy)
     {
         zx = zx;
@@ -525,6 +532,10 @@ namespace Fractal
         else if (function == "reciprocal")
         {
             return Fractal::Reciprocal;
+        }
+        else if (function == "abs")
+        {
+            return Fractal::Absolute;
         }
         else
         {

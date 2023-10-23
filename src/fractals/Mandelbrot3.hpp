@@ -48,9 +48,23 @@ namespace Fractal
                     // generate escape time fractal
                     while ((zx + zy) <= threshold && (t < this->parameters.max_iterations))
                     {
-                        yy = (xx + xx) * yy + cy;
+                        if (this->parameters.absolute_inputs)
+                        {
+                            Fractal::Absolute(zx, zy);
+                        }
 
-                        xx = zx - zy + cx;
+                        yy = (xx + xx) * yy;
+
+                        xx = zx - zy;
+
+                        if (this->parameters.absolute_result)
+                        {
+                            Fractal::Absolute(xx, yy);
+                        }
+
+                        xx += cx;
+
+                        yy += cy;
 
                         zx = xx * xx;
 

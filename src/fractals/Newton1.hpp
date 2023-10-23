@@ -41,6 +41,11 @@ namespace Fractal
 
                     while (tmp > this->parameters.tolerance && ++t < this->parameters.max_iterations)
                     {
+                        if (this->parameters.absolute_inputs)
+                        {
+                            Fractal::Absolute(zx, zy);
+                        }
+
                         auto oldx = zx;
 
                         auto oldy = zy;
@@ -60,6 +65,11 @@ namespace Fractal
                         auto zx1 = zx - oldx;
 
                         auto zy1 = zy - oldy;
+
+                        if (this->parameters.absolute_result)
+                        {
+                            Fractal::Absolute(zx1, zy1);
+                        }
 
                         tmp = (zx1 * zx1 + zy1 * zy1);
                     }

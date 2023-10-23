@@ -44,11 +44,25 @@ namespace Fractal
                     // generate escape time fractal
                     while (Fractal::Mag2(zx, zy) <= threshold && (t < this->parameters.max_iterations))
                     {
-                        auto xtemp = zx * zx - zy * zy + cx;
+                        if (this->parameters.absolute_inputs)
+                        {
+                            Fractal::Absolute(zx, zy);
+                        }
 
-                        zy = (zx + zx) * zy + cy;
+                        auto xtemp = zx * zx - zy * zy;
+
+                        zy = (zx + zx) * zy;
 
                         zx = xtemp;
+
+                        if (this->parameters.absolute_result)
+                        {
+                            Fractal::Absolute(zx, zy);
+                        }
+
+                        zx += cx;
+
+                        zy += cy;
 
                         t++;
                     }
