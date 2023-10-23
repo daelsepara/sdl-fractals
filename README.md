@@ -237,7 +237,7 @@ Range (min … max):    3.898 s …  4.063 s    10 runs
 |orbit          | 4.0 |
 |parameter file | [burningship](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/burningship.json) |
 |palette        | [hot](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/hot.json) |
-|source         | [BurningShip.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/BurningShip.hpp) |
+|source         | [Mandelbrot.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Mandelbrot.hpp) |
 
 ```cmd
 Time (mean ± σ):     559.9 ms ±   4.1 ms    [User: 518.1 ms, System: 33.7 ms]
@@ -260,7 +260,7 @@ Range (min … max):   552.8 ms … 567.2 ms    10 runs
 |orbit          | 4.0 |
 |parameter file | [burningship2](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/burningship2.json) |
 |palette        | [plasma](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/plasma.json) |
-|source         | [BurningShip.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/BurningShip.hpp) |
+|source         | [Mandelbrot.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Mandelbrot.hpp) |
 
 ```cmd
 Time (mean ± σ):      1.469 s ±  0.289 s    [User: 0.840 s, System: 0.054 s]
@@ -283,7 +283,7 @@ Range (min … max):    1.248 s …  2.128 s    10 runs
 |orbit          | 4.0 |
 |parameter file | [burningship3](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/burningship2.json) |
 |palette        | [bluered](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/bluered.json) |
-|source         | [BurningShip.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/BurningShip.hpp) |
+|source         | [Mandelbrot.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Mandelbrot.hpp) |
 
 ```cmd
 Time (mean ± σ):      1.469 s ±  0.289 s    [User: 0.840 s, System: 0.054 s]

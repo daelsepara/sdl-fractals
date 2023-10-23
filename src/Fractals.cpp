@@ -297,10 +297,6 @@ int main(int argc, char **argv)
 		{
 			fractal = new Fractal::JuliaFn12(parameters);
 		}
-		else if (parameters.type == "burningship")
-		{
-			fractal = new Fractal::BurningShip(parameters);
-		}
 		else if (parameters.type == "tricorn")
 		{
 			fractal = new Fractal::Tricorn(parameters);

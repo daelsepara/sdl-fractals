@@ -12,6 +12,11 @@ namespace Fractal
     protected:
         void generate() override
         {
+            // set inputs/result filter
+            auto InputsFilter = Fractal::MapFunction(this->parameters.inputs_filter);
+            
+            auto ResultFilter = Fractal::MapFunction(this->parameters.result_filter);
+
             // create complex plane (initialize grid)
             this->grid = Fractal::InitializeGrid(this->parameters);
 
@@ -28,6 +33,7 @@ namespace Fractal
 
             // pointer to complex function
             auto ComplexFunction1 = Fractal::MapFunction(this->parameters.function);
+            
             auto ComplexFunction2 = Fractal::MapFunction(this->parameters.function2);
 
             // calculate julia set
@@ -44,10 +50,7 @@ namespace Fractal
                     // generate escape time fractal
                     while (t < this->parameters.max_iterations)
                     {
-                        if (this->parameters.absolute_inputs)
-                        {
-                            Fractal::Absolute(zx, zy);
-                        }
+                        InputsFilter(zx, zy);
 
                         if (Fractal::Mag2(zx, zy) < shift_value)
                         {
@@ -63,10 +66,7 @@ namespace Fractal
                             Fractal::Power(zx, zy, this->parameters.exponent);
                         }
 
-                        if (this->parameters.absolute_result)
-                        {
-                            Fractal::Absolute(zx, zy);
-                        }
+                        ResultFilter(zx, zy);
 
                         zx += this->parameters.cx;
 

@@ -12,6 +12,11 @@ namespace Fractal
     protected:
         void generate() override
         {
+            // set inputs/result filter
+            auto InputsFilter = Fractal::MapFunction(this->parameters.inputs_filter);
+            
+            auto ResultFilter = Fractal::MapFunction(this->parameters.result_filter);
+
             // create complex plane (initialize grid)
             this->grid = Fractal::InitializeGrid(this->parameters);
 
@@ -41,10 +46,7 @@ namespace Fractal
 
                     while (tmp > this->parameters.tolerance && ++t < this->parameters.max_iterations)
                     {
-                        if (this->parameters.absolute_inputs)
-                        {
-                            Fractal::Absolute(zx, zy);
-                        }
+                        InputsFilter(zx, zy);
 
                         auto oldx = zx;
 
@@ -66,10 +68,7 @@ namespace Fractal
 
                         auto zy1 = zy - oldy;
 
-                        if (this->parameters.absolute_result)
-                        {
-                            Fractal::Absolute(zx1, zy1);
-                        }
+                        ResultFilter(zx1, zy1);
 
                         tmp = (zx1 * zx1 + zy1 * zy1);
                     }

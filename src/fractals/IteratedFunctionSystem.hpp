@@ -13,6 +13,11 @@ namespace Fractal
     protected:
         void generate() override
         {
+            // set inputs/result filter
+            auto InputsFilter = Fractal::MapFunction(this->parameters.inputs_filter);
+            
+            auto ResultFilter = Fractal::MapFunction(this->parameters.result_filter);
+
             // create complex plane (initialize grid)
             this->grid = Fractal::InitializeGrid(this->parameters);
 
@@ -35,7 +40,11 @@ namespace Fractal
 
             for (auto t = 0; t < this->parameters.max_iterations; t++)
             {
+                InputsFilter(xn, yn);
+
                 Fractal::Transform(random.NextDouble(), x, y, this->parameters.transforms, xn, yn);
+
+                ResultFilter(xn, yn);
 
                 auto xp = this->parameters.pixel_x(xn, dx);
 

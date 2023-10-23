@@ -1,7 +1,6 @@
 #ifndef __FRACTAL_TYPES_HPP__
 #define __FRACTAL_TYPES_HPP__
 
-#include "fractals/BurningShip.hpp"
 #include "fractals/IteratedFunctionSystem.hpp"
 #include "fractals/Julia.hpp"
 #include "fractals/JuliaFn12.hpp"

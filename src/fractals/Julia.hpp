@@ -12,6 +12,11 @@ namespace Fractal
     protected:
         void generate() override
         {
+            // set inputs/result filter
+            auto InputsFilter = Fractal::MapFunction(this->parameters.inputs_filter);
+            
+            auto ResultFilter = Fractal::MapFunction(this->parameters.result_filter);
+
             // create complex plane (initialize grid)
             this->grid = Fractal::InitializeGrid(this->parameters);
 
@@ -41,10 +46,7 @@ namespace Fractal
                     // generate escape time fractal
                     while (t < this->parameters.max_iterations)
                     {
-                        if (this->parameters.absolute_inputs)
-                        {
-                            Fractal::Absolute(zx, zy);
-                        }
+                        InputsFilter(zx, zy);
 
                         ComplexFunction(zx, zy);
 
@@ -53,10 +55,7 @@ namespace Fractal
                             Fractal::Power(zx, zy, this->parameters.exponent);
                         }
 
-                        if (this->parameters.absolute_result)
-                        {
-                            Fractal::Absolute(zx, zy);
-                        }
+                        ResultFilter(zx, zy);
 
                         zx += this->parameters.cx;
 

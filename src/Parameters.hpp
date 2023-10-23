@@ -76,15 +76,15 @@ namespace Fractal
         bool invert_x = false;
         bool invert_y = false;
 
-        // get absolute value of each component
-        bool absolute_inputs = false;
-        bool absolute_result = false;
+        // inputs/result filter
+        std::string inputs_filter = "z";
+        std::string result_filter = "z";
 
         // transformations
         Fractal::Transformations transforms = Fractal::Transformations();
 
         // function
-        std::string function = "z";
+        std::string function = "";
         std::string function2 = "";
 
         // palette / colormap to use
@@ -198,9 +198,9 @@ namespace Fractal
                 this->invert_x = !data["invert_x"].is_null() ? (bool)data["invert_x"] : false;
                 this->invert_y = !data["invert_y"].is_null() ? (bool)data["invert_y"] : false;
 
-                // absolute value flag
-                this->absolute_inputs = !data["absolute_inputs"].is_null() ? (bool)data["absolute_inputs"] : false;
-                this->absolute_result = !data["absolute_result"].is_null() ? (bool)data["absolute_result"] : false;
+                // input/output filters
+                this->inputs_filter = !data["inputs_filter"].is_null() ? std::string(data["inputs_filter"]) : std::string("z");
+                this->result_filter = !data["result_filter"].is_null() ? std::string(data["result_filter"]) : std::string("z");
 
                 // log coloring
                 this->log_coloring = !data["log_coloring"].is_null() ? (bool)data["log_coloring"] : false;
@@ -218,8 +218,8 @@ namespace Fractal
                 this->invert_colors = !data["invert_colors"].is_null() ? (bool)data["invert_colors"] : false;
 
                 // function
-                this->function = !data["function"].is_null() ? std::string(data["function"]) : std::string("z");
-                this->function2 = !data["function2"].is_null() ? std::string(data["function2"]) : std::string("z");
+                this->function = !data["function"].is_null() ? std::string(data["function"]) : "";
+                this->function2 = !data["function2"].is_null() ? std::string(data["function2"]) : "";
 
                 // transforms
                 if (!data["transforms"].is_null() && data["transforms"].is_array())
