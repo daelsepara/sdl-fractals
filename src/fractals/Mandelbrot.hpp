@@ -75,22 +75,7 @@ namespace Fractal
                         t++;
                     }
 
-                    // set escape-time color
-                    if (t != this->parameters.max_iterations)
-                    {
-                        if (std::abs(zx) < this->parameters.bailout || std::abs(zy) < this->parameters.bailout)
-                        {
-                            this->grid[y][x] = this->parameters.bailout_color;
-                        }
-                        else
-                        {
-                            this->grid[y][x] = t;
-                        }
-                    }
-                    else
-                    {
-                        this->grid[y][x] = this->parameters.inside_color;
-                    }
+                    this->set_color(t, x, y, zx, zy);
                 }
             }
         }

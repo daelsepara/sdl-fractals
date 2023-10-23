@@ -43,7 +43,7 @@ namespace Fractal
 
                 if (xp >= 0 && xp < this->parameters.x_pixels && yp >= 0 && yp < this->parameters.y_pixels)
                 {
-                    this->grid[yp][xp] = this->parameters.inside_color;
+                    this->set_color(xp, yp);
                 }
 
                 x = xn;
