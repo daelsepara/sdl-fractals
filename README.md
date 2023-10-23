@@ -550,7 +550,7 @@ Range (min … max):   350.7 ms … 432.0 ms    10 runs
 **Parameters:** [koch-triangle](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/koch-triangle.json)
 
 ## Koch (Mix)
-![Koch (Mix)](samples/koch-triangle.png)
+![Koch (Mix)](samples/kochmix.png)
 **Parameters:** [kochmix](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/kochmix.json)
 
 ## Leaf
