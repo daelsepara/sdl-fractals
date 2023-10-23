@@ -296,26 +296,20 @@ namespace Fractal
 
     void Tan(double &zx, double &zy)
     {
-        auto sinzx = zx;
+        auto denum = std::cos(2.0 * zx) + std::cosh(2.0 * zy);
 
-        auto sinzy = zy;
+        zx = std::sin(2.0 * zx) / denum;
 
-        auto coszx = zx;
-
-        auto coszy = zy;
-
-        Fractal::Sin(sinzx, sinzy);
-
-        Fractal::Cos(coszx, coszy);
-
-        Fractal::Divide(sinzx, sinzy, coszx, coszy, zx, zy);
+        zy = std::sinh(2.0 * zy) / denum;
     }
 
     void Cot(double &zx, double &zy)
     {
-        Fractal::Tan(zx, zy);
+        auto denum = std::cosh(2.0 * zy) - std::cos(2.0 * zx);
 
-        Fractal::Reciprocal(zx, zy);
+        zx = std::sin(2.0 * zx) / denum;
+
+        zy = -std::sinh(2.0 * zy) / denum;
     }
 
     void Sec(double &zx, double &zy)
@@ -334,64 +328,42 @@ namespace Fractal
 
     void Sinh(double &zx, double &zy)
     {
-        auto ezx = zx;
+        auto oldx = zx;
 
-        auto ezy = zy;
+        auto oldy = zy;
 
-        auto nzx = -zx;
+        zx = std::sinh(oldx) * std::cos(oldy);
 
-        auto nzy = -zy;
-
-        Fractal::Exp(ezx, ezy);
-
-        Fractal::Exp(nzx, nzy);
-
-        zx = (ezx - nzx) / 2.0;
-
-        zy = (ezy - nzy) / 2.0;
+        zy = std::cosh(oldx) * std::sin(oldy);
     }
 
     void Cosh(double &zx, double &zy)
     {
-        auto ezx = zx;
+        auto oldx = zx;
 
-        auto ezy = zy;
+        auto oldy = zy;
 
-        auto nzx = -zx;
+        zx = std::cosh(oldx) * std::cos(oldy);
 
-        auto nzy = -zy;
-
-        Fractal::Exp(ezx, ezy);
-
-        Fractal::Exp(nzx, nzy);
-
-        zx = (ezx + nzx) / 2.0;
-
-        zy = (ezy + nzy) / 2.0;
+        zy = std::sinh(oldy) * std::sin(oldy);
     }
 
     void Tanh(double &zx, double &zy)
     {
-        auto sinhzx = zx;
+        auto denum = std::cosh(2.0 * zx) + std::cos(2.0 * zy);
 
-        auto sinhzy = zy;
+        zx = std::sinh(2.0 * zx) / denum;
 
-        auto coshzx = zx;
-
-        auto coshzy = zy;
-
-        Fractal::Sinh(sinhzx, sinhzy);
-
-        Fractal::Cosh(coshzx, coshzy);
-
-        Fractal::Divide(sinhzx, sinhzy, coshzx, coshzy, zx, zy);
+        zy = std::sin(2.0 * zy) / denum;
     }
 
     void Coth(double &zx, double &zy)
     {
-        Fractal::Tanh(zx, zy);
+        auto denum = std::cosh(2.0 * zx) - std::cos(2.0 * zy);
 
-        Fractal::Reciprocal(zx, zy);
+        zx = std::sinh(2.0 * zx) / denum;
+
+        zy = -std::sin(2.0 * zy) / denum;
     }
 
     void Sech(double &zx, double &zy)
