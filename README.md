@@ -483,94 +483,150 @@ Range (min … max):   350.7 ms … 432.0 ms    10 runs
 
 ## Tree
 ![Tree](samples/tree.png)
-**Parameter:** [tree](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/tree.json)
+**Parameters:** [tree](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/tree.json)
 
 ## Seaweed
 ![Seaweed](samples/seaweed.png)
-**Parameter:** [seaweed](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/seaweed.json)
+**Parameters:** [seaweed](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/seaweed.json)
 
 ## Julia (Dragon)
 ![Julia Dragon](samples/julia-dragon.png)
-**Parameter:** [julia-dragon](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia-dragon.json)
+**Parameters:** [julia-dragon](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia-dragon.json)
 
 ## Julia (Siegel Disk)
 ![Julia Siegel Disk](samples/julia-siegel.png)
-**Parameter:** [julia-siegel](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia-siegel.json)
+**Parameters:** [julia-siegel](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia-siegel.json)
 
 ## Julia (Flower)
 ![Julia Flower](samples/julia-flower.png)
-**Parameter:** [julia-flower](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia-flower.json)
+**Parameters:** [julia-flower](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia-flower.json)
 
 ## Mandelbrot (Histogram coloring)
 ![Mandelbrot Histogram](samples/mandelbrot-histogram.png)
-**Parameter:** [mandelbrot-histogram](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/mandelbrot-histogram.json)
+**Parameters:** [mandelbrot-histogram](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/mandelbrot-histogram.json)
 
 ## Chrysantemum (Julia)
 ![Chrysantemum](samples/chrysantemum.png)
-**Parameter:** [chrysantemum](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/chrysantemum.json)
+**Parameters:** [chrysantemum](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/chrysantemum.json)
 
 ## Cross Snowflakes
 ![Cross Snowflakes](samples/cross-snowflakes.png)
-**Parameter:** [cross-snowflakes](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/cross-snowflakes.json)
+**Parameters:** [cross-snowflakes](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/cross-snowflakes.json)
 
 ## Dendrite (Julia)
 ![Dendrite](samples/dendrite.png)
-**Parameter:** [dendrite](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/dendrite.json)
+**Parameters:** [dendrite](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/dendrite.json)
 
 ## EKG (Julia)
 ![EKG](samples/ekg.png)
-**Parameter:** [ekg](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/ekg.json)
+**Parameters:** [ekg](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/ekg.json)
 
 ## Snowflakes (Julia)
 ![Snowflakes](samples/julia-snowflakes.png)
-**Parameter:** [julia-snowflakes](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia-snowflakes.json)
+**Parameters:** [julia-snowflakes](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia-snowflakes.json)
 
 ## Sine (Julia)
 ![Sine](samples/julia-sin.png)
-**Parameter:** [julia-sin](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia-sin.json)
+**Parameters:** [julia-sin](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia-sin.json)
 
 ## Cosine (Julia)
 ![Cosine](samples/julia-cos.png)
-**Parameter:** [julia-cos](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia-cos.json)
+**Parameters:** [julia-cos](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia-cos.json)
 
 ## Dragon Curve
 ![Dragon Curve](samples/dragon-curve.png)
-**Parameter:** [dragon-curve](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/dragon-curve.json)
+**Parameters:** [dragon-curve](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/dragon-curve.json)
+
+## Julia (1/z|Conjugate)
+![Julia (1/z|Conjugate)](samples/julia-funcs.png)
+**Parameters:** [julia-funcs](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia-funcs.json)
+
+## Koch Curve
+![Koch Curve](samples/koch.png)
+**Parameters:** [koch](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/koch.json)
+
+## Koch Triangle
+![Koch Triangle](samples/koch-triangle.png)
+**Parameters:** [koch-triangle](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/koch-triangle.json)
+
+## Koch (Mix)
+![Koch (Mix)](samples/koch-triangle.png)
+**Parameters:** [kochmix](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/kochmix.json)
+
+## Leaf
+![Leaf](samples/leaf.png)
+**Parameters:** [leaf](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/leaf.json)
+
+## Leaf 2
+![Leaf 2](samples/leaf2.png)
+**Parameters:** [leaf2](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/leaf2.json)
+
+## Levy Curve
+![Levy Curve](samples/levy-curve.png)
+**Parameters:** [levy-curve](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/levy-curve.json)
+
+## Mandelbrot (Sqr|Cos)
+![Mandelbrot (Sqr|Cos)](samples/mandelbrot-funcs.png)
+**Parameters:** [mandelbrot-funcs](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/mandelbrot-funcs.json)
+
+## Mandelbrot (1/z^4)
+![Mandelbrot (1/z^4)](samples/mandelbrot-reciprocal.png)
+**Parameters:** [mandelbrot-reciprocal](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/mandelbrot-reciprocal.json)
+
+## Maple
+![Maple](samples/maple.png)
+**Parameters:** [maple](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/maple.json)
+
+## Pentagon
+![Pentagon](samples/pentagon.png)
+**Parameters:** [pentagon](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/pentagon.json)
+
+## Mandelbrot sinh^2(z)
+![Mandelbrot sinh^2(z)](samples/sinh.png)
+**Parameters:** [sinh](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/sinh.json)
+
+## Snowflakes
+![Snowflakes](samples/snowflakes.png)
+**Parameters:** [snowflakes](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/snowflakes.json)
+
+## Tree 2
+![Tree2](samples/tree2.png)
+**Parameters:** [tree2](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/tree2.json)
 
 # Biomorphs
 
 ## Biomorph M (Mandelbrot)
 ![Biomorph (Mandelbrot)](samples/biomorph-mandelbrot.png)
-**Parameter:** [biomorph-mandelbrot](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/biomorph-mandelbrot.json)
+**Parameters:** [biomorph-mandelbrot](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/biomorph-mandelbrot.json)
 
 ## Biomorph 1 (Julia)
 ![Biomorph (Julia)](samples/biomorph-julia.png)
-**Parameter:** [biomorph-julia](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/biomorph-julia.json)
+**Parameters:** [biomorph-julia](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/biomorph-julia.json)
 
 ## Biomorph 2 (Julia)
 ![Biomorph (Julia)](samples/biomorph-julia2.png)
-**Parameter:** [biomorph-julia2](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/biomorph-julia2.json)
+**Parameters:** [biomorph-julia2](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/biomorph-julia2.json)
 
 ## Biomorph 3 (Julia)
 ![Biomorph (Julia)](samples/biomorph-julia3.png)
-**Parameter:** [biomorph-julia3](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/biomorph-julia3.json)
+**Parameters:** [biomorph-julia3](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/biomorph-julia3.json)
 
 ## Biomorph 4 (Julia)
 ![Biomorph (Julia)](samples/biomorph-julia4.png)
-**Parameter:** [biomorph-julia3](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/biomorph-julia4.json)
+**Parameters:** [biomorph-julia3](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/biomorph-julia4.json)
 
 ## Biomorph 5 (Julia)
 ![Biomorph (Julia)](samples/biomorph-julia5.png)
-**Parameter:** [biomorph-julia5](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/biomorph-julia5.json)
+**Parameters:** [biomorph-julia5](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/biomorph-julia5.json)
 
 ## Biomorph 6 (Julia)
 ![Biomorph (Julia)](samples/biomorph-julia6.png)
-**Parameter:** [biomorph-julia6](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/biomorph-julia6.json)
+**Parameters:** [biomorph-julia6](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/biomorph-julia6.json)
 
 ## Biomorph 7 (Julia)
 ![Biomorph (Julia)](samples/biomorph-julia7.png)
-**Parameter:** [biomorph-julia7](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/biomorph-julia7.json)
+**Parameters:** [biomorph-julia7](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/biomorph-julia7.json)
 
 ## Biomorph 8 (Julia)
 ![Biomorph (Julia)](samples/biomorph-julia8.png)
-**Parameter:** [biomorph-julia8](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/biomorph-julia8.json)
+**Parameters:** [biomorph-julia8](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/biomorph-julia8.json)
