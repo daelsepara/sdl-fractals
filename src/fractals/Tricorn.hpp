@@ -24,7 +24,6 @@ namespace Fractal
             auto dx = this->parameters.dx();
 
             auto dy = this->parameters.dy();
-            ;
 
             // calculate tricorn fractal
             for (auto y = 0; y < parameters.y_pixels; y++)
