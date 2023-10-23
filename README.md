@@ -234,7 +234,7 @@ Range (min … max):    3.898 s …  4.063 s    10 runs
 |normalized colormap | true |
 |inside color   | 0 |
 |max iterations | 100 |
-|orbit          | 4.0 |
+|orbit          | 2.0 |
 |parameter file | [burningship](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/burningship.json) |
 |palette        | [hot](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/hot.json) |
 |source         | [Mandelbrot.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Mandelbrot.hpp) |
@@ -257,7 +257,7 @@ Range (min … max):   552.8 ms … 567.2 ms    10 runs
 |log colormap   | true |
 |inside color   | 0 |
 |max iterations | 100 |
-|orbit          | 4.0 |
+|orbit          | 2.0 |
 |parameter file | [burningship2](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/burningship2.json) |
 |palette        | [plasma](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/plasma.json) |
 |source         | [Mandelbrot.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Mandelbrot.hpp) |
@@ -280,7 +280,7 @@ Range (min … max):    1.248 s …  2.128 s    10 runs
 |log colormap   | true |
 |inside color   | 0 |
 |max iterations | 100 |
-|orbit          | 4.0 |
+|orbit          | 2.0 |
 |parameter file | [burningship3](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/burningship2.json) |
 |palette        | [bluered](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/bluered.json) |
 |source         | [Mandelbrot.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Mandelbrot.hpp) |
