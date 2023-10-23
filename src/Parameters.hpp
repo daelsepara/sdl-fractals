@@ -16,11 +16,11 @@ namespace Fractal
 {
     typedef std::vector<double> Transformation;
 
-    typedef std::vector<std::vector<double>> Transformations;
+    typedef std::vector<Fractal::Transformation> Transformations;
 
     typedef std::vector<int> GridRow;
 
-    typedef std::vector<std::vector<int>> Grid;
+    typedef std::vector<Fractal::GridRow> Grid;
 
     class Parameters
     {

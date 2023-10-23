@@ -3,6 +3,7 @@
 
 #include <string>
 
+#include "../ComplexFunctions.hpp"
 #include "../Parameters.hpp"
 #include "../Utilities.hpp"
 

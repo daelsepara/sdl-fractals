@@ -39,6 +39,7 @@
     <ClInclude Include="..\src\fractals\MandelbrotFn12.hpp" />
     <ClInclude Include="..\src\fractals\Newton1.hpp" />
     <ClInclude Include="..\src\fractals\Tricorn.hpp" />
+    <ClInclude Include="..\src\ComplexFunctions.hpp" />
     <ClInclude Include="..\src\FractalTypes.hpp" />
     <ClInclude Include="..\src\nlohmann\json.hpp" />
     <ClInclude Include="..\src\Palette.hpp" />
