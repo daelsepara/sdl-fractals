@@ -13,9 +13,7 @@ namespace Fractal
         void generate() override
         {
             // set inputs/result filter
-            auto InputsFilter = Fractal::MapFunction(this->parameters.inputs_filter);
-            
-            auto ResultFilter = Fractal::MapFunction(this->parameters.result_filter);
+            this->map_filters();
 
             // create complex plane (initialize grid)
             this->grid = Fractal::InitializeGrid(this->parameters);
@@ -31,14 +29,14 @@ namespace Fractal
             // calculate mandelbrot set
             for (auto y = 0; y < this->parameters.y_pixels; y++)
             {
-                // calculate location cy on complex plane
+                // calculate cy coordinate on complex plane
                 auto cy = this->parameters.scaled_y(y, dy);
 
                 for (auto x = 0; x < this->parameters.x_pixels; x++)
                 {
                     auto t = 1;
 
-                    // calculate location cx on complex plane
+                    // calculate cx coordinate on complex plane
                     auto cx = this->parameters.scaled_x(x, dx);
 
                     // initial condition z0 (zx, zy)
@@ -49,15 +47,11 @@ namespace Fractal
                     // generate escape time fractal
                     while (Fractal::Mag2(zx, zy) <= threshold && (t < this->parameters.max_iterations))
                     {
-                        InputsFilter(zx, zy);
+                        this->FilterInputs(zx, zy);
 
-                        auto xtemp = zx * zx - zy * zy;
+                        Fractal::Sqr(zx, zy);
 
-                        zy = (zx + zx) * zy;
-
-                        zx = xtemp;
-
-                        ResultFilter(zx, zy);
+                        this->FilterResult(zx, zy);
 
                         zx += cx;
 

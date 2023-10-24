@@ -16,7 +16,19 @@ namespace Fractal
 
         Fractal::Grid grid;
 
+        Fractal::FunctionPointer FilterInputs;
+
+        Fractal::FunctionPointer FilterResult;
+
         virtual void generate() {}
+
+        void map_filters()
+        {
+            // set inputs/result filter
+            this->FilterInputs = Fractal::MapFunction(this->parameters.inputs_filter);
+
+            this->FilterResult = Fractal::MapFunction(this->parameters.result_filter);
+        }
 
         void set_color(int x, int y)
         {

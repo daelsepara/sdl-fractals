@@ -13,9 +13,7 @@ namespace Fractal
         void generate() override
         {
             // set inputs/result filter
-            auto InputsFilter = Fractal::MapFunction(this->parameters.inputs_filter);
-            
-            auto ResultFilter = Fractal::MapFunction(this->parameters.result_filter);
+            this->map_filters();
 
             // create complex plane (initialize grid)
             this->grid = Fractal::InitializeGrid(this->parameters);
@@ -32,9 +30,9 @@ namespace Fractal
             auto shift_value = this->parameters.shift_value * this->parameters.shift_value;
 
             // pointer to complex function
-            auto ComplexFunction1 = Fractal::MapFunction(this->parameters.function);
-            
-            auto ComplexFunction2 = Fractal::MapFunction(this->parameters.function2);
+            auto ApplyFunction1 = Fractal::MapFunction(this->parameters.function);
+
+            auto ApplyFunction2 = Fractal::MapFunction(this->parameters.function2);
 
             // calculate julia set
             for (auto y = 0; y < this->parameters.y_pixels; y++)
@@ -54,15 +52,15 @@ namespace Fractal
                     // generate escape time fractal
                     while (t < this->parameters.max_iterations)
                     {
-                        InputsFilter(zx, zy);
+                        this->FilterInputs(zx, zy);
 
                         if (Fractal::Mag2(zx, zy) < shift_value)
                         {
-                            ComplexFunction1(zx, zy);
+                            ApplyFunction1(zx, zy);
                         }
                         else
                         {
-                            ComplexFunction2(zx, zy);
+                            ApplyFunction2(zx, zy);
                         }
 
                         if (this->parameters.exponent != 1)
@@ -70,7 +68,7 @@ namespace Fractal
                             Fractal::Power(zx, zy, this->parameters.exponent);
                         }
 
-                        ResultFilter(zx, zy);
+                        this->FilterResult(zx, zy);
 
                         Fractal::Multiply(zx, zy, cx, cy, zx, zy);
 
