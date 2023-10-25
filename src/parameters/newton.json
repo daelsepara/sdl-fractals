@@ -1,0 +1,15 @@
+{
+    "type": "newton",
+    "x_pixels": 2048,
+    "y_pixels": 2048,
+    "max_iterations": 255,
+    "inside_color": 0,
+    "tolerance": 1e-6,
+    "histogram_coloring": true,
+    "exponent": 3,
+    "min_x": -2.5,
+    "max_x": 2.5,
+    "min_y": -2.5,
+    "max_y": 2.5,
+    "palette": "palettes/segacube.json"
+}

@@ -323,7 +323,7 @@ namespace Fractal
         }
 
         xn = transform[0] * x + transform[1] * y + transform[4];
-        
+
         yn = transform[2] * x + transform[3] * y + transform[5];
     }
 

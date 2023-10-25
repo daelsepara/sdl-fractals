@@ -1,5 +1,5 @@
-#ifndef __NEWTON1_HPP__
-#define __NEWTON1_HPP__
+#ifndef __NEWTON_HPP__
+#define __NEWTON_HPP__
 
 #include "Base.hpp"
 #include "../Parameters.hpp"
@@ -7,7 +7,7 @@
 
 namespace Fractal
 {
-    class Newton1 : public Fractal::Base
+    class Newton : public Fractal::Base
     {
     protected:
         void generate() override
@@ -45,25 +45,30 @@ namespace Fractal
 
                         this->FilterInputs(zx, zy);
 
-                        auto zxx = zx * zx;
+                        auto denx = zx;
 
-                        auto zyy = zy * zy;
+                        auto deny = zy;
 
-                        auto tmp = (zxx + zyy) * (zxx + zyy);
+                        // n * z^(n-1)
+                        Fractal::Power(denx, deny, this->parameters.exponent - 1);
 
-                        auto tmp3 = 3.0 * tmp;
+                        denx *= (double)this->parameters.exponent;
 
-                        zx = ((zx + zx) * tmp + zxx - zyy) / tmp3;
+                        deny *= (double)this->parameters.exponent;
 
-                        zy = ((zy + zy) * (tmp - oldx)) / tmp3;
+                        // (n - 1) * z^n + 1.0
+                        Fractal::Power(zx, zy, this->parameters.exponent);
 
-                        auto zx1 = zx - oldx;
+                        zx = ((double)this->parameters.exponent - 1.0) * zx + 1.0;
 
-                        auto zy1 = zy - oldy;
+                        zy *= (double)this->parameters.exponent - 1.0;
 
-                        this->FilterResult(zx1, zy1);
+                        // ((n - 1) * z^n + 1.0) / (n * z^(n-1))
+                        Fractal::Divide(zx, zy, denx, deny, zx, zy);
 
-                        diff = (zx1 * zx1 + zy1 * zy1);
+                        this->FilterResult(zx, zy);
+                        
+                        diff = Fractal::Mag2(zx - oldx, zy - oldy);
                     }
 
                     this->set_color(t, x, y, zx, zy);
@@ -72,7 +77,7 @@ namespace Fractal
         }
 
     public:
-        Newton1(Fractal::Parameters parameters) : Fractal::Base(parameters) {}
+        Newton(Fractal::Parameters parameters) : Fractal::Base(parameters) {}
     };
 }
 
