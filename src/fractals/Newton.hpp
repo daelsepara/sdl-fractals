@@ -52,16 +52,20 @@ namespace Fractal
                         // n * z^(n-1)
                         Fractal::Power(denx, deny, this->parameters.exponent - 1);
 
-                        denx *= (double)this->parameters.exponent;
+                        auto n = (double)this->parameters.exponent;
 
-                        deny *= (double)this->parameters.exponent;
+                        denx *= n;
+
+                        deny *= n;
 
                         // (n - 1) * z^n + 1.0
                         Fractal::Power(zx, zy, this->parameters.exponent);
 
-                        zx = ((double)this->parameters.exponent - 1.0) * zx + 1.0;
+                        auto n1 = (double)this->parameters.exponent - 1.0;
+                        
+                        (zx *= n1) += 1.0;
 
-                        zy *= (double)this->parameters.exponent - 1.0;
+                        zy *= n1;
 
                         // ((n - 1) * z^n + 1.0) / (n * z^(n-1))
                         Fractal::Divide(zx, zy, denx, deny, zx, zy);
