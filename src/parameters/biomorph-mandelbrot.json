@@ -13,6 +13,6 @@
     "max_x": 4,
     "min_y": -4.5,
     "max_y": 4.5,
-    "histogram_coloring": true,
+    "color_mode": "histogram",
     "palette": "palettes/set1.json"
 }

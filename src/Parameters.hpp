@@ -8,12 +8,36 @@
 #include <string>
 #include <vector>
 
+#include <unordered_map>
 #include <SDL2/SDL.h>
 
 #include "nlohmann/json.hpp"
 
 namespace Fractal
 {
+    enum class ColorMode
+    {
+        DEFAULT = 0,
+        NORMALIZED,
+        LOG,
+        HISTOGRAM,
+        MODULUS
+    };
+
+    using Mapping = std::unordered_map<const char *, Fractal::ColorMode>;
+
+    Fractal::Mapping ColorModeMapping = {
+        {"none", Fractal::ColorMode::DEFAULT},
+        {"default", Fractal::ColorMode::DEFAULT},
+        {"norm", Fractal::ColorMode::NORMALIZED},
+        {"normalized", Fractal::ColorMode::NORMALIZED},
+        {"log", Fractal::ColorMode::LOG},
+        {"logarithm", Fractal::ColorMode::LOG},
+        {"hist", Fractal::ColorMode::HISTOGRAM},
+        {"histogram", Fractal::ColorMode::HISTOGRAM},
+        {"mod", Fractal::ColorMode::HISTOGRAM},
+        {"modulus", Fractal::ColorMode::MODULUS}};
+
     typedef std::vector<double> Transformation;
 
     typedef std::vector<Fractal::Transformation> Transformations;
@@ -21,6 +45,28 @@ namespace Fractal
     typedef std::vector<int> GridRow;
 
     typedef std::vector<Fractal::GridRow> Grid;
+
+    Fractal::ColorMode Find(Fractal::Mapping &unordered_map, const char *key)
+    {
+        auto result = Fractal::ColorMode::DEFAULT;
+
+        for (auto &keys : unordered_map)
+        {
+            if (std::strcmp(keys.first, key) == 0)
+            {
+                result = keys.second;
+
+                break;
+            }
+        }
+
+        return result;
+    }
+
+    Fractal::ColorMode Find(Fractal::Mapping &unordered_map, std::string str)
+    {
+        return Fractal::Find(unordered_map, str.c_str());
+    }
 
     class Parameters
     {
@@ -57,18 +103,6 @@ namespace Fractal
         // bailout color
         int bailout_color = 0;
 
-        // log color mapping
-        bool log_coloring = false;
-
-        // normalized color mapping
-        bool normalized_coloring = false;
-
-        // modulus color mapping
-        bool mod_coloring = false;
-
-        // histogram color mapping
-        bool histogram_coloring = false;
-
         // invert colors
         bool invert_colors = false;
 
@@ -89,6 +123,9 @@ namespace Fractal
 
         // palette / colormap to use
         std::string palette = "";
+
+        // color mode
+        Fractal::ColorMode color_mode = Fractal::ColorMode::DEFAULT;
 
         double dx()
         {
@@ -202,22 +239,10 @@ namespace Fractal
                 this->inputs_filter = !data["inputs_filter"].is_null() ? std::string(data["inputs_filter"]) : std::string("z");
                 this->result_filter = !data["result_filter"].is_null() ? std::string(data["result_filter"]) : std::string("z");
 
-                // log coloring
-                this->log_coloring = !data["log_coloring"].is_null() ? (bool)data["log_coloring"] : false;
-
-                // normalized coloring
-                this->normalized_coloring = !data["normalized_coloring"].is_null() ? (bool)data["normalized_coloring"] : false;
-
-                // modulus coloring
-                this->mod_coloring = !data["mod_coloring"].is_null() ? (bool)data["mod_coloring"] : false;
-
-                // histogram coloring
-                this->histogram_coloring = !data["histogram_coloring"].is_null() ? (bool)data["histogram_coloring"] : false;
-
                 // invert colors
                 this->invert_colors = !data["invert_colors"].is_null() ? (bool)data["invert_colors"] : false;
 
-                // function
+                // functions
                 this->function = !data["function"].is_null() ? std::string(data["function"]) : "";
                 this->function2 = !data["function2"].is_null() ? std::string(data["function2"]) : "";
 
@@ -246,6 +271,9 @@ namespace Fractal
 
                 // palette / colormap
                 this->palette = !data["palette"].is_null() ? std::string(data["palette"]) : "";
+
+                // color mode
+                this->color_mode = !data["color_mode"].is_null() ? Fractal::Find(ColorModeMapping, std::string(data["color_mode"])) : Fractal::ColorMode::DEFAULT;
 
                 file.close();
             }

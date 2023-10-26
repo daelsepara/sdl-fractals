@@ -15,6 +15,6 @@
     "max_x": 4,
     "min_y": -4,
     "max_y": 4,
-    "histogram_coloring": true,
+    "color_mode": "histogram",
     "palette": "palettes/jet.json"
 }

@@ -13,6 +13,6 @@
     "max_x": 1.6,
     "min_y": -1.6,
     "max_y": 1.6,
-    "log_coloring": true,
+    "color_mode": "log",
     "palette": "palettes/heat.json"
 }

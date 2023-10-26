@@ -320,19 +320,19 @@ namespace Fractal
 
     void FinalizeColors(Fractal::Grid &grid, Fractal::Parameters &parameters, int max_color)
     {
-        if (parameters.log_coloring)
+        if (parameters.color_mode == Fractal::ColorMode::LOG)
         {
             Fractal::Log(grid, max_color);
         }
-        else if (parameters.normalized_coloring)
+        else if (parameters.color_mode == Fractal::ColorMode::NORMALIZED)
         {
             Fractal::Normalize(grid, max_color);
         }
-        else if (parameters.mod_coloring)
+        else if (parameters.color_mode == Fractal::ColorMode::MODULUS)
         {
             Fractal::Mod(grid);
         }
-        else if (parameters.histogram_coloring)
+        else if (parameters.color_mode == Fractal::ColorMode::HISTOGRAM)
         {
             Fractal::Histogram(grid);
         }

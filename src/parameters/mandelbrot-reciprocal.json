@@ -12,5 +12,5 @@
     "min_y": -2.0,
     "max_y": 2.0,
     "palette": "palettes/magma.json",
-    "log_coloring": true
+    "color_mode": "log"
 }

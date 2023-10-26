@@ -5,7 +5,7 @@
     "max_iterations": 255,
     "orbit": 4.0,
     "inside_color": 0,
-    "log_coloring": true,
+    "color_mode": "log",
     "min_x": -2.25,
     "max_x": 2.25,
     "min_y": -2.25,

@@ -13,6 +13,6 @@
     "max_x": 0.007,
     "min_y": -0.007,
     "max_y": 0.007,
-    "normalized_coloring": true,
+    "color_mode": "normalized",
     "palette": "palettes/jet.json"
 }

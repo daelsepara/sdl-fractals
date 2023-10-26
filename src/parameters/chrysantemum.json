@@ -13,6 +13,6 @@
     "max_x": 1.5,
     "min_y": -1.5,
     "max_y": 1.5,
-    "histogram_coloring": true,
+    "color_mode": "histogram",
     "palette": "palettes/rainbow.json"
 }

@@ -7,7 +7,7 @@
     "exponent": 4,
     "function": "conj",
     "inside_color": 0,
-    "log_coloring": true,
+    "color_mode": "log",
     "min_x": -2.25,
     "max_x": 2.25,
     "min_y": -2.25,

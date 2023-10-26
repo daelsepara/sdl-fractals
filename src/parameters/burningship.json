@@ -9,7 +9,7 @@
     "function:": "z",
     "invert_x": true,
     "invert_y": true,
-    "normalized_coloring": true,
+    "color_mode": "normalized",
     "inside_color": 0,
     "min_x": -1.663,
     "max_x": -1.59,

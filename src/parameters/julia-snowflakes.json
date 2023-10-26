@@ -13,6 +13,6 @@
     "max_x": 1.5,
     "min_y": -1.5,
     "max_y": 1.5,
-    "log_coloring": true,
+    "color_mode": "log",
     "palette": "palettes/gray.json"
 }

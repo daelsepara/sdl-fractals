@@ -16,5 +16,5 @@
     "min_y": -2.5,
     "max_y": 2.5,
     "palette": "palettes/magma.json",
-    "histogram_coloring": true
+    "color_mode": "histogram"
 }

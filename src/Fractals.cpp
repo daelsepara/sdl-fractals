@@ -131,14 +131,6 @@ bool ParseString(std::string arg, char **argv, int i, const char *param, std::st
 #undef main
 #endif
 
-void reset_colormap(Fractal::Parameters &parameters)
-{
-	parameters.log_coloring = false;
-	parameters.normalized_coloring = false;
-	parameters.mod_coloring = false;
-	parameters.histogram_coloring = false;
-}
-
 int main(int argc, char **argv)
 {
 	std::string parameters_file;
@@ -221,35 +213,27 @@ int main(int argc, char **argv)
 
 		if (normalized_coloring)
 		{
-			reset_colormap(parameters);
-
-			parameters.normalized_coloring = true;
+			parameters.color_mode = Fractal::ColorMode::NORMALIZED;
 		}
 
 		if (log_coloring)
 		{
-			reset_colormap(parameters);
-
-			parameters.log_coloring = true;
+			parameters.color_mode = Fractal::ColorMode::LOG;
 		}
 
 		if (mod_coloring)
 		{
-			reset_colormap(parameters);
-
-			parameters.mod_coloring = true;
+			parameters.color_mode = Fractal::ColorMode::MODULUS;
 		}
 
 		if (histogram_coloring)
 		{
-			reset_colormap(parameters);
-
-			parameters.histogram_coloring = true;
+			parameters.color_mode = Fractal::ColorMode::HISTOGRAM;
 		}
 
 		if (default_coloring)
 		{
-			reset_colormap(parameters);
+			parameters.color_mode = Fractal::ColorMode::DEFAULT;
 		}
 
 		if (invertx)
