@@ -28,6 +28,11 @@ namespace Fractal
         zy = (b * c - a * d) / denom;
     }
 
+    int Sign(double val)
+    {
+        return (double(0) < val) - (val < double(0));
+    }
+
     double Mag2(double zx, double zy)
     {
         return zx * zx + zy * zy;

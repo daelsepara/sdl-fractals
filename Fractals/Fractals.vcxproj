@@ -36,11 +36,12 @@
     <ClInclude Include="..\src\fractals\Mandelbrot2.hpp" />
     <ClInclude Include="..\src\fractals\Mandelbrot3.hpp" />
     <ClInclude Include="..\src\fractals\MandelbrotFn12.hpp" />
+    <ClInclude Include="..\src\fractals\Newton.hpp" />
     <ClInclude Include="..\src\fractals\Newton1.hpp" />
     <ClInclude Include="..\src\fractals\Tricorn.hpp" />
+    <ClInclude Include="..\src\nlohmann\json.hpp" />
     <ClInclude Include="..\src\ComplexFunctions.hpp" />
     <ClInclude Include="..\src\FractalTypes.hpp" />
-    <ClInclude Include="..\src\nlohmann\json.hpp" />
     <ClInclude Include="..\src\Palette.hpp" />
     <ClInclude Include="..\src\Parameters.hpp" />
     <ClInclude Include="..\src\Random.hpp" />
@@ -532,6 +533,13 @@
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
+    <CopyFileToFolders Include="..\src\parameters\crystal.json">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
+      <FileType>Document</FileType>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
+    </CopyFileToFolders>
     <CopyFileToFolders Include="..\src\parameters\culcita.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
@@ -756,7 +764,21 @@
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
+    <CopyFileToFolders Include="..\src\parameters\newton.json">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
+      <FileType>Document</FileType>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
+    </CopyFileToFolders>
     <CopyFileToFolders Include="..\src\parameters\newton1.json">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
+      <FileType>Document</FileType>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\src\parameters\newton4.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>

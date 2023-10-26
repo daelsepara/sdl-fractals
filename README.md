@@ -513,6 +513,10 @@ Range (min … max):   350.7 ms … 432.0 ms    10 runs
 ![Cross Snowflakes](samples/cross-snowflakes.png)
 **Parameters:** [cross-snowflakes](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/cross-snowflakes.json)
 
+## Crystal
+![Crystal](samples/crystal.png)
+**Parameters:** [crystal](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/crystal.json)
+
 ## Dendrite (Julia)
 ![Dendrite](samples/dendrite.png)
 **Parameters:** [dendrite](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/dendrite.json)
