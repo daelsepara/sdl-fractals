@@ -30,7 +30,7 @@ namespace Fractal
 
     int Sign(double val)
     {
-        return (double(0) < val) - (val < double(0));
+        return val >= 0.0 ? 1 : -1;
     }
 
     double Mag2(double zx, double zy)

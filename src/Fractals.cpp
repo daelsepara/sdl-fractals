@@ -253,7 +253,11 @@ int main(int argc, char **argv)
 
 		Fractal::Base *fractal;
 
-		if (parameters.type == "ifs")
+		if (parameters.type == "barnsleytree")
+		{
+			fractal = new Fractal::BarnsleyTree(parameters);
+		}
+		else if (parameters.type == "ifs")
 		{
 			fractal = new Fractal::IteratedFunctionSystem(parameters);
 		}

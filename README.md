@@ -613,6 +613,10 @@ Range (min … max):   350.7 ms … 432.0 ms    10 runs
 ![Newton IV](samples/newton4.png)
 **Parameters:** [newton4](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/newton4.json)
 
+## Barnsley Tree
+![Barnsley Tree](samples/barnsleytree.png)
+**Parameters:** [barnsleytree](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/barnsleytree.json)
+
 # Biomorphs
 
 ## Biomorph M (Mandelbrot)

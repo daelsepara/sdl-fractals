@@ -62,7 +62,7 @@ namespace Fractal
                         Fractal::Power(zx, zy, this->parameters.exponent);
 
                         auto n1 = (double)this->parameters.exponent - 1.0;
-                        
+
                         (zx *= n1) += 1.0;
 
                         zy *= n1;
@@ -71,7 +71,7 @@ namespace Fractal
                         Fractal::Divide(zx, zy, denx, deny, zx, zy);
 
                         this->FilterResult(zx, zy);
-                        
+
                         diff = Fractal::Mag2(zx - oldx, zy - oldy);
                     }
 

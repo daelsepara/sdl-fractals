@@ -1,0 +1,16 @@
+{
+    "type": "barnsleytree",
+    "x_pixels": 2048,
+    "y_pixels": 2048,
+    "max_iterations": 50,
+    "orbit": 2.0,
+    "inside_color": 0,
+    "cx": 0.6,
+    "cy": 1.1,
+    "min_x": -2.7,
+    "max_x": 2.7,
+    "min_y": -2.7,
+    "max_y": 2.7,
+    "palette": "palettes/srb2v22.json",
+    "color_mode": "histogram"
+}
