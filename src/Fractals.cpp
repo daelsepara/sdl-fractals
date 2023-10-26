@@ -253,7 +253,19 @@ int main(int argc, char **argv)
 
 		Fractal::Base *fractal;
 
-		if (parameters.type == "mandelbrot")
+		if (parameters.type == "ifs")
+		{
+			fractal = new Fractal::IteratedFunctionSystem(parameters);
+		}
+		else if (parameters.type == "julia")
+		{
+			fractal = new Fractal::Julia(parameters);
+		}
+		else if (parameters.type == "julia(f1|f2)")
+		{
+			fractal = new Fractal::JuliaFn12(parameters);
+		}
+		else if (parameters.type == "mandelbrot")
 		{
 			fractal = new Fractal::Mandelbrot(parameters);
 		}
@@ -277,21 +289,9 @@ int main(int argc, char **argv)
 		{
 			fractal = new Fractal::Newton1(parameters);
 		}
-		else if (parameters.type == "julia")
-		{
-			fractal = new Fractal::Julia(parameters);
-		}
-		else if (parameters.type == "julia(f1|f2)")
-		{
-			fractal = new Fractal::JuliaFn12(parameters);
-		}
 		else if (parameters.type == "tricorn")
 		{
 			fractal = new Fractal::Tricorn(parameters);
-		}
-		else if (parameters.type == "ifs")
-		{
-			fractal = new Fractal::IteratedFunctionSystem(parameters);
 		}
 		else
 		{
