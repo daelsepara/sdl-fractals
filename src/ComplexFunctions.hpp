@@ -92,6 +92,17 @@ namespace Fractal
         zy = expx * std::sin(oldy);
     }
 
+    void Log(double &zx, double &zy)
+    {
+        auto oldx = zx;
+
+        auto oldy = zy;
+
+        zx = std::log(oldx * oldx + oldy * oldy) / 2.0;
+
+        zy = std::atan2(oldy, oldx);
+    }
+
     void Tan(double &zx, double &zy)
     {
         auto denum = std::cos(2.0 * zx) + std::cosh(2.0 * zy);
@@ -223,6 +234,17 @@ namespace Fractal
         }
     }
 
+    void Power(double ax, double ay, double bx, double by, double &zx, double &zy)
+    {
+        Fractal::Log(ax, ay);
+
+        Fractal::Log(bx, by);
+
+        Fractal::Multiply(ax, ay, bx, by, zx, zy);
+
+        Fractal::Exp(zx, ay);
+    }
+
     void Absolute(double &zx, double &zy)
     {
         zx = std::abs(zx);
@@ -290,6 +312,10 @@ namespace Fractal
         else if (function == "exp")
         {
             return Fractal::Exp;
+        }
+        else if (function == "log")
+        {
+            return Fractal::Log;
         }
         else if (function == "conj")
         {
