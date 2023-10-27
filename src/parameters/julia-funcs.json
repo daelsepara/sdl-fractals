@@ -2,7 +2,7 @@
     "type": "julia(f1|f2)",
     "x_pixels": 2048,
     "y_pixels": 2048,
-    "max_iterations": 20000,
+    "max_iterations": 200,
     "orbit": 10.0,
     "shift_value": 1.0,
     "exponent": 1,
@@ -15,6 +15,6 @@
     "max_x": 2.5,
     "min_y": -2.5,
     "max_y": 2.5,
-    "palette": "palettes/magma.json",
+    "palette": "palettes/rgbm.json",
     "color_mode": "histogram"
 }
