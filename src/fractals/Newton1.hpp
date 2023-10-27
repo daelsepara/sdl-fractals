@@ -66,7 +66,14 @@ namespace Fractal
                         diff = (zx1 * zx1 + zy1 * zy1);
                     }
 
-                    this->set_color(t, x, y, zx, zy);
+                    if (this->parameters.decomp)
+                    {
+                        this->decomp(t, x, y, zx, zy);
+                    }
+                    else
+                    {
+                        this->set_color(t, x, y, zx, zy);
+                    }
                 }
             }
         }

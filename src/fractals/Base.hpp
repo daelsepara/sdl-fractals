@@ -9,6 +9,10 @@
 
 namespace Fractal
 {
+    const double PI = 3.14159265358979323846;
+
+    const double PI2 = Fractal::PI * 2.0;
+
     class Base
     {
     protected:
@@ -30,9 +34,14 @@ namespace Fractal
             this->FilterResult = Fractal::MapFunction(this->parameters.result_filter);
         }
 
+        void set_color(int x, int y, int c)
+        {
+            this->grid[y][x] = c;
+        }
+
         void set_color(int x, int y)
         {
-            this->grid[y][x] = this->parameters.inside_color;
+            this->set_color(x, y, this->parameters.inside_color);
         }
 
         void set_color(int t, int x, int y, double zx, double zy)
@@ -50,7 +59,28 @@ namespace Fractal
             }
             else
             {
-                this->grid[y][x] = this->parameters.inside_color;
+                this->set_color(x, y);
+            }
+        }
+
+        void decomp(int t, int x, int y, double zx, double zy)
+        {
+            if (t != this->parameters.max_iterations)
+            {
+                auto d = std::atan2(zy, zx);
+
+                if (d < 0)
+                {
+                    d += Fractal::PI2;
+                }
+
+                auto color = (int)((double)this->parameters.max_iterations * (d / Fractal::PI2));
+
+                this->set_color(x, y, color);
+            }
+            else
+            {
+                this->set_color(x, y);
             }
         }
 

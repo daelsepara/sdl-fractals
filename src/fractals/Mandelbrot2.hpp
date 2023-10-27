@@ -60,7 +60,14 @@ namespace Fractal
                         t++;
                     }
 
-                    this->set_color(t, x, y, zx, zy);
+                    if (this->parameters.decomp)
+                    {
+                        this->decomp(t, x, y, zx, zy);
+                    }
+                    else
+                    {
+                        this->set_color(t, x, y, zx, zy);
+                    }
                 }
             }
         }

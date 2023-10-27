@@ -75,7 +75,14 @@ namespace Fractal
                         diff = Fractal::Mag2(zx - oldx, zy - oldy);
                     }
 
-                    this->set_color(t, x, y, zx, zy);
+                    if (this->parameters.decomp)
+                    {
+                        this->decomp(t, x, y, zx, zy);
+                    }
+                    else
+                    {
+                        this->set_color(t, x, y, zx, zy);
+                    }
                 }
             }
         }

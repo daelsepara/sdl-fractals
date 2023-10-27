@@ -127,6 +127,9 @@ namespace Fractal
         // color mode
         Fractal::ColorMode color_mode = Fractal::ColorMode::DEFAULT;
 
+        // decomposition mode
+        bool decomp = false;
+
         double dx()
         {
             return (double)(this->max_x - this->min_x) / (double)(this->x_pixels);
@@ -245,6 +248,9 @@ namespace Fractal
                 // functions
                 this->function = !data["function"].is_null() ? std::string(data["function"]) : "";
                 this->function2 = !data["function2"].is_null() ? std::string(data["function2"]) : "";
+
+                // decomp
+                this->decomp = !data["decomp"].is_null() ? (bool)data["decomp"] : false;
 
                 // transforms
                 if (!data["transforms"].is_null() && data["transforms"].is_array())
