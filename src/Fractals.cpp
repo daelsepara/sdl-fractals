@@ -149,6 +149,7 @@ int main(int argc, char **argv)
 	bool benchmark = false;
 	bool invert_colors = false;
 	bool default_coloring = false;
+	bool decomp = false;
 
 	if (argc > 1)
 	{
@@ -199,6 +200,10 @@ int main(int argc, char **argv)
 			{
 				benchmark = true;
 			}
+			else if (arg == "/DECOMP")
+			{
+				decomp = true;
+			}
 		}
 	}
 
@@ -236,20 +241,13 @@ int main(int argc, char **argv)
 			parameters.color_mode = Fractal::ColorMode::DEFAULT;
 		}
 
-		if (invertx)
-		{
-			parameters.invert_x = true;
-		}
+		parameters.decomp = decomp;
 
-		if (inverty)
-		{
-			parameters.invert_y = true;
-		}
+		parameters.invert_x = invertx;
 
-		if (invert_colors)
-		{
-			parameters.invert_colors = true;
-		}
+		parameters.invert_y = inverty;
+
+		parameters.invert_colors = invert_colors;
 
 		Fractal::Base *fractal;
 
