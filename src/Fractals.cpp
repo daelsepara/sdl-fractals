@@ -241,13 +241,25 @@ int main(int argc, char **argv)
 			parameters.color_mode = Fractal::ColorMode::DEFAULT;
 		}
 
-		parameters.decomp = decomp;
+		if (decomp)
+		{
+			parameters.decomp = true;
+		}
 
-		parameters.invert_x = invertx;
+		if (invertx)
+		{
+			parameters.invert_x = true;
+		}
+		
+		if (inverty)
+		{
+			parameters.invert_y = true;
+		}
 
-		parameters.invert_y = inverty;
-
-		parameters.invert_colors = invert_colors;
+		if (invert_colors)
+		{
+			parameters.invert_colors = true;
+		}
 
 		Fractal::Base *fractal;
 
