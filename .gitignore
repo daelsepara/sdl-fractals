@@ -34,6 +34,8 @@
 # local settings
 .vscode/
 .vs/
+.DS_Store/
+universe/
 
 # miscellaneous
 *.user
