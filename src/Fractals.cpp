@@ -110,7 +110,7 @@ bool ParseString(std::string arg, char **argv, int i, const char *param, std::st
 
 	auto result = (!arg.compare(0, len, param) && arg.length() > len);
 
-	if (result)
+	if (result && len < 256)
 	{
 		// clear buffer
 		std::memset(Buffer, 0, 255);
