@@ -4,6 +4,7 @@
 #include "fractals/BarnsleyTree.hpp"
 #include "fractals/IteratedFunctionSystem.hpp"
 #include "fractals/Julia.hpp"
+#include "fractals/JuliaFn.hpp"
 #include "fractals/JuliaFn12.hpp"
 #include "fractals/Mandelbrot.hpp"
 #include "fractals/Mandelbrot2.hpp"

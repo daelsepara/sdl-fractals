@@ -545,6 +545,10 @@ Range (min … max):   350.7 ms … 432.0 ms    10 runs
 ![Julia (1/z|Conjugate)](samples/julia-funcs.png)
 **Parameters:** [julia-funcs](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia-funcs.json)
 
+## Julia (c * fn(z))
+![Julia (c * fn(z)](samples/julia-func.png)
+**Parameters:** [julia-func](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia-func.json)
+
 ## Julia 6
 ![Julia 6](samples/julia6.png)
 **Parameters:** [julia6](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/julia6.json)

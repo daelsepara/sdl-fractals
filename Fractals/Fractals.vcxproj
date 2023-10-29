@@ -32,6 +32,7 @@
     <ClInclude Include="..\src\fractals\Base.hpp" />
     <ClInclude Include="..\src\fractals\IteratedFunctionSystem.hpp" />
     <ClInclude Include="..\src\fractals\Julia.hpp" />
+    <ClInclude Include="..\src\fractals\JuliaFn.hpp" />
     <ClInclude Include="..\src\fractals\JuliaFn12.hpp" />
     <ClInclude Include="..\src\fractals\Mandelbrot.hpp" />
     <ClInclude Include="..\src\fractals\Mandelbrot2.hpp" />
@@ -669,6 +670,13 @@
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
     <CopyFileToFolders Include="..\src\parameters\julia-flower.json">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
+      <FileType>Document</FileType>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\src\parameters\julia-func.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>

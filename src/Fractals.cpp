@@ -250,7 +250,7 @@ int main(int argc, char **argv)
 		{
 			parameters.invert_x = true;
 		}
-		
+
 		if (inverty)
 		{
 			parameters.invert_y = true;
@@ -275,6 +275,10 @@ int main(int argc, char **argv)
 		{
 			fractal = new Fractal::Julia(parameters);
 		}
+		else if (parameters.type == "juliafn")
+		{
+			fractal = new Fractal::JuliaFn(parameters);
+		}
 		else if (parameters.type == "julia(f1|f2)")
 		{
 			fractal = new Fractal::JuliaFn12(parameters);
@@ -291,13 +295,13 @@ int main(int argc, char **argv)
 		{
 			fractal = new Fractal::Mandelbrot3(parameters);
 		}
-		else if (parameters.type == "mandelbrot(f1|f2)")
-		{
-			fractal = new Fractal::MandelbrotFn12(parameters);
-		}
 		else if (parameters.type == "mandelbrotfn")
 		{
 			fractal = new Fractal::MandelbrotFn(parameters);
+		}
+		else if (parameters.type == "mandelbrot(f1|f2)")
+		{
+			fractal = new Fractal::MandelbrotFn12(parameters);
 		}
 		else if (parameters.type == "newton")
 		{

@@ -103,6 +103,15 @@ namespace Fractal
         zy = std::atan2(oldy, oldx);
     }
 
+    void Logistic(double &zx, double &zy)
+    {
+        auto oldx = 1.0 - zx;
+
+        auto oldy = -zy;
+
+        Fractal::Multiply(zx, zy, oldx, oldy, zx, zy);
+    }
+
     void Tan(double &zx, double &zy)
     {
         auto denum = std::cos(2.0 * zx) + std::cosh(2.0 * zy);
@@ -316,6 +325,10 @@ namespace Fractal
         else if (function == "log")
         {
             return Fractal::Log;
+        }
+        else if (function == "logistic")
+        {
+            return Fractal::Logistic;
         }
         else if (function == "conj")
         {
