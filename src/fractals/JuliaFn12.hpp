@@ -23,9 +23,6 @@ namespace Fractal
 
             auto dy = this->parameters.dy();
 
-            // pre-calculate escape orbit
-            auto threshold = this->parameters.orbit * this->parameters.orbit;
-
             // pre-calculate shift value
             auto shift_value = this->parameters.shift_value * this->parameters.shift_value;
 
@@ -70,7 +67,7 @@ namespace Fractal
 
                         zy += this->parameters.cy;
 
-                        if (Fractal::Mag2(zx, zy) > threshold)
+                        if (Fractal::Mag2(zx, zy) > this->parameters.orbit)
                         {
                             break;
                         }

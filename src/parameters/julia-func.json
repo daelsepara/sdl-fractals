@@ -14,5 +14,6 @@
     "min_y": -2.0,
     "max_y": 2.0,
     "color_mode": "histogram",
-    "palette": "palettes/topological.json"
+    "palette": "palettes/topological.json",
+    "decomp": true
 }
