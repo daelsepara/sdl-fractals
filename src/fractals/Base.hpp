@@ -48,35 +48,27 @@ namespace Fractal
         {
             if (t != this->parameters.max_iterations)
             {
-                if (std::abs(zx) < this->parameters.bailout || std::abs(zy) < this->parameters.bailout)
+                if (this->parameters.decomp)
+                {
+                    auto d = std::atan2(zy, zx);
+
+                    if (d < 0)
+                    {
+                        d += Fractal::PI2;
+                    }
+
+                    auto color = (int)((double)this->parameters.max_iterations * (d / Fractal::PI2));
+
+                    this->set_color(x, y, color);
+                }
+                else if (std::abs(zx) < this->parameters.bailout || std::abs(zy) < this->parameters.bailout)
                 {
                     this->grid[y][x] = this->parameters.bailout_color;
                 }
                 else
                 {
-                    this->grid[y][x] = t;
+                    this->set_color(x, y, t);
                 }
-            }
-            else
-            {
-                this->set_color(x, y);
-            }
-        }
-
-        void decomp(int t, int x, int y, double zx, double zy)
-        {
-            if (t != this->parameters.max_iterations)
-            {
-                auto d = std::atan2(zy, zx);
-
-                if (d < 0)
-                {
-                    d += Fractal::PI2;
-                }
-
-                auto color = (int)((double)this->parameters.max_iterations * (d / Fractal::PI2));
-
-                this->set_color(x, y, color);
             }
             else
             {
