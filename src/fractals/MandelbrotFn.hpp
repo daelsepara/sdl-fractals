@@ -1,5 +1,5 @@
-#ifndef __MANDELBROT_FN12_HPP__
-#define __MANDELBROT_FN12_HPP__
+#ifndef __MANDELBROT_FN_HPP__
+#define __MANDELBROT_FN_HPP__
 
 #include "Base.hpp"
 #include "../Parameters.hpp"
@@ -7,7 +7,7 @@
 
 namespace Fractal
 {
-    class MandelbrotFn12 : public Fractal::Base
+    class MandelbrotFn : public Fractal::Base
     {
     protected:
         void generate() override
@@ -23,16 +23,8 @@ namespace Fractal
 
             auto dy = this->parameters.dy();
 
-            // pre-calculate escape orbit
-            auto threshold = this->parameters.orbit * this->parameters.orbit;
-
-            // pre-calculate shift value
-            auto shift_value = this->parameters.shift_value * this->parameters.shift_value;
-
             // pointer to complex function
-            auto ApplyFunction1 = Fractal::MapFunction(this->parameters.function);
-
-            auto ApplyFunction2 = Fractal::MapFunction(this->parameters.function2);
+            auto ApplyFunction = Fractal::MapFunction(this->parameters.function);
 
             // calculate mandelbrot set
             for (auto y = 0; y < this->parameters.y_pixels; y++)
@@ -54,14 +46,7 @@ namespace Fractal
                     {
                         this->FilterInputs(zx, zy);
 
-                        if (Fractal::Mag2(zx, zy) < shift_value)
-                        {
-                            ApplyFunction1(zx, zy);
-                        }
-                        else
-                        {
-                            ApplyFunction2(zx, zy);
-                        }
+                        ApplyFunction(zx, zy);
 
                         if (this->parameters.exponent != 1)
                         {
@@ -72,7 +57,7 @@ namespace Fractal
 
                         Fractal::Multiply(zx, zy, cx, cy, zx, zy);
 
-                        if (Fractal::Mag2(zx, zy) > threshold)
+                        if (Fractal::Mag2(zx, zy) >= this->parameters.orbit)
                         {
                             break;
                         }
@@ -93,7 +78,7 @@ namespace Fractal
         }
 
     public:
-        MandelbrotFn12(Fractal::Parameters parameters) : Fractal::Base(parameters) {}
+        MandelbrotFn(Fractal::Parameters parameters) : Fractal::Base(parameters) {}
     };
 }
 

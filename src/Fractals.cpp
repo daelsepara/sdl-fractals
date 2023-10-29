@@ -295,6 +295,10 @@ int main(int argc, char **argv)
 		{
 			fractal = new Fractal::MandelbrotFn12(parameters);
 		}
+		else if (parameters.type == "mandelbrotfn")
+		{
+			fractal = new Fractal::MandelbrotFn(parameters);
+		}
 		else if (parameters.type == "newton")
 		{
 			fractal = new Fractal::Newton(parameters);

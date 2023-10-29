@@ -12,8 +12,8 @@ for j in mandelbrot mandelbrot4; do mkdir -p universe/fractals/$j-histogram; for
 for j in mandelbrot mandelbrot4; do mkdir -p universe/fractals/$j-histogram; for i in ${PALETTES}; do ./Fractals.exe /params=parameters/$j.json /palette=palettes/$i.json /image=universe/fractals/$j-histogram/$j-histogram-$i-inverted.png /histogram /invert; done; done;
 for j in mandelbrot mandelbrot4; do mkdir -p universe/fractals/$j-log; for i in ${PALETTES}; do ./Fractals.exe /params=parameters/$j.json /palette=palettes/$i.json /image=universe/fractals/$j-log/$j-log-$i.png /log; done; done;
 for j in mandelbrot mandelbrot4; do mkdir -p universe/fractals/$j-log; for i in ${PALETTES}; do ./Fractals.exe /params=parameters/$j.json /palette=palettes/$i.json /image=universe/fractals/$j-log/$j-log-$i-inverted.png /log /invert; done; done;
-for j in mandelbrot-funcs mandelbrot-reciprocal; do mkdir -p universe/fractals/$j; for i in ${PALETTES}; do ./Fractals.exe /params=parameters/$j.json /palette=palettes/$i.json /image=universe/fractals/$j/$j-$i.png; done; done;
-for j in mandelbrot-funcs mandelbrot-reciprocal; do mkdir -p universe/fractals/$j; for i in ${PALETTES}; do ./Fractals.exe /params=parameters/$j.json /palette=palettes/$i.json /image=universe/fractals/$j/$j-$i-inverted.png /invert; done; done;
+for j in mandelbrot-func mandelbrot-funcs mandelbrot-reciprocal; do mkdir -p universe/fractals/$j; for i in ${PALETTES}; do ./Fractals.exe /params=parameters/$j.json /palette=palettes/$i.json /image=universe/fractals/$j/$j-$i.png; done; done;
+for j in mandelbrot-func mandelbrot-funcs mandelbrot-reciprocal; do mkdir -p universe/fractals/$j; for i in ${PALETTES}; do ./Fractals.exe /params=parameters/$j.json /palette=palettes/$i.json /image=universe/fractals/$j/$j-$i-inverted.png /invert; done; done;
 
 # create fractal universe
 for j in ${FRACTALS}; do mkdir -p universe/fractals/$j; for i in ${PALETTES}; do ./Fractals.exe /params=parameters/$j.json /palette=palettes/$i.json /image=universe/fractals/$j/$j-$i.png; done; done;

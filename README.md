@@ -573,6 +573,10 @@ Range (min … max):   350.7 ms … 432.0 ms    10 runs
 ![Levy Curve](samples/levy-curve.png)
 **Parameters:** [levy-curve](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/levy-curve.json)
 
+## Mandelbrot (Sine)
+![Mandelbrot (Sine)](samples/mandelbrot-func.png)
+**Parameters:** [mandelbrot-func](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/mandelbrot-func.json)
+
 ## Mandelbrot (Sqr|Cos)
 ![Mandelbrot (Sqr|Cos)](samples/mandelbrot-funcs.png)
 **Parameters:** [mandelbrot-funcs](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/mandelbrot-funcs.json)

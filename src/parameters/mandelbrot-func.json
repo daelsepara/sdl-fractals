@@ -1,0 +1,16 @@
+{
+    "type": "mandelbrotfn",
+    "x_pixels": 2048,
+    "y_pixels": 2048,
+    "max_iterations": 255,
+    "orbit": 255,
+    "exponent": 1,
+    "function": "sin",
+    "inside_color": 0,
+    "min_x": -10,
+    "max_x": 10,
+    "min_y": -10,
+    "max_y": 10,
+    "palette": "palettes/topological.json",
+    "decomp": true
+}
