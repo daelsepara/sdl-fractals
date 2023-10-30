@@ -57,13 +57,9 @@ namespace Fractal
 
                         zy = ((zy + zy) * (tmp - oldx)) / tmp3;
 
-                        auto zx1 = zx - oldx;
+                        this->FilterResult(zx, zy);
 
-                        auto zy1 = zy - oldy;
-
-                        this->FilterResult(zx1, zy1);
-
-                        diff = (zx1 * zx1 + zy1 * zy1);
+                        diff = Fractal::Mag2(zx - oldx, zy - oldy);
                     }
 
                     this->set_color(t, x, y, zx, zy);
