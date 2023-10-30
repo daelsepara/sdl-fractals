@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\Fractals.cpp">
+    <ClCompile Include="../src/Fractals.cpp">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">stdcpp17</LanguageStandard>
@@ -28,478 +28,478 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\fractals\BarnsleyTree.hpp" />
-    <ClInclude Include="..\src\fractals\Base.hpp" />
-    <ClInclude Include="..\src\fractals\IteratedFunctionSystem.hpp" />
-    <ClInclude Include="..\src\fractals\Julia.hpp" />
-    <ClInclude Include="..\src\fractals\JuliaFn.hpp" />
-    <ClInclude Include="..\src\fractals\JuliaFn12.hpp" />
-    <ClInclude Include="..\src\fractals\Mandelbrot.hpp" />
-    <ClInclude Include="..\src\fractals\Mandelbrot2.hpp" />
-    <ClInclude Include="..\src\fractals\Mandelbrot3.hpp" />
-    <ClInclude Include="..\src\fractals\MandelbrotFn12.hpp" />
-    <ClInclude Include="..\src\fractals\MandelbrotFn.hpp" />
-    <ClInclude Include="..\src\fractals\Newton.hpp" />
-    <ClInclude Include="..\src\fractals\Newton1.hpp" />
-    <ClInclude Include="..\src\fractals\Tricorn.hpp" />
-    <ClInclude Include="..\src\nlohmann\json.hpp" />
-    <ClInclude Include="..\src\ComplexFunctions.hpp" />
-    <ClInclude Include="..\src\FractalTypes.hpp" />
-    <ClInclude Include="..\src\Palette.hpp" />
-    <ClInclude Include="..\src\Parameters.hpp" />
-    <ClInclude Include="..\src\Random.hpp" />
-    <ClInclude Include="..\src\Utilities.hpp" />
+    <ClInclude Include="../src/fractals/BarnsleyTree.hpp" />
+    <ClInclude Include="../src/fractals/Base.hpp" />
+    <ClInclude Include="../src/fractals/IteratedFunctionSystem.hpp" />
+    <ClInclude Include="../src/fractals/Julia.hpp" />
+    <ClInclude Include="../src/fractals/JuliaFn.hpp" />
+    <ClInclude Include="../src/fractals/JuliaFn12.hpp" />
+    <ClInclude Include="../src/fractals/Mandelbrot.hpp" />
+    <ClInclude Include="../src/fractals/Mandelbrot2.hpp" />
+    <ClInclude Include="../src/fractals/Mandelbrot3.hpp" />
+    <ClInclude Include="../src/fractals/MandelbrotFn12.hpp" />
+    <ClInclude Include="../src/fractals/MandelbrotFn.hpp" />
+    <ClInclude Include="../src/fractals/Newton.hpp" />
+    <ClInclude Include="../src/fractals/Newton1.hpp" />
+    <ClInclude Include="../src/fractals/Tricorn.hpp" />
+    <ClInclude Include="../src/nlohmann\json.hpp" />
+    <ClInclude Include="../src/ComplexFunctions.hpp" />
+    <ClInclude Include="../src/FractalTypes.hpp" />
+    <ClInclude Include="../src/Palette.hpp" />
+    <ClInclude Include="../src/Parameters.hpp" />
+    <ClInclude Include="../src/Random.hpp" />
+    <ClInclude Include="../src/Utilities.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <CopyFileToFolders Include="..\src\palettes\accent.json">
+    <CopyFileToFolders Include="../src/palettes/accent.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\alternate.json">
+    <CopyFileToFolders Include="../src/palettes/alternate.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\apple8.json">
+    <CopyFileToFolders Include="../src/palettes/apple8.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\atari8.json">
+    <CopyFileToFolders Include="../src/palettes/atari8.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\atari8v2.json">
+    <CopyFileToFolders Include="../src/palettes/atari8v2.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\aurora.json">
+    <CopyFileToFolders Include="../src/palettes/aurora.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\bbw.json">
+    <CopyFileToFolders Include="../src/palettes/bbw.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\blue.json">
+    <CopyFileToFolders Include="../src/palettes/blue.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\bluegray.json">
+    <CopyFileToFolders Include="../src/palettes/bluegray.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\bluered.json">
+    <CopyFileToFolders Include="../src/palettes/bluered.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\blues.json">
+    <CopyFileToFolders Include="../src/palettes/blues.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\bof.json">
+    <CopyFileToFolders Include="../src/palettes/bof.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\cividis.json">
+    <CopyFileToFolders Include="../src/palettes/cividis.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\coldfire.json">
+    <CopyFileToFolders Include="../src/palettes/coldfire.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\default.json">
+    <CopyFileToFolders Include="../src/palettes/default.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\dmc2rgb.json">
+    <CopyFileToFolders Include="../src/palettes/dmc2rgb.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\duel.json">
+    <CopyFileToFolders Include="../src/palettes/duel.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\firestorm.json">
+    <CopyFileToFolders Include="../src/palettes/firestorm.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\flare.json">
+    <CopyFileToFolders Include="../src/palettes/flare.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\froth3.json">
+    <CopyFileToFolders Include="../src/palettes/froth3.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\froth6.json">
+    <CopyFileToFolders Include="../src/palettes/froth6.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\gamma1.json">
+    <CopyFileToFolders Include="../src/palettes/gamma1.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\gamma2.json">
+    <CopyFileToFolders Include="../src/palettes/gamma2.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\github.json">
+    <CopyFileToFolders Include="../src/palettes/github.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\gnpu.json">
+    <CopyFileToFolders Include="../src/palettes/gnpu.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\gray.json">
+    <CopyFileToFolders Include="../src/palettes/gray.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\green.json">
+    <CopyFileToFolders Include="../src/palettes/green.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\grey.json">
+    <CopyFileToFolders Include="../src/palettes/grey.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\heat.json">
+    <CopyFileToFolders Include="../src/palettes/heat.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\hls.json">
+    <CopyFileToFolders Include="../src/palettes/hls.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\hocuspocus.json">
+    <CopyFileToFolders Include="../src/palettes/hocuspocus.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\hot.json">
+    <CopyFileToFolders Include="../src/palettes/hot.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\hsv.json">
+    <CopyFileToFolders Include="../src/palettes/hsv.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\husl.json">
+    <CopyFileToFolders Include="../src/palettes/husl.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\inferno.json">
+    <CopyFileToFolders Include="../src/palettes/inferno.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\jet.json">
+    <CopyFileToFolders Include="../src/palettes/jet.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\landscape.json">
+    <CopyFileToFolders Include="../src/palettes/landscape.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\magma.json">
+    <CopyFileToFolders Include="../src/palettes/magma.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\moreland.json">
+    <CopyFileToFolders Include="../src/palettes/moreland.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\neon.json">
+    <CopyFileToFolders Include="../src/palettes/neon.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\paired.json">
+    <CopyFileToFolders Include="../src/palettes/paired.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\parula.json">
+    <CopyFileToFolders Include="../src/palettes/parula.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\plasma.json">
+    <CopyFileToFolders Include="../src/palettes/plasma.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\purple.json">
+    <CopyFileToFolders Include="../src/palettes/purple.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\rainbow.json">
+    <CopyFileToFolders Include="../src/palettes/rainbow.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\rdpu.json">
+    <CopyFileToFolders Include="../src/palettes/rdpu.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\red.json">
+    <CopyFileToFolders Include="../src/palettes/red.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\rgbm.json">
+    <CopyFileToFolders Include="../src/palettes/rgbm.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\rob.json">
+    <CopyFileToFolders Include="../src/palettes/rob.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\rocket.json">
+    <CopyFileToFolders Include="../src/palettes/rocket.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\royal.json">
+    <CopyFileToFolders Include="../src/palettes/royal.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\sand.json">
+    <CopyFileToFolders Include="../src/palettes/sand.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\seaborn.json">
+    <CopyFileToFolders Include="../src/palettes/seaborn.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\segacube.json">
+    <CopyFileToFolders Include="../src/palettes/segacube.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\set1.json">
+    <CopyFileToFolders Include="../src/palettes/set1.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\set2.json">
+    <CopyFileToFolders Include="../src/palettes/set2.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\srb2.json">
+    <CopyFileToFolders Include="../src/palettes/srb2.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\srb2v22.json">
+    <CopyFileToFolders Include="../src/palettes/srb2v22.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\tab10.json">
+    <CopyFileToFolders Include="../src/palettes/tab10.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\topological.json">
+    <CopyFileToFolders Include="../src/palettes/topological.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\turbo.json">
+    <CopyFileToFolders Include="../src/palettes/turbo.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\uzebox.json">
+    <CopyFileToFolders Include="../src/palettes/uzebox.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\viridis.json">
+    <CopyFileToFolders Include="../src/palettes/viridis.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\volcano.json">
+    <CopyFileToFolders Include="../src/palettes/volcano.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\palettes</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\palettes</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\palettes\win95.json">
+    <CopyFileToFolders Include="../src/palettes/win95.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
@@ -508,455 +508,455 @@
     </CopyFileToFolders>
   </ItemGroup>
   <ItemGroup>
-    <CopyFileToFolders Include="..\src\parameters\barnsleyfern.json">
+    <CopyFileToFolders Include="../src/parameters/barnsleyfern.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\barnsleytree.json">
+    <CopyFileToFolders Include="../src/parameters/barnsleytree.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\biomorph-julia.json">
+    <CopyFileToFolders Include="../src/parameters/biomorph-julia.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\biomorph-julia2.json">
+    <CopyFileToFolders Include="../src/parameters/biomorph-julia2.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\biomorph-julia3.json">
+    <CopyFileToFolders Include="../src/parameters/biomorph-julia3.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\biomorph-julia4.json">
+    <CopyFileToFolders Include="../src/parameters/biomorph-julia4.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\biomorph-julia5.json">
+    <CopyFileToFolders Include="../src/parameters/biomorph-julia5.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\biomorph-julia6.json">
+    <CopyFileToFolders Include="../src/parameters/biomorph-julia6.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\biomorph-julia7.json">
+    <CopyFileToFolders Include="../src/parameters/biomorph-julia7.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\biomorph-julia8.json">
+    <CopyFileToFolders Include="../src/parameters/biomorph-julia8.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\biomorph-mandelbrot.json">
+    <CopyFileToFolders Include="../src/parameters/biomorph-mandelbrot.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\burningship.json">
+    <CopyFileToFolders Include="../src/parameters/burningship.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\burningship2.json">
+    <CopyFileToFolders Include="../src/parameters/burningship2.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\burningship3.json">
+    <CopyFileToFolders Include="../src/parameters/burningship3.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\chrysantemum.json">
+    <CopyFileToFolders Include="../src/parameters/chrysantemum.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\cross-snowflakes.json">
+    <CopyFileToFolders Include="../src/parameters/cross-snowflakes.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\crystal.json">
+    <CopyFileToFolders Include="../src/parameters/crystal.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\culcita.json">
+    <CopyFileToFolders Include="../src/parameters/culcita.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\dendrite.json">
+    <CopyFileToFolders Include="../src/parameters/dendrite.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\dragon-curve.json">
+    <CopyFileToFolders Include="../src/parameters/dragon-curve.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\ekg.json">
+    <CopyFileToFolders Include="../src/parameters/ekg.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\julia-cos.json">
+    <CopyFileToFolders Include="../src/parameters/julia-cos.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\julia-dragon.json">
+    <CopyFileToFolders Include="../src/parameters/julia-dragon.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\julia-flower.json">
+    <CopyFileToFolders Include="../src/parameters/julia-flower.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\julia-func.json">
+    <CopyFileToFolders Include="../src/parameters/julia-func.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\julia-funcs.json">
+    <CopyFileToFolders Include="../src/parameters/julia-funcs.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\julia-siegel.json">
+    <CopyFileToFolders Include="../src/parameters/julia-siegel.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\julia-sin.json">
+    <CopyFileToFolders Include="../src/parameters/julia-sin.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\julia-snowflakes.json">
+    <CopyFileToFolders Include="../src/parameters/julia-snowflakes.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\julia1.json">
+    <CopyFileToFolders Include="../src/parameters/julia1.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\julia2.json">
+    <CopyFileToFolders Include="../src/parameters/julia2.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\julia3.json">
+    <CopyFileToFolders Include="../src/parameters/julia3.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\julia4.json">
+    <CopyFileToFolders Include="../src/parameters/julia4.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\julia5.json">
+    <CopyFileToFolders Include="../src/parameters/julia5.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\julia6.json">
+    <CopyFileToFolders Include="../src/parameters/julia6.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\koch-triangle.json">
+    <CopyFileToFolders Include="../src/parameters/koch-triangle.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\koch.json">
+    <CopyFileToFolders Include="../src/parameters/koch.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\kochmix.json">
+    <CopyFileToFolders Include="../src/parameters/kochmix.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\leaf.json">
+    <CopyFileToFolders Include="../src/parameters/leaf.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\leaf2.json">
+    <CopyFileToFolders Include="../src/parameters/leaf2.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\levy-curve.json">
+    <CopyFileToFolders Include="../src/parameters/levy-curve.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\mandelbrot-func.json">
+    <CopyFileToFolders Include="../src/parameters/mandelbrot-func.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\mandelbrot-funcs.json">
+    <CopyFileToFolders Include="../src/parameters/mandelbrot-funcs.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\mandelbrot-histogram.json">
+    <CopyFileToFolders Include="../src/parameters/mandelbrot-histogram.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\mandelbrot-reciprocal.json">
+    <CopyFileToFolders Include="../src/parameters/mandelbrot-reciprocal.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\mandelbrot.json">
+    <CopyFileToFolders Include="../src/parameters/mandelbrot.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\mandelbrot2.json">
+    <CopyFileToFolders Include="../src/parameters/mandelbrot2.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\mandelbrot3.json">
+    <CopyFileToFolders Include="../src/parameters/mandelbrot3.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\mandelbrot4.json">
+    <CopyFileToFolders Include="../src/parameters/mandelbrot4.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\maple.json">
+    <CopyFileToFolders Include="../src/parameters/maple.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\multicorn.json">
+    <CopyFileToFolders Include="../src/parameters/multicorn.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\newton.json">
+    <CopyFileToFolders Include="../src/parameters/newton.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\newton1.json">
+    <CopyFileToFolders Include="../src/parameters/newton1.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\newton4.json">
+    <CopyFileToFolders Include="../src/parameters/newton4.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\pascal-hadamard.json">
+    <CopyFileToFolders Include="../src/parameters/pascal-hadamard.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\pentagon.json">
+    <CopyFileToFolders Include="../src/parameters/pentagon.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\seaweed.json">
+    <CopyFileToFolders Include="../src/parameters/seaweed.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\sierpinski-carpet.json">
+    <CopyFileToFolders Include="../src/parameters/sierpinski-carpet.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\sierpinski-triangle.json">
+    <CopyFileToFolders Include="../src/parameters/sierpinski-triangle.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\sinh.json">
+    <CopyFileToFolders Include="../src/parameters/sinh.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\snowflakes.json">
+    <CopyFileToFolders Include="../src/parameters/snowflakes.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\thelypteridaceae.json">
+    <CopyFileToFolders Include="../src/parameters/thelypteridaceae.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\tree.json">
+    <CopyFileToFolders Include="../src/parameters/tree.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\tree2.json">
+    <CopyFileToFolders Include="../src/parameters/tree2.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Outdir)\parameters</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Outdir)\parameters</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\src\parameters\tricorn.json">
+    <CopyFileToFolders Include="../src/parameters/tricorn.json">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <FileType>Document</FileType>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
