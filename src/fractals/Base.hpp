@@ -34,12 +34,12 @@ namespace Fractal
             this->FilterResult = Fractal::MapFunction(this->parameters.result_filter);
         }
 
-        void set_color(int x, int y, int c)
+        inline void set_color(int x, int y, int c)
         {
             this->grid[y][x] = c;
         }
 
-        void set_color(int x, int y)
+        inline void set_color(int x, int y)
         {
             this->set_color(x, y, this->parameters.inside_color);
         }
@@ -63,7 +63,7 @@ namespace Fractal
                 }
                 else if (std::abs(zx) < this->parameters.bailout || std::abs(zy) < this->parameters.bailout)
                 {
-                    this->grid[y][x] = this->parameters.bailout_color;
+                    this->set_color(x, y, this->parameters.bailout_color);
                 }
                 else
                 {
