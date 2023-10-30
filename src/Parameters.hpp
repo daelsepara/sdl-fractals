@@ -81,7 +81,7 @@ namespace Fractal
         int max_iterations = 255;
         int exponent = 2;
         int bailout = -1;
-        double orbit = 2.0;
+        double escape_value = 4.0;
         double shift_value = 0.0;
 
         // complex plane window boundaries
@@ -214,7 +214,7 @@ namespace Fractal
 
                 // parameters for escape time type of fractals
                 this->max_iterations = !data["max_iterations"].is_null() ? (int)data["max_iterations"] : 255;
-                this->orbit = !data["orbit"].is_null() ? (double)data["orbit"] : std::numeric_limits<double>::quiet_NaN();
+                this->escape_value = !data["escape_value"].is_null() ? (double)data["escape_value"] : std::numeric_limits<double>::quiet_NaN();
                 this->shift_value = !data["shift_value"].is_null() ? (double)data["shift_value"] : std::numeric_limits<double>::quiet_NaN();
                 this->bailout = !data["bailout"].is_null() ? (int)data["bailout"] : std::numeric_limits<int>::quiet_NaN();
 

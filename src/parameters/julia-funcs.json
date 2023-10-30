@@ -3,7 +3,7 @@
     "x_pixels": 2048,
     "y_pixels": 2048,
     "max_iterations": 200,
-    "orbit": 100.0,
+    "escape_value": 100.0,
     "shift_value": 1.0,
     "exponent": 1,
     "function": "reciprocal",

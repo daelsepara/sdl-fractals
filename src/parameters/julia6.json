@@ -3,7 +3,7 @@
     "x_pixels": 2048,
     "y_pixels": 2048,
     "max_iterations": 255,
-    "orbit": 2.0,
+    "escape_value": 4.0,
     "exponent": 2,
     "function": "z",
     "inside_color": 32,

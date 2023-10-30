@@ -3,7 +3,7 @@
     "x_pixels": 2048,
     "y_pixels": 2048,
     "max_iterations": 255,
-    "orbit": 255,
+    "escape_value": 255.0,
     "exponent": 1,
     "function": "sin",
     "inside_color": 0,

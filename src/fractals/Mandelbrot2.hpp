@@ -23,9 +23,6 @@ namespace Fractal
 
             auto dy = this->parameters.dy();
 
-            // pre-calculate escape orbit
-            auto threshold = this->parameters.orbit * this->parameters.orbit;
-
             // calculate mandelbrot set
             for (auto y = 0; y < this->parameters.y_pixels; y++)
             {
@@ -45,7 +42,7 @@ namespace Fractal
                     auto zy = cy;
 
                     // generate escape time fractal
-                    while (Fractal::Mag2(zx, zy) <= threshold && (t < this->parameters.max_iterations))
+                    while (Fractal::Mag2(zx, zy) <= this->parameters.escape_value && (t < this->parameters.max_iterations))
                     {
                         this->FilterInputs(zx, zy);
 

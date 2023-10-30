@@ -3,7 +3,7 @@
     "x_pixels": 2048,
     "y_pixels": 2048,
     "max_iterations": 255,
-    "orbit": 100,
+    "escape_value": 10000.0,
     "bailout": 100,
     "exponent": 2,
     "function": "z",

@@ -77,7 +77,7 @@ Use default color mapping. Overrides color mapping in parameter file.
 |Generator      | **z**^**exp** + **C** |
 |exponent       | 2 |
 |max iterations | 255 |
-|orbit          | 2.0 |
+|escape value.  | 4.0 |
 |parameter files| [mandelbrot](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/mandelbrot.json), [mandelbrot2](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/mandelbrot2.json), [mandelbrot3](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/mandelbrot3.json) |
 |palette        | default |
 |source(s)      | [Mandelbrot.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Mandelbrot.hpp), [Mandelbrot2.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Mandelbrot2.hpp), [Mandelbrot3.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Mandelbrot3.hpp) |
@@ -129,7 +129,7 @@ Range (min … max):   855.1 ms … 882.9 ms    10 runs
 |---------------|-----------------------|
 |Generator      | **z**^**exp** + **C** |
 |max iterations | 255 |
-|orbit          | 2.0 |
+|escape value.  | 4.0 |
 |source         | [Julia.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Julia.hpp) |
 
 ### Specific Parameters and Benchmarks
@@ -211,7 +211,7 @@ Range (min … max):    3.454 s …  3.544 s    10 runs
 |Generator      | **z**^**exp** + **C** |
 |exponent       | 4 |
 |max iterations | 255 |
-|orbit          | 2.0 |
+|escape value.  | 4.0 |
 |parameter file | [mandelbrot4](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/mandelbrot4.json) |
 |palette        | default |
 |source         | [Mandelbrot.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Mandelbrot.hpp) |
@@ -234,7 +234,7 @@ Range (min … max):    3.898 s …  4.063 s    10 runs
 |normalized colormap | true |
 |inside color   | 0 |
 |max iterations | 100 |
-|orbit          | 2.0 |
+|escape value.  | 4.0 |
 |parameter file | [burningship](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/burningship.json) |
 |palette        | [hot](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/hot.json) |
 |source         | [Mandelbrot.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Mandelbrot.hpp) |
@@ -257,7 +257,7 @@ Range (min … max):   552.8 ms … 567.2 ms    10 runs
 |log colormap   | true |
 |inside color   | 0 |
 |max iterations | 100 |
-|orbit          | 2.0 |
+|escape value.  | 4.0 |
 |parameter file | [burningship2](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/burningship2.json) |
 |palette        | [plasma](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/plasma.json) |
 |source         | [Mandelbrot.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Mandelbrot.hpp) |
@@ -280,7 +280,7 @@ Range (min … max):    1.248 s …  2.128 s    10 runs
 |log colormap   | true |
 |inside color   | 0 |
 |max iterations | 100 |
-|orbit          | 2.0 |
+|escape value.  | 4.0 |
 |parameter file | [burningship3](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/burningship2.json) |
 |palette        | [bluered](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/bluered.json) |
 |source         | [Mandelbrot.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Mandelbrot.hpp) |
@@ -300,7 +300,7 @@ Range (min … max):    1.248 s …  2.128 s    10 runs
 |Generator      | (**z_x**^2 + **z_y**^2) - i(2 * **z_x** * **z_y**) + **C** |
 |inside color   | 0 |
 |max iterations | 255 |
-|orbit          | 4.0 |
+|escape value.  | 4.0 |
 |parameter file | [tricorn](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/tricorn.json) |
 |palette        | [parula](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/parula.json) |
 |source         | [Tricorn.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Tricorn.hpp) |
@@ -321,7 +321,7 @@ Range (min … max):   536.0 ms … 602.0 ms    10 runs
 |exponent       | 4 |
 |inside color   | 0 |
 |max iterations | 255 |
-|orbit          | 2.0 |
+|escape value.  | 4.0 |
 |parameter file | [multicorn](https://github.com/daelsepara/sdl-fractals/tree/main/src/parameters/multicorn.json) |
 |palette        | [viridis](https://github.com/daelsepara/sdl-fractals/tree/main/src/palettes/viridis.json) |
 |source         | [Mandelbrot.hpp](https://github.com/daelsepara/sdl-fractals/tree/main/src/fractals/Mandelbrot.hpp) |

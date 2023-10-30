@@ -23,9 +23,6 @@ namespace Fractal
 
             auto dy = this->parameters.dy();
 
-            // pre-calculate shift value
-            auto shift_value = this->parameters.shift_value * this->parameters.shift_value;
-
             // pointer to complex function
             auto ApplyFunction = Fractal::MapFunction(this->parameters.function);
 
@@ -41,7 +38,7 @@ namespace Fractal
                     auto t = 0;
 
                     // generate escape time fractal
-                    while (Fractal::Mag2(zx, zy) <= this->parameters.orbit && t < this->parameters.max_iterations)
+                    while (Fractal::Mag2(zx, zy) <= this->parameters.escape_value && t < this->parameters.max_iterations)
                     {
                         this->FilterInputs(zx, zy);
 
