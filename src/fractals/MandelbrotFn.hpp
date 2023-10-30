@@ -42,7 +42,7 @@ namespace Fractal
                     auto t = 0;
 
                     // generate escape time fractal
-                    while (t < this->parameters.max_iterations)
+                    while (Fractal::Mag2(zx, zy) <= this->parameters.orbit && t < this->parameters.max_iterations)
                     {
                         this->FilterInputs(zx, zy);
 
@@ -56,11 +56,6 @@ namespace Fractal
                         this->FilterResult(zx, zy);
 
                         Fractal::Multiply(zx, zy, cx, cy, zx, zy);
-
-                        if (Fractal::Mag2(zx, zy) >= this->parameters.orbit)
-                        {
-                            break;
-                        }
 
                         t++;
                     }

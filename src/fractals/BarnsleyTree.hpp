@@ -42,7 +42,7 @@ namespace Fractal
                     auto zy = this->parameters.scaled_y(y, dy);
 
                     // generate escape time fractal
-                    while (t < this->parameters.max_iterations)
+                    while (Fractal::Mag2(zx, zy) <= threshold && t < this->parameters.max_iterations)
                     {
                         this->FilterInputs(zx, zy);
 
@@ -51,11 +51,6 @@ namespace Fractal
                         Fractal::Multiply(zx, zy, this->parameters.cx, this->parameters.cy, zx, zy);
 
                         this->FilterResult(zx, zy);
-
-                        if (Fractal::Mag2(zx, zy) > threshold)
-                        {
-                            break;
-                        }
 
                         t++;
                     }

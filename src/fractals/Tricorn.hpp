@@ -40,7 +40,7 @@ namespace Fractal
 
                     auto zy = cy;
 
-                    while (Fractal::Mag2(zx, zy) < this->parameters.orbit && t < this->parameters.max_iterations)
+                    while (Fractal::Mag2(zx, zy) <= this->parameters.orbit && t < this->parameters.max_iterations)
                     {
                         this->FilterInputs(zx, zy);
 
