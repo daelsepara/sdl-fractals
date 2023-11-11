@@ -13,7 +13,7 @@ namespace Fractal
         void Generate() override
         {
             // set inputs/result filter
-            this->MapFilters();
+            this->MapFunctions();
 
             // create complex plane (initialize grid)
             this->grid = Fractal::InitializeGrid(this->parameters);
@@ -22,9 +22,6 @@ namespace Fractal
             auto dx = this->parameters.DeltaX();
 
             auto dy = this->parameters.DeltaY();
-
-            // pointer to complex function
-            auto ApplyFunction = this->parameters.Functions.size() > 0 ? Fractal::MapFunction(this->parameters.Functions[0]) : Fractal::Identity;
 
             auto x = 0;
 
@@ -62,7 +59,7 @@ namespace Fractal
                     {
                         this->FilterInputs(zx, zy);
 
-                        ApplyFunction(zx, zy);
+                        this->ApplyFunction(zx, zy);
 
                         if (this->parameters.Exponent != 1)
                         {

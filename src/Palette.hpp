@@ -73,11 +73,11 @@ namespace Fractal
 
                     for (auto i = 0; i < data["colors"].size(); i++)
                     {
-                        this->Colors[i] = (int)data["colors"][i];
+                        this->Colors[i] = int(data["colors"][i]);
                     }
                 }
 
-                this->Brightness = !data["brightness"].is_null() ? (int)data["brightness"] : 1;
+                this->Brightness = !data["brightness"].is_null() ? int(data["brightness"]) : 1;
             }
 
             file.close();

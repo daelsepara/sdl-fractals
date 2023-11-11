@@ -29,15 +29,23 @@ namespace Fractal
             // set fixed alpha channel value
             Uint8 a = 255;
 
+            auto color = 0;
+
+            auto c = 0;
+
+            Uint32 *target = NULL;
+
+            Uint8 r, g, b;
+
             // write to ARGB surface
             for (auto y = 0; y < parameters.YPixels; y++)
             {
                 for (auto x = 0; x < parameters.XPixels; x++)
                 {
                     // calculate target pixel
-                    Uint32 *const target = (Uint32 *)((Uint8 *)surface->pixels + y * surface->pitch + x * surface->format->BytesPerPixel);
+                    target = (Uint32 *)((Uint8 *)surface->pixels + y * surface->pitch + x * surface->format->BytesPerPixel);
 
-                    auto color = (int)grid[y][x];
+                    color = grid[y][x];
 
                     // invert colors
                     if (parameters.InvertColors)
@@ -46,14 +54,14 @@ namespace Fractal
                     }
 
                     // clamp to values 0-255 and calculate index to palette
-                    auto c = std::min(std::max(color, 0), 255) * 3;
+                    c = std::min(std::max(color, 0), 255) * 3;
 
                     // get RGB color from palette and adjust color brightness
-                    Uint8 r = palette.Colors[c] * palette.Brightness;
+                    r = palette.Colors[c] * palette.Brightness;
 
-                    Uint8 g = palette.Colors[c + 1] * palette.Brightness;
+                    g = palette.Colors[c + 1] * palette.Brightness;
 
-                    Uint8 b = palette.Colors[c + 2] * palette.Brightness;
+                    b = palette.Colors[c + 2] * palette.Brightness;
 
                     // write pixel on surface
                     *target = (Uint32)(a << 24 | r << 16 | g << 8 | b);
@@ -217,12 +225,12 @@ namespace Fractal
 
     int LogColor(int color, int max_value)
     {
-        return (int)(std::log1p((double)color) / std::log1p((double)max_value) * 255.0);
+        return int(std::log1p(double(color)) / std::log1p(double(max_value)) * 255.0);
     }
 
     int NormalizedColor(int color, int max_value)
     {
-        return (int)(((double)color / (double)max_value) * 255.0);
+        return int(double(color) / double(max_value) * 255.0);
     }
 
     int ClampColor(int color)
@@ -258,7 +266,7 @@ namespace Fractal
         {
             for (auto x = 0; x < grid[y].size(); x++)
             {
-                grid[y][x] = (Uint8)(grid[y][x] % 255);
+                grid[y][x] = Uint8(grid[y][x] % 255);
             }
         }
     }
@@ -298,7 +306,7 @@ namespace Fractal
         // pass 3: compute hue
         auto hue = std::vector<std::vector<int>>(grid.size(), std::vector<int>(grid[0].size(), 0));
 
-        auto color_scaler = 1.0 / (double)total * 255.0;
+        auto color_scaler = 1.0 / double(total) * 255.0;
 
         // pass 4: map to color
         for (auto y = 0; y < grid.size(); y++)
@@ -313,7 +321,7 @@ namespace Fractal
                     }
                 }
 
-                grid[y][x] = (int)((double)hue[y][x] * color_scaler);
+                grid[y][x] = int(double(hue[y][x]) * color_scaler);
             }
         }
     }

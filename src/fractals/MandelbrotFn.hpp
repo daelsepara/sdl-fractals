@@ -13,7 +13,7 @@ namespace Fractal
         void Generate() override
         {
             // set inputs/result filter
-            this->MapFilters();
+            this->MapFunctions();
 
             // create complex plane (initialize grid)
             this->grid = Fractal::InitializeGrid(this->parameters);
@@ -37,9 +37,6 @@ namespace Fractal
 
             auto zy = 0.0;
 
-            // pointer to complex function
-            auto ApplyFunction = this->parameters.Functions.size() > 0 ? Fractal::MapFunction(this->parameters.Functions[0]) : Fractal::Identity;
-
             // calculate mandelbrot set
             for (y = 0; y < this->parameters.YPixels; y++)
             {
@@ -60,7 +57,7 @@ namespace Fractal
                     {
                         this->FilterInputs(zx, zy);
 
-                        ApplyFunction(zx, zy);
+                        this->ApplyFunction(zx, zy);
 
                         if (this->parameters.Exponent != 1)
                         {

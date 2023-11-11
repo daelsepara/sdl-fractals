@@ -24,10 +24,15 @@ namespace Fractal
 
         Fractal::FunctionPointer FilterResult;
 
+        Fractal::FunctionPointer ApplyFunction;
+
         virtual void Generate() {}
 
-        void MapFilters()
+        void MapFunctions()
         {
+            // set default function
+            this->ApplyFunction = this->parameters.Functions.size() > 0 ? Fractal::MapFunction(this->parameters.Functions[0]) : Fractal::Identity;
+
             // set inputs/result filter
             this->FilterInputs = Fractal::MapFunction(this->parameters.InputsFilter);
 
@@ -57,7 +62,7 @@ namespace Fractal
                         d += Fractal::PI2;
                     }
 
-                    auto color = (int)((double)this->parameters.MaxIterations * (d / Fractal::PI2));
+                    auto color = int(double(this->parameters.MaxIterations) * (d / Fractal::PI2));
 
                     this->SetColor(x, y, color);
                 }

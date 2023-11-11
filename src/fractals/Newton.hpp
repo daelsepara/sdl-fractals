@@ -13,7 +13,7 @@ namespace Fractal
         void Generate() override
         {
             // set inputs/result filter
-            this->MapFilters();
+            this->MapFunctions();
 
             // create complex plane (initialize grid)
             this->grid = Fractal::InitializeGrid(this->parameters);
@@ -23,9 +23,11 @@ namespace Fractal
 
             auto dy = this->parameters.DeltaY();
 
-            auto n = (double)this->parameters.Exponent;
+            auto exp1 = this->parameters.Exponent - 1;
 
-            auto n1 = (double)this->parameters.Exponent - 1.0;
+            auto n = double(this->parameters.Exponent);
+
+            auto n1 = double(exp1);
 
             auto x = 0;
 
@@ -61,7 +63,7 @@ namespace Fractal
 
                     diff = std::numeric_limits<double>::infinity();
 
-                    while (diff > this->parameters.Tolerance && ++t < this->parameters.MaxIterations)
+                    while (diff > this->parameters.Tolerance && t++ < this->parameters.MaxIterations)
                     {
                         oldx = zx;
 
@@ -74,7 +76,7 @@ namespace Fractal
                         deny = zy;
 
                         // n * z^(n-1)
-                        Fractal::Power(denx, deny, this->parameters.Exponent - 1);
+                        Fractal::Power(denx, deny, exp1);
 
                         denx *= n;
 

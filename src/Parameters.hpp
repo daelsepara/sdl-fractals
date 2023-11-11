@@ -143,23 +143,23 @@ namespace Fractal
 
         double DeltaX()
         {
-            return (double)(this->MaxX - this->MinX) / (double)(this->XPixels);
+            return double(this->MaxX - this->MinX) / double(this->XPixels);
         }
 
         double DeltaY()
         {
-            return (double)(this->MaxY - this->MinY) / (double)(this->YPixels);
+            return double(this->MaxY - this->MinY) / double(this->YPixels);
         }
 
         double ScaledX(int x, double dx)
         {
             if (this->InvertX)
             {
-                return this->MinX + (double)(this->XPixels - x - 1) * dx;
+                return this->MinX + double(this->XPixels - x - 1) * dx;
             }
             else
             {
-                return this->MinX + (double)x * dx;
+                return this->MinX + double(x) * dx;
             }
         }
 
@@ -167,11 +167,11 @@ namespace Fractal
         {
             if (this->InvertY)
             {
-                return this->MinY + (double)y * dy;
+                return this->MinY + double(y) * dy;
             }
             else
             {
-                return this->MinY + (double)(this->YPixels - y - 1) * dy;
+                return this->MinY + double(this->YPixels - y - 1) * dy;
             }
         }
 
@@ -179,11 +179,11 @@ namespace Fractal
         {
             if (this->InvertX)
             {
-                return (this->XPixels - (int)((x - this->MinX) / dx) + 1);
+                return (this->XPixels - int((x - this->MinX) / dx) + 1);
             }
             else
             {
-                return (int)((x - this->MinX) / dx);
+                return int((x - this->MinX) / dx);
             }
         }
 
@@ -191,11 +191,11 @@ namespace Fractal
         {
             if (this->InvertY)
             {
-                return (int)((y - this->MinY) / dy);
+                return int((y - this->MinY) / dy);
             }
             else
             {
-                return (this->YPixels - (int)((y - this->MinY) / dy) + 1);
+                return (this->YPixels - int((y - this->MinY) / dy) + 1);
             }
         }
 
@@ -214,49 +214,49 @@ namespace Fractal
                 this->Type = !data["type"].is_null() ? std::string(data["type"]) : std::string("mandelbrot");
 
                 // borders on the complex plane
-                this->MinX = !data["minX"].is_null() ? (double)data["minX"] : -2.5;
+                this->MinX = !data["minX"].is_null() ? double(data["minX"]) : -2.5;
 
-                this->MaxX = !data["maxX"].is_null() ? (double)data["maxX"] : 2.5;
+                this->MaxX = !data["maxX"].is_null() ? double(data["maxX"]) : 2.5;
 
-                this->MinY = !data["minY"].is_null() ? (double)data["minY"] : -2.5;
+                this->MinY = !data["minY"].is_null() ? double(data["minY"]) : -2.5;
 
-                this->MaxY = !data["maxY"].is_null() ? (double)data["maxY"] : 2.5;
+                this->MaxY = !data["maxY"].is_null() ? double(data["maxY"]) : 2.5;
 
                 // complex plane dimensions (in pixels)
-                this->XPixels = !data["xPixels"].is_null() ? (int)data["xPixels"] : 2048;
+                this->XPixels = !data["xPixels"].is_null() ? int(data["xPixels"]) : 2048;
 
-                this->YPixels = !data["yPixels"].is_null() ? (int)data["yPixels"] : 2048;
+                this->YPixels = !data["yPixels"].is_null() ? int(data["yPixels"]) : 2048;
 
                 // parameters for escape time type of fractals
-                this->MaxIterations = !data["maxIterations"].is_null() ? (int)data["maxIterations"] : 255;
+                this->MaxIterations = !data["maxIterations"].is_null() ? int(data["maxIterations"]) : 255;
 
-                this->EscapeValue = !data["escapeValue"].is_null() ? (double)data["escapeValue"] : std::numeric_limits<double>::quiet_NaN();
+                this->EscapeValue = !data["escapeValue"].is_null() ? double(data["escapeValue"]) : std::numeric_limits<double>::quiet_NaN();
 
-                this->ShiftValue = !data["shiftValue"].is_null() ? (double)data["shiftValue"] : std::numeric_limits<double>::quiet_NaN();
+                this->ShiftValue = !data["shiftValue"].is_null() ? double(data["shiftValue"]) : std::numeric_limits<double>::quiet_NaN();
 
-                this->Bailout = !data["bailout"].is_null() ? (int)data["bailout"] : std::numeric_limits<int>::quiet_NaN();
+                this->Bailout = !data["bailout"].is_null() ? int(data["bailout"]) : std::numeric_limits<int>::quiet_NaN();
 
                 // mandelbrot parameter
-                this->Exponent = !data["exponent"].is_null() ? (int)data["exponent"] : std::numeric_limits<int>::quiet_NaN();
+                this->Exponent = !data["exponent"].is_null() ? int(data["exponent"]) : std::numeric_limits<int>::quiet_NaN();
 
                 // newton parameter
-                this->Tolerance = !data["tolerance"].is_null() ? (double)data["tolerance"] : std::numeric_limits<double>::epsilon();
+                this->Tolerance = !data["tolerance"].is_null() ? double(data["tolerance"]) : std::numeric_limits<double>::epsilon();
 
                 // julia set parameters
-                this->cx = !data["cx"].is_null() ? (double)data["cx"] : std::numeric_limits<double>::quiet_NaN();
+                this->cx = !data["cx"].is_null() ? double(data["cx"]) : std::numeric_limits<double>::quiet_NaN();
 
-                this->cy = !data["cy"].is_null() ? (double)data["cy"] : std::numeric_limits<double>::quiet_NaN();
+                this->cy = !data["cy"].is_null() ? double(data["cy"]) : std::numeric_limits<double>::quiet_NaN();
 
                 // inside color
-                this->InsideColor = !data["insideColor"].is_null() ? (int)data["insideColor"] : 0;
+                this->InsideColor = !data["insideColor"].is_null() ? int(data["insideColor"]) : 0;
 
                 // bailout color
-                this->BailoutColor = !data["bailoutColor"].is_null() ? (int)data["bailoutColor"] : 0;
+                this->BailoutColor = !data["bailoutColor"].is_null() ? int(data["bailoutColor"]) : 0;
 
                 // invert axis
-                this->InvertX = !data["invertX"].is_null() ? (bool)data["invertX"] : false;
+                this->InvertX = !data["invertX"].is_null() ? bool(data["invertX"]) : false;
 
-                this->InvertY = !data["invertY"].is_null() ? (bool)data["invertY"] : false;
+                this->InvertY = !data["invertY"].is_null() ? bool(data["invertY"]) : false;
 
                 // input/output filters
                 this->InputsFilter = !data["inputsFilter"].is_null() ? std::string(data["inputsFilter"]) : std::string("z");
@@ -264,7 +264,7 @@ namespace Fractal
                 this->ResultFilter = !data["resultFilter"].is_null() ? std::string(data["resultFilter"]) : std::string("z");
 
                 // invert colors
-                this->InvertColors = !data["invertColors"].is_null() ? (bool)data["invertColors"] : false;
+                this->InvertColors = !data["invertColors"].is_null() ? bool(data["invertColors"]) : false;
 
                 // functions
                 if (!data["functions"].is_null())
@@ -289,7 +289,7 @@ namespace Fractal
                 }
 
                 // decomp
-                this->Decomp = !data["decomp"].is_null() ? (bool)data["decomp"] : false;
+                this->Decomp = !data["decomp"].is_null() ? bool(data["decomp"]) : false;
 
                 // transforms
                 if (!data["transforms"].is_null() && data["transforms"].is_array())
@@ -304,7 +304,7 @@ namespace Fractal
 
                             for (auto i = 0; i < data["transforms"][j].size(); i++)
                             {
-                                auto val = !data["transforms"][j][i].is_null() ? (double)data["transforms"][j][i] : std::numeric_limits<double>::quiet_NaN();
+                                auto val = !data["transforms"][j][i].is_null() ? double(data["transforms"][j][i]) : std::numeric_limits<double>::quiet_NaN();
 
                                 transform.push_back(val);
                             }

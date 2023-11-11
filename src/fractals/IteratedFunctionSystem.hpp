@@ -14,7 +14,7 @@ namespace Fractal
         void Generate() override
         {
             // set inputs/result filter
-            this->MapFilters();
+            this->MapFunctions();
 
             // create complex plane (initialize grid)
             this->grid = Fractal::InitializeGrid(this->parameters);
