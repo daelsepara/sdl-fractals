@@ -6,7 +6,7 @@
     "escapeValue": 100.0,
     "bailout": 10,
     "exponent": 2,
-    "function1": "z",
+    "functions": ["z"],
     "insideColor": 0,
     "bailoutColor": 128,
     "cx": 1.0,

@@ -24,7 +24,7 @@ namespace Fractal
             auto dy = this->parameters.DeltaY();
 
             // pointer to complex function
-            auto ApplyFunction = Fractal::MapFunction(this->parameters.Function1);
+            auto ApplyFunction = this->parameters.Functions.size() > 0 ? Fractal::MapFunction(this->parameters.Functions[0]) : Fractal::Identity;
 
             auto x = 0;
 

@@ -5,7 +5,7 @@
     "maxIterations": 255,
     "escapeValue": 4.0,
     "exponent": 4,
-    "function1": "conj",
+    "functions": ["conj"],
     "insideColor": 0,
     "colorMode": "log",
     "minX": -2.25,

@@ -38,7 +38,7 @@ namespace Fractal
             auto zy = 0.0;
 
             // pointer to complex function
-            auto ApplyFunction = Fractal::MapFunction(this->parameters.Function1);
+            auto ApplyFunction = this->parameters.Functions.size() > 0 ? Fractal::MapFunction(this->parameters.Functions[0]) : Fractal::Identity;
 
             // calculate julia set
             for (y = 0; y < this->parameters.YPixels; y++)

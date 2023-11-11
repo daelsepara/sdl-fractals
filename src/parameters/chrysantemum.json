@@ -4,7 +4,7 @@
     "yPixels": 2048,
     "maxIterations": 255,
     "escapeValue": 4.0,
-    "function1": "z",
+    "functions": ["z"],
     "exponent": 2,
     "insideColor": 255,
     "cx": 0.2541,

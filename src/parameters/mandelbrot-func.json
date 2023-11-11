@@ -5,7 +5,7 @@
     "maxIterations": 255,
     "escapeValue": 255.0,
     "exponent": 1,
-    "function1": "sin",
+    "functions": ["sin"],
     "insideColor": 0,
     "minX": -10,
     "maxX": 10,

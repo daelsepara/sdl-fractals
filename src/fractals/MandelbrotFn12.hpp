@@ -38,9 +38,9 @@ namespace Fractal
             auto zy = 0.0;
 
             // pointer to complex function
-            auto ApplyFunction1 = Fractal::MapFunction(this->parameters.Function1);
+            auto ApplyFunction1 = this->parameters.Functions.size() > 0 ? Fractal::MapFunction(this->parameters.Functions[0]) : Fractal::Identity;
 
-            auto ApplyFunction2 = Fractal::MapFunction(this->parameters.Function2);
+            auto ApplyFunction2 = this->parameters.Functions.size() > 1 ? Fractal::MapFunction(this->parameters.Functions[1]) : Fractal::Identity;
 
             // calculate mandelbrot set
             for (y = 0; y < this->parameters.YPixels; y++)

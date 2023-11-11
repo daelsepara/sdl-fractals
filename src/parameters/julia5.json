@@ -5,7 +5,7 @@
     "maxIterations": 320,
     "escapeValue": 4.0,
     "exponent": 2,
-    "function1": "z",
+    "functions": ["z"],
     "insideColor": 255,
     "cx": 0.26294324588,
     "cy": -0.0024215732998,

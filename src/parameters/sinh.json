@@ -5,7 +5,7 @@
     "maxIterations": 100,
     "escapeValue": 1000000.0,
     "exponent": 4,
-    "function1": "sinh",
+    "functions": ["sinh"],
     "insideColor": 0,
     "minX": -1.7,
     "maxX": 1.7,

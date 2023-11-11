@@ -71,31 +71,41 @@ namespace Fractal
     class Parameters
     {
     public:
+        // fractal type
         std::string Type;
 
         // image size
         int XPixels = 2048;
+
         int YPixels = 2048;
 
-        // mandelbrot parameter(s)
+        // mandelbrot/julia parameter(s)
         int MaxIterations = 255;
+
         int Exponent = 2;
+
         int Bailout = -1;
+
         double EscapeValue = 4.0;
+
         double ShiftValue = 0.0;
+
+        // Julia set parameters
+        double cx = -0.8;
+
+        double cy = 0.156;
 
         // complex plane window boundaries
         double MinX = -2.5;
+
         double MaxX = 2.5;
+
         double MinY = -2.5;
+
         double MaxY = 2.5;
 
         // Newton parameters
         double Tolerance = 0.000001;
-
-        // Julia set parameters
-        double cx = -0.8;
-        double cy = 0.156;
 
         // inside color
         int InsideColor = 0;
@@ -108,18 +118,19 @@ namespace Fractal
 
         // invert axis
         bool InvertX = false;
+
         bool InvertY = false;
 
         // inputs/result filter
         std::string InputsFilter = "z";
+
         std::string ResultFilter = "z";
 
         // transformations
         Fractal::Transformations Transforms = Fractal::Transformations();
 
-        // function
-        std::string Function1 = "";
-        std::string Function2 = "";
+        // functions
+        std::vector<std::string> Functions = {"z"};
 
         // palette / colormap to use
         std::string Palette = "";
@@ -202,20 +213,27 @@ namespace Fractal
                 // fractal type
                 this->Type = !data["type"].is_null() ? std::string(data["type"]) : std::string("mandelbrot");
 
-                // window borders on the comlex plane
+                // borders on the complex plane
                 this->MinX = !data["minX"].is_null() ? (double)data["minX"] : -2.5;
+
                 this->MaxX = !data["maxX"].is_null() ? (double)data["maxX"] : 2.5;
+
                 this->MinY = !data["minY"].is_null() ? (double)data["minY"] : -2.5;
+
                 this->MaxY = !data["maxY"].is_null() ? (double)data["maxY"] : 2.5;
 
-                // fractal dimensions (in pixels)
+                // complex plane dimensions (in pixels)
                 this->XPixels = !data["xPixels"].is_null() ? (int)data["xPixels"] : 2048;
+
                 this->YPixels = !data["yPixels"].is_null() ? (int)data["yPixels"] : 2048;
 
                 // parameters for escape time type of fractals
                 this->MaxIterations = !data["maxIterations"].is_null() ? (int)data["maxIterations"] : 255;
+
                 this->EscapeValue = !data["escapeValue"].is_null() ? (double)data["escapeValue"] : std::numeric_limits<double>::quiet_NaN();
+
                 this->ShiftValue = !data["shiftValue"].is_null() ? (double)data["shiftValue"] : std::numeric_limits<double>::quiet_NaN();
+
                 this->Bailout = !data["bailout"].is_null() ? (int)data["bailout"] : std::numeric_limits<int>::quiet_NaN();
 
                 // mandelbrot parameter
@@ -224,30 +242,51 @@ namespace Fractal
                 // newton parameter
                 this->Tolerance = !data["tolerance"].is_null() ? (double)data["tolerance"] : std::numeric_limits<double>::epsilon();
 
-                // julia set
+                // julia set parameters
                 this->cx = !data["cx"].is_null() ? (double)data["cx"] : std::numeric_limits<double>::quiet_NaN();
+
                 this->cy = !data["cy"].is_null() ? (double)data["cy"] : std::numeric_limits<double>::quiet_NaN();
 
-                // inside_color
+                // inside color
                 this->InsideColor = !data["insideColor"].is_null() ? (int)data["insideColor"] : 0;
 
-                // bailout_color
+                // bailout color
                 this->BailoutColor = !data["bailoutColor"].is_null() ? (int)data["bailoutColor"] : 0;
 
                 // invert axis
                 this->InvertX = !data["invertX"].is_null() ? (bool)data["invertX"] : false;
+
                 this->InvertY = !data["invertY"].is_null() ? (bool)data["invertY"] : false;
 
                 // input/output filters
                 this->InputsFilter = !data["inputsFilter"].is_null() ? std::string(data["inputsFilter"]) : std::string("z");
+
                 this->ResultFilter = !data["resultFilter"].is_null() ? std::string(data["resultFilter"]) : std::string("z");
 
                 // invert colors
                 this->InvertColors = !data["invertColors"].is_null() ? (bool)data["invertColors"] : false;
 
                 // functions
-                this->Function1 = !data["function1"].is_null() ? std::string(data["function1"]) : "";
-                this->Function2 = !data["function2"].is_null() ? std::string(data["function2"]) : "";
+                if (!data["functions"].is_null())
+                {
+                    this->Functions.clear();
+
+                    if (data["functions"].is_array())
+                    {
+                        for (auto i = 0; i < data["functions"].size(); i++)
+                        {
+                            this->Functions.push_back(std::string(data["functions"][i]));
+                        }
+                    }
+                    else
+                    {
+                        this->Functions.push_back(std::string(data["functions"]));
+                    }
+                }
+                else
+                {
+                    this->Functions = {"z"};
+                }
 
                 // decomp
                 this->Decomp = !data["decomp"].is_null() ? (bool)data["decomp"] : false;
