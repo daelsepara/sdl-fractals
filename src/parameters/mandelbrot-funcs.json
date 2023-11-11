@@ -8,10 +8,10 @@
     "exponent": 1,
     "functions": ["sqr","cos"],
     "insideColor": 0,
-    "minX": -5,
-    "maxX": 5,
-    "minY": -5,
-    "maxY": 5,
+    "minX": -5.0,
+    "maxX": 5.0,
+    "minY": -5.0,
+    "maxY": 5.0,
     "palette": "palettes/magma.json",
     "colorMode": "log"
 }

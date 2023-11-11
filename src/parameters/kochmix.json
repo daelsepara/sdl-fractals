@@ -51,9 +51,9 @@
             0.189394
         ]
     ],
-    "minX": -8,
-    "maxX": 8,
-    "minY": -3,
-    "maxY": 13,
+    "minX": -8.0,
+    "maxX": 8.0,
+    "minY": -3.0,
+    "maxY": 13.0,
     "palette": "palettes/gray.json"
 }

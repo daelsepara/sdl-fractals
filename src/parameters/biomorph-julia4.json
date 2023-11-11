@@ -11,10 +11,10 @@
     "bailoutColor": 128,
     "cx": 0.5,
     "cy": 0.0,
-    "minX": -4,
-    "maxX": 4,
-    "minY": -4,
-    "maxY": 4,
+    "minX": -4.0,
+    "maxX": 4.0,
+    "minY": -4.0,
+    "maxY": 4.0,
     "colorMode": "histogram",
     "palette": "palettes/blues.json"
 }

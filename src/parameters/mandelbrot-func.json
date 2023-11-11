@@ -7,10 +7,10 @@
     "exponent": 1,
     "functions": ["sin"],
     "insideColor": 0,
-    "minX": -10,
-    "maxX": 10,
-    "minY": -10,
-    "maxY": 10,
+    "minX": -10.0,
+    "maxX": 10.0,
+    "minY": -10.0,
+    "maxY": 10.0,
     "palette": "palettes/topological.json",
     "decomp": true
 }
