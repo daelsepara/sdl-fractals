@@ -26,22 +26,36 @@ namespace Fractal
             // pointer to complex function
             auto ApplyFunction = Fractal::MapFunction(this->parameters.Function1);
 
+            auto x = 0;
+
+            auto y = 0;
+
+            auto t = 0;
+
+            auto cx = 0.0;
+
+            auto cy = 0.0;
+
+            auto zx = 0.0;
+
+            auto zy = 0.0;
+
             // calculate mandelbrot set
-            for (auto y = 0; y < parameters.YPixels; y++)
+            for (y = 0; y < parameters.YPixels; y++)
             {
                 // calculate cy coordinate on complex plane
-                auto cy = this->parameters.ScaledY(y, dy);
+                cy = this->parameters.ScaledY(y, dy);
 
-                for (auto x = 0; x < parameters.XPixels; x++)
+                for (x = 0; x < parameters.XPixels; x++)
                 {
-                    auto t = 0;
+                    t = 0;
 
                     // calculate cx coordinate on complex plane
-                    auto cx = this->parameters.ScaledX(x, dx);
+                    cx = this->parameters.ScaledX(x, dx);
 
-                    auto zx = 0.0;
+                    zx = 0.0;
 
-                    auto zy = 0.0;
+                    zy = 0.0;
 
                     // generate escape time fractal
                     while (Fractal::Mag2(zx, zy) <= this->parameters.EscapeValue && t < this->parameters.MaxIterations)

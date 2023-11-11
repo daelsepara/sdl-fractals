@@ -23,36 +23,58 @@ namespace Fractal
 
             auto dy = this->parameters.DeltaY();
 
+            auto n = (double)this->parameters.Exponent;
+
+            auto n1 = (double)this->parameters.Exponent - 1.0;
+
+            auto x = 0;
+
+            auto y = 0;
+
+            auto t = 0;
+
+            auto zx = 0.0;
+
+            auto zy = 0.0;
+
+            auto oldx = 0.0;
+
+            auto oldy = 0.0;
+
+            auto diff = 0.0;
+
+            auto denx = 0.0;
+
+            auto deny = 0.0;
+
             // calculate newton fractal
-            for (auto y = 0; y < parameters.YPixels; y++)
+            for (y = 0; y < parameters.YPixels; y++)
             {
-                for (auto x = 0; x < parameters.XPixels; x++)
+                for (x = 0; x < parameters.XPixels; x++)
                 {
-                    auto t = 0;
+                    t = 0;
 
                     // calculate location (zx, zy) on complex plane
-                    auto zx = this->parameters.ScaledX(x, dx);
+                    zx = this->parameters.ScaledX(x, dx);
 
-                    auto zy = this->parameters.ScaledY(y, dy);
+                    zy = this->parameters.ScaledY(y, dy);
 
-                    auto diff = std::numeric_limits<double>::infinity();
+                    diff = std::numeric_limits<double>::infinity();
 
                     while (diff > this->parameters.Tolerance && ++t < this->parameters.MaxIterations)
                     {
-                        auto oldx = zx;
+                        oldx = zx;
 
-                        auto oldy = zy;
+                        oldy = zy;
 
                         this->FilterInputs(zx, zy);
 
-                        auto denx = zx;
+                        denx = zx;
 
-                        auto deny = zy;
+                        deny = zy;
 
                         // n * z^(n-1)
                         Fractal::Power(denx, deny, this->parameters.Exponent - 1);
-
-                        auto n = (double)this->parameters.Exponent;
 
                         denx *= n;
 
@@ -60,8 +82,6 @@ namespace Fractal
 
                         // (n - 1) * z^n + 1.0
                         Fractal::Power(zx, zy, this->parameters.Exponent);
-
-                        auto n1 = (double)this->parameters.Exponent - 1.0;
 
                         (zx *= n1) += 1.0;
 

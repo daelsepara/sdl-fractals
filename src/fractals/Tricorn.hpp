@@ -23,22 +23,36 @@ namespace Fractal
 
             auto dy = this->parameters.DeltaY();
 
+            auto x = 0;
+
+            auto y = 0;
+
+            auto t = 0;
+
+            auto cx = 0.0;
+
+            auto cy = 0.0;
+
+            auto zx = 0.0;
+
+            auto zy = 0.0;
+
             // calculate tricorn fractal
-            for (auto y = 0; y < parameters.YPixels; y++)
+            for (y = 0; y < parameters.YPixels; y++)
             {
                 // calculate cy coordinate on complex plane
-                auto cy = this->parameters.ScaledY(y, dy);
+                cy = this->parameters.ScaledY(y, dy);
 
-                for (auto x = 0; x < parameters.XPixels; x++)
+                for (x = 0; x < parameters.XPixels; x++)
                 {
-                    auto t = 0;
+                    t = 0;
 
                     // calculate cx coordinate on complex plane
-                    auto cx = this->parameters.ScaledX(x, dx);
+                    cx = this->parameters.ScaledX(x, dx);
 
-                    auto zx = cx;
+                    zx = cx;
 
-                    auto zy = cy;
+                    zy = cy;
 
                     while (Fractal::Mag2(zx, zy) <= this->parameters.EscapeValue && t < this->parameters.MaxIterations)
                     {

@@ -23,35 +23,59 @@ namespace Fractal
 
             auto dy = this->parameters.DeltaY();
 
+            auto x = 0;
+
+            auto y = 0;
+
+            auto t = 0;
+
+            auto zx = 0.0;
+
+            auto zy = 0.0;
+
+            auto diff = 0.0;
+
+            auto oldx = 0.0;
+
+            auto oldy = 0.0;
+
+            auto zxx = 0.0;
+
+            auto zyy = 0.0;
+
+            auto tmp = 0.0;
+
+            auto tmp3 = 0.0;
+
             // calculate newton fractal
-            for (auto y = 0; y < parameters.YPixels; y++)
+            for (y = 0; y < parameters.YPixels; y++)
             {
-                for (auto x = 0; x < parameters.XPixels; x++)
+                for (x = 0; x < parameters.XPixels; x++)
                 {
-                    auto t = 0;
+                    t = 0;
 
                     // calculate location (zx, zy) on complex plane
-                    auto zx = this->parameters.ScaledX(x, dx);
+                    zx = this->parameters.ScaledX(x, dx);
 
-                    auto zy = this->parameters.ScaledY(y, dy);
+                    zy = this->parameters.ScaledY(y, dy);
 
-                    auto diff = std::numeric_limits<double>::infinity();
+                    diff = std::numeric_limits<double>::infinity();
 
                     while (diff > this->parameters.Tolerance && ++t < this->parameters.MaxIterations)
                     {
-                        auto oldx = zx;
+                        oldx = zx;
 
-                        auto oldy = zy;
+                        oldy = zy;
 
                         this->FilterInputs(zx, zy);
 
-                        auto zxx = zx * zx;
+                        zxx = zx * zx;
 
-                        auto zyy = zy * zy;
+                        zyy = zy * zy;
 
-                        auto tmp = (zxx + zyy) * (zxx + zyy);
+                        tmp = (zxx + zyy) * (zxx + zyy);
 
-                        auto tmp3 = 3.0 * tmp;
+                        tmp3 = 3.0 * tmp;
 
                         zx = ((zx + zx) * tmp + zxx - zyy) / tmp3;
 

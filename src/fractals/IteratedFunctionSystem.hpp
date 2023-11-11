@@ -36,6 +36,10 @@ namespace Fractal
 
             auto yn = 0.0;
 
+            auto xp = 0.0;
+
+            auto yp = 0.0;
+
             for (auto t = 0; t < this->parameters.MaxIterations; t++)
             {
                 this->FilterInputs(xn, yn);
@@ -44,9 +48,9 @@ namespace Fractal
 
                 this->FilterResult(xn, yn);
 
-                auto xp = this->parameters.PixelX(xn, dx);
+                xp = this->parameters.PixelX(xn, dx);
 
-                auto yp = this->parameters.PixelY(yn, dy);
+                yp = this->parameters.PixelY(yn, dy);
 
                 if (xp >= 0 && xp < this->parameters.XPixels && yp >= 0 && yp < this->parameters.YPixels)
                 {

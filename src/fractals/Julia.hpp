@@ -23,20 +23,34 @@ namespace Fractal
 
             auto dy = this->parameters.DeltaY();
 
+            auto x = 0;
+
+            auto y = 0;
+
+            auto t = 0;
+
+            auto cx = 0.0;
+
+            auto cy = 0.0;
+
+            auto zx = 0.0;
+
+            auto zy = 0.0;
+
             // pointer to complex function
             auto ApplyFunction = Fractal::MapFunction(this->parameters.Function1);
 
             // calculate julia set
-            for (auto y = 0; y < this->parameters.YPixels; y++)
+            for (y = 0; y < this->parameters.YPixels; y++)
             {
-                for (auto x = 0; x < this->parameters.XPixels; x++)
+                for (x = 0; x < this->parameters.XPixels; x++)
                 {
-                    auto t = 0;
+                    t = 0;
 
                     // calculate location (zx, zy) on complex plane
-                    auto zx = this->parameters.ScaledX(x, dx);
+                    zx = this->parameters.ScaledX(x, dx);
 
-                    auto zy = this->parameters.ScaledY(y, dy);
+                    zy = this->parameters.ScaledY(y, dy);
 
                     // generate escape time fractal
                     while (Fractal::Mag2(zx, zy) <= this->parameters.EscapeValue && t < this->parameters.MaxIterations)

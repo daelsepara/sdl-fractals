@@ -23,23 +23,37 @@ namespace Fractal
 
             auto dy = this->parameters.DeltaY();
 
+            auto x = 0;
+
+            auto y = 0;
+
+            auto t = 0;
+
+            auto cx = 0.0;
+
+            auto cy = 0.0;
+
+            auto zx = 0.0;
+
+            auto zy = 0.0;
+
             // calculate mandelbrot set
-            for (auto y = 0; y < this->parameters.YPixels; y++)
+            for (y = 0; y < this->parameters.YPixels; y++)
             {
                 // calculate cy coordinate on complex plane
-                auto cy = this->parameters.ScaledY(y, dy);
+                cy = this->parameters.ScaledY(y, dy);
 
-                for (auto x = 0; x < this->parameters.XPixels; x++)
+                for (x = 0; x < this->parameters.XPixels; x++)
                 {
-                    auto t = 1;
+                    t = 1;
 
                     // calculate cx coordinate on complex plane
-                    auto cx = this->parameters.ScaledX(x, dx);
+                    cx = this->parameters.ScaledX(x, dx);
 
                     // initial condition z0 (zx, zy)
-                    auto zx = cx;
+                    zx = cx;
 
-                    auto zy = cy;
+                    zy = cy;
 
                     // generate escape time fractal
                     while (Fractal::Mag2(zx, zy) <= this->parameters.EscapeValue && (t < this->parameters.MaxIterations))
