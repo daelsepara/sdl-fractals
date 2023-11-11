@@ -10,7 +10,7 @@ namespace Fractal
 {
     typedef void (*FunctionPointer)(double &a, double &b);
 
-    const double eps = std::numeric_limits<double>::epsilon();
+    const double Epsilon = std::numeric_limits<double>::epsilon();
 
     void Multiply(double x, double y, double a, double b, double &zx, double &zy)
     {
@@ -50,7 +50,7 @@ namespace Fractal
 
     void Reciprocal(double &zx, double &zy)
     {
-        auto mag2 = Fractal::Mag2(zx, zy) + eps;
+        auto mag2 = Fractal::Mag2(zx, zy) + Fractal::Epsilon;
 
         zx = zx / mag2;
 
@@ -374,6 +374,8 @@ namespace Fractal
     void Transform(double p, double x, double y, Fractal::Transformations &transforms, double &xn, double &yn)
     {
         auto transform_p = 0.0;
+
+        auto i = 0;
 
         for (auto i = 0; i < transforms.size(); i++)
         {

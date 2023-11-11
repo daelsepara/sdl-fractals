@@ -1,9 +1,9 @@
 {
     "type": "ifs",
-    "x_pixels": 2048,
-    "y_pixels": 2048,
-    "max_iterations": 1000000,
-    "inside_color": 255,
+    "xPixels": 2048,
+    "yPixels": 2048,
+    "maxIterations": 1000000,
+    "insideColor": 255,
     "transforms": [
         [
             0.000,
@@ -60,9 +60,9 @@
             0.180
         ]
     ],
-    "min_x": -0.3,
-    "max_x": 0.3,
-    "min_y": -0.2,
-    "max_y": 0.6,
+    "minX": -0.3,
+    "maxX": 0.3,
+    "minY": -0.2,
+    "maxY": 0.6,
     "palette": "palettes/green.json"
 }

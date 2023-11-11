@@ -11,18 +11,18 @@ namespace Fractal
     class IteratedFunctionSystem : public Fractal::Base
     {
     protected:
-        void generate() override
+        void Generate() override
         {
             // set inputs/result filter
-            this->map_filters();
+            this->MapFilters();
 
             // create complex plane (initialize grid)
             this->grid = Fractal::InitializeGrid(this->parameters);
 
             // calculate scaling factors
-            auto dx = this->parameters.dx();
+            auto dx = this->parameters.DeltaX();
 
-            auto dy = this->parameters.dy();
+            auto dy = this->parameters.DeltaY();
 
             auto x = 0.0;
 
@@ -36,21 +36,21 @@ namespace Fractal
 
             auto yn = 0.0;
 
-            for (auto t = 0; t < this->parameters.max_iterations; t++)
+            for (auto t = 0; t < this->parameters.MaxIterations; t++)
             {
                 this->FilterInputs(xn, yn);
 
-                Fractal::Transform(random.NextDouble(), x, y, this->parameters.transforms, xn, yn);
+                Fractal::Transform(random.NextDouble(), x, y, this->parameters.Transforms, xn, yn);
 
                 this->FilterResult(xn, yn);
 
-                auto xp = this->parameters.pixel_x(xn, dx);
+                auto xp = this->parameters.PixelX(xn, dx);
 
-                auto yp = this->parameters.pixel_y(yn, dy);
+                auto yp = this->parameters.PixelY(yn, dy);
 
-                if (xp >= 0 && xp < this->parameters.x_pixels && yp >= 0 && yp < this->parameters.y_pixels)
+                if (xp >= 0 && xp < this->parameters.XPixels && yp >= 0 && yp < this->parameters.YPixels)
                 {
-                    this->set_color(xp, yp);
+                    this->SetColor(xp, yp);
                 }
 
                 x = xn;

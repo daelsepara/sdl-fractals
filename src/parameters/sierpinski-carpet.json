@@ -1,9 +1,9 @@
 {
     "type": "ifs",
-    "x_pixels": 2048,
-    "y_pixels": 2048,
-    "max_iterations": 10000000,
-    "inside_color": 128,
+    "xPixels": 2048,
+    "yPixels": 2048,
+    "maxIterations": 10000000,
+    "insideColor": 128,
     "transforms": [
         [
             0.33,
@@ -78,9 +78,9 @@
             0.125
         ]
     ],
-    "min_x": -1.0,
-    "max_x": 1.0,
-    "min_y": -1.0,
-    "max_y": 1.0,
+    "minX": -1.0,
+    "maxX": 1.0,
+    "minY": -1.0,
+    "maxY": 1.0,
     "palette": "palettes/sand.json"
 }

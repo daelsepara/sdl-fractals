@@ -10,34 +10,34 @@ namespace Fractal
     class Newton1 : public Fractal::Base
     {
     protected:
-        void generate() override
+        void Generate() override
         {
             // set inputs/result filter
-            this->map_filters();
+            this->MapFilters();
 
             // create complex plane (initialize grid)
             this->grid = Fractal::InitializeGrid(this->parameters);
 
             // calculate scaling factors
-            auto dx = this->parameters.dx();
+            auto dx = this->parameters.DeltaX();
 
-            auto dy = this->parameters.dy();
+            auto dy = this->parameters.DeltaY();
 
             // calculate newton fractal
-            for (auto y = 0; y < parameters.y_pixels; y++)
+            for (auto y = 0; y < parameters.YPixels; y++)
             {
-                for (auto x = 0; x < parameters.x_pixels; x++)
+                for (auto x = 0; x < parameters.XPixels; x++)
                 {
                     auto t = 0;
 
                     // calculate location (zx, zy) on complex plane
-                    auto zx = this->parameters.scaled_x(x, dx);
+                    auto zx = this->parameters.ScaledX(x, dx);
 
-                    auto zy = this->parameters.scaled_y(y, dy);
+                    auto zy = this->parameters.ScaledY(y, dy);
 
                     auto diff = std::numeric_limits<double>::infinity();
 
-                    while (diff > this->parameters.tolerance && ++t < this->parameters.max_iterations)
+                    while (diff > this->parameters.Tolerance && ++t < this->parameters.MaxIterations)
                     {
                         auto oldx = zx;
 
@@ -62,7 +62,7 @@ namespace Fractal
                         diff = Fractal::Mag2(zx - oldx, zy - oldy);
                     }
 
-                    this->set_color(t, x, y, zx, zy);
+                    this->SetColor(t, x, y, zx, zy);
                 }
             }
         }

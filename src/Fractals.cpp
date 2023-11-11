@@ -213,112 +213,112 @@ int main(int argc, char **argv)
 
 		if (palette_file.length() > 0)
 		{
-			parameters.palette = palette_file;
+			parameters.Palette = palette_file;
 		}
 
 		if (normalized_coloring)
 		{
-			parameters.color_mode = Fractal::ColorMode::NORMALIZED;
+			parameters.ColorMode = Fractal::ColorMode::NORMALIZED;
 		}
 
 		if (log_coloring)
 		{
-			parameters.color_mode = Fractal::ColorMode::LOG;
+			parameters.ColorMode = Fractal::ColorMode::LOG;
 		}
 
 		if (mod_coloring)
 		{
-			parameters.color_mode = Fractal::ColorMode::MODULUS;
+			parameters.ColorMode = Fractal::ColorMode::MODULUS;
 		}
 
 		if (histogram_coloring)
 		{
-			parameters.color_mode = Fractal::ColorMode::HISTOGRAM;
+			parameters.ColorMode = Fractal::ColorMode::HISTOGRAM;
 		}
 
 		if (default_coloring)
 		{
-			parameters.color_mode = Fractal::ColorMode::DEFAULT;
+			parameters.ColorMode = Fractal::ColorMode::DEFAULT;
 		}
 
 		if (decomp)
 		{
-			parameters.decomp = true;
+			parameters.Decomp = true;
 		}
 
 		if (invertx)
 		{
-			parameters.invert_x = true;
+			parameters.InvertX = true;
 		}
 
 		if (inverty)
 		{
-			parameters.invert_y = true;
+			parameters.InvertY = true;
 		}
 
 		if (invert_colors)
 		{
-			parameters.invert_colors = true;
+			parameters.InvertColors = true;
 		}
 
 		Fractal::Base *fractal;
 
-		if (parameters.type == "barnsleytree")
+		if (parameters.Type == "barnsleytree")
 		{
 			fractal = new Fractal::BarnsleyTree(parameters);
 		}
-		else if (parameters.type == "ifs")
+		else if (parameters.Type == "ifs")
 		{
 			fractal = new Fractal::IteratedFunctionSystem(parameters);
 		}
-		else if (parameters.type == "julia")
+		else if (parameters.Type == "julia")
 		{
 			fractal = new Fractal::Julia(parameters);
 		}
-		else if (parameters.type == "juliafn")
+		else if (parameters.Type == "juliafn")
 		{
 			fractal = new Fractal::JuliaFn(parameters);
 		}
-		else if (parameters.type == "julia(f1|f2)")
+		else if (parameters.Type == "julia(f1|f2)")
 		{
 			fractal = new Fractal::JuliaFn12(parameters);
 		}
-		else if (parameters.type == "mandelbrot")
+		else if (parameters.Type == "mandelbrot")
 		{
 			fractal = new Fractal::Mandelbrot(parameters);
 		}
-		else if (parameters.type == "mandelbrot2")
+		else if (parameters.Type == "mandelbrot2")
 		{
 			fractal = new Fractal::Mandelbrot2(parameters);
 		}
-		else if (parameters.type == "mandelbrot3")
+		else if (parameters.Type == "mandelbrot3")
 		{
 			fractal = new Fractal::Mandelbrot3(parameters);
 		}
-		else if (parameters.type == "mandelbrotfn")
+		else if (parameters.Type == "mandelbrotfn")
 		{
 			fractal = new Fractal::MandelbrotFn(parameters);
 		}
-		else if (parameters.type == "mandelbrot(f1|f2)")
+		else if (parameters.Type == "mandelbrot(f1|f2)")
 		{
 			fractal = new Fractal::MandelbrotFn12(parameters);
 		}
-		else if (parameters.type == "newton")
+		else if (parameters.Type == "newton")
 		{
 			fractal = new Fractal::Newton(parameters);
 		}
-		else if (parameters.type == "newton1")
+		else if (parameters.Type == "newton1")
 		{
 			fractal = new Fractal::Newton1(parameters);
 		}
-		else if (parameters.type == "tricorn")
+		else if (parameters.Type == "tricorn")
 		{
 			fractal = new Fractal::Tricorn(parameters);
 		}
 		else
 		{
 			std::cerr << "Unable to generate unknown '"
-					  << parameters.type
+					  << parameters.Type
 					  << "' fractal."
 					  << std::endl;
 
@@ -327,20 +327,20 @@ int main(int argc, char **argv)
 
 		if (!benchmark)
 		{
-			std::cerr << "Generating '" << parameters.type << "' fractal" << std::endl;
+			std::cerr << "Generating '" << parameters.Type << "' fractal" << std::endl;
 
 			if (image_file.length() > 0)
 			{
-				fractal->save(image_file);
+				fractal->Save(image_file);
 			}
 			else
 			{
-				fractal->render();
+				fractal->Render();
 			}
 		}
 		else
 		{
-			fractal->benchmark();
+			fractal->Benchmark();
 		}
 	}
 

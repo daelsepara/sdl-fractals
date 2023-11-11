@@ -71,120 +71,120 @@ namespace Fractal
     class Parameters
     {
     public:
-        std::string type;
+        std::string Type;
 
         // image size
-        int x_pixels = 2048;
-        int y_pixels = 2048;
+        int XPixels = 2048;
+        int YPixels = 2048;
 
         // mandelbrot parameter(s)
-        int max_iterations = 255;
-        int exponent = 2;
-        int bailout = -1;
-        double escape_value = 4.0;
-        double shift_value = 0.0;
+        int MaxIterations = 255;
+        int Exponent = 2;
+        int Bailout = -1;
+        double EscapeValue = 4.0;
+        double ShiftValue = 0.0;
 
         // complex plane window boundaries
-        double min_x = -2.5;
-        double max_x = 2.5;
-        double min_y = -2.5;
-        double max_y = 2.5;
+        double MinX = -2.5;
+        double MaxX = 2.5;
+        double MinY = -2.5;
+        double MaxY = 2.5;
 
         // Newton parameters
-        double tolerance = 0.000001;
+        double Tolerance = 0.000001;
 
         // Julia set parameters
         double cx = -0.8;
         double cy = 0.156;
 
         // inside color
-        int inside_color = 0;
+        int InsideColor = 0;
 
         // bailout color
-        int bailout_color = 0;
+        int BailoutColor = 0;
 
         // invert colors
-        bool invert_colors = false;
+        bool InvertColors = false;
 
         // invert axis
-        bool invert_x = false;
-        bool invert_y = false;
+        bool InvertX = false;
+        bool InvertY = false;
 
         // inputs/result filter
-        std::string inputs_filter = "z";
-        std::string result_filter = "z";
+        std::string InputsFilter = "z";
+        std::string ResultFilter = "z";
 
         // transformations
-        Fractal::Transformations transforms = Fractal::Transformations();
+        Fractal::Transformations Transforms = Fractal::Transformations();
 
         // function
-        std::string function = "";
-        std::string function2 = "";
+        std::string Function1 = "";
+        std::string Function2 = "";
 
         // palette / colormap to use
-        std::string palette = "";
+        std::string Palette = "";
 
         // color mode
-        Fractal::ColorMode color_mode = Fractal::ColorMode::DEFAULT;
+        Fractal::ColorMode ColorMode = Fractal::ColorMode::DEFAULT;
 
         // decomposition mode
-        bool decomp = false;
+        bool Decomp = false;
 
-        double dx()
+        double DeltaX()
         {
-            return (double)(this->max_x - this->min_x) / (double)(this->x_pixels);
+            return (double)(this->MaxX - this->MinX) / (double)(this->XPixels);
         }
 
-        double dy()
+        double DeltaY()
         {
-            return (double)(this->max_y - this->min_y) / (double)(this->y_pixels);
+            return (double)(this->MaxY - this->MinY) / (double)(this->YPixels);
         }
 
-        double scaled_x(int x, double dx)
+        double ScaledX(int x, double dx)
         {
-            if (this->invert_x)
+            if (this->InvertX)
             {
-                return this->min_x + (double)(this->x_pixels - x - 1) * dx;
+                return this->MinX + (double)(this->XPixels - x - 1) * dx;
             }
             else
             {
-                return this->min_x + (double)x * dx;
+                return this->MinX + (double)x * dx;
             }
         }
 
-        double scaled_y(int y, double dy)
+        double ScaledY(int y, double dy)
         {
-            if (this->invert_y)
+            if (this->InvertY)
             {
-                return this->min_y + (double)y * dy;
+                return this->MinY + (double)y * dy;
             }
             else
             {
-                return this->min_y + (double)(this->y_pixels - y - 1) * dy;
+                return this->MinY + (double)(this->YPixels - y - 1) * dy;
             }
         }
 
-        int pixel_x(double x, double dx)
+        int PixelX(double x, double dx)
         {
-            if (this->invert_x)
+            if (this->InvertX)
             {
-                return (this->x_pixels - (int)((x - this->min_x) / dx) + 1);
+                return (this->XPixels - (int)((x - this->MinX) / dx) + 1);
             }
             else
             {
-                return (int)((x - this->min_x) / dx);
+                return (int)((x - this->MinX) / dx);
             }
         }
 
-        int pixel_y(double y, double dy)
+        int PixelY(double y, double dy)
         {
-            if (this->invert_y)
+            if (this->InvertY)
             {
-                return (int)((y - this->min_y) / dy);
+                return (int)((y - this->MinY) / dy);
             }
             else
             {
-                return (this->y_pixels - (int)((y - this->min_y) / dy) + 1);
+                return (this->YPixels - (int)((y - this->MinY) / dy) + 1);
             }
         }
 
@@ -200,62 +200,62 @@ namespace Fractal
                 auto data = nlohmann::json::parse(file);
 
                 // fractal type
-                this->type = !data["type"].is_null() ? std::string(data["type"]) : std::string("mandelbrot");
+                this->Type = !data["type"].is_null() ? std::string(data["type"]) : std::string("mandelbrot");
 
                 // window borders on the comlex plane
-                this->min_x = !data["min_x"].is_null() ? (double)data["min_x"] : -2.5;
-                this->max_x = !data["max_x"].is_null() ? (double)data["max_x"] : 2.5;
-                this->min_y = !data["min_y"].is_null() ? (double)data["min_y"] : -2.5;
-                this->max_y = !data["max_y"].is_null() ? (double)data["max_y"] : 2.5;
+                this->MinX = !data["minX"].is_null() ? (double)data["minX"] : -2.5;
+                this->MaxX = !data["maxX"].is_null() ? (double)data["maxX"] : 2.5;
+                this->MinY = !data["minY"].is_null() ? (double)data["minY"] : -2.5;
+                this->MaxY = !data["maxY"].is_null() ? (double)data["maxY"] : 2.5;
 
                 // fractal dimensions (in pixels)
-                this->x_pixels = !data["x_pixels"].is_null() ? (int)data["x_pixels"] : 2048;
-                this->y_pixels = !data["y_pixels"].is_null() ? (int)data["y_pixels"] : 2048;
+                this->XPixels = !data["xPixels"].is_null() ? (int)data["xPixels"] : 2048;
+                this->YPixels = !data["yPixels"].is_null() ? (int)data["yPixels"] : 2048;
 
                 // parameters for escape time type of fractals
-                this->max_iterations = !data["max_iterations"].is_null() ? (int)data["max_iterations"] : 255;
-                this->escape_value = !data["escape_value"].is_null() ? (double)data["escape_value"] : std::numeric_limits<double>::quiet_NaN();
-                this->shift_value = !data["shift_value"].is_null() ? (double)data["shift_value"] : std::numeric_limits<double>::quiet_NaN();
-                this->bailout = !data["bailout"].is_null() ? (int)data["bailout"] : std::numeric_limits<int>::quiet_NaN();
+                this->MaxIterations = !data["maxIterations"].is_null() ? (int)data["maxIterations"] : 255;
+                this->EscapeValue = !data["escapeValue"].is_null() ? (double)data["escapeValue"] : std::numeric_limits<double>::quiet_NaN();
+                this->ShiftValue = !data["shiftValue"].is_null() ? (double)data["shiftValue"] : std::numeric_limits<double>::quiet_NaN();
+                this->Bailout = !data["bailout"].is_null() ? (int)data["bailout"] : std::numeric_limits<int>::quiet_NaN();
 
                 // mandelbrot parameter
-                this->exponent = !data["exponent"].is_null() ? (int)data["exponent"] : std::numeric_limits<int>::quiet_NaN();
+                this->Exponent = !data["exponent"].is_null() ? (int)data["exponent"] : std::numeric_limits<int>::quiet_NaN();
 
                 // newton parameter
-                this->tolerance = !data["tolerance"].is_null() ? (double)data["tolerance"] : std::numeric_limits<double>::epsilon();
+                this->Tolerance = !data["tolerance"].is_null() ? (double)data["tolerance"] : std::numeric_limits<double>::epsilon();
 
                 // julia set
                 this->cx = !data["cx"].is_null() ? (double)data["cx"] : std::numeric_limits<double>::quiet_NaN();
                 this->cy = !data["cy"].is_null() ? (double)data["cy"] : std::numeric_limits<double>::quiet_NaN();
 
                 // inside_color
-                this->inside_color = !data["inside_color"].is_null() ? (int)data["inside_color"] : 0;
+                this->InsideColor = !data["insideColor"].is_null() ? (int)data["insideColor"] : 0;
 
                 // bailout_color
-                this->bailout_color = !data["bailout_color"].is_null() ? (int)data["bailout_color"] : 0;
+                this->BailoutColor = !data["bailoutColor"].is_null() ? (int)data["bailoutColor"] : 0;
 
                 // invert axis
-                this->invert_x = !data["invert_x"].is_null() ? (bool)data["invert_x"] : false;
-                this->invert_y = !data["invert_y"].is_null() ? (bool)data["invert_y"] : false;
+                this->InvertX = !data["invertX"].is_null() ? (bool)data["invertX"] : false;
+                this->InvertY = !data["invertY"].is_null() ? (bool)data["invertY"] : false;
 
                 // input/output filters
-                this->inputs_filter = !data["inputs_filter"].is_null() ? std::string(data["inputs_filter"]) : std::string("z");
-                this->result_filter = !data["result_filter"].is_null() ? std::string(data["result_filter"]) : std::string("z");
+                this->InputsFilter = !data["inputsFilter"].is_null() ? std::string(data["inputsFilter"]) : std::string("z");
+                this->ResultFilter = !data["resultFilter"].is_null() ? std::string(data["resultFilter"]) : std::string("z");
 
                 // invert colors
-                this->invert_colors = !data["invert_colors"].is_null() ? (bool)data["invert_colors"] : false;
+                this->InvertColors = !data["invertColors"].is_null() ? (bool)data["invertColors"] : false;
 
                 // functions
-                this->function = !data["function"].is_null() ? std::string(data["function"]) : "";
-                this->function2 = !data["function2"].is_null() ? std::string(data["function2"]) : "";
+                this->Function1 = !data["function1"].is_null() ? std::string(data["function1"]) : "";
+                this->Function2 = !data["function2"].is_null() ? std::string(data["function2"]) : "";
 
                 // decomp
-                this->decomp = !data["decomp"].is_null() ? (bool)data["decomp"] : false;
+                this->Decomp = !data["decomp"].is_null() ? (bool)data["decomp"] : false;
 
                 // transforms
                 if (!data["transforms"].is_null() && data["transforms"].is_array())
                 {
-                    this->transforms = Fractal::Transformations();
+                    this->Transforms = Fractal::Transformations();
 
                     for (auto j = 0; j < data["transforms"].size(); j++)
                     {
@@ -270,22 +270,22 @@ namespace Fractal
                                 transform.push_back(val);
                             }
 
-                            this->transforms.push_back(transform);
+                            this->Transforms.push_back(transform);
                         }
                     }
                 }
 
                 // palette / colormap
-                this->palette = !data["palette"].is_null() ? std::string(data["palette"]) : "";
+                this->Palette = !data["palette"].is_null() ? std::string(data["palette"]) : "";
 
                 // color mode
-                this->color_mode = !data["color_mode"].is_null() ? Fractal::Find(ColorModeMapping, std::string(data["color_mode"])) : Fractal::ColorMode::DEFAULT;
+                this->ColorMode = !data["colorMode"].is_null() ? Fractal::Find(ColorModeMapping, std::string(data["colorMode"])) : Fractal::ColorMode::DEFAULT;
 
                 file.close();
             }
             else
             {
-                std::cerr << "Unable to laod parameters from " << filename << std::endl;
+                std::cerr << "Unable to load parameters from " << filename << std::endl;
             }
         }
 

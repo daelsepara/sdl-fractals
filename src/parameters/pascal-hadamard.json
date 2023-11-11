@@ -1,9 +1,9 @@
 {
     "type": "ifs",
-    "x_pixels": 2048,
-    "y_pixels": 2048,
-    "max_iterations": 1000000,
-    "inside_color": 128,
+    "xPixels": 2048,
+    "yPixels": 2048,
+    "maxIterations": 1000000,
+    "insideColor": 128,
     "transforms": [
         [
             0.5,
@@ -33,9 +33,9 @@
             0.34
         ]
     ],
-    "min_x": -0.5,
-    "max_x": 0.0,
-    "min_y": -0.5,
-    "max_y": 0.0,
+    "minX": -0.5,
+    "maxX": 0.0,
+    "minY": -0.5,
+    "maxY": 0.0,
     "palette": "palettes/gnpu.json"
 }

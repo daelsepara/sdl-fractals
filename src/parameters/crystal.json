@@ -1,9 +1,9 @@
 {
     "type": "ifs",
-    "x_pixels": 2048,
-    "y_pixels": 2048,
-    "max_iterations": 10000000,
-    "inside_color": 200,
+    "xPixels": 2048,
+    "yPixels": 2048,
+    "maxIterations": 10000000,
+    "insideColor": 200,
     "transforms": [
         [
             0.255,
@@ -42,9 +42,9 @@
             0.5
         ]
     ],
-    "min_x": 0.0,
-    "max_x": 1.0,
-    "min_y": 0.0,
-    "max_y": 1.0,
+    "minX": 0.0,
+    "maxX": 1.0,
+    "minY": 0.0,
+    "maxY": 1.0,
     "palette": "palettes/aurora.json"
 }

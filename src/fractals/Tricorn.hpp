@@ -10,37 +10,37 @@ namespace Fractal
     class Tricorn : public Fractal::Base
     {
     protected:
-        void generate() override
+        void Generate() override
         {
             // set inputs/result filter
-            this->map_filters();
+            this->MapFilters();
 
             // create complex plane (initialize grid)
             this->grid = Fractal::InitializeGrid(this->parameters);
 
             // calculate scaling factors
-            auto dx = this->parameters.dx();
+            auto dx = this->parameters.DeltaX();
 
-            auto dy = this->parameters.dy();
+            auto dy = this->parameters.DeltaY();
 
             // calculate tricorn fractal
-            for (auto y = 0; y < parameters.y_pixels; y++)
+            for (auto y = 0; y < parameters.YPixels; y++)
             {
                 // calculate cy coordinate on complex plane
-                auto cy = this->parameters.scaled_y(y, dy);
+                auto cy = this->parameters.ScaledY(y, dy);
 
-                for (auto x = 0; x < parameters.x_pixels; x++)
+                for (auto x = 0; x < parameters.XPixels; x++)
                 {
                     auto t = 0;
 
                     // calculate cx coordinate on complex plane
-                    auto cx = this->parameters.scaled_x(x, dx);
+                    auto cx = this->parameters.ScaledX(x, dx);
 
                     auto zx = cx;
 
                     auto zy = cy;
 
-                    while (Fractal::Mag2(zx, zy) <= this->parameters.escape_value && t < this->parameters.max_iterations)
+                    while (Fractal::Mag2(zx, zy) <= this->parameters.EscapeValue && t < this->parameters.MaxIterations)
                     {
                         this->FilterInputs(zx, zy);
 
@@ -57,7 +57,7 @@ namespace Fractal
                         t++;
                     }
 
-                    this->set_color(t, x, y, zx, zy);
+                    this->SetColor(t, x, y, zx, zy);
                 }
             }
         }

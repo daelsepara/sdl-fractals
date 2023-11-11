@@ -10,31 +10,31 @@ namespace Fractal
     class Mandelbrot3 : public Fractal::Base
     {
     protected:
-        void generate() override
+        void Generate() override
         {
             // set inputs/result filter
-            this->map_filters();
+            this->MapFilters();
 
             // create complex plane (initialize grid)
             this->grid = Fractal::InitializeGrid(this->parameters);
 
             // calculate scaling factors
-            auto dx = this->parameters.dx();
+            auto dx = this->parameters.DeltaX();
 
-            auto dy = this->parameters.dy();
+            auto dy = this->parameters.DeltaY();
 
             // calculate mandelbrot set
-            for (auto y = 0; y < this->parameters.y_pixels; y++)
+            for (auto y = 0; y < this->parameters.YPixels; y++)
             {
                 // calculate cy coordinate on complex plane
-                auto cy = this->parameters.scaled_y(y, dy);
+                auto cy = this->parameters.ScaledY(y, dy);
 
-                for (auto x = 0; x < this->parameters.x_pixels; x++)
+                for (auto x = 0; x < this->parameters.XPixels; x++)
                 {
                     auto t = 1;
 
                     // calculate cx coordinate on complex plane
-                    auto cx = this->parameters.scaled_x(x, dx);
+                    auto cx = this->parameters.ScaledX(x, dx);
 
                     // initial condition z0 (zx, zy)
                     auto zx = cx * cx;
@@ -46,7 +46,7 @@ namespace Fractal
                     auto yy = cy;
 
                     // generate escape time fractal
-                    while ((zx + zy) <= this->parameters.escape_value && (t < this->parameters.max_iterations))
+                    while ((zx + zy) <= this->parameters.EscapeValue && (t < this->parameters.MaxIterations))
                     {
                         this->FilterInputs(xx, yy);
 
@@ -67,7 +67,7 @@ namespace Fractal
                         t++;
                     }
 
-                    this->set_color(t, x, y, zx, zy);
+                    this->SetColor(t, x, y, zx, zy);
                 }
             }
         }

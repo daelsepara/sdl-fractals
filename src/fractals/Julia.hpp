@@ -10,44 +10,44 @@ namespace Fractal
     class Julia : public Fractal::Base
     {
     protected:
-        void generate() override
+        void Generate() override
         {
             // set inputs/result filter
-            this->map_filters();
+            this->MapFilters();
 
             // create complex plane (initialize grid)
             this->grid = Fractal::InitializeGrid(this->parameters);
 
             // calculate scaling factors
-            auto dx = this->parameters.dx();
+            auto dx = this->parameters.DeltaX();
 
-            auto dy = this->parameters.dy();
+            auto dy = this->parameters.DeltaY();
 
             // pointer to complex function
-            auto ApplyFunction = Fractal::MapFunction(this->parameters.function);
+            auto ApplyFunction = Fractal::MapFunction(this->parameters.Function1);
 
             // calculate julia set
-            for (auto y = 0; y < this->parameters.y_pixels; y++)
+            for (auto y = 0; y < this->parameters.YPixels; y++)
             {
-                for (auto x = 0; x < this->parameters.x_pixels; x++)
+                for (auto x = 0; x < this->parameters.XPixels; x++)
                 {
                     auto t = 0;
 
                     // calculate location (zx, zy) on complex plane
-                    auto zx = this->parameters.scaled_x(x, dx);
+                    auto zx = this->parameters.ScaledX(x, dx);
 
-                    auto zy = this->parameters.scaled_y(y, dy);
+                    auto zy = this->parameters.ScaledY(y, dy);
 
                     // generate escape time fractal
-                    while (Fractal::Mag2(zx, zy) <= this->parameters.escape_value && t < this->parameters.max_iterations)
+                    while (Fractal::Mag2(zx, zy) <= this->parameters.EscapeValue && t < this->parameters.MaxIterations)
                     {
                         this->FilterInputs(zx, zy);
 
                         ApplyFunction(zx, zy);
 
-                        if (this->parameters.exponent != 1)
+                        if (this->parameters.Exponent != 1)
                         {
-                            Fractal::Power(zx, zy, this->parameters.exponent);
+                            Fractal::Power(zx, zy, this->parameters.Exponent);
                         }
 
                         this->FilterResult(zx, zy);
@@ -59,7 +59,7 @@ namespace Fractal
                         t++;
                     }
 
-                    this->set_color(t, x, y, zx, zy);
+                    this->SetColor(t, x, y, zx, zy);
                 }
             }
         }

@@ -17,22 +17,22 @@ namespace Fractal
     Grid InitializeGrid(Fractal::Parameters &parameters)
     {
         // create complex plane
-        return Fractal::Grid(parameters.y_pixels, Fractal::GridRow(parameters.x_pixels, 0));
+        return Fractal::Grid(parameters.YPixels, Fractal::GridRow(parameters.XPixels, 0));
     }
 
     SDL_Surface *GenerateSurface(Fractal::Grid &grid, Fractal::Parameters &parameters, Fractal::Palette &palette)
     {
-        auto surface = SDL_CreateRGBSurface(0, parameters.x_pixels, parameters.y_pixels, 32, 0, 0, 0, 0);
+        auto surface = SDL_CreateRGBSurface(0, parameters.XPixels, parameters.YPixels, 32, 0, 0, 0, 0);
 
-        if (surface && grid.size() >= parameters.y_pixels && grid[0].size() >= parameters.x_pixels)
+        if (surface && grid.size() >= parameters.YPixels && grid[0].size() >= parameters.XPixels)
         {
             // set fixed alpha channel value
             Uint8 a = 255;
 
             // write to ARGB surface
-            for (auto y = 0; y < parameters.y_pixels; y++)
+            for (auto y = 0; y < parameters.YPixels; y++)
             {
-                for (auto x = 0; x < parameters.x_pixels; x++)
+                for (auto x = 0; x < parameters.XPixels; x++)
                 {
                     // calculate target pixel
                     Uint32 *const target = (Uint32 *)((Uint8 *)surface->pixels + y * surface->pitch + x * surface->format->BytesPerPixel);
@@ -40,7 +40,7 @@ namespace Fractal
                     auto color = (int)grid[y][x];
 
                     // invert colors
-                    if (parameters.invert_colors)
+                    if (parameters.InvertColors)
                     {
                         color = 255 - color;
                     }
@@ -113,9 +113,9 @@ namespace Fractal
 
             auto palette = Fractal::Palette();
 
-            if (parameters.palette.length() > 0)
+            if (parameters.Palette.length() > 0)
             {
-                palette.Load(parameters.palette);
+                palette.Load(parameters.Palette);
             }
 
             auto surface = Fractal::GenerateSurface(grid, parameters, palette);
@@ -192,9 +192,9 @@ namespace Fractal
     {
         auto palette = Fractal::Palette();
 
-        if (parameters.palette.length() > 0)
+        if (parameters.Palette.length() > 0)
         {
-            palette.Load(parameters.palette);
+            palette.Load(parameters.Palette);
         }
 
         auto surface = Fractal::GenerateSurface(grid, parameters, palette);
@@ -320,19 +320,19 @@ namespace Fractal
 
     void FinalizeColors(Fractal::Grid &grid, Fractal::Parameters &parameters, int max_color)
     {
-        if (parameters.color_mode == Fractal::ColorMode::LOG)
+        if (parameters.ColorMode == Fractal::ColorMode::LOG)
         {
             Fractal::Log(grid, max_color);
         }
-        else if (parameters.color_mode == Fractal::ColorMode::NORMALIZED)
+        else if (parameters.ColorMode == Fractal::ColorMode::NORMALIZED)
         {
             Fractal::Normalize(grid, max_color);
         }
-        else if (parameters.color_mode == Fractal::ColorMode::MODULUS)
+        else if (parameters.ColorMode == Fractal::ColorMode::MODULUS)
         {
             Fractal::Mod(grid);
         }
-        else if (parameters.color_mode == Fractal::ColorMode::HISTOGRAM)
+        else if (parameters.ColorMode == Fractal::ColorMode::HISTOGRAM)
         {
             Fractal::Histogram(grid);
         }

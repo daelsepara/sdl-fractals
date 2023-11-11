@@ -24,31 +24,31 @@ namespace Fractal
 
         Fractal::FunctionPointer FilterResult;
 
-        virtual void generate() {}
+        virtual void Generate() {}
 
-        void map_filters()
+        void MapFilters()
         {
             // set inputs/result filter
-            this->FilterInputs = Fractal::MapFunction(this->parameters.inputs_filter);
+            this->FilterInputs = Fractal::MapFunction(this->parameters.InputsFilter);
 
-            this->FilterResult = Fractal::MapFunction(this->parameters.result_filter);
+            this->FilterResult = Fractal::MapFunction(this->parameters.ResultFilter);
         }
 
-        inline void set_color(int x, int y, int c)
+        inline void SetColor(int x, int y, int c)
         {
             this->grid[y][x] = c;
         }
 
-        inline void set_color(int x, int y)
+        inline void SetColor(int x, int y)
         {
-            this->set_color(x, y, this->parameters.inside_color);
+            this->SetColor(x, y, this->parameters.InsideColor);
         }
 
-        void set_color(int t, int x, int y, double zx, double zy)
+        void SetColor(int t, int x, int y, double zx, double zy)
         {
-            if (t != this->parameters.max_iterations)
+            if (t != this->parameters.MaxIterations)
             {
-                if (this->parameters.decomp)
+                if (this->parameters.Decomp)
                 {
                     auto d = std::atan2(zy, zx);
 
@@ -57,50 +57,50 @@ namespace Fractal
                         d += Fractal::PI2;
                     }
 
-                    auto color = (int)((double)this->parameters.max_iterations * (d / Fractal::PI2));
+                    auto color = (int)((double)this->parameters.MaxIterations * (d / Fractal::PI2));
 
-                    this->set_color(x, y, color);
+                    this->SetColor(x, y, color);
                 }
-                else if (std::abs(zx) < this->parameters.bailout || std::abs(zy) < this->parameters.bailout)
+                else if (std::abs(zx) < this->parameters.Bailout || std::abs(zy) < this->parameters.Bailout)
                 {
-                    this->set_color(x, y, this->parameters.bailout_color);
+                    this->SetColor(x, y, this->parameters.BailoutColor);
                 }
                 else
                 {
-                    this->set_color(x, y, t);
+                    this->SetColor(x, y, t);
                 }
             }
             else
             {
-                this->set_color(x, y);
+                this->SetColor(x, y);
             }
         }
 
     public:
-        void render()
+        void Render()
         {
-            this->generate();
+            this->Generate();
 
-            Fractal::FinalizeColors(this->grid, this->parameters, this->parameters.max_iterations);
+            Fractal::FinalizeColors(this->grid, this->parameters, this->parameters.MaxIterations);
 
             Fractal::RenderImage(this->grid, this->parameters);
         }
 
-        void save(std::string image)
+        void Save(std::string image)
         {
-            this->generate();
+            this->Generate();
 
             if (image.length() > 0)
             {
-                Fractal::FinalizeColors(this->grid, this->parameters, this->parameters.max_iterations);
+                Fractal::FinalizeColors(this->grid, this->parameters, this->parameters.MaxIterations);
 
                 Fractal::SaveImage(this->grid, this->parameters, image);
             }
         }
 
-        void benchmark()
+        void Benchmark()
         {
-            this->generate();
+            this->Generate();
         }
 
         Base() {}
