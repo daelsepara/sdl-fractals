@@ -64,7 +64,7 @@ namespace Fractal
                     yy = cy;
 
                     // generate escape time fractal
-                    while ((zx + zy) <= this->parameters.EscapeValue && (t < this->parameters.MaxIterations))
+                    while ((zx + zy) <= this->parameters.EscapeValue && t < this->parameters.MaxIterations)
                     {
                         this->FilterInputs(xx, yy);
 

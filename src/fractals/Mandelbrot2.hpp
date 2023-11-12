@@ -56,7 +56,7 @@ namespace Fractal
                     zy = cy;
 
                     // generate escape time fractal
-                    while (Fractal::Mag2(zx, zy) <= this->parameters.EscapeValue && (t < this->parameters.MaxIterations))
+                    while (Fractal::Mag2(zx, zy) <= this->parameters.EscapeValue && t < this->parameters.MaxIterations)
                     {
                         this->FilterInputs(zx, zy);
 
