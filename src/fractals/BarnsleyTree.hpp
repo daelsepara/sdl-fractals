@@ -12,7 +12,7 @@ namespace Fractal
     protected:
         void Generate() override
         {
-            // set inputs/result filter
+            // set apply/inputs/result function filter
             this->MapFunctions();
 
             // create complex plane (initialize grid)
