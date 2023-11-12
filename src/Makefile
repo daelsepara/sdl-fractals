@@ -1,4 +1,4 @@
-LINKER_FLAGS=-O3 -std=c++17 -lSDL2 -lSDL2_image -lSDL2_ttf
+LINKER_FLAGS=-O3 -std=c++17 -lSDL2 -lSDL2_image
 INCLUDES=-I/usr/include/SDL2
 
 UNAME_S=$(shell uname -s)
