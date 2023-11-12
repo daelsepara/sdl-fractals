@@ -29,10 +29,6 @@ namespace Fractal
 
             auto t = 0;
 
-            auto cx = 0.0;
-
-            auto cy = 0.0;
-
             auto zx = 0.0;
 
             auto zy = 0.0;
