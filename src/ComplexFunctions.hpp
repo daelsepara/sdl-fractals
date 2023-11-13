@@ -351,47 +351,6 @@ namespace Fractal
             return Fractal::Identity;
         }
     }
-
-    void ApplyTransformation(double x, double y, Fractal::Transformation &transform, double &xn, double &yn)
-    {
-        // transform[0] = x coefficient (xn)
-        // transform[1] = y coefficient (xn)
-        // transform[2] = x coefficient (yn)
-        // transform[3] = y coefficient (yn)
-        // transform[4] = constant (xn)
-        // transform[5] = constant (yn)
-        // transform[6] = probability
-        if (transform.size() < 7)
-        {
-            return;
-        }
-
-        xn = transform[0] * x + transform[1] * y + transform[4];
-
-        yn = transform[2] * x + transform[3] * y + transform[5];
-    }
-
-    void Transform(double p, double x, double y, Fractal::Transformations &transforms, double &xn, double &yn)
-    {
-        auto transform_p = 0.0;
-
-        auto i = 0;
-
-        for (auto i = 0; i < transforms.size(); i++)
-        {
-            if (transforms[i].size() >= 7)
-            {
-                transform_p += transforms[i][6];
-
-                if (p < transform_p)
-                {
-                    Fractal::ApplyTransformation(x, y, transforms[i], xn, yn);
-
-                    break;
-                }
-            }
-        }
-    }
 }
 
 #endif
