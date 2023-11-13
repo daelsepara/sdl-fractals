@@ -63,7 +63,7 @@ namespace Fractal
 
                     diff = std::numeric_limits<double>::infinity();
 
-                    while (diff > this->parameters.Tolerance && t++ < this->parameters.MaxIterations)
+                    while (diff > this->parameters.Tolerance && t < this->parameters.MaxIterations)
                     {
                         oldx = zx;
 
@@ -95,6 +95,8 @@ namespace Fractal
                         this->FilterResult(zx, zy);
 
                         diff = Fractal::Mag2(zx - oldx, zy - oldy);
+
+                        t++;
                     }
 
                     this->SetColor(t, x, y, zx, zy);
