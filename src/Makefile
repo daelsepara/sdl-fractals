@@ -9,7 +9,7 @@ ifeq ($(UNAME_S),Darwin)
 	CC = clang++
 else
 	LINKER_FLAGS += -lstdc++fs
-	CC = g++
+	CC = clang++
 endif
 
 all: main
