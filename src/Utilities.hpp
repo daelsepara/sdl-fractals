@@ -285,7 +285,7 @@ namespace Fractal
     void Histogram(Fractal::Grid &grid)
     {
         // compute total counts
-        auto total = grid.size() + grid[0].size();
+        auto total = grid.size() * grid[0].size();
 
         auto NumIterationsPerPixel = std::map<int, int>();
 
