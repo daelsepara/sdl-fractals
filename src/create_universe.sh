@@ -10,6 +10,9 @@ for j in ${BIOMORPHS}; do mkdir -p universe/biomorphs/$j; for i in ${PALETTES}; 
 # create mandelbrots
 for j in mandelbrot mandelbrot4; do mkdir -p universe/fractals/$j-histogram; for i in ${PALETTES}; do ./Fractals.exe /params=parameters/$j.json /palette=palettes/$i.json /image=universe/fractals/$j-histogram/$j-histogram-$i.png /histogram; done; done;
 for j in mandelbrot mandelbrot4; do mkdir -p universe/fractals/$j-histogram; for i in ${PALETTES}; do ./Fractals.exe /params=parameters/$j.json /palette=palettes/$i.json /image=universe/fractals/$j-histogram/$j-histogram-$i-inverted.png /histogram /invert; done; done;
+mkdir -p universe/fractals/mandelbrot; for i in ${PALETTES}; do ./Fractals.exe /params=parameters/mandelbrot.json /palette=palettes/$i.json /image=universe/fractals/mandelbrot/mandelbrot-$i.png; done;
+mkdir -p universe/fractals/mandelbrot; for i in ${PALETTES}; do ./Fractals.exe /params=parameters/mandelbrot.json /palette=palettes/$i.json /image=universe/fractals/mandelbrot/mandelbrot-$i-inverted.png /invert; done;
+
 for j in mandelbrot mandelbrot4; do mkdir -p universe/fractals/$j-log; for i in ${PALETTES}; do ./Fractals.exe /params=parameters/$j.json /palette=palettes/$i.json /image=universe/fractals/$j-log/$j-log-$i.png /log; done; done;
 for j in mandelbrot mandelbrot4; do mkdir -p universe/fractals/$j-log; for i in ${PALETTES}; do ./Fractals.exe /params=parameters/$j.json /palette=palettes/$i.json /image=universe/fractals/$j-log/$j-log-$i-inverted.png /log /invert; done; done;
 for j in mandelbrot-func mandelbrot-funcs mandelbrot-reciprocal; do mkdir -p universe/fractals/$j; for i in ${PALETTES}; do ./Fractals.exe /params=parameters/$j.json /palette=palettes/$i.json /image=universe/fractals/$j/$j-$i.png; done; done;
