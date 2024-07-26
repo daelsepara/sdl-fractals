@@ -286,29 +286,25 @@ namespace Fractal
     {
         auto NumIterationsPerPixel = std::map<int, int>();
 
-        // pass 1: compute histogram
+        auto total = 0;
+
+        // pass 1: compute histogram and total counts
         for (auto y = 0; y < grid.size(); y++)
         {
             for (auto x = 0; x < grid[y].size(); x++)
             {
                 NumIterationsPerPixel[grid[y][x]]++;
+
+                total++;
             }
         }
 
-        // pass 2: compute total counts
-        auto total = 0;
-
-        for (auto i = NumIterationsPerPixel.begin(); i != NumIterationsPerPixel.end(); ++i)
-        {
-            total += i->second;
-        }
-
-        // pass 3: compute hue
+        // pass 2: compute hue
         auto hue = std::vector<std::vector<int>>(grid.size(), std::vector<int>(grid[0].size(), 0));
 
         auto color_scaler = 1.0 / double(total) * 255.0;
 
-        // pass 4: map to color
+        // pass 3: map to color
         for (auto y = 0; y < grid.size(); y++)
         {
             for (auto x = 0; x < grid[y].size(); x++)
