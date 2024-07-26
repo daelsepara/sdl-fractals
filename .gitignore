@@ -42,10 +42,8 @@ universe/
 *.filters
 
 # vs output directories
-*/x64/Release/*
-*/x64/Debug/*
-Release/*
-Debug/*
+**/Release/
+**/Debug/
 
 # generated files
 *.ppm
