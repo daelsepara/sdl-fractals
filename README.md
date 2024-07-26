@@ -15,12 +15,12 @@ make
 # Usage
 
 ```cmd
-./Fractals.exe /PARAMS={parameters.json} /IMAGE={image.png} /PALETTE={palette.json} /BENCHMAK {other parameters}
+./Fractals.exe /PARAMS={parameters.json} /IMAGE={image.png} /PALETTE={palette.json} /BENCHMARK {other parameters}
 ```
 
 ## Required parameters
 
-#### /PARAMS={parameters.json}
+#### /PARAMS={parameters.json} or /PARAMETERS={parameters.json}
 
 Read parameters from *{parameters.json}* file.
 
