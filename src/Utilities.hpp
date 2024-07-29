@@ -266,7 +266,7 @@ namespace Fractal
         {
             for (auto x = 0; x < grid[y].size(); x++)
             {
-                grid[y][x] = Uint8(grid[y][x] % 255);
+                grid[y][x] = Uint8(grid[y][x] % 256);
             }
         }
     }
