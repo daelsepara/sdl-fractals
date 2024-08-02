@@ -6,7 +6,7 @@
     "escapeValue": 4.0,
     "exponent": 2,
     "inputsFilter": "abs",
-    "function:": "z",
+    "functions": ["z"],
     "invertX": true,
     "invertY": true,
     "colorMode": "normalized",
