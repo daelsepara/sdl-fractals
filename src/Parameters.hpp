@@ -35,7 +35,7 @@ namespace Fractal
         {"logarithm", Fractal::ColorMode::LOG},
         {"hist", Fractal::ColorMode::HISTOGRAM},
         {"histogram", Fractal::ColorMode::HISTOGRAM},
-        {"mod", Fractal::ColorMode::HISTOGRAM},
+        {"mod", Fractal::ColorMode::MODULUS},
         {"modulus", Fractal::ColorMode::MODULUS}};
 
     typedef std::vector<double> Transformation;
